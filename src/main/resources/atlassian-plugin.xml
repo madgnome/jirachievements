@@ -1,0 +1,36 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+  </plugin-info>
+
+  <component-import key="ao" name="Active Objects service"
+                    interface="com.atlassian.activeobjects.external.ActiveObjects">
+    <description>Component to access Active Objects functionality from the plugin</description>
+  </component-import>
+
+  <component key="tx-processor" name="Transactional Annotation Processor"
+             class="com.atlassian.activeobjects.external.TransactionalAnnotationProcessor">
+    <decription>Processes @Transactional annotations.</decription>
+  </component>
+
+  <resource type="download" name="images/" location="includes/images/"/>
+  <resource type="download" name="css/" location="includes/css/"/>
+  <resource type="download" name="js/" location="includes/js/"/>
+
+  <web-resource name="Notifications resources" key="ja-notification">
+    <resource name="notification.js" type="download" location="includes/js/notification.js"/>
+    <resource type="download" name="notification.css" location="includes/css/notification.css"/>
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+
+    <context>atl.general</context>
+    <context>atl.admin</context>
+  </web-resource>
+
+    <ao key="ao-module">
+      <description>The module configuring the Active Objects service used by this plugin</description>
+      <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
+      <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievements</entity>
+    </ao>
+</atlassian-plugin>
