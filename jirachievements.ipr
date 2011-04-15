@@ -297,7 +297,7 @@
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
@@ -499,6 +499,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.1_3/cglib-2.1_3-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-core:0.9.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.9.6/activeobjects-core-0.9.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.9.6/activeobjects-core-0.9.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.9.6/activeobjects-core-0.9.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.9.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.9.6/activeobjects-dbex-0.9.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.9.6/activeobjects-dbex-0.9.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.9.6/activeobjects-dbex-0.9.6-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.9.6">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.9.6/activeobjects-plugin-0.9.6.jar!/" />
@@ -508,6 +530,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.9.6/activeobjects-plugin-0.9.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.9.6">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.9.6/activeobjects-spi-0.9.6.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.9.6/activeobjects-spi-0.9.6-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.9.6/activeobjects-spi-0.9.6-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.applinks:applinks-api:3.3">
@@ -1401,15 +1434,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/p4package/atlassian-p4package/2007.12.14/atlassian-p4package-2007.12.14-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.plugins.rest:atlassian-rest-common:2.4.0">
+    <library name="Maven: com.atlassian.plugins.rest:atlassian-rest-common:1.0.2">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/plugins/rest/atlassian-rest-common/2.4.0/atlassian-rest-common-2.4.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/plugins/rest/atlassian-rest-common/1.0.2/atlassian-rest-common-1.0.2.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/plugins/rest/atlassian-rest-common/2.4.0/atlassian-rest-common-2.4.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/plugins/rest/atlassian-rest-common/1.0.2/atlassian-rest-common-1.0.2-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/plugins/rest/atlassian-rest-common/2.4.0/atlassian-rest-common-2.4.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/plugins/rest/atlassian-rest-common/1.0.2/atlassian-rest-common-1.0.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.plugins:atlassian-plugins-core:2.7.5">
@@ -2226,26 +2259,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/javax/transaction/jta/1.0.1B/jta-1.0.1B-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: javax.validation:validation-api:1.0.0.GA">
+    <library name="Maven: javax.ws.rs:jsr311-api:1.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: javax.xml.bind:jaxb-api:2.2.2">
+    <library name="Maven: javax.xml.bind:jaxb-api:2.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: javax.xml.stream:stax-api:1.0-2">
@@ -2501,6 +2534,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/nekohtml/nekohtml/0.8.1/nekohtml-0.8.1-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m18">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m18/activeobjects-0.9-m18.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m18/activeobjects-0.9-m18-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m18/activeobjects-0.9-m18-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: net.jcip:jcip-annotations:1.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar!/" />
@@ -2732,6 +2776,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/2.9.4/lucene-core-2.9.4-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.lucene:lucene-queries:2.2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queries/2.2.0/lucene-queries-2.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queries/2.2.0/lucene-queries-2.2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queries/2.2.0/lucene-queries-2.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.velocity:velocity-tools:1.3">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/velocity/velocity-tools/1.3/velocity-tools-1.3.jar!/" />
@@ -2818,6 +2873,28 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.1/jettison-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.woodstox:stax2-api:3.1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/stax2-api/3.1.0/stax2-api-3.1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/stax2-api/3.1.0/stax2-api-3.1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/stax2-api/3.1.0/stax2-api-3.1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.1.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/woodstox-core-asl/4.1.0/woodstox-core-asl-4.1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/woodstox-core-asl/4.1.0/woodstox-core-asl-4.1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/woodstox-core-asl/4.1.0/woodstox-core-asl-4.1.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.codehaus.woodstox:wstx-asl:3.2.4">
@@ -2917,17 +2994,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/easymock/easymockclassextension/2.5.2/easymockclassextension-2.5.2-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.hibernate:hibernate-validator:4.0.2.GA">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/4.0.2.GA/hibernate-validator-4.0.2.GA-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.hibernate:hibernate:3.2.5.ga">
@@ -3227,15 +3293,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/2.0.6/spring-web-2.0.6-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.springframework:spring-webmvc:2.5.6.SEC02">
+    <library name="Maven: org.springframework:spring-webmvc:2.5.6">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/2.5.6.SEC02/spring-webmvc-2.5.6.SEC02.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/2.5.6/spring-webmvc-2.5.6.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/2.5.6.SEC02/spring-webmvc-2.5.6.SEC02-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/2.5.6/spring-webmvc-2.5.6-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/2.5.6.SEC02/spring-webmvc-2.5.6.SEC02-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/2.5.6/spring-webmvc-2.5.6-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.tuckey:urlrewrite:2.5.2">

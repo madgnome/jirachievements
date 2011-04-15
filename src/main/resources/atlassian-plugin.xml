@@ -5,6 +5,15 @@
     <vendor name="${project.organization.name}" url="${project.organization.url}"/>
   </plugin-info>
 
+  <ao key="ao-module">
+    <description>The module configuring the Active Objects service used by this plugin</description>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievements</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper</entity>
+  </ao>
+
+  <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
+
   <component-import key="ao" name="Active Objects service"
                     interface="com.atlassian.activeobjects.external.ActiveObjects">
     <description>Component to access Active Objects functionality from the plugin</description>
@@ -13,6 +22,17 @@
   <component key="tx-processor" name="Transactional Annotation Processor"
              class="com.atlassian.activeobjects.external.TransactionalAnnotationProcessor">
     <decription>Processes @Transactional annotations.</decription>
+  </component>
+
+  <component key="issue-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
+  <component key="plugin-initializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"/>
+
+  <component key="userDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserDaoService</inteface>
+  </component>
+
+  <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
   </component>
 
   <resource type="download" name="images/" location="includes/images/"/>
@@ -28,9 +48,7 @@
     <context>atl.admin</context>
   </web-resource>
 
-    <ao key="ao-module">
-      <description>The module configuring the Active Objects service used by this plugin</description>
-      <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
-      <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievements</entity>
-    </ao>
+  <rest key="rest-service-resources" path="/jirachievement" version="1.0">
+    <description>Provides the REST resources for JIRAchievement plugin.</description>
+  </rest>
 </atlassian-plugin>

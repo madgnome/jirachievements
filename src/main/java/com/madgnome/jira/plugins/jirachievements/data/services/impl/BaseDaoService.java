@@ -6,7 +6,6 @@ public class BaseDaoService
 {
   protected final ActiveObjects ao;
 
-
   public BaseDaoService(ActiveObjects ao)
   {
     this.ao = ao;
