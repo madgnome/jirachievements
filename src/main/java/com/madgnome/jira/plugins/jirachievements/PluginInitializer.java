@@ -1,23 +1,29 @@
 package com.madgnome.jira.plugins.jirachievements;
 
 import com.atlassian.crowd.embedded.api.User;
+import com.atlassian.jira.extension.Startable;
 import com.atlassian.jira.user.util.UserUtil;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserDaoService;
-import org.springframework.beans.factory.InitializingBean;
+import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
-public class PluginInitializer implements InitializingBean
+public class PluginInitializer implements Startable
 {
   private final UserUtil userUtil;
-  private final IUserDaoService userDaoService;
+  private final IUserWrapperDaoService userWrapperDaoService;
+  private final IAchievementDaoService achievementDaoService;
+  private final IStatisticRefDaoService statisticRefDaoService;
 
-  public PluginInitializer(IUserDaoService userDaoService, UserUtil userUtil)
+  public PluginInitializer(IUserWrapperDaoService userWrapperDaoService, UserUtil userUtil, IAchievementDaoService achievementDaoService, IStatisticRefDaoService statisticRefDaoService)
   {
-    this.userDaoService = userDaoService;
+    this.userWrapperDaoService = userWrapperDaoService;
     this.userUtil = userUtil;
+    this.achievementDaoService = achievementDaoService;
+    this.statisticRefDaoService = statisticRefDaoService;
   }
 
   @Override
-  public void afterPropertiesSet() throws Exception
+  public void start() throws Exception
   {
     initDatabase();
   }
@@ -25,13 +31,25 @@ public class PluginInitializer implements InitializingBean
   private void initDatabase()
   {
     initUserWrappers();
+    initAchievements();
+    initStatistics();
+  }
+
+  private void initStatistics()
+  {
+    statisticRefDaoService.getOrCreate("IssueCount");
+  }
+
+  private void initAchievements()
+  {
+    achievementDaoService.getOrCreate("Padawan");
   }
 
   private void initUserWrappers()
   {
     for (User user : userUtil.getUsers())
     {
-      userDaoService.createUserWrapper(user);
+      userWrapperDaoService.createUserWrapper(user);
     }
   }
 }

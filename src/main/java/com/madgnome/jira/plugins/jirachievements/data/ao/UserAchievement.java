@@ -2,7 +2,7 @@ package com.madgnome.jira.plugins.jirachievements.data.ao;
 
 import net.java.ao.Entity;
 
-public interface UserAchievements extends Entity
+public interface UserAchievement extends Entity
 {
   public int getUserWrapper();
   public void setUserWrapper(UserWrapper userWrapper);

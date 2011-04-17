@@ -1,12 +1,11 @@
 package com.madgnome.jira.plugins.jirachievements.data.services;
 
 import com.atlassian.activeobjects.tx.Transactional;
-import com.atlassian.crowd.embedded.api.User;
+import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 
 @Transactional
-public interface IUserDaoService
+public interface IUserStatisticDaoService
 {
-  UserWrapper createUserWrapper(User jiraUser);
-  UserWrapper getUserWrapper(User jiraUser);
+  UserStatistic getStatistic(UserWrapper userWrapper, String ref);
 }

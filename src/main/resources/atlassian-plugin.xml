@@ -8,8 +8,11 @@
   <ao key="ao-module">
     <description>The module configuring the Active Objects service used by this plugin</description>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
-    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievements</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper</entity>
+    <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v1.InitDatabaseTask</upgradeTask>
   </ao>
 
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
@@ -25,14 +28,28 @@
   </component>
 
   <component key="issue-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
+  <component key="old-event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
+  <component key="event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
   <component key="plugin-initializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"/>
-
-  <component key="userDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserDaoService</inteface>
-  </component>
 
   <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
+  </component>
+
+  <component key="statisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.StatisticRefDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService</inteface>
+  </component>
+
+  <component key="userAchievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserAchievementDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService</inteface>
+  </component>
+
+  <component key="userStatisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserStatisticDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService</inteface>
+  </component>
+
+  <component key="userWrapperDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserWrapperDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService</inteface>
   </component>
 
   <resource type="download" name="images/" location="includes/images/"/>
