@@ -58,7 +58,10 @@
 
   <web-resource name="Notifications resources" key="ja-notification">
     <resource name="notification.js" type="download" location="includes/js/notification.js"/>
-    <resource type="download" name="notification.css" location="includes/css/notification.css"/>
+    <resource name="jquery.jgrowl_minimized.js" type="download" location="includes/js/plugins/jquery.jgrowl_minimized.js"/>
+    <resource name="jquery.corner.js" type="download" location="includes/js/plugins/jquery.corner.js"/>
+    <resource name="notification.css" type="download" location="includes/css/notification.css"/>
+    <resource name="jquery.jgrowl.css" type="download" location="includes/css/plugins/jquery.jgrowl.css"/>
     <dependency>com.atlassian.auiplugin:ajs</dependency>
 
     <context>atl.general</context>
