@@ -4,9 +4,12 @@ import net.java.ao.Entity;
 
 public interface UserAchievement extends Entity
 {
-  public int getUserWrapper();
-  public void setUserWrapper(UserWrapper userWrapper);
+  int getUserWrapper();
+  void setUserWrapper(UserWrapper userWrapper);
 
-  public Achievement getAchievement();
-  public void setAchievement(Achievement achievement);
+  Achievement getAchievement();
+  void setAchievement(Achievement achievement);
+
+  boolean isNotified();
+  void setNotified(boolean notified);
 }

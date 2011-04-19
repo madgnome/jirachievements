@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IDaoService<T extends Entity>
 {
-  public List<T> all();
+  T get(int id);
+  List<T> all();
 }

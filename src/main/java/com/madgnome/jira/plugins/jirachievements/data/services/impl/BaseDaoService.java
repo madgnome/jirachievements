@@ -22,6 +22,12 @@ public abstract class BaseDaoService<T extends Entity> implements IDaoService<T>
     this.ao = ao;
   }
 
+  public T get(int id)
+  {
+    T[] result = ao.find(clazz, "ID = ?", id);
+    return result.length > 0 ? result[0] : null;
+  }
+
   public List<T> all()
   {
     return Arrays.asList(ao.find(clazz));

@@ -6,8 +6,6 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 
-import java.util.List;
-
 public class UserAchievementDaoService extends BaseDaoService<UserAchievement> implements IUserAchievementDaoService
 {
   @Override
@@ -31,9 +29,17 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
   }
 
   @Override
-  public List<Achievement> findUserAchievements(int jiraUserId)
+  public UserAchievement get(Achievement achievement, UserWrapper userWrapper)
   {
-//    ao.find(UserAchievement.class, )
-    return null;
+    return get(achievement.getID(), userWrapper.getID());
+  }
+
+  @Override
+  public UserAchievement get(int achievementId, int userWrapperId)
+  {
+    UserAchievement[] userAchievements =
+            ao.find(clazz, "ACHIEVEMENT_ID = ? AND USER_WRAPPER_ID = ?", achievementId, userWrapperId);
+
+    return userAchievements.length > 0 ? userAchievements[0] : null;
   }
 }

@@ -5,12 +5,15 @@ import net.java.ao.ManyToMany;
 
 public interface UserWrapper extends Entity
 {
-  public String getJiraUserName();
-  public void setJiraUserName(String name);
+  String getJiraUserName();
+  void setJiraUserName(String name);
 
-  @ManyToMany(UserAchievement.class)
-  public Achievement[] getAchievements();
+  @ManyToMany(value = UserAchievement.class, where = "NOTIFIED = FALSE")
+  Achievement[] getNewAchievements();
+
+  @ManyToMany(value = UserAchievement.class)
+  Achievement[] getAchievements();
 
   @ManyToMany(UserStatistic.class)
-  public StatisticRef[] getStatistics();
+  StatisticRef[] getStatistics();
 }

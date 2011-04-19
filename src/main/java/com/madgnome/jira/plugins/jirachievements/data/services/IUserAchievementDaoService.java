@@ -5,11 +5,11 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 
-import java.util.List;
-
 @Transactional
 public interface IUserAchievementDaoService extends IDaoService<UserAchievement>
 {
   void addAchievementToUser(Achievement achievement, UserWrapper userWrapper);
-  List<Achievement> findUserAchievements(int jiraUserId);
+
+  UserAchievement get(Achievement achievement, UserWrapper userWrapper);
+  UserAchievement get(int achievementId, int userWrapperId);
 }
