@@ -71,4 +71,7 @@
   <rest key="rest-service-resources" path="/jirachievement" version="1.0">
     <description>Provides the REST resources for JIRAchievement plugin.</description>
   </rest>
+  <!-- Rules -->
+  <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
+
 </atlassian-plugin>
