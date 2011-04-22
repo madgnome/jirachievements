@@ -2,9 +2,11 @@ package com.madgnome.jira.plugins.jirachievements.data.ao;
 
 import net.java.ao.Entity;
 import net.java.ao.ManyToMany;
+import net.java.ao.schema.NotNull;
 
 public interface UserWrapper extends Entity
 {
+  @NotNull
   String getJiraUserName();
   void setJiraUserName(String name);
 

@@ -1666,6 +1666,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/spring/atlassian-spring/1.0/atlassian-spring-1.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.atlassian.templaterenderer:atlassian-template-renderer-api:1.2.3">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/templaterenderer/atlassian-template-renderer-api/1.2.3/atlassian-template-renderer-api-1.2.3.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/templaterenderer/atlassian-template-renderer-api/1.2.3/atlassian-template-renderer-api-1.2.3-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/templaterenderer/atlassian-template-renderer-api/1.2.3/atlassian-template-renderer-api-1.2.3-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.atlassian.trackback:atlassian-trackback:0.11">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/trackback/atlassian-trackback/0.11/atlassian-trackback-0.11.jar!/" />

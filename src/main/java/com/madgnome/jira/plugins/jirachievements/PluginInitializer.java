@@ -3,6 +3,7 @@ package com.madgnome.jira.plugins.jirachievements;
 import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.extension.Startable;
 import com.atlassian.jira.user.util.UserUtil;
+import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
@@ -51,5 +52,13 @@ public class PluginInitializer implements Startable
     {
       userWrapperDaoService.createUserWrapper(user);
     }
+  }
+
+  private void initAchievement(String ref, String name, String description)
+  {
+    Achievement achievement = achievementDaoService.getOrCreate(ref);
+    achievement.setName(name);
+    achievement.setDescription(description);
+    achievement.save();
   }
 }

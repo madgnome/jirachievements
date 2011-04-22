@@ -11,7 +11,5 @@ public interface ReferencableEntity extends Entity
   @NotNull
   @Unique
   public String getRef();
-  @NotNull
-  @Unique
   public void setRef(String ref);
 }

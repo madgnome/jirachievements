@@ -39,6 +39,7 @@ public class AchievementResource
 
     List<Map<String, String>> achievements = new ArrayList<Map<String, String>>();
 
+    // TODO Change this
     for (Achievement achievement : userWrapper.getNewAchievements())
     {
       Map<String, String> achievementMap = new HashMap<String, String>();

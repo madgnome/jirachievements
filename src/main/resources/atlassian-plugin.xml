@@ -15,6 +15,9 @@
     <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v1.InitDatabaseTask</upgradeTask>
   </ao>
 
+  <component-import key="userManager" interface="com.atlassian.sal.api.user.UserManager"/>
+  <component-import key="webResourceManager" interface="com.atlassian.plugin.webresource.WebResourceManager" />
+  <component-import key="templateRenderer" interface="com.atlassian.templaterenderer.TemplateRenderer"/>
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
 
   <component-import key="ao" name="Active Objects service"
@@ -68,9 +71,32 @@
     <context>atl.admin</context>
   </web-resource>
 
+  <view-profile-panel key="achievements-profile" i18n-name-key="Achievements"
+                      name="User Profile Roadmap Panel"
+                      class="com.madgnome.jira.plugins.jirachievements.ui.AchievementViewProfilePanel"
+                      application="jira">
+    <order>40</order>
+  </view-profile-panel>
+
+  <web-item key="achievements-page-link" section="system.user.options/personal">
+    <label>Achievements</label>
+    <link>/secure/ViewProfile.jspa#selectedTab=com.madgnome.jira.plugins.jirachievements:achievements-profile</link>
+  </web-item>
+
+  <!--<webwork1 key="achievements-page" name="My Achievements page" class="java.lang.Object">-->
+    <!--<actions>-->
+      <!--<action name="com.madgnome.jira.plugins.jirachievements.webwork.MyAchievementsAction" alias="MyAchievements">-->
+        <!--<view name="success">/templates/com/madgnome/jira/plugins/jirachievements/achievements.vm</view>-->
+      <!--</action>-->
+    <!--</actions>-->
+  <!--</webwork1>-->
+
+
+
   <rest key="rest-service-resources" path="/jirachievement" version="1.0">
     <description>Provides the REST resources for JIRAchievement plugin.</description>
   </rest>
+
   <!-- Rules -->
   <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
 
