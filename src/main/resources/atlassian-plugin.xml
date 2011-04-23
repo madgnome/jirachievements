@@ -33,6 +33,8 @@
   <component key="issue-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
   <component key="old-event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
   <component key="event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
+
+  <component key="achievements-initializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
   <component key="plugin-initializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"/>
 
   <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">

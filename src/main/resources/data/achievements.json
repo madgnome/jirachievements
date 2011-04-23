@@ -1,0 +1,110 @@
+[
+  {
+    "ref": "welcome",
+    "name": "New born",
+    "catchPhrase": "That's the beginning of your journey",
+    "description": "First connection in JIRA",
+    "category": "USER",
+    "level": "BRONZE",
+    "hidden": "false"
+  },
+  {
+    "ref": "padawan:user",
+    "name": "Padawan",
+    "catchPhrase": "Strong in you the force is",
+    "description": "First issue created",
+    "category": "USER",
+    "level": "BRONZE",
+    "hidden": "false"
+  },
+  {
+    "ref": "padawan:developer",
+    "name": "Padawan",
+    "catchPhrase": "Strong in you the force is",
+    "description": "First issue fixed",
+    "category": "DEVELOPER",
+    "level": "BRONZE",
+    "hidden": "false"
+  },
+  {
+    "ref": "padawan:test",
+    "name": "Padawan",
+    "catchPhrase": "Strong in you the force is",
+    "description": "First issue tested",
+    "category": "TESTER",
+    "level": "BRONZE",
+    "hidden": "false"
+  },
+  {
+    "ref": "padawan:agilist",
+    "name": "Padawan",
+    "catchPhrase": "Strong in you the force is",
+    "description": "First issue planned",
+    "category": "AGILIST",
+    "level": "BRONZE",
+    "hidden": "false"
+  },
+  {
+    "ref": "issue-snatcher",
+    "name": "The Issue Snatcher",
+    "catchPhrase": "You can't leave the dead alone, do you?",
+    "description": "Issue reopen more than one year after it has been closed",
+    "category": "USER",
+    "level": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "lostark-raider",
+    "name": "Raider of the Lost Issue",
+    "catchPhrase": "You can't leave the dead alone, do you?",
+    "description": "Issue fixed more than one year after its creation",
+    "category": "DEVELOPER",
+    "level": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "insomniac",
+    "name": "The Insomniac",
+    "catchPhrase": "Can't sleep?",
+    "description": "Change an issue after midnight",
+    "category": "GLOBAL",
+    "level": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "expresso",
+    "name": "What else?",
+    "catchPhrase": "",
+    "description": "Change an issue before 6AM",
+    "category": "GLOBAL",
+    "level": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "quibbler",
+    "name": "The Quibbler",
+    "catchPhrase": "",
+    "description": "Fill all the field",
+    "category": "USER",
+    "level": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "keyboard-shortcuts",
+    "name": "VI Ninja",
+    "catchPhrase": "",
+    "description": "Use the keyboard shortcuts more at least 10 times",
+    "category": "USER",
+    "level": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "advanced-search",
+    "name": "The Searcher",
+    "catchPhrase": "I Can Haz Complex Query?",
+    "description": "Use advanced search",
+    "category": "USER",
+    "level": "SILVER",
+    "hidden": "false"
+  }
+]

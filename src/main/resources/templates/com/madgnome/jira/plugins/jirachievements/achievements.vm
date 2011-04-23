@@ -1,1 +1,63 @@
-blablabla
+<div class="content">
+  Blablabla
+</div>
+<div class="content">
+  <div class="module">
+    <div class="mod-header">
+      <h3>Details</h3>
+    </div>
+
+
+    <div class="mod-content">
+
+
+      <div class="aui-tabs horizontal-tabs" id="horizontal">
+        <ul class="tabs-menu">
+          <li class="menu-item active-tab first">
+            <a href="#horizontal-first"><strong>User</strong></a>
+          </li>
+          <li class="menu-item">
+            <a href="#horizontal-second"><strong>Developer</strong></a>
+          </li>
+          <li class="menu-item">
+            <a href="#horizontal-third"><strong>Tester</strong></a>
+          </li>
+          <li class="menu-item">
+            <a href="#horizontal-fourth"><strong>Agilist</strong></a>
+          </li>
+        </ul>
+        <div class="tabs-pane active-pane" id="horizontal-first">
+          #set ($loop = ["mask","","","mask","mask","","","",""])
+          #foreach ($i in $loop)
+            <div class="achievements-list">
+              <div class="achievement-full">
+                <div class="achievement-content">
+                  <h4>Padawan</h4>
+                  <span>Strong the force in you</span>
+                </div>
+
+                #if ($i == "mask")
+                <div class="mask">
+                </div>
+                #end
+              </div>
+
+            </div>
+          #end
+        </div>
+        <div class="tabs-pane" id="horizontal-second">
+            <h2>This is Tab 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor volutpat posuere. Nunc non lacinia ligula. In convallis iaculis interdum. Sed quis risus gravida enim adipiscing semper. In magna tortor, scelerisque vel lobortis sed, tincidunt quis mauris. Sed libero neque, hendrerit ac sagittis eget, rhoncus vel augue. Proin eget blandit ligula. Praesent placerat, nisl a laoreet ultrices, mi sem suscipit nisl, non ornare neque massa nec augue. Integer consectetur elementum posuere. Integer feugiat aliquam rutrum. Praesent sapien lectus, pharetra quis pharetra vel, mattis ut orci. In vehicula nibh et enim lacinia interdum. Sed aliquam vehicula risus, vitae commodo sapien vulputate eu. Phasellus vulputate tempor aliquet.</p>
+        </div>
+        <div class="tabs-pane" id="horizontal-third">
+            <h2>This is Tab 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor volutpat posuere. Nunc non lacinia ligula. In convallis iaculis interdum. Sed quis risus gravida enim adipiscing semper. In magna tortor, scelerisque vel lobortis sed, tincidunt quis mauris. Sed libero neque, hendrerit ac sagittis eget, rhoncus vel augue. Proin eget blandit ligula. Praesent placerat, nisl a laoreet ultrices, mi sem suscipit nisl, non ornare neque massa nec augue. Integer consectetur elementum posuere. Integer feugiat aliquam rutrum. Praesent sapien lectus, pharetra quis pharetra vel, mattis ut orci. In vehicula nibh et enim lacinia interdum. Sed aliquam vehicula risus, vitae commodo sapien vulputate eu. Phasellus vulputate tempor aliquet.</p>
+        </div>
+        <div class="tabs-pane" id="horizontal-fourth">
+            <h2>This is Tab 4</h2>
+            <p>Quisque commodo, lectus at venenatis volutpat, urna lacus egestas nisl, interdum fermentum risus nibh molestie mauris. Etiam a tellus ac elit accumsan scelerisque. Vivamus pellentesque, ligula eget dictum sagittis, arcu lacus scelerisque augue, in dictum eros eros rhoncus enim. Aliquam nunc metus, vestibulum eget fermentum et, gravida ut turpis. Sed bibendum bibendum sem, ac ultricies risus mollis sit amet. Duis dapibus erat placerat nunc laoreet vel mollis justo consequat. Nam tristique eleifend magna, a ultricies leo ultricies in. Etiam ac purus a ante rhoncus sollicitudin. Aenean vel quam id dui mattis mattis in molestie quam. Nulla sed ante arcu, eu lacinia enim. Ut tincidunt mi sapien, vitae vehicula magna. Aliquam condimentum orci sed dui faucibus eu laoreet massa euismod. Suspendisse potenti.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
