@@ -25,7 +25,7 @@ public class PadawanIssueEventRule extends AbstractIssueEventRule implements IIs
   @Override
   public String getAchievementRef()
   {
-    return "Padawan";
+    return "padawan:user";
   }
 
   @Override

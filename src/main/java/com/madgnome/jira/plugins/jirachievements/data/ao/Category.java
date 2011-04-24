@@ -2,7 +2,7 @@ package com.madgnome.jira.plugins.jirachievements.data.ao;
 
 public enum Category
 {
-  GLOBAL,
+  GENERAL,
   USER,
   DEVELOPER,
   TESTER,

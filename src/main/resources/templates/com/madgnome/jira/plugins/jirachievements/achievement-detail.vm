@@ -1,0 +1,27 @@
+#* @vtlvariable name="achievement" type="com.madgnome.jira.plugins.jirachievements.data.ao.Achievement" *#
+#set ($done = false)
+#foreach($userAchievement in $userAchievements)
+  #if ($userAchievement.ref == $achievement.ref)
+    #set ($done = true)
+  #end
+#end
+
+<div class="achievement-full">
+  <div class="achievement-image">
+    <img src="$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}.png"
+         onerror="this.src='$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/default.png';"/>
+  </div>
+  <div class="achievement-content">
+    #if (!$achievement.hidden)
+      <h4>$achievement.name</h4>
+      <span>$achievement.catchPhrase</span>
+    #else
+      <h4>Achievement locked</h4>
+      <span>That's a real mystery...</span>
+    #end
+  </div>
+  #if ($done == false)
+    <div class="mask">
+    </div>
+  #end
+</div>

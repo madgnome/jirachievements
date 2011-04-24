@@ -6,6 +6,10 @@ import com.atlassian.jira.plugin.profile.ViewProfilePanelModuleDescriptor;
 import com.atlassian.plugin.webresource.WebResourceManager;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.templaterenderer.TemplateRenderer;
+import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
+import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
+import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 import com.opensymphony.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,21 +19,29 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUserProfilePanel
 {
-  private static final Logger log = LoggerFactory.getLogger(AchievementViewProfilePanel.class);
+  private static final Logger logger = LoggerFactory.getLogger(AchievementViewProfilePanel.class);
 
   private final TemplateRenderer templateRenderer;
   private final UserManager userManager;
   private final WebResourceManager webResourceManager;
 
-  public AchievementViewProfilePanel(TemplateRenderer templateRenderer, UserManager userManager, WebResourceManager webResourceManager)
+  private final IAchievementDaoService achievementDaoService;
+  private final IUserWrapperDaoService userWrapperDaoService;
+
+  public AchievementViewProfilePanel(TemplateRenderer templateRenderer, UserManager userManager, WebResourceManager webResourceManager, IAchievementDaoService achievementDaoService, IUserWrapperDaoService userWrapperDaoService)
   {
     this.templateRenderer = templateRenderer;
     this.userManager = userManager;
     this.webResourceManager = webResourceManager;
+    this.achievementDaoService = achievementDaoService;
+    this.userWrapperDaoService = userWrapperDaoService;
   }
 
   @Override
@@ -51,32 +63,57 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     
     try
     {
-      render(req, writer);
+      render(req, writer, user);
     }
     catch (Exception e)
     {
       writer.write("Unauthorized access: " + e.getMessage());
     }
-//    catch (IOException e)
-//    {
-//      writer.write("Unable to render panel: " + e.getMessage());
-//      log.error("Error rendering speakeasy panel", e);
-//    }
 
     return writer.toString();
   }
 
-  private void render(HttpServletRequest req, Writer output) throws IOException, Exception
+  private void render(HttpServletRequest req, Writer output, User user) throws IOException, Exception
   {
-    String user = this.userManager.getRemoteUsername(req);
-    if (user == null)
+    String username = this.userManager.getRemoteUsername(req);
+    if (username == null)
     {
       throw new Exception("Unauthorized - must be a valid user");
     }
 
     this.webResourceManager.requireResource("com.atlassian.auiplugin:ajs");
-    this.webResourceManager.requireResourcesForContext("speakeasy.user-profile");
 
-    templateRenderer.render("templates/com/madgnome/jira/plugins/jirachievements/achievements.vm", Collections.EMPTY_MAP, output);
+    Map<String, Object> params = retrieveParameters();
+    params.put("req", req);
+
+    // TODO optimize
+    Achievement[] userAchievements = userWrapperDaoService.getUserWrapper(user).getAchievements();
+    params.put("userAchievements", userAchievements);
+
+    templateRenderer.render("templates/com/madgnome/jira/plugins/jirachievements/achievements.vm", params, output);
+  }
+
+  private Map<String, Object> retrieveParameters()
+  {
+    Map<String, Object> params = new HashMap<String, Object>();
+
+    Map<String, List<Achievement>> achievementByCategory = new HashMap<String, List<Achievement>>();
+    List<Achievement> achievements = achievementDaoService.all();
+    for (Achievement achievement : achievements)
+    {
+      Category category = achievement.getCategory();
+      List<Achievement> categoryAchievements = achievementByCategory.get(category.toString());
+      if (categoryAchievements == null)
+      {
+        categoryAchievements = new ArrayList<Achievement>();
+        achievementByCategory.put(category.toString(), categoryAchievements);
+      }
+
+      categoryAchievements.add(achievement);
+    }
+
+    params.put("achievements", achievementByCategory);
+
+    return params;
   }
 }

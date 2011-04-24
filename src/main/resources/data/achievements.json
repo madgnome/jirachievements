@@ -67,7 +67,7 @@
     "name": "The Insomniac",
     "catchPhrase": "Can't sleep?",
     "description": "Change an issue after midnight",
-    "category": "GLOBAL",
+    "category": "GENERAL",
     "level": "SILVER",
     "hidden": "false"
   },
@@ -76,7 +76,7 @@
     "name": "What else?",
     "catchPhrase": "",
     "description": "Change an issue before 6AM",
-    "category": "GLOBAL",
+    "category": "GENERAL",
     "level": "SILVER",
     "hidden": "false"
   },

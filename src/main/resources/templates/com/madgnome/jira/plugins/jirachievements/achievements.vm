@@ -1,5 +1,40 @@
+#* @vtlvariable name="achievements" type="java.util.Map<com.madgnome.jira.plugins.jirachievements.data.ao.Category, java.util.List<com.madgnome.jira.plugins.jirachievements.data.ao.Achievement>>" *#
+
+#macro (categoryAchievements $categoryName)
+  <div class="achievements-list">
+    #foreach ($achievement in $achievements.get($categoryName))
+      #parse ('/templates/com/madgnome/jira/plugins/jirachievements/achievement-detail.vm')
+    #end
+  </div>
+#end
+
+#macro (categoryMeter $categoryName)
+  #set ($currentCategory = $achievements.get($categoryName))
+  <meter min="0" max="100" value="40">25 /100</meter>
+#end
+
 <div class="content">
-  Blablabla
+  <div class="module">
+    <div class="mod-header">
+      <h3>Summary</h3>
+    </div>
+    <div class="mod-content">
+      <div class="achievements-summary">
+        <dl class="table-display">
+          <dt>User</dt>
+          <dd><p><meter min="0" max="100" value="40">25 /100</meter></p></dd>
+          <dt>Developer</dt>
+          <dd><p><meter min="0" max="100" value="25">25 /100</meter></p></dd>
+          <dt>Tester</dt>
+          <dd><p><meter min="0" max="100" value="5">25 /100</meter></p></dd>
+          <dt>Agilist</dt>
+          <dd><p><meter min="0" max="100" value="0">25 /100</meter></p></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 <div class="content">
   <div class="module">
@@ -7,10 +42,7 @@
       <h3>Details</h3>
     </div>
 
-
-    <div class="mod-content">
-
-
+    <div class="mod-content" id="achievements-details">
       <div class="aui-tabs horizontal-tabs" id="horizontal">
         <ul class="tabs-menu">
           <li class="menu-item active-tab first">
@@ -27,37 +59,35 @@
           </li>
         </ul>
         <div class="tabs-pane active-pane" id="horizontal-first">
-          #set ($loop = ["mask","","","mask","mask","","","",""])
-          #foreach ($i in $loop)
-            <div class="achievements-list">
-              <div class="achievement-full">
-                <div class="achievement-content">
-                  <h4>Padawan</h4>
-                  <span>Strong the force in you</span>
-                </div>
-
-                #if ($i == "mask")
-                <div class="mask">
-                </div>
-                #end
-              </div>
-
-            </div>
-          #end
+          #categoryAchievements("USER")
         </div>
         <div class="tabs-pane" id="horizontal-second">
-            <h2>This is Tab 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor volutpat posuere. Nunc non lacinia ligula. In convallis iaculis interdum. Sed quis risus gravida enim adipiscing semper. In magna tortor, scelerisque vel lobortis sed, tincidunt quis mauris. Sed libero neque, hendrerit ac sagittis eget, rhoncus vel augue. Proin eget blandit ligula. Praesent placerat, nisl a laoreet ultrices, mi sem suscipit nisl, non ornare neque massa nec augue. Integer consectetur elementum posuere. Integer feugiat aliquam rutrum. Praesent sapien lectus, pharetra quis pharetra vel, mattis ut orci. In vehicula nibh et enim lacinia interdum. Sed aliquam vehicula risus, vitae commodo sapien vulputate eu. Phasellus vulputate tempor aliquet.</p>
+          #categoryAchievements("DEVELOPER")
         </div>
         <div class="tabs-pane" id="horizontal-third">
-            <h2>This is Tab 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor volutpat posuere. Nunc non lacinia ligula. In convallis iaculis interdum. Sed quis risus gravida enim adipiscing semper. In magna tortor, scelerisque vel lobortis sed, tincidunt quis mauris. Sed libero neque, hendrerit ac sagittis eget, rhoncus vel augue. Proin eget blandit ligula. Praesent placerat, nisl a laoreet ultrices, mi sem suscipit nisl, non ornare neque massa nec augue. Integer consectetur elementum posuere. Integer feugiat aliquam rutrum. Praesent sapien lectus, pharetra quis pharetra vel, mattis ut orci. In vehicula nibh et enim lacinia interdum. Sed aliquam vehicula risus, vitae commodo sapien vulputate eu. Phasellus vulputate tempor aliquet.</p>
+          #categoryAchievements("TESTER")
         </div>
         <div class="tabs-pane" id="horizontal-fourth">
-            <h2>This is Tab 4</h2>
-            <p>Quisque commodo, lectus at venenatis volutpat, urna lacus egestas nisl, interdum fermentum risus nibh molestie mauris. Etiam a tellus ac elit accumsan scelerisque. Vivamus pellentesque, ligula eget dictum sagittis, arcu lacus scelerisque augue, in dictum eros eros rhoncus enim. Aliquam nunc metus, vestibulum eget fermentum et, gravida ut turpis. Sed bibendum bibendum sem, ac ultricies risus mollis sit amet. Duis dapibus erat placerat nunc laoreet vel mollis justo consequat. Nam tristique eleifend magna, a ultricies leo ultricies in. Etiam ac purus a ante rhoncus sollicitudin. Aenean vel quam id dui mattis mattis in molestie quam. Nulla sed ante arcu, eu lacinia enim. Ut tincidunt mi sapien, vitae vehicula magna. Aliquam condimentum orci sed dui faucibus eu laoreet massa euismod. Suspendisse potenti.</p>
+          #categoryAchievements("AGILIST")
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+
+  jQuery('#achievements-details').bind('tabSelect', function() {
+    jQuery('.active-pane > .achievements-list').masonry({
+      singleMode: true,
+      itemSelector : '.achievement-full'
+    });
+  });
+
+  jQuery('.active-pane > .achievements-list').masonry({
+      singleMode: true,
+      itemSelector : '.achievement-full'
+    });
+  });
+</script>
