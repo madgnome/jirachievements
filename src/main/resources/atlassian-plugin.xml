@@ -98,14 +98,13 @@
     <link>/secure/ViewProfile.jspa#selectedTab=com.madgnome.jira.plugins.jirachievements:achievements-profile</link>
   </web-item>
 
-  <!--<webwork1 key="achievements-page" name="My Achievements page" class="java.lang.Object">-->
-    <!--<actions>-->
-      <!--<action name="com.madgnome.jira.plugins.jirachievements.webwork.MyAchievementsAction" alias="MyAchievements">-->
-        <!--<view name="success">/templates/com/madgnome/jira/plugins/jirachievements/achievements.vm</view>-->
-      <!--</action>-->
-    <!--</actions>-->
-  <!--</webwork1>-->
-
+  <project-tabpanel key="roadmap-panel" name="Road Map Panel"
+                    class="com.atlassian.jira.plugin.projectpanel.impl.VersionsProjectTabPanel">
+    <label>LeaderBoard</label>
+    <order>80</order>
+    <!-- this template produces the HTML for the panel -->
+    <resource type="velocity" name="view" location="/templates/com/madgnome/jira/plugins/jirachievements/leaderboard.vm" />
+  </project-tabpanel>
 
 
   <rest key="rest-service-resources" path="/jirachievement" version="1.0">
