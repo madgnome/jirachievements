@@ -62,18 +62,28 @@
   <resource type="download" name="js/" location="includes/js/"/>
 
   <web-resource name="Notifications resources" key="ja-notification">
-    <resource name="notification.js" type="download" location="includes/js/notification.js"/>
     <resource name="jquery.jgrowl_minimized.js" type="download" location="includes/js/plugins/jquery.jgrowl_minimized.js"/>
-    <resource name="jquery.masonry.js" type="download" location="includes/js/plugins/jquery.masonry.js"/>
     <resource name="jquery.corner.js" type="download" location="includes/js/plugins/jquery.corner.js"/>
-    <resource name="notification.css" type="download" location="includes/css/notification.css"/>
     <resource name="jquery.jgrowl.css" type="download" location="includes/css/plugins/jquery.jgrowl.css"/>
-    <resource type="download" name="images/" location="includes/images/"/>
+
+    <resource name="notification.js" type="download" location="includes/js/notification.js"/>
+    <resource name="notification.css" type="download" location="includes/css/notification.css"/>
     <resource type="download" name="achievements.css" location="includes/css/achievements.css"/>
     <dependency>com.atlassian.auiplugin:ajs</dependency>
 
     <context>atl.general</context>
     <context>atl.admin</context>
+  </web-resource>
+
+  <web-resource name="Header User Details resources" key="jh-header-user-details">
+    <resource name="header-details-user.js" type="download" location="includes/js/header-details-user.js"/>
+
+    <context>atl.general</context>
+    <context>atl.admin</context>
+  </web-resource>
+
+  <web-resource name="User achievements resources" key="jh-user-achievements-details">
+    <resource name="jquery.masonry.js" type="download" location="includes/js/plugins/jquery.masonry.js"/>
   </web-resource>
 
   <view-profile-panel key="achievements-profile" i18n-name-key="Achievements"
@@ -104,5 +114,6 @@
 
   <!-- Rules -->
   <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
+  <component key="welcomeRule" class="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule"/>
 
 </atlassian-plugin>

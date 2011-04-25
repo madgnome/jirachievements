@@ -6,6 +6,7 @@ import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule;
 import com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer;
 
 public class PluginInitializer implements Startable
@@ -15,12 +16,15 @@ public class PluginInitializer implements Startable
   private final IUserWrapperDaoService userWrapperDaoService;
   private final IStatisticRefDaoService statisticRefDaoService;
 
-  public PluginInitializer(IUserWrapperDaoService userWrapperDaoService, UserUtil userUtil, IAchievementDaoService achievementDaoService, IStatisticRefDaoService statisticRefDaoService, AchievementsInitializer achievementsInitializer)
+  private final WelcomeRule welcomeRule;
+
+  public PluginInitializer(IUserWrapperDaoService userWrapperDaoService, UserUtil userUtil, IAchievementDaoService achievementDaoService, IStatisticRefDaoService statisticRefDaoService, AchievementsInitializer achievementsInitializer, WelcomeRule welcomeRule)
   {
     this.userWrapperDaoService = userWrapperDaoService;
     this.userUtil = userUtil;
     this.statisticRefDaoService = statisticRefDaoService;
     this.achievementsInitializer = achievementsInitializer;
+    this.welcomeRule = welcomeRule;
   }
 
   @Override
@@ -31,9 +35,9 @@ public class PluginInitializer implements Startable
 
   private void initDatabase()
   {
-    initUserWrappers();
     achievementsInitializer.initialize();
     initStatistics();
+    initUserWrappers();
   }
 
   private void initStatistics()
@@ -45,7 +49,12 @@ public class PluginInitializer implements Startable
   {
     for (User user : userUtil.getUsers())
     {
-      userWrapperDaoService.createUserWrapper(user);
+      if (userWrapperDaoService.getUserWrapper(user) == null)
+      {
+        userWrapperDaoService.createUserWrapper(user);
+
+        welcomeRule.execute(user);
+      }
     }
   }
 }

@@ -13,13 +13,17 @@
   </div>
   <div class="achievement-content">
     #if (!$achievement.hidden)
-      <h4>$achievement.name</h4>
+      <h4>
+        $achievement.name
+
+      </h4>
       <span>$achievement.catchPhrase</span>
     #else
       <h4>Achievement locked</h4>
       <span>That's a real mystery...</span>
     #end
   </div>
+  <div class="achievement-level achievement-${achievement.difficulty.name().toLowerCase()}">&nbsp;</div>
   #if ($done == false)
     <div class="mask">
     </div>

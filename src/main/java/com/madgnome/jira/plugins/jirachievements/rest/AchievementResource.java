@@ -5,6 +5,7 @@ import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
+import com.madgnome.jira.plugins.jirachievements.data.json.AchievementJSon;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
@@ -12,9 +13,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Path("/achievements")
 public class AchievementResource
@@ -37,17 +36,12 @@ public class AchievementResource
     User user = jiraAuthenticationContext.getLoggedInUser();
     UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
 
-    List<Map<String, String>> achievements = new ArrayList<Map<String, String>>();
+    List<AchievementJSon> achievements = new ArrayList<AchievementJSon>();
 
     // TODO Change this
     for (Achievement achievement : userWrapper.getNewAchievements())
     {
-      Map<String, String> achievementMap = new HashMap<String, String>();
-      achievementMap.put("id", Integer.toString(achievement.getID()));
-      achievementMap.put("ref", achievement.getRef());
-      achievementMap.put("name", achievement.getName());
-      achievementMap.put("description", achievement.getDescription());
-      achievements.add(achievementMap);
+      achievements.add(AchievementJSon.fromAchievement(achievement));
     }
 
     return Response.ok(achievements).build();

@@ -12,7 +12,7 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementD
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
-public class PadawanIssueEventRule extends AbstractIssueEventRule implements IIssueEventRule
+public class PadawanIssueEventRule extends AbstractRule implements IIssueEventRule
 {
   private final IUserStatisticDaoService userStatisticDaoService;
 

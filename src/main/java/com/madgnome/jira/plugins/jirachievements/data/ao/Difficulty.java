@@ -1,6 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.data.ao;
 
-public enum AchievementLevel
+public enum Difficulty
 {
   RED,
   BRONZE,

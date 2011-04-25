@@ -1,18 +1,18 @@
 .achievement-full {
   width: 350px;
-  height: 80px;
+  height: 84px;
   border: #d3d3d3 1px solid;
   margin: 10px;
 
   position: relative;
 }
 
-.achievement-image {
+.achievements-list .achievement-image {
   float: left;
   padding: 10px 10px;
 }
 
-.achievement-content {
+.achievements-list .achievement-content {
   margin: 10px 5px 5px 85px;
 }
 
@@ -24,13 +24,6 @@
   height: 100%;
   opacity: 0.5;
   background-color: #CCC;
-}
-
-dl.table-display
-{
-  /*width: 41.1em;*/
-  /*margin: 2em 0;*/
-  /*font-family: georgia, times, serif;*/
 }
 
 .table-display dt {
@@ -48,11 +41,47 @@ dt { clear: both; }
   float: left;
   width: 24em;
   margin: 0 0 0 0;
-  /*padding: .5em;*/
-  /*border-top: 1px solid #999;*/
 }
 
 .achievements-summary meter {
   width: 260px;
   height: 20px;
+}
+
+/* Header-details-user */
+#header-user-achievements {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.achievement-count {
+  font-style: italic;
+}
+
+.achievement-red, .achievement-bronze, .achievement-silver, .achievement-gold {
+  padding-left: 10px;
+  background: transparent 0 0 no-repeat;
+}
+
+.achievement-red {
+  background-image: url('images/bullet_red.png');
+}
+
+.achievement-bronze {
+  background-image: url('images/bullet_orange.png');
+}
+
+.achievement-silver {
+  background-image: url('images/bullet_silver.png');
+}
+
+.achievement-gold {
+  background-image: url('images/bullet_yellow.png');
+}
+
+div.achievement-level {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 8px;
 }

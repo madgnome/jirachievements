@@ -5,17 +5,17 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoSe
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
-public abstract class AbstractIssueEventRule implements IIssueEventRule
+public abstract class AbstractRule implements IRule
 {
   protected final JiraAuthenticationContext jiraAuthenticationContext;
   protected final IUserWrapperDaoService userWrapperDaoService;
   protected final IAchievementDaoService achievementDaoService;
   protected final IUserAchievementDaoService userAchievementDaoService;
 
-  public AbstractIssueEventRule(JiraAuthenticationContext jiraAuthenticationContext,
-                                IUserWrapperDaoService userWrapperDaoService,
-                                IAchievementDaoService achievementDaoService,
-                                IUserAchievementDaoService userAchievementDaoService)
+  public AbstractRule(JiraAuthenticationContext jiraAuthenticationContext,
+                      IUserWrapperDaoService userWrapperDaoService,
+                      IAchievementDaoService achievementDaoService,
+                      IUserAchievementDaoService userAchievementDaoService)
   {
     this.jiraAuthenticationContext = jiraAuthenticationContext;
     this.userWrapperDaoService = userWrapperDaoService;

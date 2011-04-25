@@ -1,17 +1,33 @@
 package com.madgnome.jira.plugins.jirachievements.data.json;
 
-import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementLevel;
+import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
+import com.madgnome.jira.plugins.jirachievements.data.ao.Difficulty;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
+@XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
 public class AchievementJSon
 {
+  private int id;
   private String ref;
   private String name;
   private String catchPhrase;
   private String description;
   private Category category;
-  private AchievementLevel level;
+  private Difficulty difficulty;
   private boolean hidden;
+
+  public int getId()
+  {
+    return id;
+  }
+
+  public void setId(int id)
+  {
+    this.id = id;
+  }
 
   public String getRef()
   {
@@ -63,14 +79,14 @@ public class AchievementJSon
     this.category = category;
   }
 
-  public AchievementLevel getLevel()
+  public Difficulty getDifficulty()
   {
-    return level;
+    return difficulty;
   }
 
-  public void setLevel(AchievementLevel achievementLevel)
+  public void setDifficulty(Difficulty difficulty)
   {
-    this.level = achievementLevel;
+    this.difficulty = difficulty;
   }
 
   public boolean isHidden()
@@ -78,8 +94,23 @@ public class AchievementJSon
     return hidden;
   }
 
-  public void setHidden(boolean hidden)
+  public void isHidden(boolean hidden)
   {
     this.hidden = hidden;
+  }
+
+  public static AchievementJSon fromAchievement(Achievement achievement)
+  {
+    AchievementJSon achievementJSon = new AchievementJSon();
+    achievementJSon.setId(achievement.getID());
+    achievementJSon.setRef(achievement.getRef());
+    achievementJSon.setName(achievement.getName());
+    achievementJSon.setCatchPhrase(achievement.getCatchPhrase());
+    achievementJSon.setDescription(achievement.getDescription());
+    achievementJSon.setCategory(achievement.getCategory());
+    achievementJSon.setDifficulty(achievement.getDifficulty());
+    achievementJSon.isHidden(achievement.isHidden());
+
+    return achievementJSon;
   }
 }

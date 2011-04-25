@@ -6,10 +6,11 @@
       $.each(data, function(){
         var achievement = this;
         var options = {
+          position: 'center',
           corners: '30px',
           theme: 'jirachivements',
           sticky: true,
-          header: this.ref,
+//          header: this.ref,
           close: function(e,m,o)
           {
             // Change notified attribute to true
@@ -22,7 +23,18 @@
             })
           }
         };
-        $.jGrowl(this.ref, options);
+
+        var content =
+        '<div class="achievement-image">' +
+          '<img src="http://localhost:2990/jira/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/welcome_small.png"/>' +
+        '</div>' +
+        '<div class="achievement-content">' +
+          '<h4>' + this.name + '</h4>' +
+          '<span class="catchPhrase">' + this.catchPhrase + '</span>' +
+        '</div>' +
+        '<div class="achievement-level achievement-${achievement.difficulty.name().toLowerCase()}">&nbsp;</div>';
+
+        $.jGrowl(content, options);
       });
 
             

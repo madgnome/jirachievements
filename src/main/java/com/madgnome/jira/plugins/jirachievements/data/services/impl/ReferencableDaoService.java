@@ -12,6 +12,13 @@ public abstract class ReferencableDaoService<T extends ReferencableEntity> exten
     super(ao);
   }
 
+  public T get(String ref)
+  {
+    T[] references = ao.find(clazz, "REF = ?", ref);
+
+    return references.length > 0 ? references[0] : null;
+  }
+
   public T getOrCreate(String ref)
   {
     T[] references = ao.find(clazz, "REF = ?", ref);

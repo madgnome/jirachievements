@@ -17,8 +17,8 @@ public interface Achievement extends ReferencableEntity
   Category getCategory();
   void setCategory(Category category);
 
-  AchievementLevel getLevel();
-  void setAchievementLevel(AchievementLevel level);
+  Difficulty getDifficulty();
+  void setDifficulty(Difficulty level);
 
   @Default("false")
   boolean isHidden();

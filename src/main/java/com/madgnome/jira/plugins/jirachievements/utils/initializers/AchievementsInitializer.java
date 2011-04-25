@@ -1,8 +1,8 @@
 package com.madgnome.jira.plugins.jirachievements.utils.initializers;
 
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
-import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementLevel;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
+import com.madgnome.jira.plugins.jirachievements.data.ao.Difficulty;
 import com.madgnome.jira.plugins.jirachievements.data.json.AchievementJSon;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import net.sf.json.JSONArray;
@@ -58,7 +58,7 @@ public class AchievementsInitializer
   private AchievementJSon[] parseAchievementsJSon(String json)
   {
     JSONUtils.getMorpherRegistry().registerMorpher( new EnumMorpher( Category.class ) );
-    JSONUtils.getMorpherRegistry().registerMorpher( new EnumMorpher( AchievementLevel.class ) );
+    JSONUtils.getMorpherRegistry().registerMorpher( new EnumMorpher( Difficulty.class ) );
     JSONArray jsonArray = (JSONArray) JSONSerializer.toJSON(json);
     JsonConfig jsonConfig = new JsonConfig();
     jsonConfig.setArrayMode( JsonConfig.MODE_OBJECT_ARRAY );
@@ -74,7 +74,7 @@ public class AchievementsInitializer
     achievement.setName(achievementJSon.getName());
     achievement.setCatchPhrase(achievementJSon.getCatchPhrase());
     achievement.setDescription(achievementJSon.getDescription());
-    achievement.setAchievementLevel(achievementJSon.getLevel());
+    achievement.setDifficulty(achievementJSon.getDifficulty());
     achievement.setCategory(achievementJSon.getCategory());
     achievement.setHidden(achievementJSon.isHidden());
     achievement.save();

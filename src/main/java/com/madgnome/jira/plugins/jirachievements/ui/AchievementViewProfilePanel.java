@@ -81,7 +81,8 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
       throw new Exception("Unauthorized - must be a valid user");
     }
 
-    this.webResourceManager.requireResource("com.atlassian.auiplugin:ajs");
+    webResourceManager.requireResource("com.atlassian.auiplugin:ajs");
+    webResourceManager.requireResource("com.madgnome.jira.plugins.jirachievements:jh-user-achievements-details");
 
     Map<String, Object> params = retrieveParameters();
     params.put("req", req);
