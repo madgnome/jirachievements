@@ -11,7 +11,7 @@
   {
     "ref": "padawan:user",
     "name": "Padawan",
-    "catchPhrase": "Strong in you the force is",
+    "catchPhrase": "The Force is strong with this one.",
     "description": "First issue created",
     "category": "USER",
     "difficulty": "BRONZE",
@@ -20,7 +20,7 @@
   {
     "ref": "padawan:developer",
     "name": "Padawan",
-    "catchPhrase": "Strong in you the force is",
+    "catchPhrase": "The Force is strong with this one.",
     "description": "First issue fixed",
     "category": "DEVELOPER",
     "difficulty": "BRONZE",
@@ -29,7 +29,7 @@
   {
     "ref": "padawan:test",
     "name": "Padawan",
-    "catchPhrase": "Strong in you the force is",
+    "catchPhrase": "The Force is strong with this one.",
     "description": "First issue tested",
     "category": "TESTER",
     "difficulty": "BRONZE",
@@ -38,7 +38,7 @@
   {
     "ref": "padawan:agilist",
     "name": "Padawan",
-    "catchPhrase": "Strong in you the force is",
+    "catchPhrase": "The Force is strong with this one.",
     "description": "First issue planned",
     "category": "AGILIST",
     "difficulty": "BRONZE",

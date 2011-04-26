@@ -40,10 +40,10 @@
               <td>Agilist</td>
             </tr>
             <tr>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?atl_token=BV8N-OK2J-IQUQ-YNNK%7Cbe819f0a64328f8378300c7041290b32feb46bf7%7Clin&size=large&ownerId=admin"/></td>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?atl_token=BV8N-OK2J-IQUQ-YNNK%7Cbe819f0a64328f8378300c7041290b32feb46bf7%7Clin&size=large&ownerId=admin"/></td>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?atl_token=BV8N-OK2J-IQUQ-YNNK%7Cbe819f0a64328f8378300c7041290b32feb46bf7%7Clin&size=large&ownerId=admin"/></td>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?atl_token=BV8N-OK2J-IQUQ-YNNK%7Cbe819f0a64328f8378300c7041290b32feb46bf7%7Clin&size=large&ownerId=admin"/></td>
+              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10138"/></td>
+              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10140"/></td>
+              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10136"/></td>
+              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10128"/></td>
             </tr>
             <tr>
               <td>JHU</td>
