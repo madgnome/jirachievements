@@ -5,7 +5,8 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 
 @Transactional
-public interface IUserStatisticDaoService
+public interface IUserStatisticDaoService extends IDaoService<UserStatistic>
 {
-  UserStatistic getStatistic(UserWrapper userWrapper, String ref);
+  UserStatistic get(UserWrapper userWrapper, String ref);
+  UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, String value);
 }

@@ -34,7 +34,7 @@ public class AchievementResource
   public Response getUserAchievements()
   {
     User user = jiraAuthenticationContext.getLoggedInUser();
-    UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
+    UserWrapper userWrapper = userWrapperDaoService.get(user);
 
     List<AchievementBean> achievements = new ArrayList<AchievementBean>();
 
@@ -53,8 +53,9 @@ public class AchievementResource
                                               @FormParam("notified") boolean notified)
   {
     User user = jiraAuthenticationContext.getLoggedInUser();
-    UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
+    UserWrapper userWrapper = userWrapperDaoService.get(user);
 
+    // TODO put in a transaction using a method in userAchievementDaoService
     UserAchievement userAchievement = userAchievementDaoService.get(achievementId, userWrapper.getID());
     userAchievement.setNotified(notified);
     userAchievement.save();

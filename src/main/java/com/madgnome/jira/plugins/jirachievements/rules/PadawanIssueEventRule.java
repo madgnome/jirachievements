@@ -36,8 +36,8 @@ public class PadawanIssueEventRule extends AbstractRule implements IIssueEventRu
     if (EventType.ISSUE_CREATED_ID.equals(eventTypeId))
     {
       User user = jiraAuthenticationContext.getLoggedInUser();
-      UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
-      UserStatistic userStatistic = userStatisticDaoService.getStatistic(userWrapper, "IssueCount");
+      UserWrapper userWrapper = userWrapperDaoService.get(user);
+      UserStatistic userStatistic = userStatisticDaoService.get(userWrapper, "IssueCount");
       if (!"0".equals(userStatistic.getValue()))
       {
         Achievement achievement = achievementDaoService.getOrCreate(getAchievementRef());

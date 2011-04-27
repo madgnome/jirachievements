@@ -23,7 +23,7 @@ public class WelcomeRule extends AbstractRule
 
   public void execute(User user)
   {
-    UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
+    UserWrapper userWrapper = userWrapperDaoService.get(user);
 
     Achievement achievement = achievementDaoService.get(getAchievementRef());
     if (userAchievementDaoService.get(achievement, userWrapper) == null)

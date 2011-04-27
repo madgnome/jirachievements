@@ -1,6 +1,7 @@
 package com.madgnome.jira.plugins.jirachievements.rest;
 
 import com.atlassian.jira.issue.search.SearchException;
+import com.atlassian.jira.jql.parser.JqlParseException;
 import com.madgnome.jira.plugins.jirachievements.statistics.ResolvedByUserStatistic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,9 @@ public class StatisticResource
       resolvedByUserStatistic.calculate();
     }
     catch (SearchException e)
+    {
+      logger.error("Couldn't calculate statistics", e);
+    } catch (JqlParseException e)
     {
       logger.error("Couldn't calculate statistics", e);
     }

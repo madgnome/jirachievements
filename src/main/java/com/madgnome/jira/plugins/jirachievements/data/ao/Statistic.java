@@ -1,15 +1,14 @@
 package com.madgnome.jira.plugins.jirachievements.data.ao;
 
 import net.java.ao.Entity;
+import net.java.ao.Polymorphic;
 
-public interface UserStatistic extends Entity
+@Polymorphic
+public interface Statistic extends Entity
 {
   StatisticRef getStatisticRef();
   void setStatisticRef(StatisticRef statisticRef);
 
   String getValue();
   void setValue(String value);
-
-  UserWrapper getUserWrapper();
-  void setUserWrapper(UserWrapper userWrapper);
 }

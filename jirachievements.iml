@@ -254,6 +254,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.templaterenderer:atlassian-template-renderer-api:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.trove4j:trove4j:2.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.jira:jira-func-tests:4.3.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: rhino:js:1.5R4-RC3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: exml:exml:7.1" level="project" />

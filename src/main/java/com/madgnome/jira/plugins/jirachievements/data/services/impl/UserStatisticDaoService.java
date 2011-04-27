@@ -20,16 +20,27 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   }
 
   @Override
-  public UserStatistic getStatistic(UserWrapper userWrapper, String ref)
+  public UserStatistic get(UserWrapper userWrapper, String ref)
   {
-    StatisticRef[] statisticRefs = ao.find(StatisticRef.class, "REF = ?", ref);
-    if (statisticRefs == null)
+    StatisticRef statisticRef = getStatisticRef(ref);
+
+    return getOrCreate(statisticRef, userWrapper);
+  }
+
+  @Override
+  public UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, String value)
+  {
+    StatisticRef statisticRef = getStatisticRef(ref);
+
+    UserStatistic userStatistic = null;
+    if (statisticRef != null)
     {
-      logger.info("Statistic with ref {} doesn't exist", ref);
-      return null;
+      userStatistic = getOrCreate(statisticRef, userWrapper);
+      userStatistic.setValue(value);
+      userStatistic.save();
     }
 
-    return getOrCreate(statisticRefs[0], userWrapper);
+    return userStatistic;
   }
 
   private UserStatistic getOrCreate(StatisticRef statisticRef, UserWrapper userWrapper)
@@ -53,5 +64,15 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
     return userStatistic;
   }
 
+  private StatisticRef getStatisticRef(String ref)
+  {
+    StatisticRef[] statisticRefs = ao.find(StatisticRef.class, "REF = ?", ref);
+    if (statisticRefs == null)
+    {
+      logger.info("Statistic with ref {} doesn't exist", ref);
+      return null;
+    }
 
+    return statisticRefs[0];
+  }
 }

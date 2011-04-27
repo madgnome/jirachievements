@@ -5,8 +5,9 @@ import com.atlassian.crowd.embedded.api.User;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 
 @Transactional
-public interface IUserWrapperDaoService
+public interface IUserWrapperDaoService extends IDaoService<UserWrapper>
 {
-  UserWrapper createUserWrapper(User jiraUser);
-  UserWrapper getUserWrapper(User jiraUser);
+  UserWrapper create(User jiraUser);
+  UserWrapper get(User jiraUser);
+  UserWrapper get(String jiraUserName);
 }

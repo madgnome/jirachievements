@@ -1083,6 +1083,7 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.3.2/atlassian-jira-4.3.2-sources.jar!/" />
         <root url="jar://C:/techbox/lib/atlassian/atlassian-jira-4.3.2-source/jira-project/jira-components/atlassian-jira/target/atlassian-jira-4.3.2-sources.jar!/" />
         <root url="jar://C:/techbox/lib/atlassian/atlassian-jira-4.3.2-source/jira-project/jira-components/jira-core/target/jira-sources.jar!/" />
+        <root url="jar://C:/techbox/lib/atlassian/atlassian-jira-4.3.2-source/jira-project/jira-components/atlassian-jira/target/atlassian-jira-4.3.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.jira:jira-func-tests:4.3.2">
@@ -2612,6 +2613,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.trove4j:trove4j:2.0.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/2.0.2/trove4j-2.0.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/2.0.2/trove4j-2.0.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/trove4j/trove4j/2.0.2/trove4j-2.0.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: net.sourceforge.cssparser:cssparser:0.9.5">

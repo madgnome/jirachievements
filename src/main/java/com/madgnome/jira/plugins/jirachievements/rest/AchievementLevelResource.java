@@ -31,7 +31,7 @@ public class AchievementLevelResource
   public Response getUserAchievementsCountByLevel()
   {
     User user = jiraAuthenticationContext.getLoggedInUser();
-    UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
+    UserWrapper userWrapper = userWrapperDaoService.get(user);
 
     Map<Difficulty, Integer> achievementsByLevel =  userAchievementDaoService.getAchievementsByLevel(userWrapper);
 

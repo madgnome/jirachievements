@@ -88,7 +88,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     params.put("req", req);
 
     // TODO optimize
-    Achievement[] userAchievements = userWrapperDaoService.getUserWrapper(user).getAchievements();
+    Achievement[] userAchievements = userWrapperDaoService.get(user).getAchievements();
     params.put("userAchievements", userAchievements);
 
     templateRenderer.render("templates/com/madgnome/jira/plugins/jirachievements/achievements.vm", params, output);

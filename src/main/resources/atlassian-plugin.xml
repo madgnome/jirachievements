@@ -8,6 +8,7 @@
   <ao key="ao-module">
     <description>The module configuring the Active Objects service used by this plugin</description>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic</entity>
@@ -21,6 +22,7 @@
   <component-import key="templateRenderer" interface="com.atlassian.templaterenderer.TemplateRenderer"/>
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
   <component-import key="jqlParser" interface="com.atlassian.jira.jql.parser.JqlQueryParser"/>
+  <component-import key="avatarService" interface="com.atlassian.jira.avatar.AvatarService"/>
 
   <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
@@ -34,13 +36,18 @@
   <component key="event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
 
   <component key="achievements-initializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
+  <component key="statistics-initializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsInitializer"/>
   <component key="plugin-initializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"/>
 
   <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
   </component>
 
-  <component key="statisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.StatisticRefDaoService">
+  <component key="projectStatisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectStatisticDaoService">
+    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService</inteface>
+  </component>
+
+  <component key="statisticRefDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.StatisticRefDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService</inteface>
   </component>
 
@@ -99,8 +106,8 @@
     <link>/secure/ViewProfile.jspa#selectedTab=com.madgnome.jira.plugins.jirachievements:achievements-profile</link>
   </web-item>
 
-  <project-tabpanel key="roadmap-panel" name="Road Map Panel"
-                    class="com.atlassian.jira.plugin.projectpanel.impl.VersionsProjectTabPanel">
+  <project-tabpanel key="project-leaderboard-panel" name="Project Leaderboard Panel"
+                    class="com.madgnome.jira.plugins.jirachievements.ui.LeaderBoardProjectTabPanel">
     <label>LeaderBoard</label>
     <order>80</order>
     <!-- this template produces the HTML for the panel -->

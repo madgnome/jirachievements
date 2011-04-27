@@ -29,7 +29,7 @@ public class InitDatabaseTask implements ActiveObjectsUpgradeTask
   {
     for (User user : userUtil.getUsers())
     {
-      userWrapperDaoService.createUserWrapper(user);
+      userWrapperDaoService.create(user);
     }
   }
 }

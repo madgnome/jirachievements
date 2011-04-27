@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 
-public class AchievementsInitializer
+public class AchievementsInitializer implements ITableInitializer
 {
   private final static Logger logger = LoggerFactory.getLogger(AchievementsInitializer.class);
   private final IAchievementDaoService achievementDaoService;
@@ -28,6 +28,7 @@ public class AchievementsInitializer
     this.achievementDaoService = achievementDaoService;
   }
 
+  @Override
   public void initialize()
   {
     String achievementsString = loadAchievementsFile();

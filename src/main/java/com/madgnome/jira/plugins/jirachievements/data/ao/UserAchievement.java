@@ -7,7 +7,7 @@ import java.util.Date;
 
 public interface UserAchievement extends Entity
 {
-  int getUserWrapper();
+  UserWrapper getUserWrapper();
   void setUserWrapper(UserWrapper userWrapper);
 
   Achievement getAchievement();
