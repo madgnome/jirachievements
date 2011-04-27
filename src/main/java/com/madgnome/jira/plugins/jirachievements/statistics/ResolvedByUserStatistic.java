@@ -3,8 +3,8 @@ package com.madgnome.jira.plugins.jirachievements.statistics;
 import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.bc.issue.search.SearchService;
 import com.atlassian.jira.issue.Issue;
+import com.atlassian.jira.issue.changehistory.ChangeHistoryItem;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
-import com.atlassian.jira.issue.history.ChangeItemBean;
 import com.atlassian.jira.issue.search.SearchException;
 import com.atlassian.jira.issue.search.SearchResults;
 import com.atlassian.jira.jql.parser.JqlParseException;
@@ -12,6 +12,7 @@ import com.atlassian.jira.jql.parser.JqlQueryParser;
 import com.atlassian.jira.user.util.UserUtil;
 import com.atlassian.jira.web.bean.PagerFilter;
 import com.atlassian.query.Query;
+import gnu.trove.TObjectIntHashMap;
 
 import java.util.List;
 
@@ -34,11 +35,30 @@ public class ResolvedByUserStatistic
   {
     Query query = jqlQueryParser.parseQuery("status WAS Resolved");
 
+    TObjectIntHashMap<String> resolvedByUser = new TObjectIntHashMap<String>();
     SearchResults searchResults = searchService.search(retrieveAdministrator(), query, PagerFilter.getUnlimitedFilter());
     for (Issue issue : searchResults.getIssues())
     {
-      List<ChangeItemBean> changeItemBeans = changeHistoryManager.getChangeItemsForField(issue, "status");
+      List<ChangeHistoryItem> changeHistoryItems = changeHistoryManager.getAllChangeItems(issue);
+      for (ChangeHistoryItem changeHistoryItem : changeHistoryItems)
+      {
+        if (changeHistoryItem.getField().equals("status") &&
+            changeHistoryItem.getTo().equals("Resolved"))
+        {
+          String user = changeHistoryItem.getUser();
+          resolvedByUser.adjustOrPutValue(user, 1, 1);
+
+          break;
+        }
+      }
     }
+
+    saveStatistics(resolvedByUser);
+  }
+
+  private void saveStatistics(TObjectIntHashMap<String> resolvedByUser)
+  {
+
   }
 
   private User retrieveAdministrator()

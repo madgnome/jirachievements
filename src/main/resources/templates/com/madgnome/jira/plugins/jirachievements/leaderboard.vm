@@ -23,7 +23,7 @@
 </table>
 #end
 
-<div id="primary" class="column">
+<div id="primary" class="column full">
   <div class="content">
     <div class="module">
       <div class="mod-header">
