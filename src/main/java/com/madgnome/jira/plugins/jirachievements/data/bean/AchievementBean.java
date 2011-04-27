@@ -1,4 +1,4 @@
-package com.madgnome.jira.plugins.jirachievements.data.json;
+package com.madgnome.jira.plugins.jirachievements.data.bean;
 
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
 @XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
-public class AchievementJSon
+public class AchievementBean
 {
   private int id;
   private String ref;
@@ -99,18 +99,18 @@ public class AchievementJSon
     this.hidden = hidden;
   }
 
-  public static AchievementJSon fromAchievement(Achievement achievement)
+  public static AchievementBean fromAchievement(Achievement achievement)
   {
-    AchievementJSon achievementJSon = new AchievementJSon();
-    achievementJSon.setId(achievement.getID());
-    achievementJSon.setRef(achievement.getRef());
-    achievementJSon.setName(achievement.getName());
-    achievementJSon.setCatchPhrase(achievement.getCatchPhrase());
-    achievementJSon.setDescription(achievement.getDescription());
-    achievementJSon.setCategory(achievement.getCategory());
-    achievementJSon.setDifficulty(achievement.getDifficulty());
-    achievementJSon.isHidden(achievement.isHidden());
+    AchievementBean achievementBean = new AchievementBean();
+    achievementBean.setId(achievement.getID());
+    achievementBean.setRef(achievement.getRef());
+    achievementBean.setName(achievement.getName());
+    achievementBean.setCatchPhrase(achievement.getCatchPhrase());
+    achievementBean.setDescription(achievement.getDescription());
+    achievementBean.setCategory(achievement.getCategory());
+    achievementBean.setDifficulty(achievement.getDifficulty());
+    achievementBean.isHidden(achievement.isHidden());
 
-    return achievementJSon;
+    return achievementBean;
   }
 }

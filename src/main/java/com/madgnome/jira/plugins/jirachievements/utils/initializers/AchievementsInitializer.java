@@ -3,7 +3,7 @@ package com.madgnome.jira.plugins.jirachievements.utils.initializers;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Difficulty;
-import com.madgnome.jira.plugins.jirachievements.data.json.AchievementJSon;
+import com.madgnome.jira.plugins.jirachievements.data.bean.AchievementBean;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONSerializer;
@@ -31,9 +31,9 @@ public class AchievementsInitializer
   public void initialize()
   {
     String achievementsString = loadAchievementsFile();
-    AchievementJSon[] achievements = parseAchievementsJSon(achievementsString);
+    AchievementBean[] achievements = parseAchievementsJSon(achievementsString);
 
-    for (AchievementJSon achievement : achievements)
+    for (AchievementBean achievement : achievements)
     {
       createAchievement(achievement);
     }
@@ -55,28 +55,28 @@ public class AchievementsInitializer
     return writer.toString();
   }
 
-  private AchievementJSon[] parseAchievementsJSon(String json)
+  private AchievementBean[] parseAchievementsJSon(String json)
   {
     JSONUtils.getMorpherRegistry().registerMorpher( new EnumMorpher( Category.class ) );
     JSONUtils.getMorpherRegistry().registerMorpher( new EnumMorpher( Difficulty.class ) );
     JSONArray jsonArray = (JSONArray) JSONSerializer.toJSON(json);
     JsonConfig jsonConfig = new JsonConfig();
     jsonConfig.setArrayMode( JsonConfig.MODE_OBJECT_ARRAY );
-    jsonConfig.setRootClass(AchievementJSon.class);
+    jsonConfig.setRootClass(AchievementBean.class);
 
-    return (AchievementJSon[]) JSONSerializer.toJava( jsonArray, jsonConfig );
+    return (AchievementBean[]) JSONSerializer.toJava( jsonArray, jsonConfig );
   }
 
-  private void createAchievement(AchievementJSon achievementJSon)
+  private void createAchievement(AchievementBean achievementBean)
   {
-    Achievement achievement = achievementDaoService.getOrCreate(achievementJSon.getRef());
-    achievement.setRef(achievementJSon.getRef());
-    achievement.setName(achievementJSon.getName());
-    achievement.setCatchPhrase(achievementJSon.getCatchPhrase());
-    achievement.setDescription(achievementJSon.getDescription());
-    achievement.setDifficulty(achievementJSon.getDifficulty());
-    achievement.setCategory(achievementJSon.getCategory());
-    achievement.setHidden(achievementJSon.isHidden());
+    Achievement achievement = achievementDaoService.getOrCreate(achievementBean.getRef());
+    achievement.setRef(achievementBean.getRef());
+    achievement.setName(achievementBean.getName());
+    achievement.setCatchPhrase(achievementBean.getCatchPhrase());
+    achievement.setDescription(achievementBean.getDescription());
+    achievement.setDifficulty(achievementBean.getDifficulty());
+    achievement.setCategory(achievementBean.getCategory());
+    achievement.setHidden(achievementBean.isHidden());
     achievement.save();
   }
 }

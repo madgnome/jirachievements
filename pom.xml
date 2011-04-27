@@ -10,12 +10,12 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <organization>
-        <name>Madgnome</name>
+        <name>Julien Hoarau</name>
         <url>http://madgnome.blogspot.com/</url>
     </organization>
 
     <name>jirachievements</name>
-    <description>This is the  com.madgnome.jira.plugins:jirachievements plugin for Atlassian JIRA.</description>
+    <description>This is the  JIRA Hero plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>

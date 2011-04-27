@@ -15,15 +15,14 @@
     <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v1.InitDatabaseTask</upgradeTask>
   </ao>
 
+  <component-import key="userUtil" interface="com.atlassian.jira.user.util.UserUtil"/>
   <component-import key="userManager" interface="com.atlassian.sal.api.user.UserManager"/>
   <component-import key="webResourceManager" interface="com.atlassian.plugin.webresource.WebResourceManager" />
   <component-import key="templateRenderer" interface="com.atlassian.templaterenderer.TemplateRenderer"/>
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
+  <component-import key="jqlParser" interface="com.atlassian.jira.jql.parser.JqlQueryParser"/>
 
-  <component-import key="ao" name="Active Objects service"
-                    interface="com.atlassian.activeobjects.external.ActiveObjects">
-    <description>Component to access Active Objects functionality from the plugin</description>
-  </component-import>
+  <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
   <component key="tx-processor" name="Transactional Annotation Processor"
              class="com.atlassian.activeobjects.external.TransactionalAnnotationProcessor">
@@ -56,6 +55,8 @@
   <component key="userWrapperDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserWrapperDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService</inteface>
   </component>
+
+  <component key="resolvedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ResolvedByUserStatistic"/>
 
   <resource type="download" name="images/" location="includes/images/"/>
   <resource type="download" name="css/" location="includes/css/"/>

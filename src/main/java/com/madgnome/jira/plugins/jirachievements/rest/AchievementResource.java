@@ -5,7 +5,7 @@ import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
-import com.madgnome.jira.plugins.jirachievements.data.json.AchievementJSon;
+import com.madgnome.jira.plugins.jirachievements.data.bean.AchievementBean;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
@@ -36,12 +36,12 @@ public class AchievementResource
     User user = jiraAuthenticationContext.getLoggedInUser();
     UserWrapper userWrapper = userWrapperDaoService.getUserWrapper(user);
 
-    List<AchievementJSon> achievements = new ArrayList<AchievementJSon>();
+    List<AchievementBean> achievements = new ArrayList<AchievementBean>();
 
     // TODO Change this
     for (Achievement achievement : userWrapper.getNewAchievements())
     {
-      achievements.add(AchievementJSon.fromAchievement(achievement));
+      achievements.add(AchievementBean.fromAchievement(achievement));
     }
 
     return Response.ok(achievements).build();

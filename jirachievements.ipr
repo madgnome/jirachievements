@@ -1081,6 +1081,8 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.3.2/atlassian-jira-4.3.2-sources.jar!/" />
+        <root url="jar://C:/techbox/lib/atlassian/atlassian-jira-4.3.2-source/jira-project/jira-components/atlassian-jira/target/atlassian-jira-4.3.2-sources.jar!/" />
+        <root url="jar://C:/techbox/lib/atlassian/atlassian-jira-4.3.2-source/jira-project/jira-components/jira-core/target/jira-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.jira:jira-func-tests:4.3.2">
