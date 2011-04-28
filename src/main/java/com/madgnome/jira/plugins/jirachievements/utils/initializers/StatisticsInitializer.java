@@ -21,6 +21,6 @@ public class StatisticsInitializer implements ITableInitializer
     statisticRefDaoService.getOrCreate("IssueCount");
     statisticRefDaoService.getOrCreate("CreatedIssueCount");
     statisticRefDaoService.getOrCreate("ResolvedIssueCount");
-    statisticRefDaoService.getOrCreate("ClosedIssueCount");
+    statisticRefDaoService.getOrCreate("TestedIssueCount");
   }
 }

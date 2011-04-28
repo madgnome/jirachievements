@@ -1,5 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.ui;
 
+import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.avatar.Avatar;
 import com.atlassian.jira.avatar.AvatarService;
 import com.atlassian.jira.plugin.projectpanel.impl.AbstractProjectTabPanel;
@@ -42,10 +43,16 @@ public class LeaderBoardProjectTabPanel extends AbstractProjectTabPanel
   {
     Map<String, Object> params = super.createVelocityParams(ctx);
     String projectKey = ctx.getProject().getKey();
-    List<ProjectStatistic> resolvedIssueCount = projectStatisticDaoService.findStatisticsForProjectAndRef(projectKey, "ResolvedIssueCount");
-    params.put("resolvedCount", resolvedIssueCount);
 
-    params.put("avatarUrl", avatarService.getAvatarURL(ctx.getUser(), resolvedIssueCount.get(0).getUserWrapper().getJiraUserName(), Avatar.Size.LARGE));
+    List<Map<String, Object>> resolvedIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser());
+    params.put("resolvedIssueLB", resolvedIssueLeaderBoard);
+
+    return params;
+  }
+
+  private List<Map<String, Object>> retrieveResolvedIssueLeaderBoard(String projectKey, User user)
+  {
+    List<ProjectStatistic> resolvedIssueCount = projectStatisticDaoService.findStatisticsForProjectAndRef(projectKey, "ResolvedIssueCount");
 
     // username
     // avatar url
@@ -62,7 +69,7 @@ public class LeaderBoardProjectTabPanel extends AbstractProjectTabPanel
     List<Map<String, Object>> resolvedIssueLeaderBoard = new ArrayList<Map<String, Object>>();
     for (ProjectStatistic projectStatistic : resolvedIssueCount)
     {
-      URI avatarUrl = avatarService.getAvatarURL(ctx.getUser(), projectStatistic.getUserWrapper().getJiraUserName(), Avatar.Size.LARGE);
+      URI avatarUrl = avatarService.getAvatarURL(user, projectStatistic.getUserWrapper().getJiraUserName(), Avatar.Size.LARGE);
 
       Map<String,Object> resolvedIssueUserInfos =
               MapBuilder.<String, Object>newBuilder()
@@ -73,9 +80,9 @@ public class LeaderBoardProjectTabPanel extends AbstractProjectTabPanel
                       .toMap();
 
       resolvedIssueLeaderBoard.add(resolvedIssueUserInfos);
-    }
-    params.put("resolvedIssueLB", resolvedIssueLeaderBoard);
 
-    return params;
+    }
+
+    return resolvedIssueLeaderBoard;
   }
 }
