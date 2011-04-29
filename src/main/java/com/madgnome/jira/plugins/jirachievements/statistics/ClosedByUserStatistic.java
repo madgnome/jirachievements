@@ -8,11 +8,18 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatistic
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
-public class ResolvedByUserStatistic extends OnFieldChangedValueStatistic
+public class ClosedByUserStatistic extends OnFieldChangedValueStatistic
 {
-  public ResolvedByUserStatistic(SearchService searchService, UserUtil userUtil, JqlQueryParser jqlQueryParser, ChangeHistoryManager changeHistoryManager, IUserStatisticDaoService userStatisticDaoService, IUserWrapperDaoService userWrapperDaoService, IProjectStatisticDaoService projectStatisticDaoService)
+
+  public ClosedByUserStatistic(SearchService searchService, UserUtil userUtil, JqlQueryParser jqlQueryParser, ChangeHistoryManager changeHistoryManager, IUserStatisticDaoService userStatisticDaoService, IUserWrapperDaoService userWrapperDaoService, IProjectStatisticDaoService projectStatisticDaoService)
   {
     super(searchService, userUtil, jqlQueryParser, changeHistoryManager, userStatisticDaoService, userWrapperDaoService, projectStatisticDaoService);
+  }
+
+  @Override
+  protected String getFieldValue()
+  {
+    return "Closed";
   }
 
   @Override
@@ -22,20 +29,14 @@ public class ResolvedByUserStatistic extends OnFieldChangedValueStatistic
   }
 
   @Override
-  protected String getFieldValue()
-  {
-    return "Resolved";
-  }
-
-  @Override
   protected String getJQLQuery()
   {
-    return "status WAS Resolved";
+    return "status = Closed";
   }
 
   @Override
   protected String getStatisticRef()
   {
-    return "ResolvedIssueCount";
+    return "TestedIssueCount";
   }
 }

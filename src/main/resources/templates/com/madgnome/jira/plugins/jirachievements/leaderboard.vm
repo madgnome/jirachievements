@@ -24,6 +24,32 @@
 </table>
 #end
 
+#macro (userLink $entry $showAvatar)
+  <a rel="$entry.username"
+     #if ($showAvatar)
+     class="user-hover user-avatar"
+     style="background-image:url('${projectStatistic.smallAvatarUrl}')"
+     #end >
+    $entry.username
+  </a>
+#end
+
+#macro (leaderboardTable $listLeaderBoard)
+<table>
+  <tbody>
+    #foreach ($projectStatistic in $listLeaderBoard)
+      <tr>
+        <td class="name">
+          #userLink($projectStatistic true)
+        </td>
+        <td class="count">$projectStatistic.count</td>
+        <td class="graph last">#histogram($projectStatistic.percentage)</td>
+      </tr>
+    #end
+  </tbody>
+</table>
+#end
+
 <div id="primary" class="column full">
   <div class="content">
     <div class="module">
@@ -38,19 +64,19 @@
               <td>User</td>
               <td>Developer</td>
               <td>Tester</td>
-              <td>Agilist</td>
+##              <td>Agilist</td>
             </tr>
             <tr>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10138"/></td>
-              <td><img src="$resolvedIssueLB.get(0).avatarUrl"/></td>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10136"/></td>
-              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10128"/></td>
+              <td><img src="$createdIssueLB.get(0).largeAvatarUrl"/></td>
+              <td><img src="$resolvedIssueLB.get(0).largeAvatarUrl"/></td>
+              <td><img src="$testedIssueLB.get(0).largeAvatarUrl"/></td>
+##              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10128"/></td>
             </tr>
             <tr>
-              <td>JHU</td>
-              <td>$resolvedIssueLB.get(0).username</td>
-              <td>FBT</td>
-              <td>SFS</td>
+              <td>#userLink($createdIssueLB.get(0) false)</td>
+              <td>#userLink($resolvedIssueLB.get(0) false)</td>
+              <td>#userLink($testedIssueLB.get(0) false)</td>
+##              <td>SFS</td>
             </tr>
           </tbody>
         </table>
@@ -75,49 +101,21 @@
             <li class="menu-item">
               <a href="#horizontal-third"><strong>Tester</strong></a>
             </li>
-            <li class="menu-item">
-              <a href="#horizontal-fourth"><strong>Agilist</strong></a>
-            </li>
+##            <li class="menu-item">
+##              <a href="#horizontal-fourth"><strong>Agilist</strong></a>
+##            </li>
           </ul>
           <div class="tabs-pane active-pane" id="horizontal-first">
-            <table>
-              <tbody>
-                #foreach ($projectStatistic in $resolvedIssueLB)
-                  <tr>
-                    <td class="name">$projectStatistic.username</td>
-                    <td class="count">$projectStatistic.count</td>
-                    <td class="graph last">#histogram($projectStatistic.percentage)</td>
-                  </tr>
-                #end
-##                <tr>
-##                  <td class="name">JHU</td>
-##                  <td>#histogram(60)</td>
-##                </tr>
-##                <tr class="rowAlternateLightGray">
-##                  <td class="name">SFS</td>
-##                  <td>#histogram(20)</td>
-##                </tr>
-##                <tr class="">
-##                  <td class="name">NBC</td>
-##                  <td>#histogram(12)</td>
-##                </tr>
-##                <tr class="rowAlternateLightGray">
-##                  <td class="name">FBT</td>
-##                  <td>#histogram(8)</td>
-##                </tr>
-##                <tr class="">
-##                  <td class="name">JRT</td>
-##                  <td>#histogram(0)</td>
-##                </tr>
-              </tbody>
-            </table>
+            #leaderboardTable($createdIssueLB)
           </div>
           <div class="tabs-pane" id="horizontal-second">
+            #leaderboardTable($resolvedIssueLB)
           </div>
           <div class="tabs-pane" id="horizontal-third">
+            #leaderboardTable($testedIssueLB)
           </div>
-          <div class="tabs-pane" id="horizontal-fourth">
-          </div>
+##          <div class="tabs-pane" id="horizontal-fourth">
+##          </div>
         </div>
       </div>
     </div>

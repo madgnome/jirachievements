@@ -28,7 +28,7 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   }
 
   @Override
-  public UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, String value)
+  public UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, int value)
   {
     StatisticRef statisticRef = getStatisticRef(ref);
 
@@ -67,7 +67,7 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   private StatisticRef getStatisticRef(String ref)
   {
     StatisticRef[] statisticRefs = ao.find(StatisticRef.class, "REF = ?", ref);
-    if (statisticRefs == null)
+    if (statisticRefs.length == 0)
     {
       logger.info("Statistic with ref {} doesn't exist", ref);
       return null;

@@ -15,4 +15,14 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     </constructor-arg>
   </bean>
 
+  <bean id="statisticResource" class="com.madgnome.jira.plugins.jirachievements.rest.StatisticResource" >
+    <constructor-arg>
+      <list>
+        <ref bean="openedByUserStatistic"/>
+        <ref bean="resolvedByUserStatistic"/>
+        <ref bean="closedByUserStatistic"/>
+      </list>
+    </constructor-arg>
+  </bean>
+
 </beans>

@@ -63,7 +63,9 @@
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService</inteface>
   </component>
 
+  <component key="openedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.OpenedByUserStatistic"/>
   <component key="resolvedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ResolvedByUserStatistic"/>
+  <component key="closedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ClosedByUserStatistic"/>
 
   <resource type="download" name="images/" location="includes/images/"/>
   <resource type="download" name="css/" location="includes/css/"/>

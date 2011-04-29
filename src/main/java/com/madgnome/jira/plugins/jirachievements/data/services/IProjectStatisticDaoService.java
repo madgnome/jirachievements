@@ -10,7 +10,7 @@ import java.util.List;
 public interface IProjectStatisticDaoService extends IDaoService<ProjectStatistic>
 {
   ProjectStatistic get(UserWrapper userWrapper, String projectKey, String statisticRef);
-  ProjectStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String statisticRef, String value);
+  ProjectStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String statRef, int value);
 
   List<ProjectStatistic> findStatisticsForProjectAndRef(String projectKey, String statisticRef);
 }

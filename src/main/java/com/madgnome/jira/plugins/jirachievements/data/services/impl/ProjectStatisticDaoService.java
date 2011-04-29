@@ -34,7 +34,7 @@ public class ProjectStatisticDaoService extends BaseDaoService<ProjectStatistic>
   }
 
   @Override
-  public ProjectStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String statRef, String value)
+  public ProjectStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String statRef, int value)
   {
     StatisticRef statisticRef = statisticRefDaoService.get(statRef);
 

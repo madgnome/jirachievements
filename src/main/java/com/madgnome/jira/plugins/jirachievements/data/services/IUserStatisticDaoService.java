@@ -8,5 +8,5 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 public interface IUserStatisticDaoService extends IDaoService<UserStatistic>
 {
   UserStatistic get(UserWrapper userWrapper, String ref);
-  UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, String value);
+  UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, int value);
 }

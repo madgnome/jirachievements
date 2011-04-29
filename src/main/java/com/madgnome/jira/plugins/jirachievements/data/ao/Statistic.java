@@ -9,6 +9,6 @@ public interface Statistic extends Entity
   StatisticRef getStatisticRef();
   void setStatisticRef(StatisticRef statisticRef);
 
-  String getValue();
-  void setValue(String value);
+  int getValue();
+  void setValue(int value);
 }
