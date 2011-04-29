@@ -61,7 +61,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-beans:2.5.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.profiling:atlassian-profiling:1.8.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.5.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-web:2.0.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-core:2.2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-ldap:2.2.0" level="project" />
@@ -255,6 +255,9 @@
     <orderEntry type="library" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" level="project" />
     <orderEntry type="library" name="Maven: net.sf.trove4j:trove4j:2.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-all:1.8.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.activeobjects:activeobjects-test:0.9.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m18" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.jira:jira-func-tests:4.3.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: rhino:js:1.5R4-RC3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: exml:exml:7.1" level="project" />
@@ -327,7 +330,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit-addons:junit-addons:1.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: xerces:xmlParserAPIs:2.6.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: poi:poi:2.5.1-final-20040804" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-all:1.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-test:2.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-application-management:2.2.0" level="project" />
   </component>
