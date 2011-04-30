@@ -21,9 +21,9 @@ public abstract class ReferencableDaoService<T extends ReferencableEntity> exten
 
   public T getOrCreate(String ref)
   {
-    T[] references = ao.find(clazz, "REF = ?", ref);
+    T reference = get(ref);
 
-    return references.length == 0 ? create(ref) : references[0];
+    return reference == null ? create(ref) : reference;
   }
 
   public T create(String ref)

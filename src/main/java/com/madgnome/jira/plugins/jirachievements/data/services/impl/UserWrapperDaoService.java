@@ -20,15 +20,17 @@ public class UserWrapperDaoService extends BaseDaoService<UserWrapper> implement
   }
 
   @Override
+  public UserWrapper getOrCreate(User jiraUser)
+  {
+    UserWrapper userWrapper = get(jiraUser);
+
+    return userWrapper == null ? create(jiraUser) : userWrapper;
+  }
+
+  @Override
   public UserWrapper create(User jiraUser)
   {
-    UserWrapper userWrapper = null;
-    if (get(jiraUser) == null)
-    {
-      userWrapper = ao.create(UserWrapper.class, ImmutableMap.<String, Object>of("JIRA_USER_NAME", jiraUser.getName()));
-    }
-
-    return userWrapper;
+    return ao.create(UserWrapper.class, ImmutableMap.<String, Object>of("JIRA_USER_NAME", jiraUser.getName()));
   }
 
   @Override

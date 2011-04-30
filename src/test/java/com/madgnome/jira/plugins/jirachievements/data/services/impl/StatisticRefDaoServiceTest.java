@@ -1,6 +1,5 @@
 package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 
-import com.atlassian.activeobjects.test.TestActiveObjects;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import net.java.ao.sql.ActiveObjectSqlException;
@@ -16,8 +15,7 @@ public class StatisticRefDaoServiceTest extends AbstractServiceTest
   @Before
   public void setUp() throws Exception
   {
-    final TestActiveObjects ao = new TestActiveObjects(entityManager);
-    statisticRefDaoService = new StatisticRefDaoService(ao);
+    statisticRefDaoService = new StatisticRefDaoService(createActiveObjects());
   }
 
   @Test
@@ -41,7 +39,7 @@ public class StatisticRefDaoServiceTest extends AbstractServiceTest
   }
 
   @Test
-  public void getShouldReturnNull()
+  public void getShouldReturnNullIfAnyStatisticWithRef()
   {
     assertNull(statisticRefDaoService.get("TestStatistic"));
   }

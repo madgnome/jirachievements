@@ -1,6 +1,8 @@
 package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 
 import com.atlassian.activeobjects.ao.ActiveObjectsFieldNameConverter;
+import com.atlassian.activeobjects.external.ActiveObjects;
+import com.atlassian.activeobjects.test.TestActiveObjects;
 import com.madgnome.jira.plugins.jirachievements.data.DatabaseProcessor;
 import net.java.ao.EntityManager;
 import net.java.ao.test.NameConverters;
@@ -17,4 +19,9 @@ import org.junit.runner.RunWith;
 public abstract class AbstractServiceTest
 {
   protected EntityManager entityManager;
+
+  protected ActiveObjects createActiveObjects()
+  {
+    return new TestActiveObjects(entityManager);
+  }
 }

@@ -8,6 +8,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 public interface IUserWrapperDaoService extends IDaoService<UserWrapper>
 {
   UserWrapper create(User jiraUser);
+  UserWrapper getOrCreate(User jiraUser);
   UserWrapper get(User jiraUser);
   UserWrapper get(String jiraUserName);
 }
