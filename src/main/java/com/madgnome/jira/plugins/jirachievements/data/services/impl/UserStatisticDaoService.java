@@ -2,6 +2,7 @@ package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
@@ -24,9 +25,9 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   }
 
   @Override
-  public UserStatistic get(UserWrapper userWrapper, String ref)
+  public UserStatistic get(UserWrapper userWrapper, StatisticRefEnum statisticRefEnum)
   {
-    StatisticRef statisticRef = statisticRefDaoService.get(ref);
+    StatisticRef statisticRef = statisticRefDaoService.get(statisticRefEnum);
     if (statisticRef == null)
     {
       return null;
@@ -36,9 +37,9 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   }
 
   @Override
-  public UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, int value)
+  public UserStatistic createOrUpdate(StatisticRefEnum statRef, UserWrapper userWrapper, int value)
   {
-    StatisticRef statisticRef = statisticRefDaoService.get(ref);
+    StatisticRef statisticRef = statisticRefDaoService.get(statRef);
 
     UserStatistic userStatistic = null;
     if (statisticRef != null)

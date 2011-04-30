@@ -4,6 +4,7 @@ import com.atlassian.jira.bc.issue.search.SearchService;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
 import com.atlassian.jira.jql.parser.JqlQueryParser;
 import com.atlassian.jira.user.util.UserUtil;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
@@ -35,8 +36,8 @@ public class ClosedByUserStatistic extends OnFieldChangedValueStatistic
   }
 
   @Override
-  protected String getStatisticRef()
+  protected StatisticRefEnum getStatisticRef()
   {
-    return "TestedIssueCount";
+    return StatisticRefEnum.TESTED_ISSUE_COUNT;
   }
 }

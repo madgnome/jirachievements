@@ -7,6 +7,7 @@ public class AchievementsInitializerTest
   @Test
   public void initializeTest()
   {
+    // TODO fix test
     AchievementsInitializer initializer = new AchievementsInitializer(null);
 //    initializer.initialize();
   }

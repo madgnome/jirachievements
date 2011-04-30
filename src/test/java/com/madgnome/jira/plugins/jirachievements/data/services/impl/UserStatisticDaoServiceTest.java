@@ -3,6 +3,7 @@ package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.crowd.embedded.impl.ImmutableUser;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import org.junit.Before;
@@ -28,13 +29,13 @@ public class UserStatisticDaoServiceTest extends BaseDaoServiceTest<UserStatisti
   public void getShouldReturnNullIfStatisticRefDoesntExist()
   {
     UserWrapper userWrapper = createUserWrapper();
-    assertNull(daoService.get(userWrapper, "unknownStatisticRef"));
+    assertNull(daoService.get(userWrapper, StatisticRefEnum.CREATED_ISSUE_COUNT));
   }
 
   @Test
   public void getShouldReturnStatisticWithValueAtZeroIfAny()
   {
-    String statRef = "StatisticRef";
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
     createStatisticRef(statRef);
     UserWrapper userWrapper = createUserWrapper();
 
@@ -46,7 +47,7 @@ public class UserStatisticDaoServiceTest extends BaseDaoServiceTest<UserStatisti
   @Test
   public void createOrUpdateShouldCreateStatisticWithValueIfAny()
   {
-    String statRef = "StatisticRef";
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
     createStatisticRef(statRef);
     UserWrapper userWrapper = createUserWrapper();
 
@@ -60,7 +61,7 @@ public class UserStatisticDaoServiceTest extends BaseDaoServiceTest<UserStatisti
   @Test
   public void createOrUpdateShouldUpdateStatisticWithValueIfAny()
   {
-    String statRef = "StatisticRef";
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
     createStatisticRef(statRef);
     UserWrapper userWrapper = createUserWrapper();
 
@@ -72,9 +73,9 @@ public class UserStatisticDaoServiceTest extends BaseDaoServiceTest<UserStatisti
     assertEquals(value, userStatistic.getValue());
   }
 
-  private StatisticRef createStatisticRef(String statRef)
+  private StatisticRef createStatisticRef(StatisticRefEnum statisticRefEnum)
   {
-    return statisticRefDaoService.create(statRef);
+    return statisticRefDaoService.create(statisticRefEnum);
   }
 
   private UserWrapper createUserWrapper()

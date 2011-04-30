@@ -3,6 +3,7 @@ package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
@@ -28,9 +29,9 @@ public class ProjectStatisticDaoService extends BaseDaoService<ProjectStatistic>
   }
   
   @Override
-  public ProjectStatistic get(UserWrapper userWrapper, String projectKey, String statRef)
+  public ProjectStatistic get(UserWrapper userWrapper, String projectKey, StatisticRefEnum statisticRefEnum)
   {
-    StatisticRef statisticRef = statisticRefDaoService.get(statRef);
+    StatisticRef statisticRef = statisticRefDaoService.get(statisticRefEnum);
     if (statisticRef == null)
     {
       return null;
@@ -40,9 +41,9 @@ public class ProjectStatisticDaoService extends BaseDaoService<ProjectStatistic>
   }
 
   @Override
-  public ProjectStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String statRef, int value)
+  public ProjectStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, StatisticRefEnum statisticRefEnum, int value)
   {
-    StatisticRef statisticRef = statisticRefDaoService.get(statRef);
+    StatisticRef statisticRef = statisticRefDaoService.get(statisticRefEnum);
 
     ProjectStatistic projectStatistic = null;
     if (statisticRef != null)
@@ -56,9 +57,9 @@ public class ProjectStatisticDaoService extends BaseDaoService<ProjectStatistic>
   }
 
   @Override
-  public List<ProjectStatistic> findStatisticsForProjectAndRef(String projectKey, String statisticRef)
+  public List<ProjectStatistic> findStatisticsForProjectAndRef(String projectKey, StatisticRefEnum statisticRefEnum)
   {
-    StatisticRef statRef = statisticRefDaoService.get(statisticRef);
+    StatisticRef statRef = statisticRefDaoService.get(statisticRefEnum);
     Query query = Query.select().where("PROJECT_KEY = ? AND STATISTIC_REF_ID = ?", projectKey, statRef.getID()).order("VALUE DESC");
     return Arrays.asList(ao.find(getClazz(), query));
   }

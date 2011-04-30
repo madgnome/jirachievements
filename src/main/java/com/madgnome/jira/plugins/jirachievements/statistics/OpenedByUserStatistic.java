@@ -11,6 +11,7 @@ import com.atlassian.jira.project.Project;
 import com.atlassian.jira.user.util.UserUtil;
 import com.atlassian.jira.web.bean.PagerFilter;
 import com.atlassian.query.Query;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
@@ -29,9 +30,9 @@ public class OpenedByUserStatistic extends AbstractStatisticCalculator
   }
 
   @Override
-  protected String getStatisticRef()
+  protected StatisticRefEnum getStatisticRef()
   {
-    return "CreatedIssueCount";
+    return StatisticRefEnum.CREATED_ISSUE_COUNT;
   }
 
   @Override

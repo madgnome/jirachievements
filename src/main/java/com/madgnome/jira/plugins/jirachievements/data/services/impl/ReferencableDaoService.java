@@ -12,6 +12,11 @@ public abstract class ReferencableDaoService<T extends ReferencableEntity> exten
     super(ao);
   }
 
+  public T get(Enum enumValue)
+  {
+    return get(enumValue.toString());
+  }
+
   public T get(String ref)
   {
     T[] references = ao.find(clazz, "REF = ?", ref);
@@ -19,11 +24,21 @@ public abstract class ReferencableDaoService<T extends ReferencableEntity> exten
     return references.length > 0 ? references[0] : null;
   }
 
+  public T getOrCreate(Enum enumValue)
+  {
+    return getOrCreate(enumValue.toString());
+  }
+
   public T getOrCreate(String ref)
   {
     T reference = get(ref);
 
     return reference == null ? create(ref) : reference;
+  }
+
+  public T create(Enum enumValue)
+  {
+    return getOrCreate(enumValue.toString());
   }
 
   public T create(String ref)

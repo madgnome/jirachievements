@@ -5,6 +5,7 @@ import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.crowd.embedded.impl.ImmutableUser;
 import com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
@@ -34,13 +35,13 @@ public class ProjectStatisticDaoServiceTest extends BaseDaoServiceTest<ProjectSt
   public void getShouldReturnNullIfStatisticRefDoesntExist()
   {
     UserWrapper userWrapper = createUserWrapper();
-    assertNull(daoService.get(userWrapper, "PKEY", "unknownStatisticRef"));
+    assertNull(daoService.get(userWrapper, "PKEY", StatisticRefEnum.CREATED_ISSUE_COUNT));
   }
 
   @Test
   public void createOrUpdateShouldCreateStatisticWithValueIfAny()
   {
-    String statRef = "StatisticRef";
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
     createStatisticRef(statRef);
     UserWrapper userWrapper = createUserWrapper();
 
@@ -55,7 +56,7 @@ public class ProjectStatisticDaoServiceTest extends BaseDaoServiceTest<ProjectSt
   @Test
   public void createOrUpdateShouldUpdateStatisticWithValueIfAny()
   {
-    String statRef = "StatisticRef";
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
     createStatisticRef(statRef);
     UserWrapper userWrapper = createUserWrapper();
 
@@ -71,7 +72,7 @@ public class ProjectStatisticDaoServiceTest extends BaseDaoServiceTest<ProjectSt
   @Test
   public void findShouldReturnStatisticsForProjectOrderedByDescendingValue() throws Exception
   {
-    String statRef = "StatisticRef";
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
     createStatisticRef(statRef);
     UserWrapper bobUserWrapper = createUserWrapper("bob", "Sponge Bob");
     UserWrapper patrickUserWrapper = createUserWrapper("patrick", "Patrick Star");
@@ -84,10 +85,10 @@ public class ProjectStatisticDaoServiceTest extends BaseDaoServiceTest<ProjectSt
     List<ProjectStatistic> projectStatistics = daoService.findStatisticsForProjectAndRef(projectKey, statRef);
     assertNotNull(projectStatistics);
     assertEquals(2, projectStatistics.size());
-    assertTrue(projectStatistics.get(0).getValue() >= projectStatistics.get(1).getValue());
+    assertTrue( projectStatistics.get(0).getValue() >= projectStatistics.get(1).getValue());
   }
 
-  private StatisticRef createStatisticRef(String statRef)
+  private StatisticRef createStatisticRef(StatisticRefEnum statRef)
   {
     return statisticRefDaoService.create(statRef);
   }

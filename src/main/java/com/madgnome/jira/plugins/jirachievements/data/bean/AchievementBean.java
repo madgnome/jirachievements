@@ -94,7 +94,7 @@ public class AchievementBean
     return hidden;
   }
 
-  public void isHidden(boolean hidden)
+  public void setHidden(boolean hidden)
   {
     this.hidden = hidden;
   }
@@ -109,7 +109,7 @@ public class AchievementBean
     achievementBean.setDescription(achievement.getDescription());
     achievementBean.setCategory(achievement.getCategory());
     achievementBean.setDifficulty(achievement.getDifficulty());
-    achievementBean.isHidden(achievement.isHidden());
+    achievementBean.setHidden(achievement.isHidden());
 
     return achievementBean;
   }

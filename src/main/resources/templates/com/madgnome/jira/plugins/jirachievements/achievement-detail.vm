@@ -6,16 +6,21 @@
   #end
 #end
 
+#if (!$achievement.hidden || $done)
+  #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}.png")
+#else
+  #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/lock.png")
+#end
+
 <div class="achievement-full">
   <div class="achievement-image">
-    <img src="$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}.png"
+    <img src="$imgUrl"
          onerror="this.src='$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/default.png';"/>
   </div>
   <div class="achievement-content">
-    #if (!$achievement.hidden)
+    #if (!$achievement.hidden || $done)
       <h4>
         $achievement.name
-
       </h4>
       <span>$achievement.catchPhrase</span>
     #else

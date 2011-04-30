@@ -10,7 +10,7 @@
   },
   {
     "ref": "padawan:user",
-    "name": "Padawan",
+    "name": "Padawan User",
     "catchPhrase": "The Force is strong with this one.",
     "description": "First issue created",
     "category": "USER",
@@ -19,7 +19,7 @@
   },
   {
     "ref": "padawan:developer",
-    "name": "Padawan",
+    "name": "Padawan Developer",
     "catchPhrase": "The Force is strong with this one.",
     "description": "First issue fixed",
     "category": "DEVELOPER",
@@ -27,8 +27,8 @@
     "hidden": "false"
   },
   {
-    "ref": "padawan:test",
-    "name": "Padawan",
+    "ref": "padawan:tester",
+    "name": "Padawan Tester",
     "catchPhrase": "The Force is strong with this one.",
     "description": "First issue tested",
     "category": "TESTER",
@@ -37,7 +37,7 @@
   },
   {
     "ref": "padawan:agilist",
-    "name": "Padawan",
+    "name": "Padawan Project Manager",
     "catchPhrase": "The Force is strong with this one.",
     "description": "First issue planned",
     "category": "AGILIST",
@@ -67,18 +67,18 @@
     "name": "The Insomniac",
     "catchPhrase": "Can't sleep?",
     "description": "Change an issue after midnight",
-    "category": "GENERAL",
+    "category": "USER",
     "difficulty": "SILVER",
-    "hidden": "false"
+    "hidden": "true"
   },
   {
     "ref": "expresso",
     "name": "What else?",
     "catchPhrase": "",
     "description": "Change an issue before 6AM",
-    "category": "GENERAL",
+    "category": "USER",
     "difficulty": "SILVER",
-    "hidden": "false"
+    "hidden": "true"
   },
   {
     "ref": "quibbler",
@@ -93,18 +93,72 @@
     "ref": "keyboard-shortcuts",
     "name": "VI Ninja",
     "catchPhrase": "",
-    "description": "Use the keyboard shortcuts more at least 10 times",
+    "description": "Use the keyboard shortcuts at least 10 times",
     "category": "USER",
     "difficulty": "SILVER",
     "hidden": "false"
   },
   {
     "ref": "advanced-search",
-    "name": "The Searcher",
+    "name": "C3-PO",
     "catchPhrase": "I Can Haz Complex Query?",
     "description": "Use advanced search",
     "category": "USER",
     "difficulty": "SILVER",
     "hidden": "false"
+  },
+  {
+    "ref": "texas-ranger",
+    "name": "Texas Ranger",
+    "catchPhrase": "",
+    "description": "All the workflow alone",
+    "category": "USER",
+    "difficulty": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "chuck-norris",
+    "name": "Chuck Norris",
+    "catchPhrase": "With you issues get fix by themselves",
+    "description": "All the workflow alone for at least 50 issues",
+    "category": "USER",
+    "difficulty": "GOLD",
+    "hidden": "false"
+  },
+  {
+    "ref": "writer",
+    "name": "The Writer",
+    "catchPhrase": "I think you miss your vocation",
+    "description": "Write a description issue with more than a 500 words",
+    "category": "USER",
+    "difficulty": "SILVER",
+    "hidden": "false"
+  },
+  {
+    "ref": "st-thomas",
+    "name": "The Writer",
+    "catchPhrase": "I think you miss your vocation",
+    "description": "An issue without description but with a screenshoot",
+    "category": "USER",
+    "difficulty": "BRONZE",
+    "hidden": "true"
+  },
+  {
+    "ref": "ghostwriter",
+    "name": "The GhostWriter",
+    "catchPhrase": "",
+    "description": "Edit description of an issue created by another person",
+    "category": "USER",
+    "difficulty": "SILVER",
+    "hidden": "true"
+  },
+  {
+    "ref": "ghostwriter",
+    "name": "The Sixth Sense",
+    "catchPhrase": "I watch dead issues",
+    "description": "Start to watch a close issue",
+    "category": "USER",
+    "difficulty": "BRONZE",
+    "hidden": "true"
   }
 ]

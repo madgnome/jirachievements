@@ -5,6 +5,7 @@ import com.atlassian.jira.event.issue.IssueEvent;
 import com.atlassian.jira.event.type.EventType;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
@@ -37,8 +38,8 @@ public class PadawanIssueEventRule extends AbstractRule implements IIssueEventRu
     {
       User user = jiraAuthenticationContext.getLoggedInUser();
       UserWrapper userWrapper = userWrapperDaoService.get(user);
-      UserStatistic userStatistic = userStatisticDaoService.get(userWrapper, "IssueCount");
-      if (!"0".equals(userStatistic.getValue()))
+      UserStatistic userStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.CREATED_ISSUE_COUNT);
+      if (userStatistic.getValue() == 1)
       {
         Achievement achievement = achievementDaoService.getOrCreate(getAchievementRef());
         userAchievementDaoService.addAchievementToUser(achievement, userWrapper);

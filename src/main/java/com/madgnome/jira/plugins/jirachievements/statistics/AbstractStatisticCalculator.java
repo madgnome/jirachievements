@@ -5,6 +5,7 @@ import com.atlassian.jira.bc.issue.search.SearchService;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
 import com.atlassian.jira.jql.parser.JqlQueryParser;
 import com.atlassian.jira.user.util.UserUtil;
+import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
@@ -40,7 +41,7 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
     this.projectStatisticDaoService = projectStatisticDaoService;
   }
 
-  protected abstract String getStatisticRef();
+  protected abstract StatisticRefEnum getStatisticRef();
 
   protected User retrieveAdministrator()
   {
