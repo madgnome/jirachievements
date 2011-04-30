@@ -18,9 +18,10 @@ public class UserStatisticDaoServiceTest extends BaseDaoServiceTest<UserStatisti
   @Before
   public void setUp() throws Exception
   {
-    daoService = new UserStatisticDaoService(createActiveObjects());
     statisticRefDaoService = new StatisticRefDaoService(createActiveObjects());
     userWrapperDaoService = new UserWrapperDaoService(createActiveObjects());
+
+    daoService = new UserStatisticDaoService(createActiveObjects(), statisticRefDaoService);
   }
 
   @Test

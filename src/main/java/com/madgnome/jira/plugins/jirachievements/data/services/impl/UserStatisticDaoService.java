@@ -4,25 +4,29 @@ import com.atlassian.activeobjects.external.ActiveObjects;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
+import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 
 public class UserStatisticDaoService extends BaseDaoService<UserStatistic> implements IUserStatisticDaoService
 {
+  private final IStatisticRefDaoService statisticRefDaoService;
+
   @Override
   protected Class<UserStatistic> getClazz()
   {
     return UserStatistic.class;
   }
 
-  public UserStatisticDaoService(ActiveObjects ao)
+  public UserStatisticDaoService(ActiveObjects ao, IStatisticRefDaoService statisticRefDaoService)
   {
     super(ao);
+    this.statisticRefDaoService = statisticRefDaoService;
   }
 
   @Override
   public UserStatistic get(UserWrapper userWrapper, String ref)
   {
-    StatisticRef statisticRef = getStatisticRef(ref);
+    StatisticRef statisticRef = statisticRefDaoService.get(ref);
     if (statisticRef == null)
     {
       return null;
@@ -34,7 +38,7 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   @Override
   public UserStatistic createOrUpdate(String ref, UserWrapper userWrapper, int value)
   {
-    StatisticRef statisticRef = getStatisticRef(ref);
+    StatisticRef statisticRef = statisticRefDaoService.get(ref);
 
     UserStatistic userStatistic = null;
     if (statisticRef != null)
@@ -66,17 +70,5 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
     userStatistic.save();
 
     return userStatistic;
-  }
-
-  private StatisticRef getStatisticRef(String ref)
-  {
-    StatisticRef[] statisticRefs = ao.find(StatisticRef.class, "REF = ?", ref);
-    if (statisticRefs.length == 0)
-    {
-      logger.info("Statistic with ref {} doesn't exist", ref);
-      return null;
-    }
-
-    return statisticRefs[0];
   }
 }
