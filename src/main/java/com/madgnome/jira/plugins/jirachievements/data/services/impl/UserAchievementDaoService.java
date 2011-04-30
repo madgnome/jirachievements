@@ -30,7 +30,6 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
     UserAchievement userAchievement = ao.create(UserAchievement.class);
     userAchievement.setUserWrapper(userWrapper);
     userAchievement.setAchievement(achievement);
-//    userAchievement.setCreatedOn(Calendar.getInstance().getTime());
     userAchievement.save();
   }
 

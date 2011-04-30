@@ -23,6 +23,10 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
   public UserStatistic get(UserWrapper userWrapper, String ref)
   {
     StatisticRef statisticRef = getStatisticRef(ref);
+    if (statisticRef == null)
+    {
+      return null;
+    }
 
     return getOrCreate(statisticRef, userWrapper);
   }

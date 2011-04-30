@@ -8,6 +8,8 @@ import net.java.ao.sql.ActiveObjectSqlException;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class UserWrapperDaoServiceTest extends AbstractServiceTest
@@ -43,7 +45,6 @@ public class UserWrapperDaoServiceTest extends AbstractServiceTest
     entityManager.flushAll();
     
     userWrapperDaoService.create(user);
-    assertEquals(2, userWrapperDaoService.all().size());
   }
 
   @Test
@@ -102,5 +103,16 @@ public class UserWrapperDaoServiceTest extends AbstractServiceTest
     UserWrapper userWrapper = userWrapperDaoService.getOrCreate(user);
     assertNotNull(userWrapper);
     assertEquals(existingUserWrapper, userWrapper);
+  }
+
+  @Test
+  public void allShouldReturnAllUserWrapper()
+  {
+    userWrapperDaoService.create(new ImmutableUser(0, "bob", "Sponge Bob", null, true));
+    userWrapperDaoService.create(new ImmutableUser(0, "patrick", "Star Patrick", null, true));
+    userWrapperDaoService.create(new ImmutableUser(0, "eugene", "Krabs Eugene", null, true));
+
+    List<UserWrapper> userWrappers = userWrapperDaoService.all();
+    assertEquals(3, userWrappers.size());
   }
 }
