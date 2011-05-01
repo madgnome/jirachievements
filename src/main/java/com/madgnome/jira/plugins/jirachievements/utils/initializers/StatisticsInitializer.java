@@ -19,7 +19,6 @@ public class StatisticsInitializer implements ITableInitializer
   @Override
   public void initialize()
   {
-    statisticRefDaoService.getOrCreate("IssueCount");
     statisticRefDaoService.getOrCreate(StatisticRefEnum.CREATED_ISSUE_COUNT);
     statisticRefDaoService.getOrCreate(StatisticRefEnum.RESOLVED_ISSUE_COUNT);
     statisticRefDaoService.getOrCreate(StatisticRefEnum.TESTED_ISSUE_COUNT);

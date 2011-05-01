@@ -9,17 +9,16 @@ import org.slf4j.LoggerFactory;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Path("/statistics")
 public class StatisticResource
 {
   private final Logger logger = LoggerFactory.getLogger(StatisticResource.class);
-  private final List<IStatisticCalculator> statisticCalculators;
+  private final IStatisticCalculator statisticsCalculator;
 
-  public StatisticResource(List<IStatisticCalculator> statisticCalculators)
+  public StatisticResource(IStatisticCalculator statisticsCalculator)
   {
-    this.statisticCalculators = statisticCalculators;
+    this.statisticsCalculator = statisticsCalculator;
   }
 
   @GET
@@ -28,10 +27,7 @@ public class StatisticResource
   {
     try
     {
-      for (IStatisticCalculator statisticCalculator : statisticCalculators)
-      {
-        statisticCalculator.calculate();
-      }
+      statisticsCalculator.calculate();
     }
     catch (SearchException e)
     {
