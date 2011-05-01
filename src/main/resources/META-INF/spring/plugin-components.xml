@@ -25,4 +25,17 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     </constructor-arg>
   </bean>
 
+  <bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer" >
+    <constructor-arg type="com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService" ref="userWrapperDaoService"/>
+    <constructor-arg type="com.atlassian.jira.user.util.UserUtil" ref="userUtil"/>
+    <constructor-arg type="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule" ref="welcomeRule"/>
+    <constructor-arg type="java.util.List">
+      <list>
+        <ref bean="achievementsInitializers"/>
+        <ref bean="statisticsInitializers"/>
+        <ref bean="levelsInitializers"/>
+      </list>
+    </constructor-arg>
+  </bean>
+
 </beans>

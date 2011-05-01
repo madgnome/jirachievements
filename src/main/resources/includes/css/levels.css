@@ -1,0 +1,116 @@
+.levels td {
+  padding: 3px 0;
+}
+
+.icon.level {
+  background: transparent no-repeat center 4px;
+  padding-left: 16px;
+}
+
+.icon.level.user1 {
+  background-image: url('images/levels/red_1.png');
+}
+
+.icon.level.user2 {
+  background-image: url('images/levels/red_2.png');
+}
+
+.icon.level.user3 {
+  background-image: url('images/levels/red_3.png');
+}
+
+.icon.level.user4 {
+  background-image: url('images/levels/red_4.png');
+}
+
+.icon.level.user5 {
+  background-image: url('images/levels/red_5.png');
+}
+
+.icon.level.user6 {
+  background-image: url('images/levels/red_6.png');
+}
+
+.icon.level.user7 {
+  background-image: url('images/levels/red_7.png');
+}
+
+.icon.level.user8 {
+  background-image: url('images/levels/red_8.png');
+}
+
+.icon.level.user9 {
+  background-image: url('images/levels/red_9.png');
+}
+
+.icon.level.developer1 {
+  background-image: url('images/levels/green_1.png');
+}
+
+.icon.level.developer2 {
+  background-image: url('images/levels/green_2.png');
+}
+
+.icon.level.developer3 {
+  background-image: url('images/levels/green_3.png');
+}
+
+.icon.level.developer4 {
+  background-image: url('images/levels/green_4.png');
+}
+
+.icon.level.developer5 {
+  background-image: url('images/levels/green_5.png');
+}
+
+.icon.level.developer6 {
+  background-image: url('images/levels/green_6.png');
+}
+
+.icon.level.developer7 {
+  background-image: url('images/levels/green_7.png');
+}
+
+.icon.level.developer8 {
+  background-image: url('images/levels/green_8.png');
+}
+
+.icon.level.developer9 {
+  background-image: url('images/levels/green_9.png');
+}
+
+.icon.level.tester1 {
+  background-image: url('images/levels/blue_1.png');
+}
+
+.icon.level.tester2 {
+  background-image: url('images/levels/blue_2.png');
+}
+
+.icon.level.tester3 {
+  background-image: url('images/levels/blue_3.png');
+}
+
+.icon.level.tester4 {
+  background-image: url('images/levels/blue_4.png');
+}
+
+.icon.level.tester5 {
+  background-image: url('images/levels/blue_5.png');
+}
+
+.icon.level.tester6 {
+  background-image: url('images/levels/blue_6.png');
+}
+
+.icon.level.tester7 {
+  background-image: url('images/levels/blue_7.png');
+}
+
+.icon.level.tester8 {
+  background-image: url('images/levels/blue_8.png');
+}
+
+.icon.level.tester9 {
+  background-image: url('images/levels/blue_9.png');
+}

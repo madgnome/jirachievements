@@ -85,3 +85,8 @@ div.achievement-level {
   right: 0;
   padding-right: 8px;
 }
+
+span.level {
+  font-style: italic;
+  font-size: 0.98em;
+}

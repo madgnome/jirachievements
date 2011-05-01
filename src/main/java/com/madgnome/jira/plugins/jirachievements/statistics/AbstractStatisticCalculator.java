@@ -95,7 +95,7 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
           logger.warn("Couldn't retrieve userwrapper for username '{}'", userName);
         }
 
-        return false;
+        return true;
       }
     });
   }

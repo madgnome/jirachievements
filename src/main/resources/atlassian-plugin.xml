@@ -8,6 +8,7 @@
   <ao key="ao-module">
     <description>The module configuring the Active Objects service used by this plugin</description>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Level</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement</entity>
@@ -31,17 +32,21 @@
     <decription>Processes @Transactional annotations.</decription>
   </component>
 
-  <component key="issue-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
-  <component key="old-event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
-  <component key="event-listener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
+  <component key="issueListener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
+  <component key="oldEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
+  <component key="eventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
 
-  <component key="achievements-initializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
-  <component key="statistics-initializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsInitializer"/>
-  <component key="plugin-initializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"/>
+  <component key="achievementsInitializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
+  <component key="statisticsInitializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsInitializer"/>
+  <component key="levelsInitializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
+  <!--<component key="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"/>-->
 
   <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
   </component>
+
+  <component key="levelDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.LevelDaoService"
+            interface="com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService"/>
 
   <component key="projectStatisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectStatisticDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService</inteface>
@@ -79,6 +84,7 @@
     <resource name="notification.js" type="download" location="includes/js/notification.js"/>
     <resource name="notification.css" type="download" location="includes/css/notification.css"/>
     <resource type="download" name="achievements.css" location="includes/css/achievements.css"/>
+    <resource type="download" name="levels.css" location="includes/css/levels.css"/>
     <dependency>com.atlassian.auiplugin:ajs</dependency>
 
     <context>atl.general</context>

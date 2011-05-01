@@ -6,9 +6,10 @@ import com.atlassian.jira.plugin.profile.ViewProfilePanelModuleDescriptor;
 import com.atlassian.plugin.webresource.WebResourceManager;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.templaterenderer.TemplateRenderer;
-import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
-import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
+import com.madgnome.jira.plugins.jirachievements.data.ao.*;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 import com.opensymphony.user.User;
 import org.slf4j.Logger;
@@ -16,7 +17,6 @@ import org.slf4j.LoggerFactory;
 import webwork.action.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -34,14 +34,18 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
 
   private final IAchievementDaoService achievementDaoService;
   private final IUserWrapperDaoService userWrapperDaoService;
+  private final ILevelDaoService levelDaoService;
+  private final IUserStatisticDaoService userStatisticDaoService;
 
-  public AchievementViewProfilePanel(TemplateRenderer templateRenderer, UserManager userManager, WebResourceManager webResourceManager, IAchievementDaoService achievementDaoService, IUserWrapperDaoService userWrapperDaoService)
+  public AchievementViewProfilePanel(TemplateRenderer templateRenderer, UserManager userManager, WebResourceManager webResourceManager, IAchievementDaoService achievementDaoService, IUserWrapperDaoService userWrapperDaoService, ILevelDaoService levelDaoService, IUserStatisticDaoService userStatisticDaoService)
   {
     this.templateRenderer = templateRenderer;
     this.userManager = userManager;
     this.webResourceManager = webResourceManager;
     this.achievementDaoService = achievementDaoService;
     this.userWrapperDaoService = userWrapperDaoService;
+    this.levelDaoService = levelDaoService;
+    this.userStatisticDaoService = userStatisticDaoService;
   }
 
   @Override
@@ -73,7 +77,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     return writer.toString();
   }
 
-  private void render(HttpServletRequest req, Writer output, User user) throws IOException, Exception
+  private void render(HttpServletRequest req, Writer output, User user) throws Exception
   {
     String username = this.userManager.getRemoteUsername(req);
     if (username == null)
@@ -84,20 +88,46 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     webResourceManager.requireResource("com.atlassian.auiplugin:ajs");
     webResourceManager.requireResource("com.madgnome.jira.plugins.jirachievements:jh-user-achievements-details");
 
-    Map<String, Object> params = retrieveParameters();
+    UserWrapper userWrapper = userWrapperDaoService.get(user);
+    Map<String, Object> params = retrieveParameters(userWrapper);
     params.put("req", req);
-
-    // TODO optimize
-    Achievement[] userAchievements = userWrapperDaoService.get(user).getAchievements();
-    params.put("userAchievements", userAchievements);
 
     templateRenderer.render("templates/com/madgnome/jira/plugins/jirachievements/achievements.vm", params, output);
   }
 
-  private Map<String, Object> retrieveParameters()
+  private Map<String, Object> retrieveParameters(UserWrapper userWrapper)
   {
     Map<String, Object> params = new HashMap<String, Object>();
 
+    Map<String, List<Achievement>> achievementByCategory = retrieveAchievementsByCategory();
+    params.put("achievements", achievementByCategory);
+
+    Achievement[] userAchievements = userWrapper.getAchievements();
+    params.put("userAchievements", userAchievements);
+
+    UserStatistic createdUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.CREATED_ISSUE_COUNT);
+    Level userLevel = levelDaoService.findMatchingLevel(Category.USER, createdUserStatistic.getValue());
+    params.put("userStatistic", createdUserStatistic);
+    params.put("userLevel", userLevel);
+    params.put("userPercentage", (userLevel.getMaxThreshold() - createdUserStatistic.getValue()) * 100 / userLevel.getMaxThreshold());
+
+    UserStatistic resolvedUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.RESOLVED_ISSUE_COUNT);
+    Level developerLevel = levelDaoService.findMatchingLevel(Category.DEVELOPER, resolvedUserStatistic.getValue());
+    params.put("developerStatistic", resolvedUserStatistic);
+    params.put("developerLevel", developerLevel);
+    params.put("developerPercentage", (developerLevel.getMaxThreshold() - resolvedUserStatistic.getValue()) * 100 / developerLevel.getMaxThreshold());
+
+    UserStatistic testedUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.TESTED_ISSUE_COUNT);
+    Level testerLevel = levelDaoService.findMatchingLevel(Category.TESTER, testedUserStatistic.getValue());
+    params.put("testerStatistic", testedUserStatistic);
+    params.put("testerLevel", testerLevel);
+    params.put("testerPercentage", (testerLevel.getMaxThreshold() - testedUserStatistic.getValue()) * 100 / testerLevel.getMaxThreshold());
+
+    return params;
+  }
+
+  private Map<String, List<Achievement>> retrieveAchievementsByCategory()
+  {
     Map<String, List<Achievement>> achievementByCategory = new HashMap<String, List<Achievement>>();
     List<Achievement> achievements = achievementDaoService.all();
     for (Achievement achievement : achievements)
@@ -112,9 +142,6 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
 
       categoryAchievements.add(achievement);
     }
-
-    params.put("achievements", achievementByCategory);
-
-    return params;
+    return achievementByCategory;
   }
 }

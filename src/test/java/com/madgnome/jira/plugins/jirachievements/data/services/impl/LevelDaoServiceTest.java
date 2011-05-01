@@ -67,5 +67,23 @@ public class LevelDaoServiceTest extends BaseDaoServiceTest<Level, LevelDaoServi
     assertTrue(level.getMaxThreshold() > value);
   }
 
+  @Test
+  public void findNextLevelShouldReturnClosestNextLevelForGivenValue()
+  {
+    Category category = Category.USER;
+    statisticRefDaoService.create(StatisticRefEnum.CREATED_ISSUE_COUNT);
+    daoService.getOrCreate(category, 0, StatisticRefEnum.CREATED_ISSUE_COUNT, 0, 10);
+    daoService.getOrCreate(category, 1, StatisticRefEnum.CREATED_ISSUE_COUNT, 11, 50);
+    daoService.getOrCreate(category, 2, StatisticRefEnum.CREATED_ISSUE_COUNT, 51, 150);
+    daoService.getOrCreate(category, 3, StatisticRefEnum.CREATED_ISSUE_COUNT, 151, 500);
+    daoService.getOrCreate(category, 4, StatisticRefEnum.CREATED_ISSUE_COUNT, 501, 2000);
+    daoService.getOrCreate(category, 5, StatisticRefEnum.CREATED_ISSUE_COUNT, 2001, 5000);
 
+    int value = 200;
+    Level currentLevel = daoService.findMatchingLevel(category, value);
+    Level nextLevel = daoService.findNextLevel(category, value);
+    assertNotNull(nextLevel);
+    assertTrue(nextLevel.getMaxThreshold() > value);
+    assertTrue(currentLevel.getNumber() + 1 == nextLevel.getNumber());
+  }
 }

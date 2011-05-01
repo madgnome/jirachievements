@@ -61,6 +61,14 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
     return levels.length > 0 ? levels[0] : null;
   }
 
+  @Override
+  public Level findNextLevel(Category category, int value)
+  {
+    Level[] levels = ao.find(getClazz(), "CATEGORY = ? AND MIN_THRESHOLD > ? ORDER BY MIN_THRESHOLD ASC", category, value);
+
+    return levels.length > 0 ? levels[0] : null;
+  }
+
   private Level create(Category category, int number, StatisticRefEnum statisticRefEnum, int min, int max)
   {
     StatisticRef statisticRef = statisticRefDaoService.get(statisticRefEnum);

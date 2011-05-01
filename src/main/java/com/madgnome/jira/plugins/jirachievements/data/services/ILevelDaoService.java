@@ -12,4 +12,5 @@ public interface ILevelDaoService extends IDaoService<Level>
   Level getOrCreate(Category category, int number, StatisticRefEnum statisticRefEnum, int min, int max);
   List<Level> all(Category category);
   Level findMatchingLevel(Category category, int value);
+  Level findNextLevel(Category category, int value);
 }

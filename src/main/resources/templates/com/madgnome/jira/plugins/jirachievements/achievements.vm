@@ -45,50 +45,34 @@
         <h3>Summary</h3>
       </div>
       <div class="mod-content">
-        <table cellpadding="2" cellspacing="0" style="width: 100%">
+        <table class="levels" style="width: 100%">
           <tbody>
             <tr>
-              <td class="name">User</td>
-              <td class="count">25</td>
+              <td class="icon level user${userLevel.number}">&nbsp;</td>
+              <td class="name"><span class="level">Level ${userLevel.number}</span> - User</td>
+              <td class="count">$userStatistic.value</td>
               <td class="graph last">
-                #histogram(25)
+                #histogram($userPercentage)
               </td>
             </tr>
             <tr class="rowAlternateLightGray">
-              <td class="name">Developer</td>
-              <td class="count">25</td>
+              <td class="icon level developer${developerLevel.number}">&nbsp;</td>
+              <td class="name"><span class="level">Level ${developerLevel.number}</span> - Developer</td>
+              <td class="count">$developerStatistic.value</td>
               <td class="graph last">
-                #histogram(75)
+                #histogram($developerPercentage)
               </td>
             </tr>
             <tr class="">
-              <td class="name">Tester</td>
-              <td class="count">25</td>
+              <td class="icon level tester${testerLevel.number}">&nbsp;</td>
+              <td class="name"><span class="level">Level ${testerLevel.number}</span> - Tester</td>
+              <td class="count">$testerStatistic.value</td>
               <td class="graph last">
-                #histogram(60)
-              </td>
-            </tr>
-            <tr class="rowAlternateLightGray">
-              <td class="name">Agilist</td>
-              <td class="count">25</td>
-              <td class="graph last">
-                #histogram(5)
+                #histogram($testerPercentage)
               </td>
             </tr>
           </tbody>
         </table>
-##        <div class="achievements-summary">
-##          <dl class="table-display">
-##            <dt>User</dt>
-##            <dd><p><meter min="0" max="100" value="40">25 /100</meter></p></dd>
-##            <dt>Developer</dt>
-##            <dd><p><meter min="0" max="100" value="25">25 /100</meter></p></dd>
-##            <dt>Tester</dt>
-##            <dd><p><meter min="0" max="100" value="5">25 /100</meter></p></dd>
-##            <dt>Agilist</dt>
-##            <dd><p><meter min="0" max="100" value="0">25 /100</meter></p></dd>
-##          </dl>
-##        </div>
       </div>
     </div>
 
@@ -112,9 +96,6 @@
             <li class="menu-item">
               <a href="#horizontal-third"><strong>Tester</strong></a>
             </li>
-            <li class="menu-item">
-              <a href="#horizontal-fourth"><strong>Agilist</strong></a>
-            </li>
           </ul>
           <div class="tabs-pane active-pane" id="horizontal-first">
             #categoryAchievements("USER")
@@ -125,26 +106,11 @@
           <div class="tabs-pane" id="horizontal-third">
             #categoryAchievements("TESTER")
           </div>
-          <div class="tabs-pane" id="horizontal-fourth">
-            #categoryAchievements("AGILIST")
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-##<div id="secondary" class="column">
-##  <div class="content">
-##    <div class="module">
-##      <div class="mod-header">
-##        <h3>Levels</h3>
-##      </div>
-##      <div class="mod-content">
-##      </div>
-##    </div>
-##  </div>
-##</div>
 
 <script type="text/javascript">
   jQuery(document).ready(function() {
