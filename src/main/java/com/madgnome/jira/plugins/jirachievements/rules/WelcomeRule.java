@@ -3,6 +3,7 @@ package com.madgnome.jira.plugins.jirachievements.rules;
 import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
+import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
@@ -16,9 +17,9 @@ public class WelcomeRule extends AbstractRule
   }
 
   @Override
-  public String getAchievementRef()
+  public AchievementRefEnum getAchievementRef()
   {
-    return "welcome";
+    return AchievementRefEnum.WELCOME;
   }
 
   public void execute(User user)

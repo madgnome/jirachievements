@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public abstract class ReferencableDaoServiceTest<T extends ReferencableEntity, V extends IReferencableDaoService<T>> extends AbstractServiceTest
+public abstract class ReferencableDaoServiceTest<T extends ReferencableEntity, V extends IReferencableDaoService<T, ?>> extends AbstractServiceTest
 {
   protected V referencableDaoService;
 

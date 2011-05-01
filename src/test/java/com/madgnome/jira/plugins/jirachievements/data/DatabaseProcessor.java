@@ -11,6 +11,7 @@ public class DatabaseProcessor implements DatabaseUpdater
   {
     entityManager.migrate(
             Achievement.class,
+            Level.class,
             ProjectStatistic.class,
             Statistic.class,
             StatisticRef.class,

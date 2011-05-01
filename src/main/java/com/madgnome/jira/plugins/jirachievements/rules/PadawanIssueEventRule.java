@@ -4,10 +4,7 @@ import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.event.issue.IssueEvent;
 import com.atlassian.jira.event.type.EventType;
 import com.atlassian.jira.security.JiraAuthenticationContext;
-import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
-import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
-import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
-import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
+import com.madgnome.jira.plugins.jirachievements.data.ao.*;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
@@ -24,9 +21,9 @@ public class PadawanIssueEventRule extends AbstractRule implements IIssueEventRu
   }
 
   @Override
-  public String getAchievementRef()
+  public AchievementRefEnum getAchievementRef()
   {
-    return "padawan:user";
+    return AchievementRefEnum.PADAWAN_USER;
   }
 
   @Override

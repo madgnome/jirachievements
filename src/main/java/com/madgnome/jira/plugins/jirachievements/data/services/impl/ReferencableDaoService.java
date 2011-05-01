@@ -5,14 +5,14 @@ import com.google.common.collect.ImmutableMap;
 import com.madgnome.jira.plugins.jirachievements.data.ao.ReferencableEntity;
 import com.madgnome.jira.plugins.jirachievements.data.services.IReferencableDaoService;
 
-public abstract class ReferencableDaoService<T extends ReferencableEntity> extends BaseDaoService<T> implements IReferencableDaoService<T>
+public abstract class ReferencableDaoService<T extends ReferencableEntity, V extends Enum> extends BaseDaoService<T> implements IReferencableDaoService<T, V>
 {
   public ReferencableDaoService(ActiveObjects ao)
   {
     super(ao);
   }
 
-  public T get(Enum enumValue)
+  public T get(V enumValue)
   {
     return get(enumValue.toString());
   }
@@ -24,7 +24,7 @@ public abstract class ReferencableDaoService<T extends ReferencableEntity> exten
     return references.length > 0 ? references[0] : null;
   }
 
-  public T getOrCreate(Enum enumValue)
+  public T getOrCreate(V enumValue)
   {
     return getOrCreate(enumValue.toString());
   }
@@ -36,7 +36,7 @@ public abstract class ReferencableDaoService<T extends ReferencableEntity> exten
     return reference == null ? create(ref) : reference;
   }
 
-  public T create(Enum enumValue)
+  public T create(V enumValue)
   {
     return getOrCreate(enumValue.toString());
   }
