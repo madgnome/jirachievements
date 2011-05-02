@@ -19,8 +19,9 @@
   <packaging>atlassian-plugin</packaging>
 
   <scm>
-    <connection>scm:git:ssh://git@github.com/madgnome/jirachievements.git</connection>
-    <url>git:ssh://git@github.com/madgnome/jirachievements.git</url>
+    <connection>scm:git:git://github.com/madgnome/jirachievements.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:madgnome/jirachievements.git</developerConnection>
+    <url>https://github.com/madgnome/jirachievements</url>
   </scm>
 
   <dependencies>
