@@ -2,7 +2,7 @@ package com.madgnome.jira.plugins.jirachievements.rest;
 
 import com.atlassian.jira.issue.search.SearchException;
 import com.atlassian.jira.jql.parser.JqlParseException;
-import com.madgnome.jira.plugins.jirachievements.statistics.IStatisticCalculator;
+import com.madgnome.jira.plugins.jirachievements.statistics.IStatisticsCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +14,9 @@ import javax.ws.rs.core.Response;
 public class StatisticResource
 {
   private final Logger logger = LoggerFactory.getLogger(StatisticResource.class);
-  private final IStatisticCalculator statisticsCalculator;
+  private final IStatisticsCalculator statisticsCalculator;
 
-  public StatisticResource(IStatisticCalculator statisticsCalculator)
+  public StatisticResource(IStatisticsCalculator statisticsCalculator)
   {
     this.statisticsCalculator = statisticsCalculator;
   }
@@ -27,7 +27,7 @@ public class StatisticResource
   {
     try
     {
-      statisticsCalculator.calculate();
+      statisticsCalculator.calculateAll();
     }
     catch (SearchException e)
     {
