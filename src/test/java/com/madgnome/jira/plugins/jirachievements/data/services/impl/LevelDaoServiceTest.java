@@ -54,13 +54,13 @@ public class LevelDaoServiceTest extends BaseDaoServiceTest<Level, LevelDaoServi
     Category category = Category.USER;
     statisticRefDaoService.create(StatisticRefEnum.CREATED_ISSUE_COUNT);
     daoService.getOrCreate(category, 0, StatisticRefEnum.CREATED_ISSUE_COUNT, 0, 10);
-    daoService.getOrCreate(category, 1, StatisticRefEnum.CREATED_ISSUE_COUNT, 11, 50);
-    daoService.getOrCreate(category, 2, StatisticRefEnum.CREATED_ISSUE_COUNT, 51, 150);
-    daoService.getOrCreate(category, 3, StatisticRefEnum.CREATED_ISSUE_COUNT, 151, 500);
-    daoService.getOrCreate(category, 4, StatisticRefEnum.CREATED_ISSUE_COUNT, 501, 2000);
-    daoService.getOrCreate(category, 5, StatisticRefEnum.CREATED_ISSUE_COUNT, 2001, 5000);
+    daoService.getOrCreate(category, 1, StatisticRefEnum.CREATED_ISSUE_COUNT, 10, 50);
+    daoService.getOrCreate(category, 2, StatisticRefEnum.CREATED_ISSUE_COUNT, 50, 150);
+    daoService.getOrCreate(category, 3, StatisticRefEnum.CREATED_ISSUE_COUNT, 150, 500);
+    daoService.getOrCreate(category, 4, StatisticRefEnum.CREATED_ISSUE_COUNT, 500, 2000);
+    daoService.getOrCreate(category, 5, StatisticRefEnum.CREATED_ISSUE_COUNT, 2000, 5000);
 
-    int value = 200;
+    int value = 150;
     Level level = daoService.findMatchingLevel(category, value);
     assertNotNull(level);
     assertTrue(level.getMinThreshold() <= value);
@@ -73,13 +73,13 @@ public class LevelDaoServiceTest extends BaseDaoServiceTest<Level, LevelDaoServi
     Category category = Category.USER;
     statisticRefDaoService.create(StatisticRefEnum.CREATED_ISSUE_COUNT);
     daoService.getOrCreate(category, 0, StatisticRefEnum.CREATED_ISSUE_COUNT, 0, 10);
-    daoService.getOrCreate(category, 1, StatisticRefEnum.CREATED_ISSUE_COUNT, 11, 50);
-    daoService.getOrCreate(category, 2, StatisticRefEnum.CREATED_ISSUE_COUNT, 51, 150);
-    daoService.getOrCreate(category, 3, StatisticRefEnum.CREATED_ISSUE_COUNT, 151, 500);
-    daoService.getOrCreate(category, 4, StatisticRefEnum.CREATED_ISSUE_COUNT, 501, 2000);
-    daoService.getOrCreate(category, 5, StatisticRefEnum.CREATED_ISSUE_COUNT, 2001, 5000);
+    daoService.getOrCreate(category, 1, StatisticRefEnum.CREATED_ISSUE_COUNT, 10, 50);
+    daoService.getOrCreate(category, 2, StatisticRefEnum.CREATED_ISSUE_COUNT, 50, 150);
+    daoService.getOrCreate(category, 3, StatisticRefEnum.CREATED_ISSUE_COUNT, 150, 500);
+    daoService.getOrCreate(category, 4, StatisticRefEnum.CREATED_ISSUE_COUNT, 500, 2000);
+    daoService.getOrCreate(category, 5, StatisticRefEnum.CREATED_ISSUE_COUNT, 2000, 5000);
 
-    int value = 200;
+    int value = 150;
     Level currentLevel = daoService.findMatchingLevel(category, value);
     Level nextLevel = daoService.findNextLevel(category, value);
     assertNotNull(nextLevel);
