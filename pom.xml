@@ -7,7 +7,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.madgnome.jira.plugins</groupId>
   <artifactId>jirachievements</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
 
   <organization>
     <name>Julien Hoarau</name>
@@ -19,8 +19,8 @@
   <packaging>atlassian-plugin</packaging>
 
   <scm>
-    <connection>scm:git:ssh://git@github.com:madgnome/jirachievements.git</connection>
-    <url>git:ssh://git@github.com:madgnome/jirachievements.git</url>
+    <connection>scm:git:ssh://git@github.com/madgnome/jirachievements.git</connection>
+    <url>git:ssh://git@github.com/madgnome/jirachievements.git</url>
   </scm>
 
   <dependencies>
