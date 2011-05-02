@@ -5,7 +5,7 @@ import com.atlassian.jira.jql.parser.JqlParseException;
 
 import java.util.List;
 
-public class StatisticsCalculator implements IStatisticCalculator
+public class StatisticsCalculator implements IStatisticsCalculator
 {
   private final List<IStatisticCalculator> statisticCalculators;
 
@@ -16,7 +16,7 @@ public class StatisticsCalculator implements IStatisticCalculator
 
 
   @Override
-  public void calculate() throws SearchException, JqlParseException
+  public void calculateAll() throws SearchException, JqlParseException
   {
     for (IStatisticCalculator calculator : statisticCalculators)
     {
