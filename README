@@ -1,15 +1,37 @@
-You have successfully created a plugin using the JIRA plugin archetype!
+JIRA Hero plugin for JIRA
+--------------------------------
 
-Here are the SDK commands you'll use immediately:
+To install:
 
-* atlas-run   -- installs this plugin into JIRA and starts it on http://localhost:2990/jira
-* atlas-debug -- same as atlas-run, but allows a debugger to attach at port 5005
-* atlas-cli   -- after atlas-run or atlas-debug, opens a Maven command line window:
-                 - 'pi' reinstalls the plugin into the running JIRA instance
-* atlas-help  -- prints description for all commands in the SDK
+ 	1. Download and install active-objects plugin as explained here :
+ 	   https://studio.atlassian.com/wiki/display/AO/Installing+Active+Objects
+  2. Download JIRA Hero from the Universal Plugin Manager
+  3. Restart JIRA
+  4. Enjoy!
 
-Full documentation is always available at:
+Description
+--------------------------------
 
-http://confluence.atlassian.com/display/DEVNET/Developing+your+Plugin+using+the+Atlassian+Plugin+SDK
+JIRA Hero brings gameplay mechanics into JIRA to guide, engage and encourage users.
+Didactic: Perfect to discover JIRA tips and good practices
 
-This file was modified by IntelliJ IDEA 10.0.3 for binding GitHub repository
+ * Fun and engaging: Win achievements, gain level and find the easter eggs
+ * Informative: Get the key actors at a glance for each project, component and version
+
+Main Features & Benefits
+ * Help new user to become familiar with JIRA
+ * Collect badges and achievements
+ * Guide the user through a succession of achievement
+ * Gain rank in your own area of expertise (user, developer, tester, project manager) from padawan to master
+ * Have fun discovering the easter eggs
+ * Get the key actors at a glance for each project, component and version
+ * Customize, tweak, disable... to fit your company need 
+
+
+Documentation
+--------------------------------
+
+For information about installing, configuring and using the JIRA Hero plugin for
+JIRA, please see:
+
+      https://github.com/madgnome/jirachievements/wiki
