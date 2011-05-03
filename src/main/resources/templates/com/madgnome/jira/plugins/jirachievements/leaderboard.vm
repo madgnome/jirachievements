@@ -1,26 +1,26 @@
 #* @vtlvariable name="resolvedCount" type="java.util.List<com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic>" *#
 #macro (histogram $percentage)
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-    #if ($percentage.intValue() != 0)
-        #set ($newPercentage = 5)
-        #if ($percentage.intValue() > 5)
-            #set ($newPercentage = $percentage.intValue())
-        #end
-    <tr>
-        <td style="width:${newPercentage}%" class="colour-bar-cont" valign="center">
-            <div class="colour-bar"></div>
-        </td>
-        #set ($remainder = 100 - $newPercentage)
-        <td  style="width:$remainder%">&nbsp;&nbsp;&nbsp;$percentage%</td>
-    </tr>
-    #else
-    <tr>
-        <td width="1px" class="colour-bar-cont" valign="center">
-            <div class="colour-bar"></div>
-        </td>
-        <td>&nbsp;</td>
-    </tr>
+  #if ($percentage.intValue() != 0)
+    #set ($newPercentage = 5)
+    #if ($percentage.intValue() > 5)
+      #set ($newPercentage = $percentage.intValue())
     #end
+  <tr>
+    <td style="width:${newPercentage}%" class="colour-bar-cont" valign="center">
+      <div class="colour-bar"></div>
+    </td>
+    #set ($remainder = 100 - $newPercentage)
+    <td  style="width:$remainder%">&nbsp;&nbsp;&nbsp;$percentage%</td>
+  </tr>
+  #else
+  <tr>
+    <td width="1px" class="colour-bar-cont" valign="center">
+      <div class="colour-bar"></div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  #end
 </table>
 #end
 
@@ -29,7 +29,8 @@
      #if ($showAvatar)
      class="user-hover user-avatar"
      style="background-image:url('${projectStatistic.smallAvatarUrl}')"
-     #end >
+     #end
+     href="${baseurl}/secure/ViewProfile.jspa?name=$entry.username">
     $entry.username
   </a>
 #end
@@ -64,19 +65,16 @@
               <td>User</td>
               <td>Developer</td>
               <td>Tester</td>
-##              <td>Agilist</td>
             </tr>
             <tr>
               <td><img src="$createdIssueLB.get(0).largeAvatarUrl"/></td>
               <td><img src="$resolvedIssueLB.get(0).largeAvatarUrl"/></td>
               <td><img src="$testedIssueLB.get(0).largeAvatarUrl"/></td>
-##              <td><img src="http://localhost:2990/jira/secure/useravatar?size=large&avatarId=10128"/></td>
             </tr>
             <tr>
               <td>#userLink($createdIssueLB.get(0) false)</td>
               <td>#userLink($resolvedIssueLB.get(0) false)</td>
               <td>#userLink($testedIssueLB.get(0) false)</td>
-##              <td>SFS</td>
             </tr>
           </tbody>
         </table>
@@ -101,9 +99,6 @@
             <li class="menu-item">
               <a href="#horizontal-third"><strong>Tester</strong></a>
             </li>
-##            <li class="menu-item">
-##              <a href="#horizontal-fourth"><strong>Agilist</strong></a>
-##            </li>
           </ul>
           <div class="tabs-pane active-pane" id="horizontal-first">
             #leaderboardTable($createdIssueLB)
@@ -114,8 +109,6 @@
           <div class="tabs-pane" id="horizontal-third">
             #leaderboardTable($testedIssueLB)
           </div>
-##          <div class="tabs-pane" id="horizontal-fourth">
-##          </div>
         </div>
       </div>
     </div>
