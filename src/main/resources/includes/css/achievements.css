@@ -79,11 +79,26 @@ dt { clear: both; }
   background-image: url('images/bullet_yellow.png');
 }
 
+.achievement-full div.description-tip {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  padding-right: 16px;
+  background: transparent url('images/information.png') 0 0 no-repeat;
+
+  cursor: pointer;
+}
+
+.achievement-description {
+  padding: 5px 10px;
+  font-style: italic;
+}
+
 div.achievement-level {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding-right: 8px;
+  padding-right: 6px;
 }
 
 span.level {

@@ -6,9 +6,11 @@
   #end
 #end
 
+#set($visible = true)
 #if (!$achievement.hidden || $done)
   #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}.png")
 #else
+  #set($visible = false)
   #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/lock.png")
 #end
 
@@ -17,8 +19,9 @@
     <img src="$imgUrl"
          onerror="this.src='$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/default.png';"/>
   </div>
+  <div id="achievement-${achievement.getID()}-tip" class="description-tip" #if ($visible) style="z-index: 10;" #end>&nbsp;</div>
   <div class="achievement-content">
-    #if (!$achievement.hidden || $done)
+    #if ($visible)
       <h4>
         $achievement.name
       </h4>
@@ -34,3 +37,21 @@
     </div>
   #end
 </div>
+
+#if ($visible)
+  <script type="text/javascript">
+
+  AJS.InlineDialog(jQuery("#achievement-${achievement.getID()}-tip"), "achievement-" + $achievement.getID(), function(contents, trigger, showPopup) {
+    contents.css({
+        width: "auto",
+        minWidth: "100px"
+    }).addClass("achievement-description");
+    contents.empty().append("<div>$achievement.description</div>");
+
+    showPopup();
+  }, {onHover:true, offsetY: 5, hideDelay: 500});
+
+
+
+  </script>
+#end

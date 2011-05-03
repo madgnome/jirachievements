@@ -115,14 +115,14 @@
 <script type="text/javascript">
   jQuery(document).ready(function() {
 
-  jQuery('#achievements-details').bind('tabSelect', function() {
-    jQuery('.active-pane > .achievements-list').masonry({
-      singleMode: true,
-      itemSelector : '.achievement-full'
+    jQuery('#achievements-details').bind('tabSelect', function() {
+      jQuery('.active-pane > .achievements-list').masonry({
+        singleMode: true,
+        itemSelector : '.achievement-full'
+      });
     });
-  });
 
-  jQuery('.active-pane > .achievements-list').masonry({
+    jQuery('.active-pane > .achievements-list').masonry({
       singleMode: true,
       itemSelector : '.achievement-full'
     });
