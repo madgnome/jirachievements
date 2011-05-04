@@ -1,7 +1,6 @@
 (function($) {
   $(document).ready(function() {
     $.getJSON(AJS.params.baseURL + '/rest/jirachievement/1.0/achievements', function(data) {
-      var items = [];
 
       $.each(data, function(){
         var achievement = this;
@@ -9,7 +8,7 @@
           position: 'center',
           corners: '30px',
           theme: 'jirachivements',
-          sticky: true,
+          life: 5000,
 //          header: this.ref,
           close: function(e,m,o)
           {
