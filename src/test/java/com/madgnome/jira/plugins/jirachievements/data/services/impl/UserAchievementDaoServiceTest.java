@@ -30,7 +30,7 @@ public class UserAchievementDaoServiceTest extends BaseDaoServiceTest<UserAchiev
   }
 
   @Test
-  public void shouldAddAchievementToUser()
+  public void addAchievementShouldAddAchievementToUser()
   {
     UserWrapper userWrapper = createUserWrapper();
     Achievement achievement = createAchievement("Achievement", Difficulty.BRONZE);
@@ -40,6 +40,18 @@ public class UserAchievementDaoServiceTest extends BaseDaoServiceTest<UserAchiev
     entityManager.flushAll();
 
     assertEquals(achievement, userWrapper.getAchievements()[0]);
+  }
+
+  @Test
+  public void addAchievementShouldNotAddIfExist()
+  {
+    UserWrapper userWrapper = createUserWrapper();
+    Achievement achievement = createAchievement("Achievement", Difficulty.BRONZE);
+    daoService.addAchievementToUser(achievement, userWrapper);
+    daoService.addAchievementToUser(achievement, userWrapper);
+    entityManager.flushAll();
+
+    assertEquals(1, userWrapper.getAchievements().length);
   }
 
   @Test

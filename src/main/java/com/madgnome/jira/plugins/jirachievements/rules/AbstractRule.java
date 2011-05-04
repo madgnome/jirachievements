@@ -5,7 +5,7 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoSe
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
-public abstract class AbstractRule implements IRule
+public abstract class AbstractRule
 {
   protected final JiraAuthenticationContext jiraAuthenticationContext;
   protected final IUserWrapperDaoService userWrapperDaoService;

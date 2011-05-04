@@ -23,11 +23,10 @@ public class IssueEventRuleEngine implements IRuleEngine<IssueEvent>
     }
   }
 
-    private List<IIssueEventRule> registerIssueEventRules()
+  private List<IIssueEventRule> registerIssueEventRules()
   {
     List<IIssueEventRule> rules = new ArrayList<IIssueEventRule>();
     rules.add(ComponentManager.getComponent(PadawanIssueEventRule.class));
-
 
     return rules;
   }

@@ -30,7 +30,7 @@
      class="user-hover user-avatar"
      style="background-image:url('${projectStatistic.smallAvatarUrl}')"
      #end
-     href="${baseurl}/secure/ViewProfile.jspa?name=$entry.username">
+     href="${baseurl}/secure/ViewProfile.jspa?name=$entry.username#selectedTab=com.madgnome.jira.plugins.jirachievements:achievements-profile">
     $entry.username
   </a>
 #end

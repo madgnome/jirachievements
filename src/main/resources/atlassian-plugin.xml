@@ -37,7 +37,7 @@
   <component key="eventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
 
   <component key="achievementsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
-  <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsInitializer"/>
+  <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
   <component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>
 
@@ -128,7 +128,8 @@
   </rest>
 
   <!-- Rules -->
-  <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
   <component key="welcomeRule" class="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule"/>
+  <component key="padawanRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanRule"/>
+  <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
 
 </atlassian-plugin>

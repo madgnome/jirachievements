@@ -29,6 +29,15 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     <constructor-arg ref="statisticsCalculator"/>
   </bean>
 
+  <bean id="rulesChecker" class="com.madgnome.jira.plugins.jirachievements.rules.RulesChecker">
+    <constructor-arg>
+      <set>
+        <ref bean="welcomeRule"/>
+        <ref bean="padawanRule"/>
+      </set>
+    </constructor-arg>
+  </bean>
+
   <bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer" >
     <constructor-arg type="java.util.List">
       <list>
@@ -39,6 +48,7 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
       </list>
     </constructor-arg>
     <constructor-arg ref="statisticsCalculator"/>
+    <constructor-arg ref="rulesChecker"/>
   </bean>
 
 

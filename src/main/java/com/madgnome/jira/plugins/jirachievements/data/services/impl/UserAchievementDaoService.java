@@ -28,10 +28,13 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
   @Override
   public void addAchievementToUser(Achievement achievement, UserWrapper userWrapper)
   {
-    UserAchievement userAchievement = ao.create(UserAchievement.class);
-    userAchievement.setUserWrapper(userWrapper);
-    userAchievement.setAchievement(achievement);
-    userAchievement.save();
+    if (get(achievement, userWrapper) == null)
+    {
+      UserAchievement userAchievement = ao.create(UserAchievement.class);
+      userAchievement.setUserWrapper(userWrapper);
+      userAchievement.setAchievement(achievement);
+      userAchievement.save();
+    }
   }
 
   @Override

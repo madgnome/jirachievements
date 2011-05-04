@@ -5,13 +5,13 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoS
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class StatisticsInitializer implements ITableInitializer
+public class StatisticsRefInitializer implements ITableInitializer
 {
-  private final static Logger logger = LoggerFactory.getLogger(StatisticsInitializer.class);
+  private final static Logger logger = LoggerFactory.getLogger(StatisticsRefInitializer.class);
 
   private final IStatisticRefDaoService statisticRefDaoService;
 
-  public StatisticsInitializer(IStatisticRefDaoService statisticRefDaoService)
+  public StatisticsRefInitializer(IStatisticRefDaoService statisticRefDaoService)
   {
     this.statisticRefDaoService = statisticRefDaoService;
   }
