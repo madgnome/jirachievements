@@ -1,15 +1,14 @@
 package com.madgnome.jira.plugins.jirachievements.statistics;
 
 import com.atlassian.crowd.embedded.api.User;
-import com.atlassian.jira.bc.issue.search.SearchService;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
-import com.atlassian.jira.jql.parser.JqlQueryParser;
 import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import gnu.trove.TObjectIntProcedure;
 import org.slf4j.Logger;
@@ -21,25 +20,24 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
 {
   protected final static Logger logger = LoggerFactory.getLogger(AbstractStatisticCalculator.class);
 
-  protected final JqlQueryParser jqlQueryParser;
+  protected final IssueSearcher issueSearcher;
   protected final UserUtil userUtil;
-  protected final SearchService searchService;
   protected final ChangeHistoryManager changeHistoryManager;
 
   protected final IUserWrapperDaoService userWrapperDaoService;
   protected final IUserStatisticDaoService userStatisticDaoService;
   protected final IProjectStatisticDaoService projectStatisticDaoService;
 
-  public AbstractStatisticCalculator(SearchService searchService, UserUtil userUtil, JqlQueryParser jqlQueryParser, ChangeHistoryManager changeHistoryManager, IUserStatisticDaoService userStatisticDaoService, IUserWrapperDaoService userWrapperDaoService, IProjectStatisticDaoService projectStatisticDaoService)
+  public AbstractStatisticCalculator(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, IUserStatisticDaoService userStatisticDaoService, IProjectStatisticDaoService projectStatisticDaoService)
   {
-    this.searchService = searchService;
+    this.issueSearcher = issueSearcher;
     this.userUtil = userUtil;
-    this.jqlQueryParser = jqlQueryParser;
     this.changeHistoryManager = changeHistoryManager;
-    this.userStatisticDaoService = userStatisticDaoService;
     this.userWrapperDaoService = userWrapperDaoService;
+    this.userStatisticDaoService = userStatisticDaoService;
     this.projectStatisticDaoService = projectStatisticDaoService;
   }
+
 
   protected abstract StatisticRefEnum getStatisticRef();
 

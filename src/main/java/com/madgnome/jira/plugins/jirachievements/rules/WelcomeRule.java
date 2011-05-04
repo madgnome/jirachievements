@@ -1,8 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.rules;
 
-import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.security.JiraAuthenticationContext;
-import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
@@ -12,12 +10,9 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoSe
 
 public class WelcomeRule extends AbstractRule implements IRule
 {
-  private final UserUtil userUtil;
-
-  public WelcomeRule(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IAchievementDaoService achievementDaoService, IUserAchievementDaoService userAchievementDaoService, UserUtil userUtil)
+  public WelcomeRule(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IAchievementDaoService achievementDaoService, IUserAchievementDaoService userAchievementDaoService)
   {
     super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService);
-    this.userUtil = userUtil;
   }
 
   @Override
@@ -29,21 +24,14 @@ public class WelcomeRule extends AbstractRule implements IRule
   @Override
   public void check()
   {
-    for (User user : userUtil.getUsers())
+    for (UserWrapper userWrapper : userWrapperDaoService.all())
     {
-      if (userWrapperDaoService.get(user) == null)
-      {
-        userWrapperDaoService.create(user);
-
-        execute(user);
-      }
+      execute(userWrapper);
     }
   }
 
-  private void execute(User user)
+  private void execute(UserWrapper userWrapper)
   {
-    UserWrapper userWrapper = userWrapperDaoService.get(user);
-
     Achievement achievement = achievementDaoService.get(getAchievementRef());
     if (userAchievementDaoService.get(achievement, userWrapper) == null)
     {

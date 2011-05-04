@@ -48,6 +48,8 @@
   <component key="levelDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.LevelDaoService"
             interface="com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService"/>
 
+  <component key="issueSearcher" class="com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher"/>
+
   <component key="projectStatisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectStatisticDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService</inteface>
   </component>
@@ -131,5 +133,6 @@
   <component key="welcomeRule" class="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule"/>
   <component key="padawanRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanRule"/>
   <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
+  <component key="lostArkRaider" class="com.madgnome.jira.plugins.jirachievements.rules.LostArkRaiderRule"/>
 
 </atlassian-plugin>

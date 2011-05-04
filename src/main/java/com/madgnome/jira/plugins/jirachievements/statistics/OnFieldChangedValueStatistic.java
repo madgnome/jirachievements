@@ -1,20 +1,16 @@
 package com.madgnome.jira.plugins.jirachievements.statistics;
 
-import com.atlassian.jira.bc.issue.search.SearchService;
 import com.atlassian.jira.issue.Issue;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryItem;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
 import com.atlassian.jira.issue.search.SearchException;
-import com.atlassian.jira.issue.search.SearchResults;
 import com.atlassian.jira.jql.parser.JqlParseException;
-import com.atlassian.jira.jql.parser.JqlQueryParser;
 import com.atlassian.jira.project.Project;
 import com.atlassian.jira.user.util.UserUtil;
-import com.atlassian.jira.web.bean.PagerFilter;
-import com.atlassian.query.Query;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +23,9 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
 {
   private final static Logger logger = LoggerFactory.getLogger(OnFieldChangedValueStatistic.class);
 
-  public OnFieldChangedValueStatistic(SearchService searchService, UserUtil userUtil, JqlQueryParser jqlQueryParser, ChangeHistoryManager changeHistoryManager, IUserStatisticDaoService userStatisticDaoService, IUserWrapperDaoService userWrapperDaoService, IProjectStatisticDaoService projectStatisticDaoService)
+  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, IUserStatisticDaoService userStatisticDaoService, IProjectStatisticDaoService projectStatisticDaoService)
   {
-    super(searchService, userUtil, jqlQueryParser, changeHistoryManager, userStatisticDaoService, userWrapperDaoService, projectStatisticDaoService);
+    super(issueSearcher, userUtil, changeHistoryManager, userWrapperDaoService, userStatisticDaoService, projectStatisticDaoService);
   }
 
   public void calculate() throws SearchException, JqlParseException
@@ -74,9 +70,6 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
 
   private List<Issue> searchIssuesMatchingQuery() throws JqlParseException, SearchException
   {
-    Query query = jqlQueryParser.parseQuery(getJQLQuery());
-    SearchResults searchResults = searchService.search(retrieveAdministrator(), query, PagerFilter.getUnlimitedFilter());
-
-    return searchResults.getIssues();
+    return issueSearcher.searchIssues(getJQLQuery());
   }
 }
