@@ -6,7 +6,8 @@ public enum AchievementRefEnum
   PADAWAN_USER("padawan:user"),
   PADAWAN_DEVELOPER("padawan:developer"),
   PADAWAN_TESTER("padawan:tester"),
-  LOST_ARK_RAIDER("lostark-raider");
+  LOST_ARK_RAIDER("lostark-raider"),
+  ISSUE_SNATCHER("issue-snatcher");
 
   private final String ref;
 

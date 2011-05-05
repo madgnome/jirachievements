@@ -51,6 +51,22 @@
 </table>
 #end
 
+#macro (firstUserLink $issueLB $showAvatar)
+  #if ($issueLB.size() > 0)
+    #userLink($issueLB.get(0) $showAvatar)
+  #else
+    Could be you...
+  #end
+#end
+
+#macro (largeAvatarUrl $issueLB)
+  #if ($issueLB.size() > 0)
+    $issueLB.get(0).largeAvatarUrl
+  #else
+    ${baseurl}/download/resources/com.madgnome.jira.plugins.jirachievements/images/avatar_unknow.png
+  #end
+#end
+
 <div id="primary" class="column full">
   <div class="content">
     <div class="module">
@@ -67,14 +83,14 @@
               <td>Tester</td>
             </tr>
             <tr>
-              <td><img src="$createdIssueLB.get(0).largeAvatarUrl"/></td>
-              <td><img src="$resolvedIssueLB.get(0).largeAvatarUrl"/></td>
-              <td><img src="$testedIssueLB.get(0).largeAvatarUrl"/></td>
+              <td><img src="#largeAvatarUrl($createdIssueLB)"/></td>
+              <td><img src="#largeAvatarUrl($resolvedIssueLB)"/></td>
+              <td><img src="#largeAvatarUrl($testedIssueLB)"/></td>
             </tr>
             <tr>
-              <td>#userLink($createdIssueLB.get(0) false)</td>
-              <td>#userLink($resolvedIssueLB.get(0) false)</td>
-              <td>#userLink($testedIssueLB.get(0) false)</td>
+              <td>#firstUserLink($createdIssueLB false)</td>
+              <td>#firstUserLink($resolvedIssueLB false)</td>
+              <td>#firstUserLink($testedIssueLB false)</td>
             </tr>
           </tbody>
         </table>
