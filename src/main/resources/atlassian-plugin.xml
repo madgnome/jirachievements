@@ -24,6 +24,7 @@
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
   <component-import key="jqlParser" interface="com.atlassian.jira.jql.parser.JqlQueryParser"/>
   <component-import key="avatarService" interface="com.atlassian.jira.avatar.AvatarService"/>
+  <component-import key="pluginScheduler" interface="com.atlassian.sal.api.scheduling.PluginScheduler"/>
 
   <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
@@ -40,6 +41,9 @@
   <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
   <component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>
+
+  <!--<component key="checkRulesJob" class="com.madgnome.jira.plugins.jirachievements.scheduling.CheckRulesJob"/>-->
+  <component key="pluginComponentManager" class="com.madgnome.jira.plugins.jirachievements.utils.PluginComponentManager"/>
 
   <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
@@ -81,9 +85,10 @@
   <web-resource name="Notifications resources" key="ja-notification">
     <resource name="jquery.jgrowl_minimized.js" type="download" location="includes/js/plugins/jquery.jgrowl_minimized.js"/>
     <resource name="jquery.corner.js" type="download" location="includes/js/plugins/jquery.corner.js"/>
-    <resource name="jquery.jgrowl.css" type="download" location="includes/css/plugins/jquery.jgrowl.css"/>
-
+    <resource name="jquery.illuminate.js" type="download" location="/includes/js/plugins/jquery.illuminate.js"/>
     <resource name="notification.js" type="download" location="includes/js/notification.js"/>
+
+    <resource name="jquery.jgrowl.css" type="download" location="includes/css/plugins/jquery.jgrowl.css"/>
     <resource name="notification.css" type="download" location="includes/css/notification.css"/>
     <resource type="download" name="achievements.css" location="includes/css/achievements.css"/>
     <resource type="download" name="levels.css" location="includes/css/levels.css"/>

@@ -49,9 +49,17 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
       </list>
     </constructor-arg>
     <constructor-arg ref="statisticsCalculator"/>
-    <constructor-arg ref="rulesChecker"/>
+    <constructor-arg ref="jobScheduler"/>
   </bean>
 
+  <bean id="jobScheduler" class="com.madgnome.jira.plugins.jirachievements.scheduling.JobsScheduler">
+    <constructor-arg index="0" ref="pluginScheduler"/>
+    <constructor-arg index="1">
+      <set>
+        <bean class="com.madgnome.jira.plugins.jirachievements.scheduling.CheckRulesJob"/>
+      </set>
+    </constructor-arg>
+  </bean>
 
 
 </beans>
