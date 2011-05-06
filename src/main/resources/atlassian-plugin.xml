@@ -85,8 +85,9 @@
   <web-resource name="Notifications resources" key="ja-notification">
     <resource name="jquery.jgrowl_minimized.js" type="download" location="includes/js/plugins/jquery.jgrowl_minimized.js"/>
     <resource name="jquery.corner.js" type="download" location="includes/js/plugins/jquery.corner.js"/>
-    <resource name="jquery.illuminate.js" type="download" location="/includes/js/plugins/jquery.illuminate.js"/>
     <resource name="notification.js" type="download" location="includes/js/notification.js"/>
+    <resource name="jquery.cookie.js" type="download" location="/includes/js/plugins/jquery.cookie.js"/>
+    <resource name="jquery.illuminate.js" type="download" location="/includes/js/plugins/jquery.illuminate.js"/>
 
     <resource name="jquery.jgrowl.css" type="download" location="includes/css/plugins/jquery.jgrowl.css"/>
     <resource name="notification.css" type="download" location="includes/css/notification.css"/>
