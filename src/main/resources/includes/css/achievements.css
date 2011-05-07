@@ -7,16 +7,30 @@
   position: relative;
 }
 
+.achievement-config {
+  width: 300px;
+  height: 70px;
+  border: #d3d3d3 1px solid;
+  margin: 5px;
+
+  position: relative;
+  cursor: pointer;
+}
+
 .achievements-list .achievement-image {
   float: left;
   padding: 10px 10px;
 }
 
-.achievements-list .achievement-content {
+.achievement-full .achievement-content {
   margin: 10px 5px 5px 85px;
 }
 
-.achievement-full .mask {
+.achievement-config .achievement-content {
+  margin: 5px 5px 5px 45px;
+}
+
+.achievement-full .mask, .achievement-config .mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -24,6 +38,10 @@
   height: 100%;
   opacity: 0.5;
   background-color: #CCC;
+}
+
+.achievement-config .mask.active {
+  visibility: hidden;
 }
 
 .table-display dt {

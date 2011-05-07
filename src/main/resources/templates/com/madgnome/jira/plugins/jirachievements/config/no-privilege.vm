@@ -1,0 +1,10 @@
+<tr>
+  <td colspan="2" class="formErrors">
+    <div class="errorArea">
+      <h4>Error</h4>
+      <ul>
+        <li>This action requires administrative privileges.</li>
+      </ul>
+    </div>
+  </td>
+</tr>

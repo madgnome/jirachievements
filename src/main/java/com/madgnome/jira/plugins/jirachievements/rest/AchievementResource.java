@@ -2,10 +2,13 @@ package com.madgnome.jira.plugins.jirachievements.rest;
 
 import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.security.JiraAuthenticationContext;
+import com.atlassian.jira.security.PermissionManager;
+import com.atlassian.jira.security.Permissions;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.bean.AchievementBean;
+import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 
@@ -19,14 +22,18 @@ import java.util.List;
 public class AchievementResource
 {
   private final JiraAuthenticationContext jiraAuthenticationContext;
+  private final PermissionManager permissionManager;
   private final IUserWrapperDaoService userWrapperDaoService;
   private final IUserAchievementDaoService userAchievementDaoService;
+  private final IAchievementDaoService achievementDaoService;
 
-  public AchievementResource(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IUserAchievementDaoService userAchievementDaoService)
+  public AchievementResource(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IUserAchievementDaoService userAchievementDaoService, IAchievementDaoService achievementDaoService, PermissionManager permissionManager)
   {
     this.jiraAuthenticationContext = jiraAuthenticationContext;
     this.userWrapperDaoService = userWrapperDaoService;
     this.userAchievementDaoService = userAchievementDaoService;
+    this.achievementDaoService = achievementDaoService;
+    this.permissionManager = permissionManager;
   }
 
   @GET
@@ -60,6 +67,21 @@ public class AchievementResource
     userAchievement.setNotified(notified);
     userAchievement.save();
 
+    return Response.ok().build();
+  }
+
+  @PUT
+  @Path("{id}/config")
+  public Response activeAchievement(@PathParam("id") int achievementId,
+                                    @FormParam("active") boolean active)
+  {
+    User user = jiraAuthenticationContext.getLoggedInUser();
+    if (!permissionManager.hasPermission(Permissions.ADMINISTER, user))
+    {
+      return Response.serverError().status(Response.Status.FORBIDDEN).build();
+    }
+
+    achievementDaoService.activate(achievementId, active);
     return Response.ok().build();
   }
 }

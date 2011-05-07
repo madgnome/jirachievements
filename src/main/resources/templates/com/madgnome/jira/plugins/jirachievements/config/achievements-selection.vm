@@ -1,0 +1,61 @@
+#macro (categoryAchievements $categoryName)
+  <div class="achievements-list">
+    #foreach ($achievement in $achievements.get($categoryName))
+      #parse ('/templates/com/madgnome/jira/plugins/jirachievements/config/achievement-admin-detail.vm')
+    #end
+  </div>
+#end
+
+<div id="achievements-details">
+  <div class="aui-tabs horizontal-tabs" id="horizontal">
+    <ul class="tabs-menu">
+      <li class="menu-item active-tab first">
+        <a href="#horizontal-first"><strong>User</strong></a>
+      </li>
+      <li class="menu-item">
+        <a href="#horizontal-second"><strong>Developer</strong></a>
+      </li>
+      <li class="menu-item">
+        <a href="#horizontal-third"><strong>Tester</strong></a>
+      </li>
+    </ul>
+    <div class="tabs-pane active-pane" id="horizontal-first">
+      #categoryAchievements("user")
+    </div>
+    <div class="tabs-pane" id="horizontal-second">
+      #categoryAchievements("developer")
+    </div>
+    <div class="tabs-pane" id="horizontal-third">
+      #categoryAchievements("tester")
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+
+    jQuery('#achievements-details').bind('tabSelect', function() {
+      jQuery('.active-pane > .achievements-list').masonry({
+        singleMode: true,
+        itemSelector : '.achievement-config'
+      });
+    });
+
+    jQuery('.active-pane > .achievements-list').masonry({
+      singleMode: true,
+      itemSelector : '.achievement-config'
+    });
+
+    jQuery('.achievement-config').click(function(event) {
+      var achievement = jQuery(event.currentTarget);
+      achievement.children('.mask').toggleClass('active');
+      jQuery.ajax({
+        url: AJS.params.baseURL + '/rest/jirachievement/1.0/achievements/' + achievement.data('id') + '/config',
+        type: 'PUT',
+        data: {
+          active: achievement.children('.mask').hasClass('active')
+        }
+      })
+    });
+  });
+</script>

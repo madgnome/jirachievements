@@ -24,6 +24,10 @@ public interface Achievement extends ReferencableEntity
   boolean isHidden();
   void setHidden(boolean hidden);
 
+  @Default("true")
+  boolean isActive();
+  void setActive(boolean active);
+
   @ManyToMany(UserAchievement.class)
   UserWrapper[] getUsers();
 }

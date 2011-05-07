@@ -99,6 +99,11 @@
     <context>atl.admin</context>
   </web-resource>
 
+  <web-resource name="JQuery UI" key="jh-jquery-ui">
+    <resource name="jquery-ui.js" type="download" location="/includes/js/plugins/jquery-ui-1.8.12.custom.min.js"/>
+    <resource name="jquery-ui.css" type="download" location="/includes/css/plugins/redmond/jquery-ui-1.8.12.custom.css"/>
+  </web-resource>
+
   <web-resource name="Header User Details resources" key="jh-header-user-details">
     <resource name="header-details-user.js" type="download" location="includes/js/header-details-user.js"/>
 
@@ -110,6 +115,7 @@
     <resource name="jquery.masonry.js" type="download" location="includes/js/plugins/jquery.masonry.js"/>
   </web-resource>
 
+  <!-- Achievements in user profile-->
   <view-profile-panel key="achievements-profile" i18n-name-key="Achievements"
                       name="User Profile Roadmap Panel"
                       class="com.madgnome.jira.plugins.jirachievements.ui.AchievementViewProfilePanel"
@@ -122,11 +128,11 @@
     <link>/secure/ViewProfile.jspa#selectedTab=com.madgnome.jira.plugins.jirachievements:achievements-profile</link>
   </web-item>
 
+  <!-- Leadeboard Project tab panel -->
   <project-tabpanel key="project-leaderboard-panel" name="Project Leaderboard Panel"
                     class="com.madgnome.jira.plugins.jirachievements.ui.LeaderBoardProjectTabPanel">
     <label>LeaderBoard</label>
     <order>80</order>
-    <!-- this template produces the HTML for the panel -->
     <resource type="velocity" name="view" location="/templates/com/madgnome/jira/plugins/jirachievements/leaderboard.vm" />
   </project-tabpanel>
 
@@ -134,6 +140,29 @@
   <rest key="rest-service-resources" path="/jirachievement" version="1.0">
     <description>Provides the REST resources for JIRAchievement plugin.</description>
   </rest>
+
+  <!-- Configuration -->
+  <web-item key="subversion-repositories-link" name="Subversion repositories link on administrators page" section="system.admin/globalsettings" weight="95">
+    <label key="subversion.repositories" />
+    <condition class="com.atlassian.jira.plugin.webfragment.conditions.JiraGlobalPermissionCondition">
+        <param name="permission">admin</param>
+    </condition>
+    <link linkId="subversion-repositories">/secure/ViewSubversionRepositories.jspa</link>
+  </web-item>
+
+  <web-item key="jh-config-webfragment" name="JIRA Hero Config Web Fragment" section="system.admin/globalsettings"
+              weight="90" system="true">
+    <label>JIRA Hero Configuration</label>
+    <link linkId="jh_global_config">/secure/admin/ViewJIRAHeroGlobalConfiguration.jspa</link>
+  </web-item>
+
+  <webwork1 key="jh-config-action" name="JIRA Hero Config Screen">
+    <actions>
+      <action name="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" alias="ViewJIRAHeroGlobalConfiguration">
+        <view name="success">/templates/com/madgnome/jira/plugins/jirachievements/config/view-global-config.vm</view>
+      </action>
+    </actions>
+  </webwork1>
 
   <!-- Rules -->
   <component key="welcomeRule" class="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule"/>

@@ -98,13 +98,13 @@
             </li>
           </ul>
           <div class="tabs-pane active-pane" id="horizontal-first">
-            #categoryAchievements("USER")
+            #categoryAchievements("user")
           </div>
           <div class="tabs-pane" id="horizontal-second">
-            #categoryAchievements("DEVELOPER")
+            #categoryAchievements("developer")
           </div>
           <div class="tabs-pane" id="horizontal-third">
-            #categoryAchievements("TESTER")
+            #categoryAchievements("tester")
           </div>
         </div>
       </div>

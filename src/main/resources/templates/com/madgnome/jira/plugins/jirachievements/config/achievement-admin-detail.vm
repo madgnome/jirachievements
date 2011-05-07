@@ -1,0 +1,27 @@
+#* @vtlvariable name="achievement" type="com.madgnome.jira.plugins.jirachievements.data.ao.Achievement" *#
+#set ($done = true)
+
+#set($visible = true)
+#set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}_small.png")
+
+<div id="achievement-$achievement.getID()" class="achievement-config">
+  <div class="achievement-image">
+    <img src="$imgUrl"
+         onerror="this.src='$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/default_small.png';"/>
+  </div>
+  <div class="achievement-content">
+    <h4>
+      $achievement.name
+    </h4>
+##    <span>$achievement.catchPhrase</span>
+    <span>$achievement.description</span>
+  </div>
+  <div class="achievement-level achievement-${achievement.difficulty.name().toLowerCase()}">&nbsp;</div>
+
+  <div class="mask #if ($achievement.active) active #end">
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery('#achievement-$achievement.getID()').data('id', $achievement.getID());
+</script>
