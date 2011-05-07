@@ -6,10 +6,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AchievementDaoService extends ReferencableDaoService<Achievement, AchievementRefEnum> implements IAchievementDaoService
 {
@@ -22,6 +19,11 @@ public class AchievementDaoService extends ReferencableDaoService<Achievement, A
   public AchievementDaoService(ActiveObjects ao)
   {
     super(ao);
+  }
+
+  public List<Achievement> allActive()
+  {
+    return Arrays.asList(ao.find(getClazz(), "ACTIVE = TRUE"));
   }
 
   public Map<Category, List<Achievement>> allGroupByCategory()

@@ -129,7 +129,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
   private Map<String, List<Achievement>> retrieveAchievementsByCategory()
   {
     Map<String, List<Achievement>> achievementByCategory = new HashMap<String, List<Achievement>>();
-    List<Achievement> achievements = achievementDaoService.all();
+    List<Achievement> achievements = achievementDaoService.allActive();
     for (Achievement achievement : achievements)
     {
       Category category = achievement.getCategory();

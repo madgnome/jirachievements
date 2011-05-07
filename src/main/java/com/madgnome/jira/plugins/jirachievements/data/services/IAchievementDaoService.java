@@ -11,6 +11,7 @@ import java.util.Map;
 @Transactional
 public interface IAchievementDaoService extends IReferencableDaoService<Achievement, AchievementRefEnum>
 {
+  List<Achievement> allActive();
   Map<Category, List<Achievement>> allGroupByCategory();
   Map<String, List<Achievement>> allGroupByCategoryName();
 

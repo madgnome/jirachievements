@@ -99,12 +99,26 @@
     jQuery( "#achievements-refreshrate" ).slider({
       min: 0.25,
       max: 24,
-      value: 3,
+      value: $action.achievementRefreshRate / 60,
       step: 0.25,
+      change: function( event, ui ) {
+        jQuery("#achievements-refreshrate-value").html(ui.value + ' hour(s)');
+			},
       slide: function( event, ui ) {
 				jQuery("#achievements-refreshrate-value").html(ui.value + ' hour(s)');
-			}
+			},
+      stop: function(event, ui) {
+        jQuery.ajax({
+          url: AJS.params.baseURL + '/rest/jirachievement/1.0/configs/achievements_refresh_rate',
+          type: 'PUT',
+          data: {
+            value: ui.value*60
+          }
+        });
+      }
     });
+
+    jQuery( "#achievements-refreshrate" ).slider('value', $action.achievementRefreshRate / 60);
   });
 </script>
 

@@ -19,21 +19,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Path("/achievements")
-public class AchievementResource
+public class AchievementResource extends AbstractBaseResource
 {
-  private final JiraAuthenticationContext jiraAuthenticationContext;
-  private final PermissionManager permissionManager;
   private final IUserWrapperDaoService userWrapperDaoService;
   private final IUserAchievementDaoService userAchievementDaoService;
   private final IAchievementDaoService achievementDaoService;
 
-  public AchievementResource(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IUserAchievementDaoService userAchievementDaoService, IAchievementDaoService achievementDaoService, PermissionManager permissionManager)
+  public AchievementResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, IUserWrapperDaoService userWrapperDaoService, IUserAchievementDaoService userAchievementDaoService, IAchievementDaoService achievementDaoService)
   {
-    this.jiraAuthenticationContext = jiraAuthenticationContext;
+    super(jiraAuthenticationContext, permissionManager);
     this.userWrapperDaoService = userWrapperDaoService;
     this.userAchievementDaoService = userAchievementDaoService;
     this.achievementDaoService = achievementDaoService;
-    this.permissionManager = permissionManager;
   }
 
   @GET

@@ -60,7 +60,7 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
     for (Difficulty difficulty : Difficulty.values())
     {
       Query query = Query.select().join(Achievement.class, AOUtil.getTablePrefix() + "_ACHIEVEMENT.ID = ACHIEVEMENT_ID")
-                                  .where("USER_WRAPPER_ID = ? AND DIFFICULTY = ?", userWrapper.getID(), difficulty.ordinal());
+                                  .where("USER_WRAPPER_ID = ? AND DIFFICULTY = ? AND ACTIVE = TRUE", userWrapper.getID(), difficulty.ordinal());
       achievementsByLevel.put(difficulty, ao.count(UserAchievement.class, query));
     }
 

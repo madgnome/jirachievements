@@ -1,21 +1,21 @@
 package com.madgnome.jira.plugins.jirachievements.rest;
 
+import com.atlassian.jira.security.JiraAuthenticationContext;
+import com.atlassian.jira.security.PermissionManager;
 import com.madgnome.jira.plugins.jirachievements.rules.RulesChecker;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 @Path("/rules")
-public class RuleResource
+public class RuleResource extends AbstractBaseResource
 {
-  private final Logger logger = LoggerFactory.getLogger(RuleResource.class);
   private final RulesChecker rulesChecker;
 
-  public RuleResource(RulesChecker rulesChecker)
+  public RuleResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, RulesChecker rulesChecker)
   {
+    super(jiraAuthenticationContext, permissionManager);
     this.rulesChecker = rulesChecker;
   }
 

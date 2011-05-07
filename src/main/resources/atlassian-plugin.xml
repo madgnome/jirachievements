@@ -8,6 +8,7 @@
   <ao key="ao-module">
     <description>The module configuring the Active Objects service used by this plugin</description>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Config</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Level</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef</entity>
@@ -41,13 +42,16 @@
   <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
   <component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>
+  <component key="configsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ConfigsInitializer"/>
 
-  <!--<component key="checkRulesJob" class="com.madgnome.jira.plugins.jirachievements.scheduling.CheckRulesJob"/>-->
   <component key="pluginComponentManager" class="com.madgnome.jira.plugins.jirachievements.utils.PluginComponentManager"/>
 
   <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
     <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
   </component>
+
+  <component key="configDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ConfigDaoService"
+             interface="com.madgnome.jira.plugins.jirachievements.data.services.IConfigDaoService"/>
 
   <component key="levelDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.LevelDaoService"
             interface="com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService"/>
