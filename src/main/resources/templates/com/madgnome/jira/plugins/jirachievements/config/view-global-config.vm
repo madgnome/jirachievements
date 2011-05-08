@@ -7,120 +7,15 @@
 
 <body>
 #if ($action.hasPermissions())
-  <table class="jiraform maxWidth">
-    <tbody>
-    <tr>
-      <td class="jiraformheader" colspan="3">
-        <h3 class="formtitle">Achievements Configuration</h3>
-      </td> 
-    </tr>
-    <tr>
-      <td class="fieldLabelArea" style="width: 15%; background-color: transparent;">
-        Refresh rate:
-      </td>
-      <td class="fieldValueArea" style="width:40%">
-        <div class="slider-container" style="margin: 5px;">
-          <div id="achievements-refreshrate"></div>
-        </div>
-        <font size="1">
-          Determines the refresh rate of achievements calculation. New achievement will arrive at this rate.
-        </font>
-      </td>
-      <td style="vertical-align: top;">
-        <span id="achievements-refreshrate-value">3 hour</span>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <div class="selectionConfig">
-          #set ($achievements = $action.achievementsByCategory)
-          #parse("/templates/com/madgnome/jira/plugins/jirachievements/config/achievements-selection.vm")
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  #parse("/templates/com/madgnome/jira/plugins/jirachievements/config/achievements-config.vm")
 
-  <table class="grid maxWidth">
-    <tbody>
-    <tr>
-      <td class="jiraformheader">
-        <h3 class="formtitle">Levels Configuration</h3>
-      </td>
-    </tr>
-    <tr>
-      <td class="jiraformbody">
-        ...
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <!-- bottom links -->
-  <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#bbbbbb" align="center">
-    <tbody>
-    <tr>
-    <td>
-        <table width="100%" cellspacing="1" cellpadding="3" border="0">
-        <tbody>
-        <tr bgcolor="#f0f0f0">
-        <td class="colHeaderLink" align="center" colspan="2">
-            #if ($action.instancesEditable)
-                #if ($action.systemAdministrator)
-                    <a href="${req.contextPath}/plugins/servlet/applinks/listApplicationLinks"><b>${i18n.getText('fisheye.config.edit.applicationlink.configuration')}</b></a>
-                    |
-                #end
-
-                <a href="${req.contextPath}/secure/admin/EditFishEyeConfig!default.jspa"><b>${i18n.getText('fisheye.config.edit.primary.configuration')}</b></a>
-                #if (!$action.cruStandalone)
-                    | <a href="${req.contextPath}/secure/admin/AssociateFishEyeReps!default.jspa"><b>${i18n.getText('fisheye.config.map.primary.repositories')}</b></a>
-                #end
-                #if ($action.cruEnabled)
-                    | <a href="${req.contextPath}/secure/admin/AssociateCruProjects!default.jspa"><b>${i18n.getText('fisheye.config.crucible.projects')}</b></a>
-                #end
-            #else
-                <a href="${req.contextPath}/secure/admin/EditInstances!default.jspa"><b>${i18n.getText('fisheye.config.edit.applinks.configuration')}</b></a> |
-                <a href="${req.contextPath}/secure/admin/EditFishEyeConfig!default.jspa"><b>${i18n.getText('fisheye.config.edit.global.configuration')}</b></a>
-            #end
-        </td>
-        </tr>
-        </tbody>
-        </table>
-    </td>
-    </tr>
-    </tbody>
-  </table>
+  #parse("/templates/com/madgnome/jira/plugins/jirachievements/config/levels-config.vm")
+  
 #else
   #parse("/templates/com/madgnome/jira/plugins/jirachievements/config/no-privilege.vm")
 #end
 
-<script type="text/javascript">
-  jQuery(document).ready(function() {
-    jQuery( "#achievements-refreshrate" ).slider({
-      min: 0.25,
-      max: 24,
-      value: $action.achievementRefreshRate / 60,
-      step: 0.25,
-      change: function( event, ui ) {
-        jQuery("#achievements-refreshrate-value").html(ui.value + ' hour(s)');
-			},
-      slide: function( event, ui ) {
-				jQuery("#achievements-refreshrate-value").html(ui.value + ' hour(s)');
-			},
-      stop: function(event, ui) {
-        jQuery.ajax({
-          url: AJS.params.baseURL + '/rest/jirachievement/1.0/configs/achievements_refresh_rate',
-          type: 'PUT',
-          data: {
-            value: ui.value*60
-          }
-        });
-      }
-    });
 
-    jQuery( "#achievements-refreshrate" ).slider('value', $action.achievementRefreshRate / 60);
-  });
-</script>
 
 </body>
 </html>

@@ -50,7 +50,7 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   @Override
   public List<Level> all(Category category)
   {
-    return Arrays.asList(ao.find(getClazz(), "CATEGORY = ?", category));
+    return Arrays.asList(ao.find(getClazz(), "CATEGORY = ? ORDER BY NUMBER ASC", category));
   }
 
   @Override

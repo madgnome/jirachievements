@@ -106,6 +106,8 @@
   <web-resource name="JQuery UI" key="jh-jquery-ui">
     <resource name="jquery-ui.js" type="download" location="/includes/js/plugins/jquery-ui-1.8.12.custom.min.js"/>
     <resource name="jquery-ui.css" type="download" location="/includes/css/plugins/redmond/jquery-ui-1.8.12.custom.css"/>
+    <resource name="jquery.flot.js" type="download" location="/includes/js/plugins/jquery.flot.min.js"/>
+    <resource name="jquery.flot.resize.js" type="download" location="/includes/js/plugins/jquery.flot.resize.min.js"/>
   </web-resource>
 
   <web-resource name="Header User Details resources" key="jh-header-user-details">

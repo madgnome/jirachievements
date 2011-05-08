@@ -1,0 +1,112 @@
+#* @vtlvariable name="action" type="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" *#
+<table class="jiraform maxWidth" style="margin-top: 10px;">
+  <tbody>
+  <tr>
+    <td class="jiraformheader" colspan="3">
+      <h3 class="formtitle">Levels Configuration</h3>
+    </td>
+  </tr>
+  <tr>
+    <td class="fieldLabelArea" style="width: 15%; background-color: transparent;">
+      Refresh rate:
+    </td>
+    <td class="fieldValueArea" style="width:40%">
+      <div class="slider-container" style="margin: 5px;">
+        <div id="statistics-refreshrate"></div>
+      </div>
+      <font size="1">
+        Determines the refresh rate of levels calculation. Level up will arrive at this rate.
+      </font>
+    </td>
+    <td style="vertical-align: top;">
+      <span id="statistics-refreshrate-value">3 hour</span>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div id="levelsConfig">
+        <table class="categories">
+          <tbody>
+            <tr>
+              <td>
+                <div class="label">User</div>
+                <span class="description">Levels for user are based on <em>created</em> issues</span>
+              </td>
+              <td>
+                <div class="label">Developer</div>
+                <span class="description">Levels for developer are based on <em>resolved</em> issues</span>
+              </td>
+              <td>
+                <div class="label">Tester</div>
+                <span class="description">Levels for tester are based on <em>tested/closed</em> issues</span>
+              </td>
+            </tr>
+            <tr>
+              <td><div id="user_placeholder" class="chart"></div></td>
+              <td><div id="developer_placeholder" class="chart"></div></td>
+              <td><div id="tester_placeholder" class="chart"></div></td>
+            </tr>
+            <tr>
+              <td><a>Configure</a></td>
+              <td><a>Configure</a></td>
+              <td><a>Configure</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  jQuery( "#statistics-refreshrate" ).slider({
+    min: 0.25,
+    max: 24,
+    value: $action.statisticsRefreshRate / 60,
+    step: 0.25,
+    change: function( event, ui ) {
+      jQuery("#statistics-refreshrate-value").html(ui.value + ' hour(s)');
+    },
+    slide: function( event, ui ) {
+      jQuery("#statistics-refreshrate-value").html(ui.value + ' hour(s)');
+    },
+    stop: function(event, ui) {
+      jQuery.ajax({
+        url: AJS.params.baseURL + '/rest/jirachievement/1.0/configs/statistics_refresh_rate',
+        type: 'PUT',
+        data: {
+          value: ui.value*60
+        }
+      });
+    }
+  });
+
+  jQuery( "#statistics-refreshrate" ).slider('value', $action.statisticsRefreshRate / 60);
+
+#macro (chartData $category)
+  var data_$category = [[
+    #foreach ($level in $action.getLevels($category))
+      [$level.number, $level.minThreshold],
+    #end
+  ]]
+#end
+
+  #chartData("user")
+  #chartData("developer")
+  #chartData("tester")
+  var types = ["user", "developer", "tester"];
+  jQuery.each(types, function(index, type) {
+
+    jQuery.plot(jQuery("#" + type +"_placeholder"), eval("data_" + type), {
+      xaxis: {
+        ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      },
+      yaxis: {
+        min: 0,
+//        ticks: [5, 50, 200, 500, 1500, 5000, 10000, 30000, 50000, 100000],
+      }
+    });
+
+  });
+</script>

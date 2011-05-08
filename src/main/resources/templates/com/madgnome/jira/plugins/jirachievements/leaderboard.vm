@@ -75,12 +75,12 @@
       </div>
 
       <div class="mod-content">
-        <table style="width: 100%; text-align: center">
+        <table style="width: 100%; text-align: center" class="categories">
           <tbody>
-            <tr style="font-weight: bold;">
-              <td>User</td>
-              <td>Developer</td>
-              <td>Tester</td>
+            <tr>
+              <td class="label">User</td>
+              <td class="label">Developer</td>
+              <td class="label">Tester</td>
             </tr>
             <tr>
               <td><img src="#largeAvatarUrl($createdIssueLB)"/></td>
