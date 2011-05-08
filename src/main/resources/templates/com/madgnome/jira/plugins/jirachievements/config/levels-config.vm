@@ -1,5 +1,5 @@
 #* @vtlvariable name="action" type="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" *#
-<table class="jiraform maxWidth" style="margin-top: 10px;">
+<table class="jiraform maxWidth" style="margin-top: 15px;">
   <tbody>
   <tr>
     <td class="jiraformheader" colspan="3">
