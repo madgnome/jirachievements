@@ -136,7 +136,7 @@
             </pluginArtifact>
             <pluginArtifact>
               <groupId>com.atlassian.activeobjects</groupId>
-              <artifactId>activeobjects-jira-spi</artifactId>
+              <artifactId>activeobjects-jira43-spi</artifactId>
               <version>${ao.version}</version>
             </pluginArtifact>
           </pluginArtifacts>
@@ -156,7 +156,7 @@
     <amps.version>3.3</amps.version>
     <jira.version>4.3.2</jira.version>
     <jira.data.version>4.3.2</jira.data.version>
-    <ao.version>0.9.6</ao.version>
+    <ao.version>0.11</ao.version>
   </properties>
 
 </project>
