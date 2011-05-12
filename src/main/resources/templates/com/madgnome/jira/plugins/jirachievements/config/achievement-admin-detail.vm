@@ -2,7 +2,7 @@
 #set ($done = true)
 
 #set($visible = true)
-#set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}_small.png")
+#set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.imageRef}_small.png")
 
 <div id="achievement-$achievement.getID()" class="achievement-config">
   <div class="achievement-image">

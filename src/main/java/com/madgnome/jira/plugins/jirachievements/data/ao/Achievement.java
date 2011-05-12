@@ -1,8 +1,11 @@
 package com.madgnome.jira.plugins.jirachievements.data.ao;
 
+import net.java.ao.Implementation;
 import net.java.ao.ManyToMany;
 import net.java.ao.schema.Default;
+import net.java.ao.schema.Ignore;
 
+@Implementation(AchievementImpl.class)
 public interface Achievement extends ReferencableEntity
 {
   String getName();
@@ -19,6 +22,9 @@ public interface Achievement extends ReferencableEntity
 
   Difficulty getDifficulty();
   void setDifficulty(Difficulty level);
+
+  @Ignore
+  String getImageRef();
 
   @Default("false")
   boolean isHidden();

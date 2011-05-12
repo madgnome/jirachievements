@@ -11,4 +11,6 @@ public interface IUserWrapperDaoService extends IDaoService<UserWrapper>
   UserWrapper getOrCreate(User jiraUser);
   UserWrapper get(User jiraUser);
   UserWrapper get(String jiraUserName);
+
+  void activate(User jiraUser, boolean active);
 }

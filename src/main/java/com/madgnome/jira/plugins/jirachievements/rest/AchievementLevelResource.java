@@ -33,6 +33,11 @@ public class AchievementLevelResource extends AbstractBaseResource
     User user = jiraAuthenticationContext.getLoggedInUser();
     UserWrapper userWrapper = userWrapperDaoService.get(user);
 
+    if (!userWrapper.isActive())
+    {
+      return Response.ok().build();
+    }
+
     Map<Difficulty, Integer> achievementsByLevel =  userAchievementDaoService.getAchievementsByLevel(userWrapper);
 
     return Response.ok(achievementsByLevel).build();

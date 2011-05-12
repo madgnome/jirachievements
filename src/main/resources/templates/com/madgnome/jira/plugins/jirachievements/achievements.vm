@@ -38,6 +38,12 @@
 </table>
 #end
 
+<div id="kryptonite">
+  <label for="disable-for-user">Disable notifications</label>
+  <input id="disable-for-user" type="checkbox" title="Kryptonite!"
+    #if (!$userWrapper.active) checked #end/>
+</div>
+
 <div id="primary" class="column full">
   <div class="content">
     <div class="module">
@@ -125,6 +131,17 @@
     jQuery('.active-pane > .achievements-list').masonry({
       singleMode: true,
       itemSelector : '.achievement-full'
+    });
+
+    jQuery('#disable-for-user').change(function(event){
+      debugger;
+      jQuery.ajax({
+        url: AJS.params.baseURL + '/rest/jirachievement/1.0/userwrappers/activate',
+        type: 'PUT',
+        data: {
+          active: !jQuery(this).is(":checked")
+        }
+      });
     });
   });
 </script>

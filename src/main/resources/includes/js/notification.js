@@ -8,6 +8,7 @@
           position: 'center',
           corners: '30px',
           theme: 'jirachivements',
+//          sticky: true,
           life: 5000,
 //          header: this.ref,
           close: function(e,m,o)
@@ -23,15 +24,17 @@
           }
         };
 
+        var imgUrl = AJS.params.baseURL + '/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/' + this.imageRef + '_small.png';
         var content =
         '<div class="achievement-image">' +
-          '<img src="http://localhost:2990/jira/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/welcome_small.png"/>' +
+          '<img src="' + imgUrl + '"/>' +
         '</div>' +
         '<div class="achievement-content">' +
           '<h4>' + this.name + '</h4>' +
           '<span class="catchPhrase">' + this.catchPhrase + '</span>' +
-        '</div>' +
-        '<div class="achievement-level achievement-${achievement.difficulty.name().toLowerCase()}">&nbsp;</div>';
+        '</div>';
+//                +
+//        '<div class="achievement-level achievement-' + this.difficulty.toLowerCase() + '">&nbsp;</div>';
 
         $.jGrowl(content, options);
       });

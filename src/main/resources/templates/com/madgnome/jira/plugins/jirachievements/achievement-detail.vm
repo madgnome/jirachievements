@@ -8,7 +8,7 @@
 
 #set($visible = true)
 #if (!$achievement.hidden || $done)
-  #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.ref}.png")
+  #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/${achievement.imageRef}.png")
 #else
   #set($visible = false)
   #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/lock.png")

@@ -45,4 +45,15 @@ public class UserWrapperDaoService extends BaseDaoService<UserWrapper> implement
     UserWrapper[] userWrappers = ao.find(UserWrapper.class, "JIRA_USER_NAME = ?", jiraUserName);
     return userWrappers.length > 0 ? userWrappers[0] : null;
   }
+
+  @Override
+  public void activate(User jiraUser, boolean active)
+  {
+    UserWrapper userWrapper = get(jiraUser);
+    if (userWrapper != null)
+    {
+      userWrapper.setActive(active);
+      userWrapper.save();
+    }
+  }
 }

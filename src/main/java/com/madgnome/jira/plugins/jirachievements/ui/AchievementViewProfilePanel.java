@@ -91,6 +91,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     UserWrapper userWrapper = userWrapperDaoService.get(user);
     Map<String, Object> params = retrieveParameters(userWrapper);
     params.put("req", req);
+    params.put("userWrapper", userWrapper);
 
     templateRenderer.render("templates/com/madgnome/jira/plugins/jirachievements/achievements.vm", params, output);
   }

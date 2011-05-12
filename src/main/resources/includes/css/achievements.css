@@ -123,3 +123,14 @@ span.level {
   font-style: italic;
   font-size: 0.98em;
 }
+
+#kryptonite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px
+}
+
+#kryptonite label {
+  font-style: italic;
+}

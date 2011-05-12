@@ -13,6 +13,7 @@ public class AchievementBean
   private int id;
   private String ref;
   private String name;
+  private String imageRef;
   private String catchPhrase;
   private String description;
   private Category category;
@@ -47,6 +48,16 @@ public class AchievementBean
   public void setName(String name)
   {
     this.name = name;
+  }
+
+  public String getImageRef()
+  {
+    return imageRef;
+  }
+
+  public void setImageRef(String imageRef)
+  {
+    this.imageRef = imageRef;
   }
 
   public String getCatchPhrase()
@@ -105,6 +116,7 @@ public class AchievementBean
     achievementBean.setId(achievement.getID());
     achievementBean.setRef(achievement.getRef());
     achievementBean.setName(achievement.getName());
+    achievementBean.setImageRef(achievement.getImageRef());
     achievementBean.setCatchPhrase(achievement.getCatchPhrase());
     achievementBean.setDescription(achievement.getDescription());
     achievementBean.setCategory(achievement.getCategory());
