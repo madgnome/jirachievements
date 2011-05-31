@@ -63,8 +63,8 @@
     "hidden": "false"
   },
   {
-    "ref": "insomniac",
-    "name": "The Insomniac",
+    "ref": "insomniac:user",
+    "name": "The Insomniac User",
     "catchPhrase": "Can't sleep?",
     "description": "Change an issue after midnight",
     "category": "USER",
@@ -72,11 +72,29 @@
     "hidden": "true"
   },
   {
-    "ref": "expresso",
+    "ref": "insomniac:developer",
+    "name": "The Insomniac Developer",
+    "catchPhrase": "Can't sleep?",
+    "description": "Change an issue after midnight",
+    "category": "DEVELOPER",
+    "difficulty": "SILVER",
+    "hidden": "true"
+  },
+  {
+    "ref": "expresso:user",
     "name": "What else?",
     "catchPhrase": "",
-    "description": "Change an issue before 6AM",
+    "description": "Create an issue before 6AM",
     "category": "USER",
+    "difficulty": "SILVER",
+    "hidden": "true"
+  },
+  {
+    "ref": "expresso:developer",
+    "name": "What else?",
+    "catchPhrase": "",
+    "description": "Resolved an issue before 6AM",
+    "category": "DEVELOPER",
     "difficulty": "SILVER",
     "hidden": "true"
   },

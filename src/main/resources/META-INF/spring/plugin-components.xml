@@ -34,7 +34,8 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
       <set>
         <ref bean="welcomeRule"/>
         <ref bean="padawanRule"/>
-        <ref bean="lostArkRaider"/>
+        <ref bean="lostArkRaiderRule"/>
+        <ref bean="insomniacExpressoRule"/>
       </set>
     </constructor-arg>
   </bean>
