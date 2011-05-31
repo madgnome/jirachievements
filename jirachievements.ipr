@@ -299,6 +299,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/target/checkout" vcs="Git" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
@@ -500,59 +501,59 @@
         <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib/2.1_3/cglib-2.1_3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-core:0.11">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-core:0.13">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.11/activeobjects-core-0.11.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.13/activeobjects-core-0.13.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.11/activeobjects-core-0.11-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.13/activeobjects-core-0.13-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.11/activeobjects-core-0.11-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.13/activeobjects-core-0.13-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.11">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.13">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.11/activeobjects-dbex-0.11.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.13/activeobjects-dbex-0.13.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.11/activeobjects-dbex-0.11-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.13/activeobjects-dbex-0.13-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.11/activeobjects-dbex-0.11-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.13/activeobjects-dbex-0.13-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.11">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.13">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.11/activeobjects-plugin-0.11.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.13/activeobjects-plugin-0.13.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.11/activeobjects-plugin-0.11-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.13/activeobjects-plugin-0.13-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.11/activeobjects-plugin-0.11-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.13/activeobjects-plugin-0.13-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.11">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.13">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.11/activeobjects-spi-0.11.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.13/activeobjects-spi-0.13.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.11/activeobjects-spi-0.11-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.13/activeobjects-spi-0.13-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.11/activeobjects-spi-0.11-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.13/activeobjects-spi-0.13-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-test:0.11">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-test:0.13">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.11/activeobjects-test-0.11.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.13/activeobjects-test-0.13.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.11/activeobjects-test-0.11-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.13/activeobjects-test-0.13-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.11/activeobjects-test-0.11-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.13/activeobjects-test-0.13-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.applinks:applinks-api:3.3">
@@ -2571,26 +2572,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/nekohtml/nekohtml/0.8.1/nekohtml-0.8.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m20">
+    <library name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m22">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m20/activeobjects-test-0.9-m20.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m22/activeobjects-test-0.9-m22.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m20/activeobjects-test-0.9-m20-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m22/activeobjects-test-0.9-m22-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m20/activeobjects-test-0.9-m20-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m22/activeobjects-test-0.9-m22-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m20">
+    <library name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m22">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m20/activeobjects-0.9-m20.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m22/activeobjects-0.9-m22.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m20/activeobjects-0.9-m20-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m22/activeobjects-0.9-m22-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m20/activeobjects-0.9-m20-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m22/activeobjects-0.9-m22-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: net.java.dev.stax-utils:stax-utils:20060502">
