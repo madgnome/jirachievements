@@ -1,10 +1,12 @@
 package com.madgnome.jira.plugins.jirachievements.data.ao;
 
 import net.java.ao.Entity;
+import net.java.ao.Preload;
 import net.java.ao.schema.Default;
 
 import java.util.Date;
 
+@Preload("NOTIFIED")
 public interface UserAchievement extends Entity
 {
   UserWrapper getUserWrapper();

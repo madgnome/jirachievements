@@ -2,10 +2,12 @@ package com.madgnome.jira.plugins.jirachievements.data.ao;
 
 import net.java.ao.Implementation;
 import net.java.ao.ManyToMany;
+import net.java.ao.Preload;
 import net.java.ao.schema.Default;
 import net.java.ao.schema.Ignore;
 
 @Implementation(AchievementImpl.class)
+@Preload
 public interface Achievement extends ReferencableEntity
 {
   String getName();
