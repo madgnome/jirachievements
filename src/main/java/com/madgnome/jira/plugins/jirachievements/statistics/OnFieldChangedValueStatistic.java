@@ -7,9 +7,10 @@ import com.atlassian.jira.issue.search.SearchException;
 import com.atlassian.jira.jql.parser.JqlParseException;
 import com.atlassian.jira.project.Project;
 import com.atlassian.jira.user.util.UserUtil;
-import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
+import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import org.slf4j.Logger;
@@ -23,37 +24,34 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
 {
   private final static Logger logger = LoggerFactory.getLogger(OnFieldChangedValueStatistic.class);
 
-  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, IUserStatisticDaoService userStatisticDaoService, IProjectStatisticDaoService projectStatisticDaoService)
+  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, StatisticManager statisticManager)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, userWrapperDaoService, userStatisticDaoService, projectStatisticDaoService);
+    super(issueSearcher, userUtil, changeHistoryManager, userWrapperDaoService, statisticManager);
   }
 
   public void calculate() throws SearchException, JqlParseException
   {
     TObjectIntHashMap<String> resolvedByUser = new TObjectIntHashMap<String>();
     Map<String, TObjectIntHashMap<String>> resolvedByUserByProject = new HashMap<String, TObjectIntHashMap<String>>();
+    Map<ProjectComponentKey, TObjectIntHashMap<String>> resolvedByUserByComponent = new HashMap<ProjectComponentKey, TObjectIntHashMap<String>>();
+    Map<ProjectVersionKey, TObjectIntHashMap<String>> resolvedByUserByVersion = new HashMap<ProjectVersionKey, TObjectIntHashMap<String>>();
 
     List<Issue> matchingIssues = searchIssuesMatchingQuery();
     for (Issue issue : matchingIssues)
     {
-      Project project = issue.getProjectObject();
-      TObjectIntHashMap<String> resolvedByUserForProject = resolvedByUserByProject.get(project.getKey());
-      if (resolvedByUserForProject == null)
-      {
-        resolvedByUserForProject = new TObjectIntHashMap<String>();
-        resolvedByUserByProject.put(project.getKey(), resolvedByUserForProject);
-      }
-
       List<ChangeHistoryItem> changeHistoryItems = changeHistoryManager.getAllChangeItems(issue);
       for (ChangeHistoryItem changeHistoryItem : changeHistoryItems)
       {
         if (changeHistoryItem.getField().equals(getFieldName()) &&
             changeHistoryItem.getTo().equals(getFieldValue()))
         {
+          Project project = issue.getProjectObject();
           String user = changeHistoryItem.getUser();
-          resolvedByUser.adjustOrPutValue(user, 1, 1);
-          resolvedByUserForProject.adjustOrPutValue(user, 1, 1);
 
+          updateUserStatistic(resolvedByUser, user);
+          updateProjectStatistic(resolvedByUserByProject, project, user);
+          updateComponentsStatistic(resolvedByUserByComponent, project, project.getProjectComponents(), user);
+          updateVersionsStatistic(resolvedByUserByVersion, project, issue.getAffectedVersions(), user);
           break;
         }
       }
@@ -61,6 +59,8 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
 
     saveStatisticsByUser(resolvedByUser);
     saveStatisticsByProject(resolvedByUserByProject);
+    saveStatisticsByComponent(resolvedByUserByComponent);
+    saveStatisticsByVersion(resolvedByUserByVersion);
   }
 
   protected abstract String getFieldValue();

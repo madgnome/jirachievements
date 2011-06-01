@@ -45,7 +45,7 @@ public class InsomniacExpressoRule extends AbstractRule implements IRule
   {
     List<Issue> issues = issueSearcher.searchIssues("status WAS IN (Open, Resolved, Closed)");
 
-    for (Issue issue : issues)
+    for (Issue issue : issues) 
     {
       checkTime(issue.getCreated(), issue.getReporterUser().getName(), AchievementRefEnum.INSOMNIAC_USER);
       checkTime(issue.getCreated(), issue.getReporterUser().getName(), AchievementRefEnum.EXPRESSO_USER);

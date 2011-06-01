@@ -8,7 +8,7 @@ public enum AchievementRefEnum
   PADAWAN_TESTER("padawan:tester"),
   LOST_ARK_RAIDER("lostark-raider"),
   ISSUE_SNATCHER("issue-snatcher"),
-  INSOMNIAC_USER("insomnia:user"),
+  INSOMNIAC_USER("insomniac:user"),
   INSOMNIAC_DEVELOPER("insomniac:developer"),
   INSOMNIAC_TESTER("insomniac:tester"),
   EXPRESSO_USER("expresso:user"),

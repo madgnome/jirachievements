@@ -18,7 +18,6 @@ import java.util.Map;
 public class LeaderBoardProjectTabPanel extends AbstractProjectTabPanel
 {
   private final IProjectStatisticDaoService projectStatisticDaoService;
-
   private final AvatarService avatarService;
 
   public LeaderBoardProjectTabPanel(IProjectStatisticDaoService projectStatisticDaoService, AvatarService avatarService)

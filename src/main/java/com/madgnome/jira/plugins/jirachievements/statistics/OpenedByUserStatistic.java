@@ -7,9 +7,10 @@ import com.atlassian.jira.jql.parser.JqlParseException;
 import com.atlassian.jira.project.Project;
 import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
-import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
+import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 
@@ -20,9 +21,9 @@ import java.util.Map;
 public class OpenedByUserStatistic extends AbstractStatisticCalculator
 {
 
-  public OpenedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, IUserStatisticDaoService userStatisticDaoService, IProjectStatisticDaoService projectStatisticDaoService)
+  public OpenedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, StatisticManager statisticManager)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, userWrapperDaoService, userStatisticDaoService, projectStatisticDaoService);
+    super(issueSearcher, userUtil, changeHistoryManager, userWrapperDaoService, statisticManager);
   }
 
   @Override
@@ -36,29 +37,30 @@ public class OpenedByUserStatistic extends AbstractStatisticCalculator
   {
     TObjectIntHashMap<String> resolvedByUser = new TObjectIntHashMap<String>();
     Map<String, TObjectIntHashMap<String>> resolvedByUserByProject = new HashMap<String, TObjectIntHashMap<String>>();
+    Map<ProjectComponentKey, TObjectIntHashMap<String>> resolvedByUserByComponent = new HashMap<ProjectComponentKey, TObjectIntHashMap<String>>();
+    Map<ProjectVersionKey, TObjectIntHashMap<String>> resolvedByUserByVersion = new HashMap<ProjectVersionKey, TObjectIntHashMap<String>>();
 
     List<Issue> matchingIssues = searchIssuesMatchingQuery();
     for (Issue issue : matchingIssues)
     {
       Project project = issue.getProjectObject();
-      TObjectIntHashMap<String> resolvedByUserForProject = resolvedByUserByProject.get(project.getKey());
-      if (resolvedByUserForProject == null)
-      {
-        resolvedByUserForProject = new TObjectIntHashMap<String>();
-        resolvedByUserByProject.put(project.getKey(), resolvedByUserForProject);
-      }
-
       String user = issue.getReporterUser().getName();
-      resolvedByUser.adjustOrPutValue(user, 1, 1);
-      resolvedByUserForProject.adjustOrPutValue(user, 1, 1);
+
+      updateUserStatistic(resolvedByUser, user);
+      updateProjectStatistic(resolvedByUserByProject, project, user);
+      updateComponentsStatistic(resolvedByUserByComponent, project, issue.getComponentObjects(), user);
+      updateVersionsStatistic(resolvedByUserByVersion, project, issue.getAffectedVersions(), user);
     }
 
     saveStatisticsByUser(resolvedByUser);
     saveStatisticsByProject(resolvedByUserByProject);
+    saveStatisticsByComponent(resolvedByUserByComponent);
+    saveStatisticsByVersion(resolvedByUserByVersion);
   }
 
   private List<Issue> searchIssuesMatchingQuery() throws JqlParseException, SearchException
   {
     return issueSearcher.searchIssues("");
   }
+
 }

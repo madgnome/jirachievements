@@ -5,12 +5,15 @@
     <vendor name="${project.organization.name}" url="${project.organization.url}"/>
   </plugin-info>
 
+  <!-- Active objects declaration -->
   <ao key="ao-module">
     <description>The module configuring the Active Objects service used by this plugin</description>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Achievement</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Config</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.Level</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.ComponentStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.VersionStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic</entity>
@@ -18,6 +21,7 @@
     <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v1.InitDatabaseTask</upgradeTask>
   </ao>
 
+  <!-- Components Import -->
   <component-import key="userUtil" interface="com.atlassian.jira.user.util.UserUtil"/>
   <component-import key="userManager" interface="com.atlassian.sal.api.user.UserManager"/>
   <component-import key="webResourceManager" interface="com.atlassian.plugin.webresource.WebResourceManager" />
@@ -29,59 +33,67 @@
 
   <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
+  <!-- Components -->
   <component key="tx-processor" name="Transactional Annotation Processor"
              class="com.atlassian.activeobjects.external.TransactionalAnnotationProcessor">
     <decription>Processes @Transactional annotations.</decription>
   </component>
 
+  <component key="issueSearcher" class="com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher"/>
+
+  <!-- Components : Listeners -->
   <component key="issueListener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
   <component key="oldEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
   <component key="eventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
 
+  <!-- Components : Initializers -->
   <component key="achievementsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
   <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
   <component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>
   <component key="configsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ConfigsInitializer"/>
 
+  <!-- Components : Managers -->
   <component key="pluginComponentManager" class="com.madgnome.jira.plugins.jirachievements.utils.PluginComponentManager"/>
+  <component key="statisticManager" class="com.madgnome.jira.plugins.jirachievements.services.StatisticManager"/>
 
-  <component key="achievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService</inteface>
-  </component>
+  <!-- Components : DAO -->
+  <component key="achievementDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.AchievementDaoService"/>
 
-  <component key="configDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ConfigDaoService"
-             interface="com.madgnome.jira.plugins.jirachievements.data.services.IConfigDaoService"/>
+  <component key="configDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IConfigDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ConfigDaoService"/>
 
   <component key="levelDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.LevelDaoService"
-            interface="com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService"/>
+             interface="com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService"/>
 
-  <component key="issueSearcher" class="com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher"/>
+  <component key="projectStatisticDaoService" inteface="com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectStatisticDaoService"/>
 
-  <component key="projectStatisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectStatisticDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService</inteface>
-  </component>
+  <component key="projectComponentStatisticDaoService" inteface="com.madgnome.jira.plugins.jirachievements.data.services.IProjectComponentStatisticDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectComponentStatisticDaoService"/>
 
-  <component key="statisticRefDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.StatisticRefDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService</inteface>
-  </component>
+  <component key="projectVersionDaoService" inteface="com.madgnome.jira.plugins.jirachievements.data.services.IProjectVersionStatisticDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.ProjectVersionStatisticDaoService"/>
 
-  <component key="userAchievementDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserAchievementDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService</inteface>
-  </component>
+  <component key="statisticRefDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.StatisticRefDaoService"/>
 
-  <component key="userStatisticDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserStatisticDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService</inteface>
-  </component>
+  <component key="userAchievementDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserAchievementDaoService"/>
 
-  <component key="userWrapperDaoService" class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserWrapperDaoService">
-    <inteface>com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService</inteface>
-  </component>
+  <component key="userStatisticDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserStatisticDaoService"/>
 
+  <component key="userWrapperDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserWrapperDaoService"/>
+
+  <!-- Components : Statistics -->
   <component key="openedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.OpenedByUserStatistic"/>
   <component key="resolvedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ResolvedByUserStatistic"/>
   <component key="closedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ClosedByUserStatistic"/>
 
+  <!-- Resources -->
   <resource type="download" name="images/" location="includes/images/"/>
   <resource type="download" name="css/" location="includes/css/"/>
   <resource type="download" name="js/" location="includes/js/"/>
@@ -134,7 +146,7 @@
     <link>/secure/ViewProfile.jspa#selectedTab=com.madgnome.jira.plugins.jirachievements:achievements-profile</link>
   </web-item>
 
-  <!-- Leadeboard Project tab panel -->
+  <!-- Leaderboard tab panel -->
   <project-tabpanel key="project-leaderboard-panel" name="Project Leaderboard Panel"
                     class="com.madgnome.jira.plugins.jirachievements.ui.LeaderBoardProjectTabPanel">
     <label>LeaderBoard</label>
@@ -142,7 +154,21 @@
     <resource type="velocity" name="view" location="/templates/com/madgnome/jira/plugins/jirachievements/leaderboard.vm" />
   </project-tabpanel>
 
+  <component-tabpanel key="component-leaderboard-panel" name="Component Leaderboard Panel"
+                      class="com.madgnome.jira.plugins.jirachievements.ui.LeaderBoardComponentTabPanel">
+    <label>LeaderBoard</label>
+    <order>80</order>
+    <resource type="velocity" name="view" location="/templates/com/madgnome/jira/plugins/jirachievements/leaderboard.vm" />
+  </component-tabpanel>
 
+  <version-tabpanel key="version-leaderboard-panel" name="Component Leaderboard Panel"
+                      class="com.madgnome.jira.plugins.jirachievements.ui.LeaderBoardVersionTabPanel">
+    <label>LeaderBoard</label>
+    <order>80</order>
+    <resource type="velocity" name="view" location="/templates/com/madgnome/jira/plugins/jirachievements/leaderboard.vm" />
+  </version-tabpanel>
+
+  <!-- REST -->
   <rest key="rest-service-resources" path="/jirachievement" version="1.0">
     <description>Provides the REST resources for JIRAchievement plugin.</description>
   </rest>
