@@ -1,5 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.rules;
 
+import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.issue.Issue;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryItem;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
@@ -47,8 +48,15 @@ public class InsomniacExpressoRule extends AbstractRule implements IRule
 
     for (Issue issue : issues) 
     {
-      checkTime(issue.getCreated(), issue.getReporterUser().getName(), AchievementRefEnum.INSOMNIAC_USER);
-      checkTime(issue.getCreated(), issue.getReporterUser().getName(), AchievementRefEnum.EXPRESSO_USER);
+      User reporterUser = issue.getReporterUser();
+      if (reporterUser == null)
+      {
+        continue;
+      }
+
+      String username = reporterUser.getName();
+      checkTime(issue.getCreated(), username, AchievementRefEnum.INSOMNIAC_USER);
+      checkTime(issue.getCreated(), username, AchievementRefEnum.EXPRESSO_USER);
       checkTime(issue.getResolutionDate(), getResolverName(issue), AchievementRefEnum.INSOMNIAC_DEVELOPER);
       checkTime(issue.getResolutionDate(), getResolverName(issue), AchievementRefEnum.EXPRESSO_DEVELOPER);
     }
