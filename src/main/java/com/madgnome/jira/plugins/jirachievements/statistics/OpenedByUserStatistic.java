@@ -1,5 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.statistics;
 
+import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.issue.Issue;
 import com.atlassian.jira.issue.changehistory.ChangeHistoryManager;
 import com.atlassian.jira.issue.search.SearchException;
@@ -44,8 +45,13 @@ public class OpenedByUserStatistic extends AbstractStatisticCalculator
     for (Issue issue : matchingIssues)
     {
       Project project = issue.getProjectObject();
-      String user = issue.getReporterUser().getName();
-
+      User reporterUser = issue.getReporterUser();
+      if (reporterUser == null)
+      {
+        continue;
+      }
+      
+      String user = reporterUser.getName();
       updateUserStatistic(resolvedByUser, user);
       updateProjectStatistic(resolvedByUserByProject, project, user);
       updateComponentsStatistic(resolvedByUserByComponent, project, issue.getComponentObjects(), user);

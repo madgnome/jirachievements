@@ -129,7 +129,6 @@
   <component name="CopyrightManager" default="">
     <module2copyright />
   </component>
-  <component name="DataSourceManagerImpl" compressed="false" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -138,6 +137,22 @@
     <entry_points version="2.0" />
   </component>
   <component name="IdProvider" IDEtalkID="487B2578C488F9CA80765565457F4F33" />
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+        <inspection_tool class="SpellCheckingInspection" enabled="true" level="TYPO" enabled_by_default="true">
+          <option name="processCode" value="false" />
+          <option name="processLiterals" value="false" />
+          <option name="processComments" value="true" />
+        </inspection_tool>
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
+  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.6" />
   </component>
