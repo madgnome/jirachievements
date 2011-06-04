@@ -99,7 +99,7 @@
   <resource type="download" name="js/" location="includes/js/"/>
 
   <web-resource name="Notifications resources" key="ja-notification">
-    <resource name="jquery.jgrowl_minimized.js" type="download" location="includes/js/plugins/jquery.jgrowl_minimized.js"/>
+    <resource name="jquery.jgrowl_minimized.js" type="download" location="includes/js/plugins/jquery.jgrowl.js"/>
     <resource name="jquery.corner.js" type="download" location="includes/js/plugins/jquery.corner.js"/>
     <resource name="notification.js" type="download" location="includes/js/notification.js"/>
     <resource name="jquery.cookie.js" type="download" location="/includes/js/plugins/jquery.cookie.js"/>
@@ -118,8 +118,8 @@
   <web-resource name="JQuery UI" key="jh-jquery-ui">
     <resource name="jquery-ui.js" type="download" location="/includes/js/plugins/jquery-ui-1.8.12.custom.min.js"/>
     <resource name="jquery-ui.css" type="download" location="/includes/css/plugins/redmond/jquery-ui-1.8.12.custom.css"/>
-    <resource name="jquery.flot.js" type="download" location="/includes/js/plugins/jquery.flot.min.js"/>
-    <resource name="jquery.flot.resize.js" type="download" location="/includes/js/plugins/jquery.flot.resize.min.js"/>
+    <resource name="jquery.flot.js" type="download" location="/includes/js/plugins/jquery.flot.js"/>
+    <resource name="jquery.flot.resize.js" type="download" location="/includes/js/plugins/jquery.flot.resize.js"/>
   </web-resource>
 
   <web-resource name="Header User Details resources" key="jh-header-user-details">

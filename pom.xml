@@ -154,8 +154,8 @@
 
   <properties>
     <amps.version>3.3</amps.version>
-    <jira.version>4.3.2</jira.version>
-    <jira.data.version>4.3.2</jira.data.version>
+    <jira.version>4.3.4</jira.version>
+    <jira.data.version>4.3.4</jira.data.version>
     <ao.version>0.13</ao.version>
   </properties>
 
