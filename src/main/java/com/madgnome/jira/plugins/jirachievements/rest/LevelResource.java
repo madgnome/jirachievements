@@ -6,6 +6,8 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Level;
 import com.madgnome.jira.plugins.jirachievements.data.bean.LevelBean;
 import com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -21,9 +23,9 @@ public class LevelResource extends AbstractBaseResource
 {
   private final ILevelDaoService levelDaoService;
 
-  public LevelResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, ILevelDaoService levelDaoService)
+  public LevelResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, ILevelDaoService levelDaoService)
   {
-    super(jiraAuthenticationContext, permissionManager);
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.levelDaoService = levelDaoService;
   }
 

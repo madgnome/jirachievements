@@ -56,6 +56,8 @@
   <!-- Components : Managers -->
   <component key="pluginComponentManager" class="com.madgnome.jira.plugins.jirachievements.utils.PluginComponentManager"/>
   <component key="statisticManager" class="com.madgnome.jira.plugins.jirachievements.services.StatisticManager"/>
+  <component key="userManager" class="com.madgnome.jira.plugins.jirachievements.services.UserManager"/>
+  <component key="achievementManager" class="com.madgnome.jira.plugins.jirachievements.services.AchievementManager"/>
 
   <!-- Components : DAO -->
   <component key="achievementDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService"

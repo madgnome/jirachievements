@@ -3,6 +3,8 @@ package com.madgnome.jira.plugins.jirachievements.rest;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.madgnome.jira.plugins.jirachievements.rules.RulesChecker;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,9 +15,9 @@ public class RuleResource extends AbstractBaseResource
 {
   private final RulesChecker rulesChecker;
 
-  public RuleResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, RulesChecker rulesChecker)
+  public RuleResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, RulesChecker rulesChecker)
   {
-    super(jiraAuthenticationContext, permissionManager);
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.rulesChecker = rulesChecker;
   }
 

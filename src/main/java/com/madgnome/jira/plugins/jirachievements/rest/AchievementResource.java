@@ -5,12 +5,10 @@ import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.atlassian.jira.security.Permissions;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
-import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.bean.AchievementBean;
-import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -21,24 +19,16 @@ import java.util.List;
 @Path("/achievements")
 public class AchievementResource extends AbstractBaseResource
 {
-  private final IUserWrapperDaoService userWrapperDaoService;
-  private final IUserAchievementDaoService userAchievementDaoService;
-  private final IAchievementDaoService achievementDaoService;
-
-  public AchievementResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, IUserWrapperDaoService userWrapperDaoService, IUserAchievementDaoService userAchievementDaoService, IAchievementDaoService achievementDaoService)
+  public AchievementResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager)
   {
-    super(jiraAuthenticationContext, permissionManager);
-    this.userWrapperDaoService = userWrapperDaoService;
-    this.userAchievementDaoService = userAchievementDaoService;
-    this.achievementDaoService = achievementDaoService;
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
   }
 
   @GET
   @Produces({MediaType.APPLICATION_JSON})
   public Response getUserAchievements()
   {
-    User user = jiraAuthenticationContext.getLoggedInUser();
-    UserWrapper userWrapper = userWrapperDaoService.get(user);
+    UserWrapper userWrapper = userManager.getCurrentUserWrapper();
 
     List<AchievementBean> achievements = new ArrayList<AchievementBean>();
 
@@ -57,13 +47,9 @@ public class AchievementResource extends AbstractBaseResource
   public Response updateUserAchievementStatus(@PathParam("id") int achievementId,
                                               @FormParam("notified") boolean notified)
   {
-    User user = jiraAuthenticationContext.getLoggedInUser();
-    UserWrapper userWrapper = userWrapperDaoService.get(user);
+    UserWrapper userWrapper = userManager.getCurrentUserWrapper();
 
-    // TODO put in a transaction using a method in userAchievementDaoService
-    UserAchievement userAchievement = userAchievementDaoService.get(achievementId, userWrapper.getID());
-    userAchievement.setNotified(notified);
-    userAchievement.save();
+    achievementManager.updateNotification(achievementId, userWrapper, notified);
 
     return Response.ok().build();
   }
@@ -79,7 +65,7 @@ public class AchievementResource extends AbstractBaseResource
       return Response.serverError().status(Response.Status.FORBIDDEN).build();
     }
 
-    achievementDaoService.activate(achievementId, active);
+    achievementManager.activate(achievementId, active);
     return Response.ok().build();
   }
 }

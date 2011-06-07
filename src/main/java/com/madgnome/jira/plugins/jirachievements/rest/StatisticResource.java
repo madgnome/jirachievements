@@ -4,6 +4,8 @@ import com.atlassian.jira.issue.search.SearchException;
 import com.atlassian.jira.jql.parser.JqlParseException;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 import com.madgnome.jira.plugins.jirachievements.statistics.IStatisticsCalculator;
 
 import javax.ws.rs.GET;
@@ -15,9 +17,9 @@ public class StatisticResource extends AbstractBaseResource
 {
   private final IStatisticsCalculator statisticsCalculator;
 
-  public StatisticResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, IStatisticsCalculator statisticsCalculator)
+  public StatisticResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, IStatisticsCalculator statisticsCalculator)
   {
-    super(jiraAuthenticationContext, permissionManager);
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.statisticsCalculator = statisticsCalculator;
   }
 

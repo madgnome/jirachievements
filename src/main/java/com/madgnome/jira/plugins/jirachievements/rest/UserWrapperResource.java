@@ -4,6 +4,8 @@ import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.PUT;
@@ -15,9 +17,9 @@ public class UserWrapperResource extends AbstractBaseResource
 {
   private final IUserWrapperDaoService userWrapperDaoService;
 
-  public UserWrapperResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, IUserWrapperDaoService userWrapperDaoService)
+  public UserWrapperResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, IUserWrapperDaoService userWrapperDaoService)
   {
-    super(jiraAuthenticationContext, permissionManager);
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.userWrapperDaoService = userWrapperDaoService;
   }
 

@@ -5,6 +5,8 @@ import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.atlassian.jira.security.Permissions;
 import com.madgnome.jira.plugins.jirachievements.data.services.IConfigDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.PUT;
@@ -17,9 +19,9 @@ public class ConfigResource extends AbstractBaseResource
 {
   private final IConfigDaoService configDaoService;
 
-  public ConfigResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, IConfigDaoService configDaoService)
+  public ConfigResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, IConfigDaoService configDaoService)
   {
-    super(jiraAuthenticationContext, permissionManager);
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.configDaoService = configDaoService;
   }
 

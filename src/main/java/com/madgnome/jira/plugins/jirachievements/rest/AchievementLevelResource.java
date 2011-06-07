@@ -1,12 +1,12 @@
 package com.madgnome.jira.plugins.jirachievements.rest;
 
-import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Difficulty;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,22 +16,19 @@ import java.util.Map;
 @Path("/achievementlevels")
 public class AchievementLevelResource extends AbstractBaseResource
 {
-  private final IUserWrapperDaoService userWrapperDaoService;
   private final IUserAchievementDaoService userAchievementDaoService;
 
-  public AchievementLevelResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, IUserAchievementDaoService userAchievementDaoService, IUserWrapperDaoService userWrapperDaoService)
+  public AchievementLevelResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, IUserAchievementDaoService userAchievementDaoService)
   {
-    super(jiraAuthenticationContext, permissionManager);
+    super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.userAchievementDaoService = userAchievementDaoService;
-    this.userWrapperDaoService = userWrapperDaoService;
   }
 
   @GET
   @Path("/count")
   public Response getUserAchievementsCountByLevel()
   {
-    User user = jiraAuthenticationContext.getLoggedInUser();
-    UserWrapper userWrapper = userWrapperDaoService.get(user);
+    UserWrapper userWrapper = userManager.getCurrentUserWrapper();
 
     if (!userWrapper.isActive())
     {
