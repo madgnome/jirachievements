@@ -3,8 +3,8 @@ JIRA Hero plugin for JIRA
 
 To install:
 
- 	1. Download and install active-objects plugin as explained here :
- 	   https://studio.atlassian.com/wiki/display/AO/Installing+Active+Objects
+  1. Download and install active-objects plugin as explained here :
+ 	   https://studio.plugins.atlassian.com/wiki/display/JHERO/Install+the+plugin
   2. Download JIRA Hero from the Universal Plugin Manager
   3. Restart JIRA
   4. Enjoy!
