@@ -4,7 +4,6 @@ import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.crowd.embedded.impl.ImmutableUser;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
-import net.java.ao.sql.ActiveObjectSqlException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,15 +35,17 @@ public class UserWrapperDaoServiceTest extends AbstractServiceTest
     assertEquals(name, newUserWrapper.getJiraUserName());
   }
 
-  @Test(expected = ActiveObjectSqlException.class)
+  @Test
   public void shouldNotCreateTwoUserWrapperWithSameName()
   {
     String name = "bob";
     User user = new ImmutableUser(0, name, "Sponge Bob", null, true);
-    userWrapperDaoService.create(user);
+    UserWrapper firstUserWrapper = userWrapperDaoService.create(user);
     entityManager.flushAll();
     
-    userWrapperDaoService.create(user);
+    UserWrapper secondUserWrapper = userWrapperDaoService.create(user);
+    entityManager.flushAll();
+    assertEquals(firstUserWrapper.getID(), secondUserWrapper.getID());
   }
 
   @Test

@@ -4,6 +4,7 @@ import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
+import com.madgnome.jira.plugins.jirachievements.data.services.Action;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,8 +36,14 @@ public class UserManager
     if (userWrapper == null)
     {
       logger.info("Create userWrapper for user <{}>", username);
-      userWrapper = userWrapperDaoService.getOrCreate(username);
-      addFirstAchievements(userWrapper);
+      userWrapper = userWrapperDaoService.getOrCreate(username, new Action<UserWrapper>()
+      {
+        @Override
+        public void execute(UserWrapper userWrapper)
+        {
+          addFirstAchievements(userWrapper);
+        }
+      });
     }
 
     return userWrapper;

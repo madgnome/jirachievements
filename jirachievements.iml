@@ -13,10 +13,10 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -27,6 +27,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.mail:mail:1.4.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xerces:xercesImpl:2.9.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: xml-apis:xml-apis:1.3.04" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.ofbiz:entityengine:1.0.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jta:jta:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
@@ -38,7 +39,6 @@
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:propertyset:1.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: dom4j:dom4j:1.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: xml-apis:xml-apis:1.3.04" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: jaxen:jaxen:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: mockobjects:alt-jdk1.3:0.07" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.velocity:atlassian-velocity:0.8" level="project" />
@@ -146,6 +146,9 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.gzipfilter:atlassian-gzipfilter:1.9" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:sitemesh:2.4.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-configuration:commons-configuration:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-dbcp:commons-dbcp:1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-pool:commons-pool:1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: hsqldb:hsqldb:1.8.0.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.lucene:lucene-analyzers:2.9.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.velocity:velocity-tools:1.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-validator:commons-validator:1.3.1" level="project" />
@@ -165,9 +168,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.jhlabs:filters:2.0.235" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javacvs:javacvs:2007-04-04-patched" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: statcvs:statcvs:20060222-patched" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-dbcp:commons-dbcp:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-pool:commons-pool:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: hsqldb:hsqldb:1.8.0.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jndi:jndi:1.2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: ots-jts:ots-jts:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jotm:jotm:1.4.3" level="project" />
@@ -180,6 +180,8 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: xapool:xapool:1.3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: saxon:saxon-noaelfred:6.5.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-discovery:commons-discovery:0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jexl:commons-jexl:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-junit:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-util:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-email:1.0" level="project" />
@@ -188,13 +190,11 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-soap:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-sql:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-regexp:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jexl:commons-jexl:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.trackback:atlassian-trackback:0.11" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xmlrpc:xmlrpc:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: axis:axis:1.3-atlassian-1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: axis:axis-jaxrpc:1.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: axis:axis-saaj:1.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-discovery:commons-discovery:0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xml-security:xmlsec:1.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: datafile:datafile:1.3.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xpp3:xpp3:1.1.3.4-RC8" level="project" />

@@ -4,7 +4,9 @@ import com.atlassian.activeobjects.external.ActiveObjects;
 import com.atlassian.crowd.embedded.api.User;
 import com.google.common.collect.ImmutableMap;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
+import com.madgnome.jira.plugins.jirachievements.data.services.Action;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import net.java.ao.ActiveObjectsException;
 
 public class UserWrapperDaoService extends BaseDaoService<UserWrapper> implements IUserWrapperDaoService
 {
@@ -25,12 +27,25 @@ public class UserWrapperDaoService extends BaseDaoService<UserWrapper> implement
     return getOrCreate(jiraUser.getName());
   }
 
-  @Override
   public UserWrapper getOrCreate(String jiraUserName)
   {
-    UserWrapper userWrapper = get(jiraUserName);
+    return getOrCreate(jiraUserName, null);
+  }
 
-    return userWrapper == null ? create(jiraUserName) : userWrapper;
+  @Override
+  public UserWrapper getOrCreate(String jiraUserName, Action<UserWrapper> postCreateAction)
+  {
+    UserWrapper userWrapper = get(jiraUserName);
+    if (userWrapper == null)
+    {
+      userWrapper = create(jiraUserName);
+      if (postCreateAction != null)
+      {
+        postCreateAction.execute(userWrapper);
+      }
+    }
+
+    return userWrapper;
   }
 
   @Override
@@ -42,7 +57,16 @@ public class UserWrapperDaoService extends BaseDaoService<UserWrapper> implement
   @Override
   public UserWrapper create(String jiraUserName)
   {
-    return ao.create(UserWrapper.class, ImmutableMap.<String, Object>of("JIRA_USER_NAME", jiraUserName));
+    try
+    {
+      return ao.create(UserWrapper.class, ImmutableMap.<String, Object>of("JIRA_USER_NAME", jiraUserName));
+    }
+    catch (ActiveObjectsException e)
+    {
+      logger.debug("Try to create an existing userWrapper", e);
+    }
+
+    return get(jiraUserName);
   }
 
   @Override

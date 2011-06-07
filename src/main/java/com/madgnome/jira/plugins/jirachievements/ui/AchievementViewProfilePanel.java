@@ -4,13 +4,12 @@ import com.atlassian.jira.plugin.profile.OptionalUserProfilePanel;
 import com.atlassian.jira.plugin.profile.ViewProfilePanel;
 import com.atlassian.jira.plugin.profile.ViewProfilePanelModuleDescriptor;
 import com.atlassian.plugin.webresource.WebResourceManager;
-import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.templaterenderer.TemplateRenderer;
 import com.madgnome.jira.plugins.jirachievements.data.ao.*;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 import com.opensymphony.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,23 +28,29 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
   private static final Logger logger = LoggerFactory.getLogger(AchievementViewProfilePanel.class);
 
   private final TemplateRenderer templateRenderer;
-  private final UserManager userManager;
+  private final com.atlassian.sal.api.user.UserManager jiraUserManager;
   private final WebResourceManager webResourceManager;
 
+  private final UserManager userManager;
   private final IAchievementDaoService achievementDaoService;
-  private final IUserWrapperDaoService userWrapperDaoService;
   private final ILevelDaoService levelDaoService;
   private final IUserStatisticDaoService userStatisticDaoService;
 
-  public AchievementViewProfilePanel(TemplateRenderer templateRenderer, UserManager userManager, WebResourceManager webResourceManager, IAchievementDaoService achievementDaoService, IUserWrapperDaoService userWrapperDaoService, ILevelDaoService levelDaoService, IUserStatisticDaoService userStatisticDaoService)
+  public AchievementViewProfilePanel(TemplateRenderer templateRenderer,
+                                     com.atlassian.sal.api.user.UserManager jiraUserManager,
+                                     WebResourceManager webResourceManager,
+                                     IAchievementDaoService achievementDaoService,
+                                     ILevelDaoService levelDaoService,
+                                     IUserStatisticDaoService userStatisticDaoService,
+                                     UserManager userManager)
   {
     this.templateRenderer = templateRenderer;
-    this.userManager = userManager;
+    this.jiraUserManager = jiraUserManager;
     this.webResourceManager = webResourceManager;
     this.achievementDaoService = achievementDaoService;
-    this.userWrapperDaoService = userWrapperDaoService;
     this.levelDaoService = levelDaoService;
     this.userStatisticDaoService = userStatisticDaoService;
+    this.userManager = userManager;
   }
 
   @Override
@@ -79,7 +84,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
 
   private void render(HttpServletRequest req, Writer output, User user) throws Exception
   {
-    String username = this.userManager.getRemoteUsername(req);
+    String username = this.jiraUserManager.getRemoteUsername(req);
     if (username == null)
     {
       throw new Exception("Unauthorized - must be a valid user");
@@ -88,7 +93,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     webResourceManager.requireResource("com.atlassian.auiplugin:ajs");
     webResourceManager.requireResource("com.madgnome.jira.plugins.jirachievements:jh-user-achievements-details");
 
-    UserWrapper userWrapper = userWrapperDaoService.get(user);
+    UserWrapper userWrapper = userManager.get(username);
     Map<String, Object> params = retrieveParameters(userWrapper);
     params.put("req", req);
     params.put("userWrapper", userWrapper);

@@ -10,7 +10,7 @@ public interface IUserWrapperDaoService extends IDaoService<UserWrapper>
   UserWrapper create(User jiraUser);
   UserWrapper create(String jiraUserName);
   UserWrapper getOrCreate(User jiraUser);
-  UserWrapper getOrCreate(String jiraUserName);
+  UserWrapper getOrCreate(String jiraUserName, Action<UserWrapper> action);
   UserWrapper get(User jiraUser);
   UserWrapper get(String jiraUserName);
 

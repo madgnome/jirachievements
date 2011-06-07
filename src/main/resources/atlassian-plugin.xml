@@ -23,7 +23,7 @@
 
   <!-- Components Import -->
   <component-import key="userUtil" interface="com.atlassian.jira.user.util.UserUtil"/>
-  <component-import key="userManager" interface="com.atlassian.sal.api.user.UserManager"/>
+  <component-import key="salUserManager" interface="com.atlassian.sal.api.user.UserManager"/>
   <component-import key="webResourceManager" interface="com.atlassian.plugin.webresource.WebResourceManager" />
   <component-import key="templateRenderer" interface="com.atlassian.templaterenderer.TemplateRenderer"/>
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
@@ -50,7 +50,7 @@
   <component key="achievementsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
   <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
-  <component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>
+  <!--<component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>-->
   <component key="configsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ConfigsInitializer"/>
 
   <!-- Components : Managers -->
