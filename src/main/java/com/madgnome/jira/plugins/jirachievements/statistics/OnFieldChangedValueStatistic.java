@@ -9,8 +9,8 @@ import com.atlassian.jira.project.Project;
 import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import org.slf4j.Logger;
@@ -24,9 +24,9 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
 {
   private final static Logger logger = LoggerFactory.getLogger(OnFieldChangedValueStatistic.class);
 
-  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, StatisticManager statisticManager)
+  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, userWrapperDaoService, statisticManager);
+    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager);
   }
 
   public void calculate() throws SearchException, JqlParseException

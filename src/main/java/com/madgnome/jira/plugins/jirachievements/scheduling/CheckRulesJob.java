@@ -32,8 +32,8 @@ public class CheckRulesJob implements IJob
   }
 
   @Override
-  public long getRepeatInterval()
+  public long getRepeatIntervalInSeconds()
   {
-    return 3600*1000;
+    return 3600l;
   }
 }

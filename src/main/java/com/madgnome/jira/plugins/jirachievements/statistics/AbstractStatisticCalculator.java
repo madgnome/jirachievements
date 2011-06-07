@@ -10,8 +10,8 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
-import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
+import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import gnu.trove.TObjectIntProcedure;
@@ -29,17 +29,17 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
   protected final UserUtil userUtil;
   protected final ChangeHistoryManager changeHistoryManager;
 
-  protected final IUserWrapperDaoService userWrapperDaoService;
+  protected final UserManager userManager;
 
   protected final StatisticManager statisticManager;
 
-  public AbstractStatisticCalculator(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, IUserWrapperDaoService userWrapperDaoService, StatisticManager statisticManager)
+  public AbstractStatisticCalculator(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
   {
     this.issueSearcher = issueSearcher;
     this.userUtil = userUtil;
     this.changeHistoryManager = changeHistoryManager;
-    this.userWrapperDaoService = userWrapperDaoService;
     this.statisticManager = statisticManager;
+    this.userManager = userManager;
   }
 
   protected abstract StatisticRefEnum getStatisticRef();
@@ -63,7 +63,7 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
         @Override
         public boolean execute(String userName, int count)
         {
-          UserWrapper userWrapper = userWrapperDaoService.get(userName);
+          UserWrapper userWrapper = userManager.get(userName);
           if (userWrapper != null)
           {
             statisticManager.createOrUpdateProjectStatistic(userWrapper, kvp.getKey(), getStatisticRef(), count);
@@ -86,7 +86,7 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
       @Override
       public boolean execute(String userName, int count)
       {
-        UserWrapper userWrapper = userWrapperDaoService.get(userName);
+        UserWrapper userWrapper = userManager.get(userName);
         if (userWrapper != null)
         {
           statisticManager.createOrUpdateUserStatistic(getStatisticRef(), userWrapper, count);
@@ -110,7 +110,7 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
         @Override
         public boolean execute(String userName, int count)
         {
-          UserWrapper userWrapper = userWrapperDaoService.get(userName);
+          UserWrapper userWrapper = userManager.get(userName);
           if (userWrapper != null)
           {
             ProjectComponentKey component = kvp.getKey();
@@ -136,7 +136,7 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
         @Override
         public boolean execute(String userName, int count)
         {
-          UserWrapper userWrapper = userWrapperDaoService.get(userName);
+          UserWrapper userWrapper = userManager.get(userName);
           if (userWrapper != null)
           {
             ProjectVersionKey version = kvp.getKey();

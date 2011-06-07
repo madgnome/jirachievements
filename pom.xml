@@ -128,7 +128,7 @@
         <configuration>
           <productVersion>${jira.version}</productVersion>
           <!--<productDataVersion>${jira.data.version}</productDataVersion>-->
-          <productDataPath>D:\dev\madgnome\jirachievements\base.zip</productDataPath>
+          <productDataPath>C:\scm\jirachievements\base.zip</productDataPath>
           <pluginArtifacts>
             <pluginArtifact>
               <groupId>com.atlassian.activeobjects</groupId>

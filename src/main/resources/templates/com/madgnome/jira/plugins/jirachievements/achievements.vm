@@ -134,7 +134,6 @@
     });
 
     jQuery('#disable-for-user').change(function(event){
-      debugger;
       jQuery.ajax({
         url: AJS.params.baseURL + '/rest/jirachievement/1.0/userwrappers/activate',
         type: 'PUT',

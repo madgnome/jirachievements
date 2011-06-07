@@ -67,6 +67,18 @@
   #end
 #end
 
+#if ($status == "ERROR")
+<div class="content" style="margin: 20px;">
+  <div class="aui-message error">
+    <p class="title">
+      <span class="aui-icon icon-error"></span>
+      <strong>Damned! A piece of kryponite weakens your super power...</strong>
+    </p>
+    <p>Something went wrong with JIRA Hero initialization. Check the log to see what happened.</p>
+  </div>
+</div>
+#end
+
 <div id="primary" class="column full">
   <div class="content">
     <div class="module">

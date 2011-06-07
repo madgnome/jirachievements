@@ -31,7 +31,6 @@ public class PluginWebActionSupport extends JiraWebActionSupport
 			return PERMISSION_VIOLATION_RESULT;
 		}
 
-
 		return INPUT;
   }
 

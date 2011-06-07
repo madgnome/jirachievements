@@ -25,8 +25,8 @@ public class PluginInitializer implements Startable
   @Override
   public void start() throws Exception
   {
-    initDatabase();
-    initStatisticsValues();
+//    initDatabase();
+//    initStatisticsValues();
 
     initJobs();
   }

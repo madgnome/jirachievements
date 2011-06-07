@@ -36,30 +36,28 @@ public class UserWrapperDaoService extends BaseDaoService<UserWrapper> implement
   public UserWrapper getOrCreate(String jiraUserName, Action<UserWrapper> postCreateAction)
   {
     UserWrapper userWrapper = get(jiraUserName);
-    if (userWrapper == null)
-    {
-      userWrapper = create(jiraUserName);
-      if (postCreateAction != null)
-      {
-        postCreateAction.execute(userWrapper);
-      }
-    }
 
-    return userWrapper;
+    return userWrapper == null ? create(jiraUserName, postCreateAction) : userWrapper;
   }
 
   @Override
   public UserWrapper create(User jiraUser)
   {
-    return create(jiraUser.getName());
+    return create(jiraUser.getName(), null);
   }
 
   @Override
-  public UserWrapper create(String jiraUserName)
+  public UserWrapper create(String jiraUserName, Action<UserWrapper> postCreateAction)
   {
     try
     {
-      return ao.create(UserWrapper.class, ImmutableMap.<String, Object>of("JIRA_USER_NAME", jiraUserName));
+      UserWrapper userWrapper = ao.create(UserWrapper.class, ImmutableMap.<String, Object>of("JIRA_USER_NAME", jiraUserName));
+      if (postCreateAction != null)
+      {
+        postCreateAction.execute(userWrapper);
+      }
+
+      return userWrapper;
     }
     catch (ActiveObjectsException e)
     {

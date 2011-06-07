@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class JobsScheduler
 {
+  private final static long MILLISECONDS_IN_SECOND = 1000l;
   private final PluginScheduler pluginScheduler;
   private final Set<IJob> jobs;
 
@@ -20,7 +21,8 @@ public class JobsScheduler
   {
     for (IJob job : jobs)
     {
-      pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, new Date(), job.getRepeatInterval());
+//      job.execute(null);
+      pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, new Date(), job.getRepeatIntervalInSeconds()*MILLISECONDS_IN_SECOND);
     }
   }
 }

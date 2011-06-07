@@ -40,24 +40,25 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     </constructor-arg>
   </bean>
 
-  <!--<bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer" >-->
-    <!--<constructor-arg type="java.util.List">-->
-      <!--<list>-->
+  <bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer" >
+    <constructor-arg type="java.util.List">
+      <list>
         <!--<ref bean="achievementsInitializer"/>-->
         <!--<ref bean="statisticsInitializer"/>-->
         <!--<ref bean="configsInitializer"/>-->
         <!--<ref bean="levelsInitializer"/>-->
         <!--<ref bean="userWrappersInitializer"/>-->
-      <!--</list>-->
-    <!--</constructor-arg>-->
-    <!--<constructor-arg ref="statisticsCalculator"/>-->
-    <!--<constructor-arg ref="jobScheduler"/>-->
-  <!--</bean>-->
+      </list>
+    </constructor-arg>
+    <constructor-arg ref="statisticsCalculator"/>
+    <constructor-arg ref="jobScheduler"/>
+  </bean>
 
   <bean id="jobScheduler" class="com.madgnome.jira.plugins.jirachievements.scheduling.JobsScheduler">
     <constructor-arg index="0" ref="pluginScheduler"/>
     <constructor-arg index="1">
       <set>
+        <bean class="com.madgnome.jira.plugins.jirachievements.scheduling.CalculateStatisticsJob"/>
         <bean class="com.madgnome.jira.plugins.jirachievements.scheduling.CheckRulesJob"/>
       </set>
     </constructor-arg>

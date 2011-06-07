@@ -9,6 +9,8 @@ import com.atlassian.jira.util.collect.MapBuilder;
 import com.madgnome.jira.plugins.jirachievements.data.ao.ProjectStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ import java.util.Map;
 
 public class LeaderBoardProjectTabPanel extends AbstractProjectTabPanel
 {
+  private final static Logger logger = LoggerFactory.getLogger(LeaderBoardProjectTabPanel.class);
   private final IProjectStatisticDaoService projectStatisticDaoService;
   private final AvatarService avatarService;
 
@@ -44,12 +47,20 @@ public class LeaderBoardProjectTabPanel extends AbstractProjectTabPanel
     Map<String, Object> params = super.createVelocityParams(ctx);
     String projectKey = ctx.getProject().getKey();
 
-    List<Map<String, Object>> createdIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser(), StatisticRefEnum.CREATED_ISSUE_COUNT);
-    params.put("createdIssueLB", createdIssueLeaderBoard);
-    List<Map<String, Object>> resolvedIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser(), StatisticRefEnum.RESOLVED_ISSUE_COUNT);
-    params.put("resolvedIssueLB", resolvedIssueLeaderBoard);
-    List<Map<String, Object>> testedIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser(), StatisticRefEnum.TESTED_ISSUE_COUNT);
-    params.put("testedIssueLB", testedIssueLeaderBoard);
+    try
+    {
+      List<Map<String, Object>> createdIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser(), StatisticRefEnum.CREATED_ISSUE_COUNT);
+      params.put("createdIssueLB", createdIssueLeaderBoard);
+      List<Map<String, Object>> resolvedIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser(), StatisticRefEnum.RESOLVED_ISSUE_COUNT);
+      params.put("resolvedIssueLB", resolvedIssueLeaderBoard);
+      List<Map<String, Object>> testedIssueLeaderBoard = retrieveResolvedIssueLeaderBoard(projectKey, ctx.getUser(), StatisticRefEnum.TESTED_ISSUE_COUNT);
+      params.put("testedIssueLB", testedIssueLeaderBoard);
+    }
+    catch (Exception e)
+    {
+      logger.error("An error occured while retrieving leaderboard data", e);
+      params.put("status", "ERROR");
+    }
 
     return params;
   }

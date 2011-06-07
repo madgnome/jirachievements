@@ -194,6 +194,7 @@
     <actions>
       <action name="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" alias="ViewJIRAHeroGlobalConfiguration">
         <view name="success">/templates/com/madgnome/jira/plugins/jirachievements/config/view-global-config.vm</view>
+        <view name="error">/templates/com/madgnome/jira/plugins/jirachievements/error.vm</view>
       </action>
     </actions>
   </webwork1>

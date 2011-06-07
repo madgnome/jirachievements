@@ -16,12 +16,10 @@ import org.slf4j.LoggerFactory;
 import webwork.action.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUserProfilePanel
 {
@@ -76,11 +74,25 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     }
     catch (Exception e)
     {
-      writer.write("Unauthorized access: " + e.getMessage());
+      logger.error("An error occured while retrieving user achievements", e);
+      renderErrorMessage(writer);
     }
 
     return writer.toString();
   }
+
+  private void renderErrorMessage(StringWriter writer)
+  {
+    try
+    {
+      templateRenderer.render("templates/com/madgnome/jira/plugins/jirachievements/error.vm", Collections.<String, Object>emptyMap(), writer);
+    }
+    catch (IOException e)
+    {
+
+    }
+  }
+
 
   private void render(HttpServletRequest req, Writer output, User user) throws Exception
   {
@@ -111,25 +123,43 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
     Achievement[] userAchievements = userWrapper.getAchievements();
     params.put("userAchievements", userAchievements);
 
-    UserStatistic createdUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.CREATED_ISSUE_COUNT);
-    Level userLevel = levelDaoService.findMatchingLevel(Category.USER, createdUserStatistic.getValue());
-    params.put("userStatistic", createdUserStatistic);
-    params.put("userLevel", userLevel);
-    params.put("userPercentage", (userLevel.getMaxThreshold() - createdUserStatistic.getValue()) * 100 / userLevel.getMaxThreshold());
+    putCreatedUserStatistic(userWrapper, params);
+    putResolvedUserStatistic(userWrapper, params);
+    putTestedUserStatistic(userWrapper, params);
 
-    UserStatistic resolvedUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.RESOLVED_ISSUE_COUNT);
-    Level developerLevel = levelDaoService.findMatchingLevel(Category.DEVELOPER, resolvedUserStatistic.getValue());
-    params.put("developerStatistic", resolvedUserStatistic);
-    params.put("developerLevel", developerLevel);
-    params.put("developerPercentage", (developerLevel.getMaxThreshold() - resolvedUserStatistic.getValue()) * 100 / developerLevel.getMaxThreshold());
+    return params;
+  }
 
+  private void putTestedUserStatistic(UserWrapper userWrapper, Map<String, Object> params)
+  {
     UserStatistic testedUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.TESTED_ISSUE_COUNT);
     Level testerLevel = levelDaoService.findMatchingLevel(Category.TESTER, testedUserStatistic.getValue());
     params.put("testerStatistic", testedUserStatistic);
     params.put("testerLevel", testerLevel);
-    params.put("testerPercentage", (testerLevel.getMaxThreshold() - testedUserStatistic.getValue()) * 100 / testerLevel.getMaxThreshold());
+    params.put("testerPercentage", calculatePercentage(testerLevel.getMaxThreshold(), testedUserStatistic.getValue()));
+  }
 
-    return params;
+  private void putResolvedUserStatistic(UserWrapper userWrapper, Map<String, Object> params)
+  {
+    UserStatistic resolvedUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.RESOLVED_ISSUE_COUNT);
+    Level developerLevel = levelDaoService.findMatchingLevel(Category.DEVELOPER, resolvedUserStatistic.getValue());
+    params.put("developerStatistic", resolvedUserStatistic);
+    params.put("developerLevel", developerLevel);
+    params.put("developerPercentage", calculatePercentage(developerLevel.getMaxThreshold(), resolvedUserStatistic.getValue()));
+  }
+
+  private void putCreatedUserStatistic(UserWrapper userWrapper, Map<String, Object> params)
+  {
+    UserStatistic createdUserStatistic = userStatisticDaoService.get(userWrapper, StatisticRefEnum.CREATED_ISSUE_COUNT);
+    Level userLevel = levelDaoService.findMatchingLevel(Category.USER, createdUserStatistic.getValue());
+    params.put("userStatistic", createdUserStatistic);
+    params.put("userLevel", userLevel);
+    params.put("userPercentage", calculatePercentage(userLevel.getMaxThreshold(), createdUserStatistic.getValue()));
+  }
+
+  private int calculatePercentage(int maxThreshold, int value)
+  {
+    return (maxThreshold - value) * 100 / maxThreshold;
   }
 
   private Map<String, List<Achievement>> retrieveAchievementsByCategory()

@@ -1,7 +1,5 @@
 package com.madgnome.jira.plugins.jirachievements.rest;
 
-import com.atlassian.jira.issue.search.SearchException;
-import com.atlassian.jira.jql.parser.JqlParseException;
 import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
@@ -28,17 +26,7 @@ public class StatisticResource extends AbstractBaseResource
   @Path("/calculate")
   public Response calculate()
   {
-    try
-    {
-      statisticsCalculator.calculateAll();
-    }
-    catch (SearchException e)
-    {
-      logger.error("Couldn't calculate statistics", e);
-    } catch (JqlParseException e)
-    {
-      logger.error("Couldn't calculate statistics", e);
-    }
+    statisticsCalculator.calculateAll();
 
     return Response.ok().build();
   }
