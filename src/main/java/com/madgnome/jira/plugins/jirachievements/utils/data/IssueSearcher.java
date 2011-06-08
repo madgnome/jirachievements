@@ -33,7 +33,7 @@ public class IssueSearcher
 
   public List<Issue> searchIssues(String jql)
   {
-    Query query = null;
+    Query query;
     try
     {
       query = jqlQueryParser.parseQuery(jql);
@@ -48,6 +48,10 @@ public class IssueSearcher
     catch (SearchException e)
     {
       logger.error("Can't search issue:", e);
+    }
+    catch (Exception e)
+    {
+      logger.warn("Can't calculate statistics for now. Issue Search is unavailable, you should try reindexing.");
     }
 
     return Collections.emptyList();
