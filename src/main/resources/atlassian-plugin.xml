@@ -176,14 +176,6 @@
   </rest>
 
   <!-- Configuration -->
-  <web-item key="subversion-repositories-link" name="Subversion repositories link on administrators page" section="system.admin/globalsettings" weight="95">
-    <label key="subversion.repositories" />
-    <condition class="com.atlassian.jira.plugin.webfragment.conditions.JiraGlobalPermissionCondition">
-        <param name="permission">admin</param>
-    </condition>
-    <link linkId="subversion-repositories">/secure/ViewSubversionRepositories.jspa</link>
-  </web-item>
-
   <web-item key="jh-config-webfragment" name="JIRA Hero Config Web Fragment" section="system.admin/globalsettings"
               weight="90" system="true">
     <label>JIRA Hero Configuration</label>
