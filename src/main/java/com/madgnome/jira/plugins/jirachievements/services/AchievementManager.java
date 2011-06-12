@@ -49,4 +49,9 @@ public class AchievementManager
   {
     achievementDaoService.activate(achievementId, active);
   }
+
+  public List<Achievement> getUserNewAchievements(UserWrapper userWrapper)
+  {
+    return achievementDaoService.getUserNewAchievements(userWrapper);
+  }
 }

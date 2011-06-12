@@ -1,10 +1,10 @@
 package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 
 import com.atlassian.activeobjects.external.ActiveObjects;
-import com.madgnome.jira.plugins.jirachievements.data.ao.Achievement;
-import com.madgnome.jira.plugins.jirachievements.data.ao.AchievementRefEnum;
-import com.madgnome.jira.plugins.jirachievements.data.ao.Category;
+import com.madgnome.jira.plugins.jirachievements.data.ao.*;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
+import com.madgnome.jira.plugins.jirachievements.utils.data.AOUtil;
+import net.java.ao.Query;
 
 import java.util.*;
 
@@ -77,5 +77,13 @@ public class AchievementDaoService extends ReferencableDaoService<Achievement, A
 
     achievement.setActive(activate);
     achievement.save();
+  }
+
+  public List<Achievement> getUserNewAchievements(UserWrapper userWrapper)
+  {
+    Query query = Query.select().join(UserAchievement.class, AOUtil.getTablePrefix() + "_ACHIEVEMENT.ID = ACHIEVEMENT_ID")
+                                .where("USER_WRAPPER_ID = ? AND NOTIFIED = ?", userWrapper.getID(), false);
+
+    return Arrays.asList(ao.find(Achievement.class, query));
   }
 }

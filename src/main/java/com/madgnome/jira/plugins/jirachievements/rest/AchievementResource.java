@@ -32,8 +32,7 @@ public class AchievementResource extends AbstractBaseResource
 
     List<AchievementBean> achievements = new ArrayList<AchievementBean>();
 
-    // TODO Change this
-    for (Achievement achievement : userWrapper.getNewAchievements())
+    for (Achievement achievement : achievementManager.getUserNewAchievements(userWrapper))
     {
       achievements.add(AchievementBean.fromAchievement(achievement));
       break;
