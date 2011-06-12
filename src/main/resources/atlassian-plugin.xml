@@ -194,7 +194,6 @@
   <!-- Rules -->
   <component key="welcomeRule" class="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule"/>
   <component key="padawanRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanRule"/>
-  <component key="padawanIssueEventRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanIssueEventRule"/>
   <component key="lostArkRaiderRule" class="com.madgnome.jira.plugins.jirachievements.rules.LostArkRaiderRule"/>
   <component key="insomniacExpressoRule" class="com.madgnome.jira.plugins.jirachievements.rules.InsomniacExpressoRule"/>
 

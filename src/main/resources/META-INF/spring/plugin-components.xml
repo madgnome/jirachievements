@@ -10,7 +10,6 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
   <bean id="issueEventRuleEngine" class="com.madgnome.jira.plugins.jirachievements.rules.IssueEventRuleEngine" >
     <constructor-arg>
       <list>
-        <ref bean="padawanIssueEventRule"/>
       </list>
     </constructor-arg>
   </bean>
