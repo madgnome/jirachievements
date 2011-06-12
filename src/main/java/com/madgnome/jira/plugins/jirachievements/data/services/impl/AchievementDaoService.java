@@ -23,7 +23,7 @@ public class AchievementDaoService extends ReferencableDaoService<Achievement, A
 
   public List<Achievement> allActive()
   {
-    return Arrays.asList(ao.find(getClazz(), "ACTIVE = TRUE"));
+    return Arrays.asList(ao.find(getClazz(), "ACTIVE = ?", true));
   }
 
   public Map<Category, List<Achievement>> allGroupByCategory()
