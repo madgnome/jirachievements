@@ -33,7 +33,6 @@
 </table>
 
 <script type="text/javascript">
-//  jQuery(document).ready(function() {
   jQuery( "#achievements-refreshrate" ).slider({
     min: 0.25,
     max: 24,
@@ -57,5 +56,4 @@
   });
 
   jQuery( "#achievements-refreshrate" ).slider('value', $action.achievementRefreshRate / 60);
-//  });
 </script>

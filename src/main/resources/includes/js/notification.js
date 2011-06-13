@@ -33,8 +33,6 @@
           '<h4>' + this.name + '</h4>' +
           '<span class="catchPhrase">' + this.catchPhrase + '</span>' +
         '</div>';
-//                +
-//        '<div class="achievement-level achievement-' + this.difficulty.toLowerCase() + '">&nbsp;</div>';
 
         $.jGrowl(content, options);
       });

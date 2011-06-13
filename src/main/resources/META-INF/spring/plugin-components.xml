@@ -24,10 +24,6 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     </constructor-arg>
   </bean>
 
-  <!--<bean id="statisticResource" class="com.madgnome.jira.plugins.jirachievements.rest.StatisticResource" >-->
-    <!--<constructor-arg ref="statisticsCalculator"/>-->
-  <!--</bean>-->
-
   <bean id="rulesChecker" class="com.madgnome.jira.plugins.jirachievements.rules.RulesChecker">
     <constructor-arg>
       <set>
@@ -40,16 +36,6 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
   </bean>
 
   <bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer" >
-    <constructor-arg type="java.util.List">
-      <list>
-        <!--<ref bean="achievementsInitializer"/>-->
-        <!--<ref bean="statisticsInitializer"/>-->
-        <!--<ref bean="configsInitializer"/>-->
-        <!--<ref bean="levelsInitializer"/>-->
-        <!--<ref bean="userWrappersInitializer"/>-->
-      </list>
-    </constructor-arg>
-    <constructor-arg ref="statisticsCalculator"/>
     <constructor-arg ref="jobScheduler"/>
   </bean>
 
