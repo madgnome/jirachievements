@@ -70,14 +70,18 @@ public class AchievementsInitializer implements ITableInitializer
 
   private void createAchievement(AchievementBean achievementBean)
   {
-    Achievement achievement = achievementDaoService.getOrCreate(achievementBean.getRef());
-    achievement.setRef(achievementBean.getRef());
-    achievement.setName(achievementBean.getName());
-    achievement.setCatchPhrase(achievementBean.getCatchPhrase());
-    achievement.setDescription(achievementBean.getDescription());
-    achievement.setDifficulty(achievementBean.getDifficulty());
-    achievement.setCategory(achievementBean.getCategory());
-    achievement.setHidden(achievementBean.isHidden());
-    achievement.save();
+    Achievement achievement = achievementDaoService.get(achievementBean.getRef());
+    if (achievement == null)
+    {
+      achievement = achievementDaoService.create(achievementBean.getRef());
+      achievement.setRef(achievementBean.getRef());
+      achievement.setName(achievementBean.getName());
+      achievement.setCatchPhrase(achievementBean.getCatchPhrase());
+      achievement.setDescription(achievementBean.getDescription());
+      achievement.setDifficulty(achievementBean.getDifficulty());
+      achievement.setCategory(achievementBean.getCategory());
+      achievement.setHidden(achievementBean.isHidden());
+      achievement.save();
+    }
   }
 }
