@@ -96,7 +96,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
 
   private void render(HttpServletRequest req, Writer output, User user) throws Exception
   {
-    String username = this.jiraUserManager.getRemoteUsername(req);
+    String username = user.getName();
     if (username == null)
     {
       throw new Exception("Unauthorized - must be a valid user");
