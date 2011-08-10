@@ -30,6 +30,7 @@
   <component-import key="jqlParser" interface="com.atlassian.jira.jql.parser.JqlQueryParser"/>
   <component-import key="avatarService" interface="com.atlassian.jira.avatar.AvatarService"/>
   <component-import key="pluginScheduler" interface="com.atlassian.sal.api.scheduling.PluginScheduler"/>
+  <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
 
   <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
@@ -176,10 +177,25 @@
   </rest>
 
   <!-- Configuration -->
-  <web-item key="jh-config-webfragment" name="JIRA Hero Config Web Fragment" section="system.admin/globalsettings"
+  <web-item key="jh-config-webfragment-old" name="JIRA Hero Config Web Fragment" section="system.admin/globalsettings"
               weight="90" system="true">
+    <condition class="com.atlassian.jira.plugin.webfragment.conditions.JiraGlobalPermissionCondition">
+      <param name="permission">admin</param>
+    </condition>
+    <condition class="com.madgnome.jira.plugins.jirachievements.utils.conditions.IsPriorToJiraVersion">
+      <param name="majorVersion">4</param>
+      <param name="minorVersion">4</param>
+    </condition>
     <label>JIRA Hero Configuration</label>
     <link linkId="jh_global_config">/secure/admin/ViewJIRAHeroGlobalConfiguration.jspa</link>
+  </web-item>
+
+  <web-item key="jh-config-webfragment" name="JIRA Hero Config Web Fragment" section="admin_plugins_menu/agile_section" weight="10">
+      <condition class="com.atlassian.jira.plugin.webfragment.conditions.JiraGlobalPermissionCondition">
+        <param name="permission">admin</param>
+      </condition>
+      <label>JIRA Hero Configuration</label>
+      <link linkId="jh_global_config">/secure/admin/ViewJIRAHeroGlobalConfiguration.jspa</link>
   </web-item>
 
   <webwork1 key="jh-config-action" name="JIRA Hero Config Screen">
