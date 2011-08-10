@@ -42,6 +42,11 @@ public class OldFashionUserEventListener implements UserEventListener, Initializ
   }
 
   @Override
+  public void userCannotChangePassword(UserEvent userEvent)
+  {
+  }
+
+  @Override
   public void init(Map map)
   {
   }

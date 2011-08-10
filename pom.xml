@@ -127,17 +127,22 @@
         <extensions>true</extensions>
         <configuration>
           <productVersion>${jira.version}</productVersion>
-          <!--<productDataVersion>${jira.data.version}</productDataVersion>-->
-          <productDataPath>C:\scm\jirachievements\base.zip</productDataPath>
+          <productDataVersion>${jira.data.version}</productDataVersion>
+          <!--<productDataPath>C:\scm\jirachievements\base.zip</productDataPath>-->
           <pluginArtifacts>
             <pluginArtifact>
               <groupId>com.atlassian.activeobjects</groupId>
               <artifactId>activeobjects-plugin</artifactId>
               <version>${ao.version}</version>
             </pluginArtifact>
+            <!--<pluginArtifact>-->
+              <!--<groupId>com.atlassian.activeobjects</groupId>-->
+              <!--<artifactId>activeobjects-jira43-spi</artifactId>-->
+              <!--<version>${ao.version}</version>-->
+            <!--</pluginArtifact>-->
             <pluginArtifact>
               <groupId>com.atlassian.activeobjects</groupId>
-              <artifactId>activeobjects-jira43-spi</artifactId>
+              <artifactId>activeobjects-jira-spi</artifactId>
               <version>${ao.version}</version>
             </pluginArtifact>
           </pluginArtifacts>
@@ -154,10 +159,10 @@
   </build>
 
   <properties>
-    <amps.version>3.3</amps.version>
-    <jira.version>4.3.4</jira.version>
-    <jira.data.version>4.3.4</jira.data.version>
-    <ao.version>0.13</ao.version>
+    <amps.version>3.4</amps.version>
+    <jira.version>4.4</jira.version>
+    <jira.data.version>4.4</jira.data.version>
+    <ao.version>0.15</ao.version>
   </properties>
 
 </project>

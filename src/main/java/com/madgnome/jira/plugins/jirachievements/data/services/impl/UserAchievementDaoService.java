@@ -59,6 +59,7 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
     Map<Difficulty, Integer> achievementsByLevel = new HashMap<Difficulty, Integer>(Difficulty.values().length);
     for (Difficulty difficulty : Difficulty.values())
     {
+      
       Query query = Query.select().join(Achievement.class, AOUtil.getTablePrefix() + "_ACHIEVEMENT.ID = ACHIEVEMENT_ID")
                                   .where("USER_WRAPPER_ID = ? AND DIFFICULTY = ? AND ACTIVE = ?", userWrapper.getID(), difficulty.ordinal(), true);
       achievementsByLevel.put(difficulty, ao.count(UserAchievement.class, query));

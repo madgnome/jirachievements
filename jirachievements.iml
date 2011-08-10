@@ -21,39 +21,40 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:atlassian-jira:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.ofbiz:entityengine-share:1.0.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:atlassian-jira:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.ofbiz:entityengine-share:1.0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: log4j:log4j:1.2.15" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.mail:mail:1.4.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xerces:xercesImpl:2.9.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.ofbiz:entityengine:1.0.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.ofbiz:entityengine:1.0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jta:jta:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.util.concurrent:atlassian-util-concurrent:2.0.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:webwork:1.4-atlassian-16" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.util.concurrent:atlassian-util-concurrent:2.2.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:webwork:1.4-atlassian-17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: webwork:pell-multipart-request:1.31.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.lucene:lucene-core:2.9.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.core:atlassian-core:4.5.10" level="project" />
-    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.core:atlassian-core:4.6.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:propertyset:1.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: dom4j:dom4j:1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xml-apis:xml-apis:1.3.04" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: jaxen:jaxen:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: mockobjects:alt-jdk1.3:0.07" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.extras:atlassian-extras:2.2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-codec:commons-codec:1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.velocity:atlassian-velocity:0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:oscore:2.2.7-atlassian-1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: velocity:velocity:1.4-atlassian-8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: velocity:velocity:1.4-atlassian-9" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:osworkflow:2.8.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:embedded-crowd-api:2.2.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:embedded-crowd-api:2.2.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.collections:google-collections:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:embedded-crowd-core:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:embedded-crowd-spi:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-api:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-api:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-codec:commons-codec:1.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:embedded-crowd-core:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:embedded-crowd-spi:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-api:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-api:2.2.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.spring:atlassian-spring:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.event:atlassian-event:2.0.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.event:atlassian-event:2.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-core:2.5.6" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-context:2.5.6.SEC02" level="project" />
@@ -63,88 +64,91 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.5.8" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-web:2.0.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-core:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-ldap:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-password-encoders:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security:atlassian-password-encoder:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-core:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-ldap:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-password-encoders:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security:atlassian-password-encoder:2.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.security:spring-security-core:2.0.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-aop:2.0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-tx:2.5.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-core:2.7.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-core:2.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-io:commons-io:1.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.multitenant:multitenant-core:1.0.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.multitenant:multitenant-core:1.0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.jcip:jcip-annotations:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: cglib:cglib-nodep:2.1_3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-events:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-persistence:2.2.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-events:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-persistence:2.2.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.config:atlassian-config:0.15" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.hibernate:hibernate:3.2.5.ga" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.sf.ehcache:ehcache:1.2.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: javax.transaction:jta:1.0.1B" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: asm:asm-attrs:1.5.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: antlr:antlr:2.7.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: cglib:cglib:2.1_3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: asm:asm:3.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-orm:2.5.6.SEC02" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-log4j12:1.5.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: joda-time:joda-time:1.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-remote:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-client-rest:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-client-common:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security:atlassian-cookie-tools:2.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-remote:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-client-rest:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-client-common:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security:atlassian-cookie-tools:2.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-httpclient:commons-httpclient:3.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.ldap:spring-ldap-core:1.3.0.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-context-support:2.5.6.SEC02" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: quartz:quartz:1.5.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security:atlassian-secure-random:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security:atlassian-secure-random:2.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.johnson:atlassian-johnson:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: atlassian-bandana:atlassian-bandana:0.1.13" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.multitenant:multitenant-utils:1.0.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:atlassian-embedded-crowd-ofbiz:1.2.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-server-common:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.antlr:antlr-runtime:3.1.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-client:2.2.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.xfire:xfire-core:1.2.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: wsdl4j:wsdl4j:1.6.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: jdom:jdom:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: stax:stax-api:1.0.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:wstx-asl:3.2.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.xfire:xfire-aegis:1.2.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.sal:sal-spi:2.4.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.gadgets:atlassian-gadgets-api:3.0.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.gadgets:atlassian-gadgets-spi:3.0.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.oauth:atlassian-oauth-api:1.2.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.p4package:atlassian-p4package:2007.12.14" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.extras:atlassian-extras:2.2.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.cache:atlassian-cache-api:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.cache:atlassian-cache-memory:1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: oro:oro:2.0.7" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:jul-to-slf4j:1.5.8" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:jcl-over-slf4j:1.5.8" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jdk.utilities:atlassian-jdk-utilities:0.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.mail:atlassian-mail:1.23" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.mail:atlassian-mail:1.24" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: mockobjects:mockobjects-alt-jdk1.3-j2ee1.3:0.09" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.6.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-digester:commons-digester:1.4.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.trackback:atlassian-trackback:0.11" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: oro:oro:2.0.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: atlassian-bandana:atlassian-bandana:0.1.13" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.multitenant:multitenant-utils:1.0.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:atlassian-embedded-crowd-ofbiz:1.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-server-common:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.antlr:antlr-runtime:3.1.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.crowd:crowd-integration-client:2.2.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.xfire:xfire-core:1.2.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: wsdl4j:wsdl4j:1.6.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: jdom:jdom:1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:wstx-asl:3.2.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.xfire:xfire-aegis:1.2.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.sal:sal-spi:2.6.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.sal:sal-core:2.6.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.sal:sal-api:2.6.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.seraph:atlassian-seraph:2.5.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: bouncycastle:bcprov-jdk14:138" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.gadgets:atlassian-gadgets-api:3.1.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.gadgets:atlassian-gadgets-spi:3.1.7" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.oauth:atlassian-oauth-api:1.2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.p4package:atlassian-p4package:2007.12.14" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.cache:atlassian-cache-api:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.cache:atlassian-cache-memory:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun:jai_core:1.1.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun:jai_codec:1.1.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.15" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:jul-to-slf4j:1.5.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:jcl-over-slf4j:1.5.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jdk.utilities:atlassian-jdk-utilities:0.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.scheduler:atlassian-scheduler:0.14" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-servlet:2.7.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-webfragment:2.7.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-webresource:2.7.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-osgi:2.7.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-osgi-events:2.7.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-servlet:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-webfragment:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-webresource:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-osgi:2.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.plugins:atlassian-plugins-osgi-events:2.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: biz.aQute:bndlib:0.0.255" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.framework:3.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.twdata.pkgscanner:package-scanner:0.9.5" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.seraph:atlassian-seraph:2.5.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security.auth.trustedapps:atlassian-trusted-apps-core:2.3.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: bouncycastle:bcprov-jdk14:138" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security.auth.trustedapps:atlassian-trusted-apps-seraph-integration:2.3.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security.auth.trustedapps:atlassian-trusted-apps-core:2.5.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.ip:atlassian-ip:2.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.security.auth.trustedapps:atlassian-trusted-apps-seraph-integration:2.5.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: bouncycastle:bcprov-jdk15:140" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.renderer:atlassian-renderer:3.14.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: radeox:radeox:1.0b2-forked-22Apr2004" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.gzipfilter:atlassian-gzipfilter:1.9" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:sitemesh:2.4.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: opensymphony:sitemesh:2.4.2-atlassian-2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-configuration:commons-configuration:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.lucene:lucene-analyzers:2.9.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.velocity:velocity-tools:1.3" level="project" />
@@ -189,7 +193,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-sql:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jelly:commons-jelly-tags-regexp:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jexl:commons-jexl:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.trackback:atlassian-trackback:0.11" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xmlrpc:xmlrpc:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: axis:axis:1.3-atlassian-1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: axis:axis-jaxrpc:1.3" level="project" />
@@ -199,45 +202,41 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: datafile:datafile:1.3.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: xpp3:xpp3:1.1.3.4-RC8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.thoughtworks.xstream:xstream:1.3.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: jfreechart:jfreechart:1.0.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: jfree:jfreechart:1.0.13" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jfree:jcommon:1.0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.tuckey:urlrewrite:2.5.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jtidy:jtidy:r8-20050104" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.modzdetector:modz-detector:0.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.modzdetector:modz-detector:0.12" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-jrcs:commons-jrcs:diff-0.1.7" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-ca_ES:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-cs_CZ:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-da_DK:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-de_CH:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-de_DE:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-default:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-en_UK:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-en_US:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-es_ES:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-fr_FR:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-hu_HU:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-it_IT:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-ja_JP:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-nl_BE:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-no_NO:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-pl_PL:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-pt_BR:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-ru_RU:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-sk_SK:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-tr_TR:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-zh_CN:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-zh_TW:4.3.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.sal:sal-api:2.4.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.applinks:applinks-api:3.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.applinks:applinks-spi:3.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.applinks:applinks-host:3.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.13" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m22" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.lucene:lucene-queries:2.2.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-core:0.13" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.13" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.13" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: net.java.dev.stax-utils:stax-utils:20060502" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-ca_ES:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-cs_CZ:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-da_DK:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-de_CH:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-de_DE:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-en_UK:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-en_US:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-es_ES:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-fr_FR:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-hu_HU:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-it_IT:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-ja_JP:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-nl_BE:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-no_NO:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-pl_PL:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-pt_BR:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-ru_RU:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-sk_SK:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-tr_TR:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-zh_CN:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.jira:jira-lang-zh_TW:4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.applinks:applinks-api:3.5.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.applinks:applinks-spi:3.5.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.applinks:applinks-host:3.5.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: rhino:js:1.7R2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.15" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m26" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-core:0.15" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.15" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:stax2-api:3.1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.ws.rs:jsr311-api:1.0" level="project" />
@@ -255,27 +254,22 @@
     <orderEntry type="library" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" level="project" />
     <orderEntry type="library" name="Maven: net.sf.trove4j:trove4j:2.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-all:1.8.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.activeobjects:activeobjects-test:0.13" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m22" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.jira:jira-func-tests:4.3.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: rhino:js:1.5R4-RC3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.activeobjects:activeobjects-test:0.15" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m26" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.jira:jira-func-tests:4.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: exml:exml:7.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.jwebunit:jwebunit:1.2-atlassian-1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.meteware.httpunit:httpunit:1.5.4-atlassian-10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.jwebunit:jwebunit:1.2-atlassian-3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.meteware.httpunit:httpunit:1.5.4-atlassian-13" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: nekohtml:nekohtml:0.8.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.google.guava:guava:r08" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.icegreen:greenmail:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: xmlunit:xmlunit:1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: ant:ant:1.5.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mortbay.jetty:jetty:6.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mortbay.jetty:jetty-util:6.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mortbay.jetty:servlet-api-2.5:6.0.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.cargo-test-runner:cargo-test-runner:2.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.cargo-test-runner:cargo-test-runner:2.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.cargo:cargo-core-uberjar:1.0-atlassianpatch-CARGO-553-2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.seleniumhq.selenium.server:selenium-server:standalone:1.0.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.seleniumhq.selenium.server:selenium-server-coreless:1.0.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.ant:ant:1.7.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.ant:ant-launcher:1.7.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.seleniumhq.selenium.core:selenium-core:1.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.easymock:easymock:2.5.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.easymock:easymockclassextension:2.5.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:1.2" level="project" />
@@ -286,36 +280,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.jackson:jackson-xc:1.5.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.sun.jersey:jersey-client:1.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.sun.jersey.contribs:jersey-apache-client:1.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-acceptance-test:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-web-app:war:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-demo-app:war:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-openid-server:war:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-openid-client:war:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-language:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-server:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-integration-client-soap:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.xfire:xfire-java5:1.2.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: xfire:xfire-jsr181-api:1.0-M1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: opensymphony:xwork:1.2.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.rifers:rife-continuations:0.0.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.opensymphony:webwork:2.2.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: freemarker:freemarker:2.3.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-integration-springsecurity:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.plugins:atlassian-plugins-spring:2.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.sal:sal-spring:2.4.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.xfire:xfire-spring:1.2.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.xbean:xbean-spring:2.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.xfire:xfire-xmlbeans:1.2.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: xmlbeans:xbean:2.2.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-webmvc:2.5.6.SEC02" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-jdbc:2.5.6.SEC02" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.csv:atlassian-csv:1.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-plugin:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-common:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-test-api:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-integration-atlassian-user:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.user:atlassian-user:3.0-alpha3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-integration-osuser:2.2.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-acceptance-test:2.2.8" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.jwebunit:jwebunit-core:2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: regexp:regexp:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.jwebunit:jwebunit-htmlunit-plugin:2.2" level="project" />
@@ -330,8 +295,12 @@
     <orderEntry type="library" scope="TEST" name="Maven: junit-addons:junit-addons:1.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: xerces:xmlParserAPIs:2.6.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: poi:poi:2.5.1-final-20040804" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-test:2.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-application-management:2.2.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-jdbc:2.5.6.SEC02" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-test:2.2.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-test-api:2.2.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-plugin:2.2.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-common:2.2.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.atlassian.crowd:crowd-rest-application-management:2.2.8" level="project" />
   </component>
 </module>
 
