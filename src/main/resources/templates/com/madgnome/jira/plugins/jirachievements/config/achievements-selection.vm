@@ -6,7 +6,7 @@
   </div>
 #end
 
-<div id="achievements-details">
+<div id="achievements-config">
   <div class="aui-tabs horizontal-tabs" id="horizontal">
     <ul class="tabs-menu">
       <li class="menu-item active-tab first">

@@ -17,6 +17,23 @@
   cursor: pointer;
 }
 
+#achievements-config .tabs-menu {
+  position: relative !important;
+  top: 2px !important;
+}
+
+#achievements-config .aui-tabs.horizontal-tabs ul.tabs-menu li.menu-item:first-child {
+  margin-left: 1em !important;
+}
+
+#achievements-config .tabs-menu .active-tab {
+  margin-left: 0 !important;
+}
+
+#achievements-config .tabs-menu .menu-item.active-tab a {
+  margin-right: 0 !important;
+}
+
 .achievements-list .achievement-image {
   float: left;
   padding: 10px 10px;

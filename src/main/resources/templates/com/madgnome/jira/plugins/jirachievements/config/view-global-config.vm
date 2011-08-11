@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>JIRA Hero Configuration</title>
-  <meta name="decorator" content="admin"/>
+  <meta name="admin.active.section" content="admin_plugins_menu/agile_section">
+  <meta name="admin.active.tab" content="jh_global_config">
 </head>
 
 <body>
