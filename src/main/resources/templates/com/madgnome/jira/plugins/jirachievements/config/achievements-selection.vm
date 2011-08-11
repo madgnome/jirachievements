@@ -34,7 +34,7 @@
 <script type="text/javascript">
   jQuery(document).ready(function() {
 
-    jQuery('#achievements-details').bind('tabSelect', function() {
+    jQuery('#achievements-config').bind('tabSelect', function() {
       jQuery('.active-pane > .achievements-list').masonry({
         singleMode: true,
         itemSelector : '.achievement-config'
