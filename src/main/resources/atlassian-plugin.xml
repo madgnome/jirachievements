@@ -31,6 +31,7 @@
   <component-import key="avatarService" interface="com.atlassian.jira.avatar.AvatarService"/>
   <component-import key="pluginScheduler" interface="com.atlassian.sal.api.scheduling.PluginScheduler"/>
   <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
+  <component-import key="lifecycleManager" interface="com.atlassian.sal.api.lifecycle.LifecycleManager"/>
 
   <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
@@ -46,6 +47,7 @@
   <component key="issueListener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
   <component key="oldEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
   <component key="eventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
+  <!--<component key="jirachievementPluginEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.JirachievementPluginEventListener"/>-->
 
   <!-- Components : Initializers -->
   <component key="achievementsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.AchievementsInitializer"/>
@@ -53,6 +55,11 @@
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
   <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
   <!--<component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>-->
+
+  <component key="pluginInitializer" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"
+            public="true" system="true">
+    <interface>com.atlassian.sal.api.lifecycle.LifecycleAware</interface>
+  </component>
 
   <!-- Components : Managers -->
   <component key="pluginComponentManager" class="com.madgnome.jira.plugins.jirachievements.utils.PluginComponentManager"/>

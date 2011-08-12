@@ -1,25 +1,41 @@
 package com.madgnome.jira.plugins.jirachievements;
 
-import com.atlassian.jira.extension.Startable;
+import com.atlassian.sal.api.lifecycle.LifecycleAware;
 import com.madgnome.jira.plugins.jirachievements.scheduling.JobsScheduler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class PluginInitializer implements Startable
+import java.util.concurrent.atomic.AtomicBoolean;
+
+public class PluginInitializer implements LifecycleAware
 {
+  private static final Logger logger = LoggerFactory.getLogger(PluginInitializer.class);
+
   private final JobsScheduler jobsScheduler;
+
+  private AtomicBoolean initialized = new AtomicBoolean(false);
 
   public PluginInitializer(JobsScheduler jobsScheduler)
   {
     this.jobsScheduler = jobsScheduler;
   }
 
-  @Override
-  public void start() throws Exception
+  public void start()
   {
-    initJobs();
+    if (initialized.compareAndSet(false, true))
+    {
+      initJobs();
+    }
   }
 
   private void initJobs()
   {
     jobsScheduler.scheduleJobs();
+  }
+
+  @Override
+  public void onStart()
+  {
+    start();
   }
 }

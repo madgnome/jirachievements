@@ -3,6 +3,7 @@ package com.madgnome.jira.plugins.jirachievements.listeners;
 import com.atlassian.event.api.EventPublisher;
 import com.atlassian.plugin.event.PluginEventListener;
 import com.atlassian.plugin.event.events.PluginEnabledEvent;
+import com.madgnome.jira.plugins.jirachievements.PluginInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
@@ -13,10 +14,12 @@ public class JirachievementPluginEventListener implements InitializingBean, Disp
   private static final Logger logger = LoggerFactory.getLogger(JirachievementPluginEventListener.class);
 
   private final EventPublisher eventPublisher;
+  private final PluginInitializer pluginInitializer;
 
-  public JirachievementPluginEventListener(EventPublisher eventPublisher)
+  public JirachievementPluginEventListener(EventPublisher eventPublisher, PluginInitializer pluginInitializer)
   {
     this.eventPublisher = eventPublisher;
+    this.pluginInitializer = pluginInitializer;
   }
 
   @Override
@@ -35,5 +38,16 @@ public class JirachievementPluginEventListener implements InitializingBean, Disp
   public void onEvent(PluginEnabledEvent pluginEnabledEvent)
   {
     logger.info("Plugin enabled : %s", pluginEnabledEvent.getPlugin().getName());
+    if (pluginEnabledEvent.getPlugin().getKey().equals("com.madgnome.jira.plugins.jirachievements"))
+    {
+      try
+      {
+        pluginInitializer.start();
+      }
+      catch (Exception e)
+      {
+        logger.error("Error while starting JIRA Hero plugin:", e);
+      }
+    }
   }
 }

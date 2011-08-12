@@ -35,9 +35,9 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     </constructor-arg>
   </bean>
 
-  <bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer">
-    <constructor-arg ref="jobScheduler"/>
-  </bean>
+  <!--<bean id="pluginInitializers" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer">-->
+    <!--<constructor-arg ref="jobScheduler"/>-->
+  <!--</bean>-->
 
   <bean id="tableInitializers" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.TableInitializers">
     <constructor-arg>
