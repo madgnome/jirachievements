@@ -159,7 +159,7 @@ public class AchievementViewProfilePanel implements ViewProfilePanel, OptionalUs
 
   private int calculatePercentage(int maxThreshold, int value)
   {
-    return (maxThreshold - value) * 100 / maxThreshold;
+    return value * 100 / maxThreshold;
   }
 
   private Map<String, List<Achievement>> retrieveAchievementsByCategory()
