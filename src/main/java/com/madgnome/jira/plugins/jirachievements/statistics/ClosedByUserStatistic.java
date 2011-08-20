@@ -5,20 +5,23 @@ import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
+
+import java.util.List;
 
 public class ClosedByUserStatistic extends OnFieldChangedValueStatistic
 {
 
-  public ClosedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
+  public ClosedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager, WorkflowConfiguration workflowConfiguration)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager);
+    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager, workflowConfiguration);
   }
 
   @Override
-  protected String getFieldValue()
+  protected List<String> getFieldValues()
   {
-    return "Closed";
+    return workflowConfiguration.getStatuses(WorkflowConfiguration.NormalizedStatus.RESOLVED);
   }
 
   @Override
@@ -30,7 +33,7 @@ public class ClosedByUserStatistic extends OnFieldChangedValueStatistic
   @Override
   protected String getJQLQuery()
   {
-    return "status = Closed";
+    return "status IN (" + workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.CLOSED) + ")";
   }
 
   @Override

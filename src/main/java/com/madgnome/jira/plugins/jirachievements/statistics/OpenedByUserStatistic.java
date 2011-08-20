@@ -12,6 +12,7 @@ import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 
@@ -22,9 +23,9 @@ import java.util.Map;
 public class OpenedByUserStatistic extends AbstractStatisticCalculator
 {
 
-  public OpenedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
+  public OpenedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager, WorkflowConfiguration workflowConfiguration)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager);
+    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager, workflowConfiguration);
   }
 
   @Override

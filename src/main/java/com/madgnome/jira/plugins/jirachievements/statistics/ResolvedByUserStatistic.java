@@ -5,13 +5,16 @@ import com.atlassian.jira.user.util.UserUtil;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
+
+import java.util.List;
 
 public class ResolvedByUserStatistic extends OnFieldChangedValueStatistic
 {
-  public ResolvedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
+  public ResolvedByUserStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager, WorkflowConfiguration workflowConfiguration)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager);
+    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager, workflowConfiguration);
   }
 
   @Override
@@ -21,15 +24,15 @@ public class ResolvedByUserStatistic extends OnFieldChangedValueStatistic
   }
 
   @Override
-  protected String getFieldValue()
+  protected List<String> getFieldValues()
   {
-    return "Resolved";
+    return workflowConfiguration.getStatuses(WorkflowConfiguration.NormalizedStatus.RESOLVED);
   }
 
   @Override
   protected String getJQLQuery()
   {
-    return "status WAS Resolved";
+    return "status WAS IN (" + workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.RESOLVED) + ")";
   }
 
   @Override

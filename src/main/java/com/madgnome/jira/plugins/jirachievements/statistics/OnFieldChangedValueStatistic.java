@@ -11,6 +11,7 @@ import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import org.slf4j.Logger;
@@ -24,9 +25,9 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
 {
   private final static Logger logger = LoggerFactory.getLogger(OnFieldChangedValueStatistic.class);
 
-  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
+  public OnFieldChangedValueStatistic(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager, WorkflowConfiguration workflowConfiguration)
   {
-    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager);
+    super(issueSearcher, userUtil, changeHistoryManager, statisticManager, userManager, workflowConfiguration);
   }
 
   public void calculate() throws SearchException, JqlParseException
@@ -42,17 +43,22 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
       List<ChangeHistoryItem> changeHistoryItems = changeHistoryManager.getAllChangeItems(issue);
       for (ChangeHistoryItem changeHistoryItem : changeHistoryItems)
       {
-        if (changeHistoryItem.getField().equals(getFieldName()) &&
-            changeHistoryItem.getTo().equals(getFieldValue()))
+        if (changeHistoryItem.getField().equals(getFieldName()))
         {
-          Project project = issue.getProjectObject();
-          String user = changeHistoryItem.getUser();
+          for (String fieldValue : getFieldValues())
+          {
+            if (changeHistoryItem.getTo().equals(fieldValue))
+            {
+              Project project = issue.getProjectObject();
+              String user = changeHistoryItem.getUser();
 
-          updateUserStatistic(resolvedByUser, user);
-          updateProjectStatistic(resolvedByUserByProject, project, user);
-          updateComponentsStatistic(resolvedByUserByComponent, project, project.getProjectComponents(), user);
-          updateVersionsStatistic(resolvedByUserByVersion, project, issue.getAffectedVersions(), user);
-          break;
+              updateUserStatistic(resolvedByUser, user);
+              updateProjectStatistic(resolvedByUserByProject, project, user);
+              updateComponentsStatistic(resolvedByUserByComponent, project, project.getProjectComponents(), user);
+              updateVersionsStatistic(resolvedByUserByVersion, project, issue.getAffectedVersions(), user);
+              break;
+            }
+          }
         }
       }
     }
@@ -63,7 +69,7 @@ public abstract class OnFieldChangedValueStatistic extends AbstractStatisticCalc
     saveStatisticsByVersion(resolvedByUserByVersion);
   }
 
-  protected abstract String getFieldValue();
+  protected abstract List<String> getFieldValues();
   protected abstract String getFieldName();
   protected abstract String getJQLQuery();
 

@@ -12,6 +12,7 @@ import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectComponentKey;
 import com.madgnome.jira.plugins.jirachievements.data.bean.ProjectVersionKey;
 import com.madgnome.jira.plugins.jirachievements.services.StatisticManager;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 import gnu.trove.TObjectIntHashMap;
 import gnu.trove.TObjectIntProcedure;
@@ -30,16 +31,18 @@ public abstract class AbstractStatisticCalculator implements IStatisticCalculato
   protected final ChangeHistoryManager changeHistoryManager;
 
   protected final UserManager userManager;
+  protected final WorkflowConfiguration workflowConfiguration;
 
   protected final StatisticManager statisticManager;
 
-  public AbstractStatisticCalculator(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager)
+  public AbstractStatisticCalculator(IssueSearcher issueSearcher, UserUtil userUtil, ChangeHistoryManager changeHistoryManager, StatisticManager statisticManager, UserManager userManager, WorkflowConfiguration workflowConfiguration)
   {
     this.issueSearcher = issueSearcher;
     this.userUtil = userUtil;
     this.changeHistoryManager = changeHistoryManager;
     this.statisticManager = statisticManager;
     this.userManager = userManager;
+    this.workflowConfiguration = workflowConfiguration;
   }
 
   protected abstract StatisticRefEnum getStatisticRef();
