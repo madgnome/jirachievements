@@ -5,6 +5,7 @@ import com.atlassian.jira.security.JiraAuthenticationContext;
 import com.atlassian.jira.security.PermissionManager;
 import com.atlassian.jira.security.Permissions;
 import com.madgnome.jira.plugins.jirachievements.data.services.IConfigDaoService;
+import com.madgnome.jira.plugins.jirachievements.scheduling.JobsScheduler;
 import com.madgnome.jira.plugins.jirachievements.services.AchievementManager;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
 
@@ -18,11 +19,13 @@ import javax.ws.rs.core.Response;
 public class ConfigResource extends AbstractBaseResource
 {
   private final IConfigDaoService configDaoService;
+  private final JobsScheduler jobsScheduler;
 
-  public ConfigResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, IConfigDaoService configDaoService)
+  public ConfigResource(JiraAuthenticationContext jiraAuthenticationContext, PermissionManager permissionManager, UserManager userManager, AchievementManager achievementManager, IConfigDaoService configDaoService, JobsScheduler jobsScheduler)
   {
     super(jiraAuthenticationContext, permissionManager, userManager, achievementManager);
     this.configDaoService = configDaoService;
+    this.jobsScheduler = jobsScheduler;
   }
 
 
@@ -39,6 +42,14 @@ public class ConfigResource extends AbstractBaseResource
     
     configDaoService.setValue(ref, value);
 
+    return Response.ok().build();
+  }
+
+  @PUT
+  @Path("/resetjob")
+  public Response resetJobs(@FormParam("job") String jobName)
+  {
+    jobsScheduler.resetJob(jobName);
     return Response.ok().build();
   }
 }

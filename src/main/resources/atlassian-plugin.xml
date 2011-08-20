@@ -43,6 +43,8 @@
 
   <component key="issueSearcher" class="com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher"/>
 
+  <component key="workflowConfiguration" class="com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration"/>
+
   <!-- Components : Listeners -->
   <component key="issueListener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
   <component key="oldEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
@@ -102,6 +104,10 @@
   <component key="openedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.OpenedByUserStatistic"/>
   <component key="resolvedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ResolvedByUserStatistic"/>
   <component key="closedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.ClosedByUserStatistic"/>
+
+  <!-- Components : Job -->
+  <component key="calculateStatisticsJob" class="com.madgnome.jira.plugins.jirachievements.scheduling.CalculateStatisticsJob"/>
+  <component key="checkRulesJob" class="com.madgnome.jira.plugins.jirachievements.scheduling.CheckRulesJob"/>
 
   <!-- Resources -->
   <resource type="download" name="images/" location="includes/images/"/>
@@ -219,5 +225,6 @@
   <component key="padawanRule" class="com.madgnome.jira.plugins.jirachievements.rules.PadawanRule"/>
   <component key="lostArkRaiderRule" class="com.madgnome.jira.plugins.jirachievements.rules.LostArkRaiderRule"/>
   <component key="insomniacExpressoRule" class="com.madgnome.jira.plugins.jirachievements.rules.InsomniacExpressoRule"/>
+  <component key="issueSnatcherRule" class="com.madgnome.jira.plugins.jirachievements.rules.IssueSnatcherRule"/>
 
 </atlassian-plugin>

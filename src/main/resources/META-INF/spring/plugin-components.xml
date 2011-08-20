@@ -31,6 +31,7 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
         <ref bean="padawanRule"/>
         <ref bean="lostArkRaiderRule"/>
         <ref bean="insomniacExpressoRule"/>
+        <ref bean="issueSnatcherRule"/>
       </set>
     </constructor-arg>
   </bean>
@@ -54,8 +55,8 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
     <constructor-arg index="0" ref="pluginScheduler"/>
     <constructor-arg index="1">
       <set>
-        <bean class="com.madgnome.jira.plugins.jirachievements.scheduling.CalculateStatisticsJob"/>
-        <bean class="com.madgnome.jira.plugins.jirachievements.scheduling.CheckRulesJob"/>
+        <ref bean="calculateStatisticsJob"/>
+        <ref bean="checkRulesJob"/>
       </set>
     </constructor-arg>
   </bean>

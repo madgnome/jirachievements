@@ -1,11 +1,12 @@
 package com.madgnome.jira.plugins.jirachievements.scheduling;
 
+import com.madgnome.jira.plugins.jirachievements.data.ao.ConfigRefEnum;
 import com.madgnome.jira.plugins.jirachievements.statistics.IStatisticsCalculator;
 import com.madgnome.jira.plugins.jirachievements.utils.PluginComponentManager;
 
 import java.util.Map;
 
-public class CalculateStatisticsJob implements IJob
+public class CalculateStatisticsJob extends AbstractJob
 {
   private final static String JOB_NAME = "StatisticCalculator";
   private IStatisticsCalculator statisticsCalculator;
@@ -28,8 +29,8 @@ public class CalculateStatisticsJob implements IJob
   }
 
   @Override
-  public long getRepeatIntervalInSeconds()
+  protected ConfigRefEnum getRefreshRateConfigRefEnum()
   {
-    return 3600l;
+    return ConfigRefEnum.STATISTICS_REFRESH_RATE;
   }
 }

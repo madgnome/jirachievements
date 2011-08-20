@@ -79,6 +79,13 @@
           value: ui.value*60
         }
       });
+      jQuery.ajax({
+        url: AJS.params.baseURL + '/rest/jirachievement/1.0/configs/resetjob',
+        type: 'PUT',
+        data: {
+          job: "StatisticCalculator"
+        }
+      });
     }
   });
 
