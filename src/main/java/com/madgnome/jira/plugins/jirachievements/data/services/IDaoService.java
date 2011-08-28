@@ -10,4 +10,5 @@ public interface IDaoService<T extends Entity>
 {
   T get(int id);
   List<T> all();
+  void deleteAll();
 }

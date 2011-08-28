@@ -32,4 +32,9 @@ public abstract class BaseDaoService<T extends Entity> implements IDaoService<T>
   {
     return Arrays.asList(ao.find(clazz));
   }
+
+  public void deleteAll()
+  {
+    ao.delete(ao.find(clazz));
+  }
 }

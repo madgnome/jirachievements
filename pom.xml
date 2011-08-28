@@ -162,7 +162,7 @@
     <amps.version>3.4</amps.version>
     <jira.version>4.4</jira.version>
     <jira.data.version>4.4</jira.data.version>
-    <ao.version>0.15</ao.version>
+    <ao.version>0.15.9</ao.version>
   </properties>
 
 </project>

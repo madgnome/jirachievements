@@ -56,6 +56,10 @@
   <component key="configsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ConfigsInitializer"/>
   <component key="levelsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.LevelsInitializer"/>
   <component key="statisticsInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.StatisticsRefInitializer"/>
+  <component key="userStatisticInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserStatisticInitializer"/>
+  <component key="projectStatisticInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ProjectStatisticInitializer"/>
+  <component key="projectComponentStatisticInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ProjectComponentStatisticInitializer"/>
+  <component key="projectVersionStatisticInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.ProjectVersionStatisticInitializer"/>
   <!--<component key="userWrappersInitializer" class="com.madgnome.jira.plugins.jirachievements.utils.initializers.UserWrappersInitializer"/>-->
 
   <component key="pluginInitializer" class="com.madgnome.jira.plugins.jirachievements.PluginInitializer"

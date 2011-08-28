@@ -47,6 +47,10 @@ http://www.springframework.org/schema/osgi http://www.springframework.org/schema
         <ref bean="configsInitializer"/>
         <ref bean="statisticsInitializer"/>
         <ref bean="levelsInitializer"/>
+        <ref bean="userStatisticInitializer"/>
+        <ref bean="projectStatisticInitializer"/>
+        <ref bean="projectComponentStatisticInitializer"/>
+        <ref bean="projectVersionStatisticInitializer"/>
       </list>
     </constructor-arg>
   </bean>
