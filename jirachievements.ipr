@@ -493,37 +493,37 @@
         <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-core:0.15">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-core:0.15.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.15/activeobjects-core-0.15.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.15.9/activeobjects-core-0.15.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.15/activeobjects-core-0.15-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.15.9/activeobjects-core-0.15.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.15/activeobjects-core-0.15-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-core/0.15.9/activeobjects-core-0.15.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.15">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-dbex:0.15.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.15/activeobjects-dbex-0.15.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.15.9/activeobjects-dbex-0.15.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.15/activeobjects-dbex-0.15-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.15.9/activeobjects-dbex-0.15.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.15/activeobjects-dbex-0.15-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-dbex/0.15.9/activeobjects-dbex-0.15.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.15">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-plugin:0.15.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15/activeobjects-plugin-0.15.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15.9/activeobjects-plugin-0.15.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15/activeobjects-plugin-0.15-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15.9/activeobjects-plugin-0.15.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15/activeobjects-plugin-0.15-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15.9/activeobjects-plugin-0.15.9-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.15">
@@ -537,15 +537,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15/activeobjects-spi-0.15-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-test:0.15">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-test:0.15.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.15/activeobjects-test-0.15.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.15.9/activeobjects-test-0.15.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.15/activeobjects-test-0.15-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.15.9/activeobjects-test-0.15.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.15/activeobjects-test-0.15-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-test/0.15.9/activeobjects-test-0.15.9-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.applinks:applinks-api:3.5.6">
@@ -2432,26 +2432,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/nekohtml/nekohtml/0.8.1/nekohtml-0.8.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m26">
+    <library name="Maven: net.java.dev.activeobjects:activeobjects-test:0.9-m34">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m26/activeobjects-test-0.9-m26.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m34/activeobjects-test-0.9-m34.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m26/activeobjects-test-0.9-m26-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m34/activeobjects-test-0.9-m34-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m26/activeobjects-test-0.9-m26-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects-test/0.9-m34/activeobjects-test-0.9-m34-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m26">
+    <library name="Maven: net.java.dev.activeobjects:activeobjects:0.9-m34">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m26/activeobjects-0.9-m26.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m34/activeobjects-0.9-m34.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m26/activeobjects-0.9-m26-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m34/activeobjects-0.9-m34-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m26/activeobjects-0.9-m26-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/net/java/dev/activeobjects/activeobjects/0.9-m34/activeobjects-0.9-m34-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: net.jcip:jcip-annotations:1.0">

@@ -76,7 +76,28 @@ public class ProjectComponentStatisticDaoService extends BaseDaoService<Componen
       throw new IllegalStateException("Found more than one statistic (" + componentStatistics.length + ") with ref " + statisticRef.getRef() + " for user " + userWrapper.getJiraUserName());
     }
 
-    return componentStatistics.length == 0 ? create(projectKey, component, statisticRef, userWrapper) : componentStatistics[0];
+    return componentStatistics.length != 0 ? componentStatistics[0] : getOrCreate(projectKey, component, statisticRef, userWrapper, 5);
+  }
+
+  private ComponentStatistic getOrCreate(String projectKey, String component, StatisticRef statisticRef, UserWrapper userWrapper, int remainingTry)
+  {
+    ComponentStatistic componentStatistic;
+    try
+    {
+      componentStatistic = create(projectKey, component, statisticRef, userWrapper);
+    }
+    catch (Exception e)
+    {
+      if (remainingTry == 0)
+      {
+        throw new RuntimeException(String.format("Couldn't create ProjectStatistic <%s> for project <%s>, component <%s> and user <%s>",
+                statisticRef.getRef(), projectKey, component, userWrapper.getJiraUserName()), e);
+      }
+
+      return getOrCreate(projectKey, component, statisticRef, userWrapper, --remainingTry);
+    }
+
+    return componentStatistic;
   }
 
   private ComponentStatistic create(String projectKey, String component, StatisticRef statisticRef, UserWrapper userWrapper)

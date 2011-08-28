@@ -1,8 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.data.ao;
 
-import net.java.ao.Entity;
-
-public interface UserStatistic extends Entity
+public interface UserStatistic extends KeyableEntity
 {
   StatisticRef getStatisticRef();
   void setStatisticRef(StatisticRef statisticRef);

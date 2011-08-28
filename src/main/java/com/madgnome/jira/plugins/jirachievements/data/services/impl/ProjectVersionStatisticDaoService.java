@@ -64,19 +64,40 @@ public class ProjectVersionStatisticDaoService extends BaseDaoService<VersionSta
     return Arrays.asList(ao.find(getClazz(), query));
   }
 
-  private VersionStatistic getOrCreate(String projectKey, String component, StatisticRef statisticRef, UserWrapper userWrapper)
+  private VersionStatistic getOrCreate(String projectKey, String version, StatisticRef statisticRef, UserWrapper userWrapper)
   {
     final VersionStatistic[] componentStatistics = ao.find(getClazz(), "STATISTIC_REF_ID = ? AND USER_WRAPPER_ID = ? AND PROJECT_KEY = ? AND VERSION = ?",
                                                                       statisticRef.getID(),
                                                                       userWrapper.getID(),
                                                                       projectKey,
-                                                                      component);
+                                                                      version);
     if (componentStatistics.length > 1)
     {
       throw new IllegalStateException("Found more than one statistic (" + componentStatistics.length + ") with ref " + statisticRef.getRef() + " for user " + userWrapper.getJiraUserName());
     }
 
-    return componentStatistics.length == 0 ? create(projectKey, component, statisticRef, userWrapper) : componentStatistics[0];
+    return componentStatistics.length != 0 ? componentStatistics[0] : getOrCreate(projectKey, version, statisticRef, userWrapper, 5);
+  }
+
+  private VersionStatistic getOrCreate(String projectKey, String version, StatisticRef statisticRef, UserWrapper userWrapper, int remainingTry)
+  {
+    VersionStatistic versionStatistic;
+    try
+    {
+      versionStatistic = create(projectKey, version, statisticRef, userWrapper);
+    }
+    catch (Exception e)
+    {
+      if (remainingTry == 0)
+      {
+        throw new RuntimeException(String.format("Couldn't create VersionStatistic <%s> for project <%s>, version <%s> and user <%s>",
+                statisticRef.getRef(), projectKey, version, userWrapper.getJiraUserName()), e);
+      }
+
+      return getOrCreate(projectKey, version, statisticRef, userWrapper, --remainingTry);
+    }
+
+    return versionStatistic;
   }
 
   private VersionStatistic create(String projectKey, String version, StatisticRef statisticRef, UserWrapper userWrapper)

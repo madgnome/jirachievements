@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
+import net.java.ao.DBParam;
 
 public class UserStatisticDaoService extends BaseDaoService<UserStatistic> implements IUserStatisticDaoService
 {
@@ -54,18 +55,38 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
 
   private UserStatistic getOrCreate(StatisticRef statisticRef, UserWrapper userWrapper)
   {
-    final UserStatistic[] userStatistics = ao.find(UserStatistic.class, "STATISTIC_REF_ID = ? AND USER_WRAPPER_ID = ?", statisticRef.getID(), userWrapper.getID());
+    final UserStatistic[] userStatistics = ao.find(getClazz(), "STATISTIC_REF_ID = ? AND USER_WRAPPER_ID = ?", statisticRef.getID(), userWrapper.getID());
     if (userStatistics.length > 1)
     {
       throw new IllegalStateException("Found more than one statistic (" + userStatistics.length + ") with ref " + statisticRef.getRef() + " for user " + userWrapper.getJiraUserName());
     }
 
-    return userStatistics.length == 0 ? create(statisticRef, userWrapper) : userStatistics[0];
+    return userStatistics.length != 0 ? userStatistics[0] : getOrCreate(statisticRef, userWrapper, 5);
+  }
+
+  private UserStatistic getOrCreate(StatisticRef statisticRef, UserWrapper userWrapper, int remainingTry)
+  {
+    UserStatistic userStatistic;
+    try
+    {
+      userStatistic = create(statisticRef, userWrapper);
+    }
+    catch (Exception e)
+    {
+      if (remainingTry == 0)
+      {
+        throw new RuntimeException(String.format("Couldn't create UserStatistic <%s> for user <%s>", statisticRef.getRef(), userWrapper.getJiraUserName()), e);
+      }
+
+      return getOrCreate(statisticRef, userWrapper, --remainingTry);
+    }
+
+    return userStatistic;
   }
 
   private UserStatistic create(StatisticRef statisticRef, UserWrapper userWrapper)
   {
-    UserStatistic userStatistic = ao.create(UserStatistic.class);
+    UserStatistic userStatistic = ao.create(UserStatistic.class, new DBParam("KEY", statisticRef.getID() + "|"  + userWrapper.getID()));
     userStatistic.setStatisticRef(statisticRef);
     userStatistic.setUserWrapper(userWrapper);
     userStatistic.save();

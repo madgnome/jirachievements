@@ -75,7 +75,28 @@ public class ProjectStatisticDaoService extends BaseDaoService<ProjectStatistic>
       throw new IllegalStateException("Found more than one statistic (" + projectStatistics.length + ") with ref " + statisticRef.getRef() + " for user " + userWrapper.getJiraUserName());
     }
 
-    return projectStatistics.length == 0 ? create(projectKey, statisticRef, userWrapper) : projectStatistics[0];
+    return projectStatistics.length != 0 ? projectStatistics[0] : getOrCreate(projectKey, statisticRef, userWrapper, 5);
+  }
+
+  private ProjectStatistic getOrCreate(String projectKey, StatisticRef statisticRef, UserWrapper userWrapper, int remainingTry)
+  {
+    ProjectStatistic projectStatistic;
+    try
+    {
+      projectStatistic = create(projectKey, statisticRef, userWrapper);
+    }
+    catch (Exception e)
+    {
+      if (remainingTry == 0)
+      {
+        throw new RuntimeException(String.format("Couldn't create ProjectStatistic <%s> for project <%s> and user <%s>",
+                statisticRef.getRef(), projectKey, userWrapper.getJiraUserName()), e);
+      }
+
+      return getOrCreate(projectKey, statisticRef, userWrapper, --remainingTry);
+    }
+
+    return projectStatistic;
   }
 
   private ProjectStatistic create(String projectKey, StatisticRef statisticRef, UserWrapper userWrapper)
