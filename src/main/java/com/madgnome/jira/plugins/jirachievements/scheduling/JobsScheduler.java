@@ -2,6 +2,7 @@ package com.madgnome.jira.plugins.jirachievements.scheduling;
 
 import com.atlassian.sal.api.scheduling.PluginScheduler;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,7 +22,15 @@ public class  JobsScheduler
   {
     for (IJob job : jobs)
     {
-      pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, new Date(), job.getRepeatIntervalInSeconds()*MILLISECONDS_IN_SECOND);
+      scheduleJob(job);
+    }
+  }
+
+  public void unscheduleJobs()
+  {
+    for (IJob job : jobs)
+    {
+      unscheduleJob(job);
     }
   }
 
@@ -29,8 +38,8 @@ public class  JobsScheduler
   {
     for (IJob job : jobs)
     {
-      pluginScheduler.unscheduleJob(job.getName());
-      pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, new Date(), job.getRepeatIntervalInSeconds()*MILLISECONDS_IN_SECOND);
+      unscheduleJob(job);
+      scheduleJob(job);
     }
   }
 
@@ -40,10 +49,29 @@ public class  JobsScheduler
     {
       if (job.getName().equals(jobName))
       {
-        pluginScheduler.unscheduleJob(job.getName());
-        pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, new Date(), job.getRepeatIntervalInSeconds()*MILLISECONDS_IN_SECOND);
+        unscheduleJob(job);
+        scheduleJob(job);
         break;
       }
     }
+  }
+
+  private void scheduleJob(IJob job)
+  {
+    final long repeatIntervalInSeconds = job.getRepeatIntervalInSeconds();
+    pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, getExecutionDate(repeatIntervalInSeconds), repeatIntervalInSeconds *MILLISECONDS_IN_SECOND);
+  }
+
+  private void unscheduleJob(IJob job)
+  {
+    pluginScheduler.unscheduleJob(job.getName());
+  }
+
+  private Date getExecutionDate(long repeatIntervalInSeconds)
+  {
+    Calendar calendar = Calendar.getInstance();
+    calendar.add(Calendar.SECOND, (int) repeatIntervalInSeconds);
+
+    return calendar.getTime();
   }
 }
