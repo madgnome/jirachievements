@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRef;
 import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
+import net.java.ao.Query;
 
 import java.util.Arrays;
 import java.util.List;
@@ -50,7 +51,8 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   @Override
   public List<Level> all(Category category)
   {
-    return Arrays.asList(ao.find(getClazz(), "CATEGORY = ? ORDER BY NUMBER ASC", category));
+    Query query = Query.select().where("CATEGORY = ?", category).order("NUMBER ASC");
+    return Arrays.asList(ao.find(getClazz(), query));
   }
 
   @Override
@@ -64,7 +66,9 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   @Override
   public Level findNextLevel(Category category, int value)
   {
-    Level[] levels = ao.find(getClazz(), "CATEGORY = ? AND MIN_THRESHOLD > ? ORDER BY MIN_THRESHOLD ASC", category, value);
+    Query query = Query.select().where("CATEGORY = ? AND MIN_THRESHOLD > ?", category, value)
+                                .order("NUMBER ASC");
+    Level[] levels = ao.find(getClazz(), query);
 
     return levels.length > 0 ? levels[0] : null;
   }
