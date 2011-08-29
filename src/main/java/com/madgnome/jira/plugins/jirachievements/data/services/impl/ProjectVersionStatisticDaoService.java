@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.ao.VersionStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectVersionStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
+import net.java.ao.DBParam;
 import net.java.ao.Query;
 
 import java.util.Arrays;
@@ -102,7 +103,7 @@ public class ProjectVersionStatisticDaoService extends BaseDaoService<VersionSta
 
   private VersionStatistic create(String projectKey, String version, StatisticRef statisticRef, UserWrapper userWrapper)
   {
-    VersionStatistic versionStatistic = ao.create(getClazz());
+    VersionStatistic versionStatistic = ao.create(getClazz(), new DBParam("KEY", statisticRef.getID() + "|"  + projectKey + "|" + version + "|" + userWrapper.getID()));
     versionStatistic.setProjectKey(projectKey);
     versionStatistic.setVersion(version);
     versionStatistic.setStatisticRef(statisticRef);
