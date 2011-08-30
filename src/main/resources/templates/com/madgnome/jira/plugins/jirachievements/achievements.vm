@@ -94,13 +94,13 @@
         <div class="aui-tabs horizontal-tabs" id="horizontal">
           <ul class="tabs-menu">
             <li class="menu-item active-tab first">
-              <a href="javascript: window.dhtmlHistory.ignoreLocationChange = true;/*selectedTab=#horizontal-first*/"><strong>User</strong></a>
+              <a href="#horizontal-first"><strong>User</strong></a>
             </li>
             <li class="menu-item">
-              <a href="javascript: window.dhtmlHistory.ignoreLocationChange = true;/*selectedTab=#horizontal-second*/"><strong>Developer</strong></a>
+              <a href="#horizontal-second"><strong>Developer</strong></a>
             </li>
             <li class="menu-item">
-              <a href="javascript: window.dhtmlHistory.ignoreLocationChange = true;/*selectedTab=#horizontal-third*/"><strong>Tester</strong></a>
+              <a href="#horizontal-third"><strong>Tester</strong></a>
             </li>
           </ul>
           <div class="tabs-pane active-pane" id="horizontal-first">
