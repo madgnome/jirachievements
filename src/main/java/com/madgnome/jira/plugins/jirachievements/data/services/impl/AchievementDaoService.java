@@ -3,8 +3,6 @@ package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.madgnome.jira.plugins.jirachievements.data.ao.*;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
-import com.madgnome.jira.plugins.jirachievements.utils.data.AOUtil;
-import net.java.ao.Query;
 
 import java.util.*;
 
@@ -81,9 +79,17 @@ public class AchievementDaoService extends ReferencableDaoService<Achievement, A
 
   public List<Achievement> getUserNewAchievements(UserWrapper userWrapper)
   {
-    Query query = Query.select().join(UserAchievement.class, AOUtil.getTablePrefix() + "_ACHIEVEMENT.ID = ACHIEVEMENT_ID")
-                                .where("USER_WRAPPER_ID = ? AND NOTIFIED = ?", userWrapper.getID(), false);
+    // TODO: use Query with join when join will be fixed in AO with postgresql
+//    Query query = Query.select().join(UserAchievement.class, AOUtil.getTablePrefix() + "_ACHIEVEMENT.ID = ACHIEVEMENT_ID")
+//                                .where("USER_WRAPPER_ID = ? AND NOTIFIED = ?", userWrapper.getID(), false);
 
-    return Arrays.asList(ao.find(Achievement.class, query));
+    List<Achievement> achievements = new ArrayList<Achievement>();
+    UserAchievement[] userAchievements = ao.find(UserAchievement.class, "USER_WRAPPER_ID = ? AND NOTIFIED = ?", userWrapper.getID(), false);
+    for (UserAchievement userAchievement : userAchievements)
+    {
+      achievements.add(userAchievement.getAchievement());
+    }
+
+    return achievements;
   }
 }

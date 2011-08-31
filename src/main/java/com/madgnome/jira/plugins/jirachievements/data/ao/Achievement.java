@@ -7,7 +7,7 @@ import net.java.ao.schema.Default;
 import net.java.ao.schema.Ignore;
 
 @Implementation(AchievementImpl.class)
-@Preload
+@Preload({"DIFFICULTY"})
 public interface Achievement extends ReferencableEntity
 {
   String getName();
