@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.utils.KeyableUtils;
 import net.java.ao.DBParam;
 
 public class UserStatisticDaoService extends BaseDaoService<UserStatistic> implements IUserStatisticDaoService
@@ -86,7 +87,7 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
 
   private UserStatistic create(StatisticRef statisticRef, UserWrapper userWrapper)
   {
-    UserStatistic userStatistic = ao.create(UserStatistic.class, new DBParam("KEY", statisticRef.getID() + "|"  + userWrapper.getID()));
+    UserStatistic userStatistic = ao.create(UserStatistic.class, new DBParam("KEY", KeyableUtils.buildKey(statisticRef, userWrapper)));
     userStatistic.setStatisticRef(statisticRef);
     userStatistic.setUserWrapper(userWrapper);
     userStatistic.save();

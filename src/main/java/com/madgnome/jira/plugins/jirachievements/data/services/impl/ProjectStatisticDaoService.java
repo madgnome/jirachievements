@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.StatisticRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IProjectStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IStatisticRefDaoService;
+import com.madgnome.jira.plugins.jirachievements.data.utils.KeyableUtils;
 import net.java.ao.DBParam;
 import net.java.ao.Query;
 
@@ -102,7 +103,7 @@ public class ProjectStatisticDaoService extends BaseDaoService<ProjectStatistic>
 
   private ProjectStatistic create(String projectKey, StatisticRef statisticRef, UserWrapper userWrapper)
   {
-    ProjectStatistic projectStatistic = ao.create(getClazz(), new DBParam("KEY", statisticRef.getID() + "|"  + projectKey + "|" + userWrapper.getID()));
+    ProjectStatistic projectStatistic = ao.create(getClazz(), new DBParam("KEY", KeyableUtils.buildKey(projectKey, statisticRef, userWrapper)));
     projectStatistic.setProjectKey(projectKey);
     projectStatistic.setStatisticRef(statisticRef);
     projectStatistic.setUserWrapper(userWrapper);

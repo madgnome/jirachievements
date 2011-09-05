@@ -53,16 +53,12 @@ public class InitDatabaseTask extends AbstractUpgradeTask
   private void initializeAO(ActiveObjects ao)
   {
     ao.migrate(Achievement.class,
-               ComponentStatistic.class,
                Config.class,
                Level.class,
-               ProjectStatistic.class,
                Statistic.class,
                StatisticRef.class,
                UserAchievement.class,
-               UserStatistic.class,
-               UserWrapper.class,
-               VersionStatistic.class);
+               UserWrapper.class);
 
     achievementDaoService = new AchievementDaoService(ao);
     statisticRefDaoService = new StatisticRefDaoService(ao);

@@ -19,6 +19,7 @@
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper</entity>
     <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v1.InitDatabaseTask</upgradeTask>
+    <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v2.StatisticsUpgradeTask</upgradeTask>
   </ao>
 
   <!-- Components Import -->
