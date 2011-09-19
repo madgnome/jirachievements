@@ -58,8 +58,16 @@ public class  JobsScheduler
 
   private void scheduleJob(IJob job)
   {
-    final long repeatIntervalInSeconds = job.getRepeatIntervalInSeconds();
-    pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, getExecutionDate(repeatIntervalInSeconds), repeatIntervalInSeconds *MILLISECONDS_IN_SECOND);
+    try
+    {
+      final long repeatIntervalInSeconds = job.getRepeatIntervalInSeconds();
+      pluginScheduler.scheduleJob(job.getName(), job.getClass(), null, getExecutionDate(repeatIntervalInSeconds), repeatIntervalInSeconds *MILLISECONDS_IN_SECOND);
+    }
+    catch (IllegalArgumentException e)
+    {
+      // Ignore exception if job is not schedule
+    }
+
   }
 
   private void unscheduleJob(IJob job)
