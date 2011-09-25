@@ -1,3 +1,4 @@
+#* @vtlvariable name="action" type="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" *#
 #macro (categoryAchievements $categoryName)
   <div class="achievements-list">
     #foreach ($achievement in $achievements.get($categoryName))
@@ -7,25 +8,20 @@
 #end
 
 <div id="achievements-config">
-  <div class="aui-tabs horizontal-tabs" id="horizontal">
-    <ul class="tabs-menu">
-      <li class="menu-item active-tab first">
-        <a href="#horizontal-first"><strong>User</strong></a>
-      </li>
-      <li class="menu-item">
-        <a href="#horizontal-second"><strong>Developer</strong></a>
-      </li>
-      <li class="menu-item">
-        <a href="#horizontal-third"><strong>Tester</strong></a>
-      </li>
+
+  <div id="tabs">
+    <ul>
+      <li><a href="#horizontal-first">User</a></li>
+      <li><a href="#horizontal-second">Developer</a></li>
+      <li><a href="#horizontal-third">Tester</a></li>
     </ul>
-    <div class="tabs-pane active-pane" id="horizontal-first">
+    <div id="horizontal-first">
       #categoryAchievements("user")
     </div>
-    <div class="tabs-pane" id="horizontal-second">
+    <div id="horizontal-second">
       #categoryAchievements("developer")
     </div>
-    <div class="tabs-pane" id="horizontal-third">
+    <div id="horizontal-third">
       #categoryAchievements("tester")
     </div>
   </div>
@@ -34,6 +30,15 @@
 <script type="text/javascript">
   jQuery(document).ready(function() {
 
+    jQuery( "#tabs" ).tabs({
+      show: function(event, ui) {
+        jQuery('.achievements-list').masonry({
+          singleMode: true,
+          itemSelector : '.achievement-config'
+        });
+      }
+    });
+
     jQuery('#achievements-config').bind('tabSelect', function() {
       jQuery('.active-pane > .achievements-list').masonry({
         singleMode: true,
@@ -41,7 +46,7 @@
       });
     });
 
-    jQuery('.active-pane > .achievements-list').masonry({
+    jQuery('.achievements-list').masonry({
       singleMode: true,
       itemSelector : '.achievement-config'
     });
@@ -58,4 +63,70 @@
       });
     });
   });
+
+  jira.app.findVersionSelectAndConvertToPicker = function ()
+  {
+    function createPicker(selectField)
+    {
+      new AJS.MultiSelect({
+                             element: selectField,
+                             itemAttrDisplayed: "label"
+                           });
+    }
+
+    function locateSelect(parent)
+    {
+
+      var _parent = AJS.$(parent),
+        selectField;
+
+      if (_parent.is("select"))
+      {
+        selectField = _parent;
+      }
+      else
+      {
+        selectField = _parent.find("select");
+      }
+
+      return selectField;
+    }
+
+    var DEFAULT_SELECTORS = [
+      "div.aui-field-versionspicker.frother-control-renderer", // aui forms
+      "td.aui-field-versionspicker.frother-control-renderer", // convert to subtask and move
+      "tr.aui-field-versionspicker.frother-control-renderer" // bulk edit
+    ];
+
+    return function (context, selector)
+    {
+
+      selector = selector || DEFAULT_SELECTORS.join(", ");
+
+      AJS.$(selector, context).each(function ()
+                                    {
+
+                                      var selectField = locateSelect(this);
+
+                                      if (selectField.length)
+                                      {
+                                        createPicker(selectField);
+                                      }
+                                      else
+                                      {
+                                        /* [logging] */
+                                        AJS.log("jira.app.convertToVersionPicker: Tried to create version picker using [" + selector + "] "
+                                                  + "however selector does not match or could not find <select>");
+                                        /* [logging] end */
+                                      }
+
+                                    });
+
+    };
+  }();
+
+  // Have to reintroduce this label for use by lozenge.js
+  // (Usually stored in hidden input (includes\decorators\global-translations.jsp)
+  AJS.params.removeItem = '$i18n.getText("admin.common.words.remove")';
+  jira.app.findVersionSelectAndConvertToPicker(document.body, ".frother-control-renderer");
 </script>

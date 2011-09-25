@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoSe
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +18,14 @@ public class PadawanRule extends AbstractRule implements IRule
   private final Map<Long, StatisticRefEnum> statisticByEventType;
   private final Map<StatisticRefEnum, AchievementRefEnum> achievementByStatistic;
 
-  public PadawanRule(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IAchievementDaoService achievementDaoService, IUserAchievementDaoService userAchievementDaoService, IUserStatisticDaoService userStatisticDaoService)
+  public PadawanRule(JiraAuthenticationContext jiraAuthenticationContext,
+                     IUserWrapperDaoService userWrapperDaoService,
+                     IAchievementDaoService achievementDaoService,
+                     IUserAchievementDaoService userAchievementDaoService,
+                     IUserStatisticDaoService userStatisticDaoService,
+                     WorkflowConfiguration workflowConfiguration)
   {
-    super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService);
+    super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService, workflowConfiguration);
     this.userStatisticDaoService = userStatisticDaoService;
 
     statisticByEventType = createStatisticByEventType();

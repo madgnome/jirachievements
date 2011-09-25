@@ -7,12 +7,17 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 
 public class WelcomeRule extends AbstractRule implements IRule
 {
-  public WelcomeRule(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IAchievementDaoService achievementDaoService, IUserAchievementDaoService userAchievementDaoService)
+  public WelcomeRule(JiraAuthenticationContext jiraAuthenticationContext,
+                     IUserWrapperDaoService userWrapperDaoService,
+                     IAchievementDaoService achievementDaoService,
+                     IUserAchievementDaoService userAchievementDaoService,
+                     WorkflowConfiguration workflowConfiguration)
   {
-    super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService);
+    super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService, workflowConfiguration);
   }
 
   @Override

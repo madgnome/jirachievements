@@ -2,7 +2,7 @@ package com.madgnome.jira.plugins.jirachievements.data.services.impl;
 
 import com.madgnome.jira.plugins.jirachievements.data.ao.ReferencableEntity;
 import com.madgnome.jira.plugins.jirachievements.data.services.IReferencableDaoService;
-import net.java.ao.sql.ActiveObjectSqlException;
+import net.java.ao.ActiveObjectsException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -22,7 +22,7 @@ public abstract class ReferencableDaoServiceTest<T extends ReferencableEntity, V
     assertNotNull(referencableDaoService.get(ref));
   }
 
-  @Test(expected = ActiveObjectSqlException.class)
+  @Test(expected = ActiveObjectsException.class)
   public void shouldNotCreateTwoStatisticRefWithSameRef()
   {
     String ref = "Reference";

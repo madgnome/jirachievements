@@ -135,8 +135,8 @@
   </web-resource>
 
   <web-resource name="JQuery UI" key="jh-jquery-ui">
-    <resource name="jquery-ui.js" type="download" location="/includes/js/plugins/jquery-ui-1.8.12.custom.min.js"/>
-    <resource name="jquery-ui.css" type="download" location="/includes/css/plugins/redmond/jquery-ui-1.8.12.custom.css"/>
+    <resource name="jquery-ui.js" type="download" location="/includes/js/plugins/jquery-ui-1.8.16.custom.min.js"/>
+    <resource name="jquery-ui.css" type="download" location="/includes/css/plugins/smoothness/jquery-ui-1.8.16.custom.css"/>
     <resource name="jquery.flot.js" type="download" location="/includes/js/plugins/jquery.flot.js"/>
     <resource name="jquery.flot.resize.js" type="download" location="/includes/js/plugins/jquery.flot.resize.js"/>
   </web-resource>
@@ -206,18 +206,34 @@
     <link linkId="jh_global_config">/secure/admin/ViewJIRAHeroGlobalConfiguration.jspa</link>
   </web-item>
 
-  <web-item key="jh-config-webfragment" name="JIRA Hero Config Web Fragment" section="admin_plugins_menu/agile_section" weight="10">
+  <web-section key="jh-config-websection" location="agile_section">
+    <label>JIRA Hero Configuration</label>
+  </web-section>
+
+  <web-item key="jh-config-webfragment" name="JIRA Hero Config Web Fragment" section="agile_section/jh-config-websection" weight="10">
       <condition class="com.atlassian.jira.plugin.webfragment.conditions.JiraGlobalPermissionCondition">
         <param name="permission">admin</param>
       </condition>
-      <label>JIRA Hero Configuration</label>
-      <link linkId="jh_global_config">/secure/admin/ViewJIRAHeroGlobalConfiguration.jspa</link>
+      <label>Achievements &amp; Levels</label>
+      <link linkId="jh-config-webfragment">/secure/admin/ViewJIRAHeroGlobalConfiguration.jspa</link>
+  </web-item>
+
+  <web-item key="jh-advanced-config-webfragment" name="JIRA Hero Config Web Fragment" section="agile_section/jh-config-websection" weight="15">
+      <condition class="com.atlassian.jira.plugin.webfragment.conditions.JiraGlobalPermissionCondition">
+        <param name="permission">admin</param>
+      </condition>
+      <label>Advanced</label>
+      <link linkId="jh-advanced-config-webfragment">/secure/admin/ViewJIRAHeroAdvancedConfiguration.jspa</link>
   </web-item>
 
   <webwork1 key="jh-config-action" name="JIRA Hero Config Screen">
     <actions>
       <action name="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" alias="ViewJIRAHeroGlobalConfiguration">
         <view name="success">/templates/com/madgnome/jira/plugins/jirachievements/config/view-global-config.vm</view>
+        <view name="error">/templates/com/madgnome/jira/plugins/jirachievements/error.vm</view>
+      </action>
+      <action name="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewAdvancedConfiguration" alias="ViewJIRAHeroAdvancedConfiguration">
+        <view name="success">/templates/com/madgnome/jira/plugins/jirachievements/config/view-advanced-config.vm</view>
         <view name="error">/templates/com/madgnome/jira/plugins/jirachievements/error.vm</view>
       </action>
     </actions>

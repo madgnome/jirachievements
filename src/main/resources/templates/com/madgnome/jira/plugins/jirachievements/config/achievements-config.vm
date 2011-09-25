@@ -1,3 +1,4 @@
+#* @vtlvariable name="action" type="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" *#
 <table class="jiraform maxWidth">
   <tbody>
   <tr>

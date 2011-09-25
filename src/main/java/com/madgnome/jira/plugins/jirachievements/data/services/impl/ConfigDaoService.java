@@ -33,13 +33,7 @@ public class ConfigDaoService extends ReferencableDaoService<Config, ConfigRefEn
 
   public void setValue(String ref, String value)
   {
-    Config config = get(ref);
-    if (config == null)
-    {
-      logger.error("Config with ref <" + ref + "> doesn't exist");
-      return;
-    }
-
+    Config config = getOrCreate(ref);
     config.setValue(value);
     config.save();
   }

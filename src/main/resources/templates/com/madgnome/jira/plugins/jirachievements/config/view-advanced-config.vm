@@ -1,0 +1,135 @@
+#* @vtlvariable name="action" type="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewAdvancedConfiguration" *#
+<html>
+<head>
+  <title>JIRA Hero Configuration</title>
+  <meta name="admin.active.section" content="agile_section/jh-config-websection">
+  <meta name="admin.active.tab" content="jh-advanced-config-webfragment">
+</head>
+
+#macro (selectField $label $id $normalizedStatus)
+  <div class="field-group frother-control-renderer">
+    <label for="$normalizedStatus">$label</label>
+    <select id="$id" name="$id" multiple="multiple" name="$id">
+      #foreach($status in $action.statuses)
+        <option value="$status.id"
+                #if ($action.isSelected($normalizedStatus, $status.id)) selected="selected" #end>
+          $status.nameTranslation
+        </option>
+      #end
+    </select>
+
+    <div class="description">Start typing to get a list of possible matches or press down to select.</div>
+  </div>
+#end
+
+<body>
+  #if ($action.hasPermissions())
+
+
+
+  <form action="ViewJIRAHeroAdvancedConfiguration.jspa" class="aui" enctype="multipart/form-data" method="post">
+    <div class="content-body">
+      <h2>Workflow Configuration</h2>
+
+        <div class="aui-message info">
+          <p class="title">
+            <span class="aui-icon icon-info"></span>
+            <strong>Default workflow is for sissies</strong> ## TODO : Check spelling
+          </p>
+          <p>
+            JIRA Hero uses issue statuses to calculate statistics, levels and for some badges.<br/>
+            By default, a <strong>user</strong> is the one opening an issue, a <strong>developer</strong> is the one resolving it
+            and the <strong>tester</strong> is the one closing it. You may need to change the default configuration to match your workflow.
+          </p>
+        </div>
+
+      #selectField("User status(es)" "userStatuses" "OPEN")
+      #selectField("Developer status(es)" "developerStatuses" "RESOLVED")
+      #selectField("Tester status(es)" "testerStatuses" "CLOSED")
+
+    </div>
+    <div class="buttons-container content-footer">
+      <div class="buttons">
+        <input accesskey="s" class="button" name="Submit"
+               title="Press Alt+s to submit this form" type="submit" value="Create">
+        <input type="hidden" name="submitted" value="true" />
+      </div>
+    </div>
+  </form>
+
+  #else
+    #parse("/templates/com/madgnome/jira/plugins/jirachievements/config/no-privilege.vm")
+  #end
+
+<script type="text/javascript">
+  jira.app.findVersionSelectAndConvertToPicker = function ()
+  {
+    function createPicker(selectField)
+    {
+      new AJS.MultiSelect({
+        element: selectField,
+        itemAttrDisplayed: "label"
+      });
+    }
+
+    function locateSelect(parent)
+    {
+
+      var _parent = AJS.$(parent),
+              selectField;
+
+      if (_parent.is("select"))
+      {
+        selectField = _parent;
+      }
+      else
+      {
+        selectField = _parent.find("select");
+      }
+
+      return selectField;
+    }
+
+    var DEFAULT_SELECTORS = [
+      "div.aui-field-versionspicker.frother-control-renderer", // aui forms
+      "td.aui-field-versionspicker.frother-control-renderer", // convert to subtask and move
+      "tr.aui-field-versionspicker.frother-control-renderer" // bulk edit
+    ];
+
+    return function (context, selector)
+    {
+
+      selector = selector || DEFAULT_SELECTORS.join(", ");
+
+      AJS.$(selector, context).each(function ()
+      {
+
+        var selectField = locateSelect(this);
+
+        if (selectField.length)
+        {
+          createPicker(selectField);
+        }
+        else
+        {
+          /* [logging] */
+          AJS.log("jira.app.convertToVersionPicker: Tried to create version picker using [" + selector + "] "
+                  + "however selector does not match or could not find <select>");
+          /* [logging] end */
+        }
+
+      });
+
+    };
+  }();
+
+  // Have to reintroduce this label for use by lozenge.js
+  // (Usually stored in hidden input (includes\decorators\global-translations.jsp)
+  AJS.params.removeItem = '$i18n.getText("admin.common.words.remove")';
+  jira.app.findVersionSelectAndConvertToPicker(document.body, ".frother-control-renderer");
+</script>
+
+</body>
+</html>
+
+

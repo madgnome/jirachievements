@@ -10,6 +10,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
+import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 import com.madgnome.jira.plugins.jirachievements.utils.data.IssueSearcher;
 
 import java.sql.Timestamp;
@@ -21,9 +22,15 @@ public class LostArkRaiderRule extends AbstractRule implements IRule
   private final IssueSearcher issueSearcher;
   private final ChangeHistoryManager changeHistoryManager;
 
-  public LostArkRaiderRule(JiraAuthenticationContext jiraAuthenticationContext, IUserWrapperDaoService userWrapperDaoService, IAchievementDaoService achievementDaoService, IUserAchievementDaoService userAchievementDaoService, IssueSearcher issueSearcher, ChangeHistoryManager changeHistoryManager)
+  public LostArkRaiderRule(JiraAuthenticationContext jiraAuthenticationContext,
+                           IUserWrapperDaoService userWrapperDaoService,
+                           IAchievementDaoService achievementDaoService,
+                           IUserAchievementDaoService userAchievementDaoService,
+                           IssueSearcher issueSearcher,
+                           ChangeHistoryManager changeHistoryManager,
+                           WorkflowConfiguration workflowConfiguration)
   {
-    super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService);
+    super(jiraAuthenticationContext, userWrapperDaoService, achievementDaoService, userAchievementDaoService, workflowConfiguration);
     this.issueSearcher = issueSearcher;
     this.changeHistoryManager = changeHistoryManager;
   }
@@ -37,7 +44,7 @@ public class LostArkRaiderRule extends AbstractRule implements IRule
   @Override
   public void check()
   {
-    List<Issue> issues = issueSearcher.searchIssues("status WAS Resolved");
+    List<Issue> issues = issueSearcher.searchIssues("status WAS IN (" + workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.RESOLVED) + ")");
 
     Calendar calendar = Calendar.getInstance();
     for (Issue issue : issues)

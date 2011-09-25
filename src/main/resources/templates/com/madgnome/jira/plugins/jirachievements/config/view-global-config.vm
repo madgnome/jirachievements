@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>JIRA Hero Configuration</title>
-  <meta name="admin.active.section" content="admin_plugins_menu/agile_section">
-  <meta name="admin.active.tab" content="jh_global_config">
+  <meta name="admin.active.section" content="agile_section/jh-config-websection">
+  <meta name="admin.active.tab" content="jh-config-webfragment">
 </head>
 
 <body>
@@ -14,9 +14,7 @@
   
 #else
   #parse("/templates/com/madgnome/jira/plugins/jirachievements/config/no-privilege.vm")
-#end
-
-
+#end 
 
 </body>
 </html>
