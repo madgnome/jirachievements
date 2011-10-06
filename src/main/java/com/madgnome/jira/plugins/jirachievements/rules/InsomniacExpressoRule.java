@@ -49,7 +49,7 @@ public class InsomniacExpressoRule extends AbstractRule implements IRule
   }
 
   @Override
-  public void check()
+  public void innerCheck()
   {
     final String searchQuery = String.format("status WAS IN (%s, %s, %s)",
             workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.OPEN),

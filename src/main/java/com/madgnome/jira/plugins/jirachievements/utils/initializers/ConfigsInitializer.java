@@ -22,5 +22,10 @@ public class ConfigsInitializer implements ITableInitializer
     
     configDaoService.getOrCreate(ConfigRefEnum.ACHIEVEMENTS_REFRESH_RATE, "60");
     configDaoService.getOrCreate(ConfigRefEnum.STATISTICS_REFRESH_RATE, Integer.toString(24*60));
+
+    configDaoService.getOrCreate(ConfigRefEnum.OPEN_WORKFLOW_STATUSES, "Open");
+    configDaoService.getOrCreate(ConfigRefEnum.RESOLVED_WORKFLOW_STATUSES, "Resolved");
+    configDaoService.getOrCreate(ConfigRefEnum.REOPENED_WORKFLOW_STATUSES, "Reopened");
+    configDaoService.getOrCreate(ConfigRefEnum.CLOSED_WORKFLOW_STATUSES, "Closed");
   }
 }

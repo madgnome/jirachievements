@@ -14,7 +14,7 @@ import net.java.ao.test.junit.ActiveObjectsJUnitRunner;
 import org.junit.runner.RunWith;
 
 @RunWith(ActiveObjectsJUnitRunner.class)
-@Jdbc(Hsql.class)
+@Jdbc(Hsql.class) // DynamicJdbcConfiguration.class
 @Data(DatabaseProcessor.class)
 @NameConverters(table = PluginActiveObjectsTableNameConverter.class, field = TestActiveObjectsFieldNameConverter.class)
 public abstract class AbstractServiceTest

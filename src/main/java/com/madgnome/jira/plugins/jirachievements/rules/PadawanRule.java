@@ -39,7 +39,7 @@ public class PadawanRule extends AbstractRule implements IRule
   }
 
   @Override
-  public void check()
+  public void innerCheck()
   {
     for (long issueEvenType :statisticByEventType.keySet())
     {

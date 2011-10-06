@@ -42,7 +42,13 @@ public class IssueSnatcherRule extends AbstractRule implements IRule
   }
 
   @Override
-  public void check()
+  public boolean isCheckable()
+  {
+    return !workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.REOPENED).equals("");
+  }
+
+  @Override
+  public void innerCheck()
   {
     List<Issue> issues = issueSearcher.searchIssues("status WAS IN (" + workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.REOPENED) + ")");
 

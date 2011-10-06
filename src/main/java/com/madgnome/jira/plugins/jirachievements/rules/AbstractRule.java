@@ -6,7 +6,7 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementD
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService;
 import com.madgnome.jira.plugins.jirachievements.services.WorkflowConfiguration;
 
-public abstract class AbstractRule
+public abstract class AbstractRule implements IRule
 {
   protected final JiraAuthenticationContext jiraAuthenticationContext;
   protected final IUserWrapperDaoService userWrapperDaoService;
@@ -25,5 +25,22 @@ public abstract class AbstractRule
     this.achievementDaoService = achievementDaoService;
     this.userAchievementDaoService = userAchievementDaoService;
     this.workflowConfiguration = workflowConfiguration;
+  }
+
+  @Override
+  public boolean isCheckable()
+  {
+    return true;
+  }
+
+  protected abstract void innerCheck();
+
+  @Override
+  public void check()
+  {
+    if (isCheckable())
+    {
+      innerCheck();
+    }
   }
 }

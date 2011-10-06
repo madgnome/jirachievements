@@ -42,7 +42,7 @@ public class LostArkRaiderRule extends AbstractRule implements IRule
   }
 
   @Override
-  public void check()
+  public void innerCheck()
   {
     List<Issue> issues = issueSearcher.searchIssues("status WAS IN (" + workflowConfiguration.getStatusesAsCSV(WorkflowConfiguration.NormalizedStatus.RESOLVED) + ")");
 

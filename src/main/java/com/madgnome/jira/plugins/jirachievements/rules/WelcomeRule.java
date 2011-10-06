@@ -27,7 +27,7 @@ public class WelcomeRule extends AbstractRule implements IRule
   }
 
   @Override
-  public void check()
+  public void innerCheck()
   {
     for (UserWrapper userWrapper : userWrapperDaoService.all())
     {

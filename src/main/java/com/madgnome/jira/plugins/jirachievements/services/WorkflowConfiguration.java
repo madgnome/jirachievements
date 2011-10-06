@@ -3,12 +3,17 @@ package com.madgnome.jira.plugins.jirachievements.services;
 import com.atlassian.jira.config.ConstantsManager;
 import com.atlassian.jira.issue.status.Status;
 import com.madgnome.jira.plugins.jirachievements.data.ao.Config;
+import com.madgnome.jira.plugins.jirachievements.data.ao.ConfigRefEnum;
 import com.madgnome.jira.plugins.jirachievements.data.services.IConfigDaoService;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class WorkflowConfiguration
 {
+  private static final String WORKFLOW_STATUSES_SUFFIX = "_WORKFLOW_STATUSES";
   private final IConfigDaoService configDaoService;
   private final ConstantsManager constantsManager;
 
@@ -17,21 +22,19 @@ public class WorkflowConfiguration
     OPEN,
     RESOLVED,
     CLOSED,
-    REOPENED
-  }
+    REOPENED;
 
-  private Map<NormalizedStatus, String> statuses;
+    public ConfigRefEnum toConfigRefEnum()
+    {
+      String name = this.toString();
+      return ConfigRefEnum.valueOf(name + WORKFLOW_STATUSES_SUFFIX);
+    }
+  }
 
   public WorkflowConfiguration(IConfigDaoService configDaoService, ConstantsManager constantsManager)
   {
     this.configDaoService = configDaoService;
     this.constantsManager = constantsManager;
-
-    statuses = new HashMap<NormalizedStatus, String>();
-    statuses.put(NormalizedStatus.OPEN, "Open");
-    statuses.put(NormalizedStatus.RESOLVED, "Resolved");
-    statuses.put(NormalizedStatus.CLOSED, "Closed");
-    statuses.put(NormalizedStatus.REOPENED, "Reopened ");
   }
 
   public List<String> getStatuses(NormalizedStatus status)
@@ -53,16 +56,22 @@ public class WorkflowConfiguration
   public String getStatusesAsCSV(NormalizedStatus status)
   {
     StringBuilder builder = new StringBuilder();
-    for (String ref : getStatuses(status))
+    List<String> statuses = getStatuses(status);
+    for (int i = 0, statusesSize = statuses.size(); i < statusesSize; i++)
     {
-      builder.append(ref).append(",");
+      String ref = statuses.get(i);
+      builder.append(ref);
+      if (i < statusesSize - 1)
+      {
+        builder.append(",");
+      }
     }
     return builder.toString();
   }
 
   public List<String> getStatusesId(NormalizedStatus status)
   {
-    final Config config = configDaoService.get(status.toString().toLowerCase() + "_workflow_statuses");
+    final Config config = configDaoService.get(status.toConfigRefEnum());
     return Arrays.asList(config.getValue().split(","));
   }
 
@@ -76,6 +85,6 @@ public class WorkflowConfiguration
       builder.append(id).append(",");
     }
 
-    configDaoService.setValue(status.toString().toLowerCase() + "_workflow_statuses", builder.toString());
+    configDaoService.setValue(status.toString().toLowerCase() + WORKFLOW_STATUSES_SUFFIX, builder.toString());
   }
 }
