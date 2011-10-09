@@ -190,11 +190,18 @@
         </configuration>
       </plugin>
     </plugins>
+    
+    <resources>
+      <resource>
+        <directory>src/main/xml</directory>
+        <targetPath>xml</targetPath>
+      </resource>
+    </resources>
   </build>
 
   <properties>
-    <amps.version>3.4</amps.version>
-    <jira.version>4.4</jira.version>
+    <amps.version>3.6</amps.version>
+    <jira.version>4.4.1</jira.version>
     <jira.data.version>4.4</jira.data.version>
     <ao.version>0.15.9</ao.version>
   </properties>

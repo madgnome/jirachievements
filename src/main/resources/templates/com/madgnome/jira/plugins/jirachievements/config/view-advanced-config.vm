@@ -8,8 +8,12 @@
 
 #macro (selectField $label $id $normalizedStatus)
   <div class="field-group frother-control-renderer">
-    <label for="$normalizedStatus">$label</label>
-    <select id="$id" name="$id" multiple="multiple" name="$id">
+    <label for="$normalizedStatus">
+      $label
+      <span class="aui-icon icon-required"></span>
+      <span class="content">required</span>
+    </label>
+    <select id="$id" name="$id" multiple name="$id">
       #foreach($status in $action.statuses)
         <option value="$status.id"
                 #if ($action.isSelected($normalizedStatus, $status.id)) selected="selected" #end>
@@ -50,7 +54,7 @@
     </div>
     <div class="buttons-container content-footer">
       <div class="buttons">
-        <input accesskey="s" class="button" name="Submit"
+        <input accesskey="s" class="button" name="Update"
                title="Press Alt+s to submit this form" type="submit" value="Create">
         <input type="hidden" name="submitted" value="true" />
       </div>

@@ -7,4 +7,5 @@ public interface IConfigDaoService extends IReferencableDaoService<Config, Confi
 {
   Config getOrCreate(ConfigRefEnum ref, String initialValue);
   void setValue(String ref, String value);
+  void setValue(ConfigRefEnum ref, String value);
 }

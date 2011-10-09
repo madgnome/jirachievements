@@ -537,15 +537,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-plugin/0.15.9/activeobjects-plugin-0.15.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.15">
+    <library name="Maven: com.atlassian.activeobjects:activeobjects-spi:0.15.8">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15/activeobjects-spi-0.15.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15.8/activeobjects-spi-0.15.8.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15/activeobjects-spi-0.15-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15.8/activeobjects-spi-0.15.8-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15/activeobjects-spi-0.15-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/activeobjects/activeobjects-spi/0.15.8/activeobjects-spi-0.15.8-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.activeobjects:activeobjects-test:0.15.9">
@@ -669,15 +669,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/core/atlassian-core/4.6.0/atlassian-core-4.6.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.crowd:atlassian-embedded-crowd-ofbiz:1.2.8">
+    <library name="Maven: com.atlassian.crowd:atlassian-embedded-crowd-ofbiz:1.2.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/crowd/atlassian-embedded-crowd-ofbiz/1.2.8/atlassian-embedded-crowd-ofbiz-1.2.8.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/crowd/atlassian-embedded-crowd-ofbiz/1.2.9/atlassian-embedded-crowd-ofbiz-1.2.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/crowd/atlassian-embedded-crowd-ofbiz/1.2.8/atlassian-embedded-crowd-ofbiz-1.2.8-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/crowd/atlassian-embedded-crowd-ofbiz/1.2.9/atlassian-embedded-crowd-ofbiz-1.2.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/crowd/atlassian-embedded-crowd-ofbiz/1.2.8/atlassian-embedded-crowd-ofbiz-1.2.8-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/crowd/atlassian-embedded-crowd-ofbiz/1.2.9/atlassian-embedded-crowd-ofbiz-1.2.9-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.crowd:crowd-acceptance-test:2.2.8">
@@ -933,26 +933,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/extras/atlassian-extras/2.2.2/atlassian-extras-2.2.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.gadgets:atlassian-gadgets-api:3.1.7">
+    <library name="Maven: com.atlassian.gadgets:atlassian-gadgets-api:3.1.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-api/3.1.7/atlassian-gadgets-api-3.1.7.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-api/3.1.9/atlassian-gadgets-api-3.1.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-api/3.1.7/atlassian-gadgets-api-3.1.7-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-api/3.1.9/atlassian-gadgets-api-3.1.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-api/3.1.7/atlassian-gadgets-api-3.1.7-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-api/3.1.9/atlassian-gadgets-api-3.1.9-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.gadgets:atlassian-gadgets-spi:3.1.7">
+    <library name="Maven: com.atlassian.gadgets:atlassian-gadgets-spi:3.1.9">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-spi/3.1.7/atlassian-gadgets-spi-3.1.7.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-spi/3.1.9/atlassian-gadgets-spi-3.1.9.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-spi/3.1.7/atlassian-gadgets-spi-3.1.7-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-spi/3.1.9/atlassian-gadgets-spi-3.1.9-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-spi/3.1.7/atlassian-gadgets-spi-3.1.7-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/gadgets/atlassian-gadgets-spi/3.1.9/atlassian-gadgets-spi-3.1.9-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.gzipfilter:atlassian-gzipfilter:1.9">
@@ -999,15 +999,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jdk/utilities/atlassian-jdk-utilities/0.4/atlassian-jdk-utilities-0.4-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:atlassian-jira-pageobjects:4.4">
+    <library name="Maven: com.atlassian.jira:atlassian-jira-pageobjects:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira-pageobjects/4.4/atlassian-jira-pageobjects-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira-pageobjects/4.4.1/atlassian-jira-pageobjects-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira-pageobjects/4.4/atlassian-jira-pageobjects-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira-pageobjects/4.4.1/atlassian-jira-pageobjects-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira-pageobjects/4.4/atlassian-jira-pageobjects-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira-pageobjects/4.4.1/atlassian-jira-pageobjects-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.jira:atlassian-jira:4.3.2">
@@ -1024,257 +1024,257 @@
         <root url="jar://C:/techbox/lib/atlassian/atlassian-jira-4.3.2-source/jira-project/jira-components/atlassian-jira/target/atlassian-jira-4.3.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:atlassian-jira:4.4">
+    <library name="Maven: com.atlassian.jira:atlassian-jira:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.4/atlassian-jira-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.4.1/atlassian-jira-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.4/atlassian-jira-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.4.1/atlassian-jira-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.4/atlassian-jira-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/atlassian-jira/4.4.1/atlassian-jira-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-func-tests:4.4">
+    <library name="Maven: com.atlassian.jira:jira-func-tests:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-func-tests/4.4/jira-func-tests-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-func-tests/4.4.1/jira-func-tests-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-func-tests/4.4/jira-func-tests-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-func-tests/4.4.1/jira-func-tests-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-func-tests/4.4/jira-func-tests-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-func-tests/4.4.1/jira-func-tests-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-ca_ES:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-ca_ES:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ca_ES/4.4/jira-lang-ca_ES-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ca_ES/4.4.1/jira-lang-ca_ES-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ca_ES/4.4/jira-lang-ca_ES-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ca_ES/4.4.1/jira-lang-ca_ES-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ca_ES/4.4/jira-lang-ca_ES-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ca_ES/4.4.1/jira-lang-ca_ES-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-cs_CZ:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-cs_CZ:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-cs_CZ/4.4/jira-lang-cs_CZ-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-cs_CZ/4.4.1/jira-lang-cs_CZ-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-cs_CZ/4.4/jira-lang-cs_CZ-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-cs_CZ/4.4.1/jira-lang-cs_CZ-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-cs_CZ/4.4/jira-lang-cs_CZ-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-cs_CZ/4.4.1/jira-lang-cs_CZ-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-da_DK:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-da_DK:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-da_DK/4.4/jira-lang-da_DK-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-da_DK/4.4.1/jira-lang-da_DK-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-da_DK/4.4/jira-lang-da_DK-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-da_DK/4.4.1/jira-lang-da_DK-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-da_DK/4.4/jira-lang-da_DK-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-da_DK/4.4.1/jira-lang-da_DK-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-de_CH:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-de_CH:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_CH/4.4/jira-lang-de_CH-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_CH/4.4.1/jira-lang-de_CH-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_CH/4.4/jira-lang-de_CH-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_CH/4.4.1/jira-lang-de_CH-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_CH/4.4/jira-lang-de_CH-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_CH/4.4.1/jira-lang-de_CH-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-de_DE:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-de_DE:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_DE/4.4/jira-lang-de_DE-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_DE/4.4.1/jira-lang-de_DE-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_DE/4.4/jira-lang-de_DE-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_DE/4.4.1/jira-lang-de_DE-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_DE/4.4/jira-lang-de_DE-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-de_DE/4.4.1/jira-lang-de_DE-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-en_UK:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-en_UK:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_UK/4.4/jira-lang-en_UK-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_UK/4.4.1/jira-lang-en_UK-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_UK/4.4/jira-lang-en_UK-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_UK/4.4.1/jira-lang-en_UK-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_UK/4.4/jira-lang-en_UK-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_UK/4.4.1/jira-lang-en_UK-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-en_US:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-en_US:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_US/4.4/jira-lang-en_US-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_US/4.4.1/jira-lang-en_US-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_US/4.4/jira-lang-en_US-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_US/4.4.1/jira-lang-en_US-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_US/4.4/jira-lang-en_US-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-en_US/4.4.1/jira-lang-en_US-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-es_ES:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-es_ES:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-es_ES/4.4/jira-lang-es_ES-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-es_ES/4.4.1/jira-lang-es_ES-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-es_ES/4.4/jira-lang-es_ES-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-es_ES/4.4.1/jira-lang-es_ES-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-es_ES/4.4/jira-lang-es_ES-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-es_ES/4.4.1/jira-lang-es_ES-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-fr_FR:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-fr_FR:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-fr_FR/4.4/jira-lang-fr_FR-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-fr_FR/4.4.1/jira-lang-fr_FR-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-fr_FR/4.4/jira-lang-fr_FR-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-fr_FR/4.4.1/jira-lang-fr_FR-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-fr_FR/4.4/jira-lang-fr_FR-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-fr_FR/4.4.1/jira-lang-fr_FR-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-hu_HU:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-hu_HU:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-hu_HU/4.4/jira-lang-hu_HU-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-hu_HU/4.4.1/jira-lang-hu_HU-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-hu_HU/4.4/jira-lang-hu_HU-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-hu_HU/4.4.1/jira-lang-hu_HU-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-hu_HU/4.4/jira-lang-hu_HU-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-hu_HU/4.4.1/jira-lang-hu_HU-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-it_IT:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-it_IT:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-it_IT/4.4/jira-lang-it_IT-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-it_IT/4.4.1/jira-lang-it_IT-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-it_IT/4.4/jira-lang-it_IT-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-it_IT/4.4.1/jira-lang-it_IT-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-it_IT/4.4/jira-lang-it_IT-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-it_IT/4.4.1/jira-lang-it_IT-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-ja_JP:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-ja_JP:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ja_JP/4.4/jira-lang-ja_JP-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ja_JP/4.4.1/jira-lang-ja_JP-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ja_JP/4.4/jira-lang-ja_JP-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ja_JP/4.4.1/jira-lang-ja_JP-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ja_JP/4.4/jira-lang-ja_JP-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ja_JP/4.4.1/jira-lang-ja_JP-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-nl_BE:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-nl_BE:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-nl_BE/4.4/jira-lang-nl_BE-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-nl_BE/4.4.1/jira-lang-nl_BE-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-nl_BE/4.4/jira-lang-nl_BE-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-nl_BE/4.4.1/jira-lang-nl_BE-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-nl_BE/4.4/jira-lang-nl_BE-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-nl_BE/4.4.1/jira-lang-nl_BE-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-no_NO:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-no_NO:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-no_NO/4.4/jira-lang-no_NO-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-no_NO/4.4.1/jira-lang-no_NO-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-no_NO/4.4/jira-lang-no_NO-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-no_NO/4.4.1/jira-lang-no_NO-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-no_NO/4.4/jira-lang-no_NO-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-no_NO/4.4.1/jira-lang-no_NO-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-pl_PL:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-pl_PL:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pl_PL/4.4/jira-lang-pl_PL-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pl_PL/4.4.1/jira-lang-pl_PL-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pl_PL/4.4/jira-lang-pl_PL-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pl_PL/4.4.1/jira-lang-pl_PL-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pl_PL/4.4/jira-lang-pl_PL-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pl_PL/4.4.1/jira-lang-pl_PL-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-pt_BR:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-pt_BR:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pt_BR/4.4/jira-lang-pt_BR-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pt_BR/4.4.1/jira-lang-pt_BR-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pt_BR/4.4/jira-lang-pt_BR-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pt_BR/4.4.1/jira-lang-pt_BR-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pt_BR/4.4/jira-lang-pt_BR-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-pt_BR/4.4.1/jira-lang-pt_BR-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-ru_RU:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-ru_RU:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ru_RU/4.4/jira-lang-ru_RU-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ru_RU/4.4.1/jira-lang-ru_RU-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ru_RU/4.4/jira-lang-ru_RU-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ru_RU/4.4.1/jira-lang-ru_RU-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ru_RU/4.4/jira-lang-ru_RU-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-ru_RU/4.4.1/jira-lang-ru_RU-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-sk_SK:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-sk_SK:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-sk_SK/4.4/jira-lang-sk_SK-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-sk_SK/4.4.1/jira-lang-sk_SK-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-sk_SK/4.4/jira-lang-sk_SK-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-sk_SK/4.4.1/jira-lang-sk_SK-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-sk_SK/4.4/jira-lang-sk_SK-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-sk_SK/4.4.1/jira-lang-sk_SK-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-tr_TR:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-tr_TR:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-tr_TR/4.4/jira-lang-tr_TR-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-tr_TR/4.4.1/jira-lang-tr_TR-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-tr_TR/4.4/jira-lang-tr_TR-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-tr_TR/4.4.1/jira-lang-tr_TR-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-tr_TR/4.4/jira-lang-tr_TR-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-tr_TR/4.4.1/jira-lang-tr_TR-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-zh_CN:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-zh_CN:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_CN/4.4/jira-lang-zh_CN-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_CN/4.4.1/jira-lang-zh_CN-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_CN/4.4/jira-lang-zh_CN-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_CN/4.4.1/jira-lang-zh_CN-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_CN/4.4/jira-lang-zh_CN-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_CN/4.4.1/jira-lang-zh_CN-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.jira:jira-lang-zh_TW:4.4">
+    <library name="Maven: com.atlassian.jira:jira-lang-zh_TW:4.4.1">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_TW/4.4/jira-lang-zh_TW-4.4.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_TW/4.4.1/jira-lang-zh_TW-4.4.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_TW/4.4/jira-lang-zh_TW-4.4-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_TW/4.4.1/jira-lang-zh_TW-4.4.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_TW/4.4/jira-lang-zh_TW-4.4-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/jira/jira-lang-zh_TW/4.4.1/jira-lang-zh_TW-4.4.1-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.johnson:atlassian-johnson:1.1">
@@ -1343,26 +1343,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/oauth/atlassian-oauth-api/1.2.2/atlassian-oauth-api-1.2.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.ofbiz:entityengine-share:1.0.8">
+    <library name="Maven: com.atlassian.ofbiz:entityengine-share:1.0.11">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine-share/1.0.8/entityengine-share-1.0.8.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine-share/1.0.11/entityengine-share-1.0.11.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine-share/1.0.8/entityengine-share-1.0.8-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine-share/1.0.11/entityengine-share-1.0.11-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine-share/1.0.8/entityengine-share-1.0.8-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine-share/1.0.11/entityengine-share-1.0.11-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.ofbiz:entityengine:1.0.8">
+    <library name="Maven: com.atlassian.ofbiz:entityengine:1.0.11">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine/1.0.8/entityengine-1.0.8.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine/1.0.11/entityengine-1.0.11.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine/1.0.8/entityengine-1.0.8-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine/1.0.11/entityengine-1.0.11-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine/1.0.8/entityengine-1.0.8-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/ofbiz/entityengine/1.0.11/entityengine-1.0.11-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.p4package:atlassian-p4package:2007.12.14">
@@ -2157,17 +2157,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: csv:csv:20">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/csv/csv/20/csv-20.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/csv/csv/20/csv-20-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/csv/csv/20/csv-20-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: datafile:datafile:1.3.3">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/datafile/datafile/1.3.3/datafile-1.3.3.jar!/" />
@@ -2661,6 +2650,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/net/sf/json-lib/json-lib/2.4/json-lib-2.4-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.sf.opencsv:opencsv:2.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/opencsv/opencsv/2.0/opencsv-2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/opencsv/opencsv/2.0/opencsv-2.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/sf/opencsv/opencsv/2.0/opencsv-2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: net.sf.trove4j:trove4j:2.0.2">

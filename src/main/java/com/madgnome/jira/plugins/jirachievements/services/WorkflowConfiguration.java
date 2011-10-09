@@ -85,6 +85,6 @@ public class WorkflowConfiguration
       builder.append(id).append(",");
     }
 
-    configDaoService.setValue(status.toString().toLowerCase() + WORKFLOW_STATUSES_SUFFIX, builder.toString());
+    configDaoService.setValue(status.toConfigRefEnum(), builder.toString());
   }
 }

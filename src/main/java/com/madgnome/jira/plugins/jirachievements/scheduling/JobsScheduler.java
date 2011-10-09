@@ -72,7 +72,14 @@ public class  JobsScheduler
 
   private void unscheduleJob(IJob job)
   {
-    pluginScheduler.unscheduleJob(job.getName());
+    try
+    {
+      pluginScheduler.unscheduleJob(job.getName());
+    }
+    catch (IllegalArgumentException e)
+    {
+      // Ignore exception if job is not schedule
+    }
   }
 
   private Date getExecutionDate(long repeatIntervalInSeconds)

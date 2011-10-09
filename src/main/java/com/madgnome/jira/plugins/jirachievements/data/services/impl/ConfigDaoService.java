@@ -37,4 +37,11 @@ public class ConfigDaoService extends ReferencableDaoService<Config, ConfigRefEn
     config.setValue(value);
     config.save();
   }
+
+  public void setValue(ConfigRefEnum ref, String value)
+  {
+    Config config = getOrCreate(ref);
+    config.setValue(value);
+    config.save();
+  }
 }
