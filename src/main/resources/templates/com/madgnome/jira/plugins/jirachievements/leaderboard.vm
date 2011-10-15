@@ -35,8 +35,8 @@
   </a>
 #end
 
-#macro (leaderboardTable $listLeaderBoard)
-<table>
+#macro (leaderboardTable $id $listLeaderBoard)
+<table id="$id">
   <tbody>
     #foreach ($projectStatistic in $listLeaderBoard)
       <tr>
@@ -100,9 +100,9 @@
               <td><img src="#largeAvatarUrl($testedIssueLB)"/></td>
             </tr>
             <tr>
-              <td>#firstUserLink($createdIssueLB false)</td>
-              <td>#firstUserLink($resolvedIssueLB false)</td>
-              <td>#firstUserLink($testedIssueLB false)</td>
+              <td id="userLeader">#firstUserLink($createdIssueLB false)</td>
+              <td id="developerLeader">#firstUserLink($resolvedIssueLB false)</td>
+              <td id="testerLeader">#firstUserLink($testedIssueLB false)</td>
             </tr>
           </tbody>
         </table>
@@ -119,23 +119,23 @@
         <div class="aui-tabs horizontal-tabs" id="horizontal">
           <ul class="tabs-menu">
             <li class="menu-item active-tab first">
-              <a href="#horizontal-first"><strong>User</strong></a>
+              <a href="#user-details"><strong>User</strong></a>
             </li>
             <li class="menu-item">
-              <a href="#horizontal-second"><strong>Developer</strong></a>
+              <a href="#developer-details"><strong>Developer</strong></a>
             </li>
             <li class="menu-item">
-              <a href="#horizontal-third"><strong>Tester</strong></a>
+              <a href="#tester-details"><strong>Tester</strong></a>
             </li>
           </ul>
-          <div class="tabs-pane active-pane" id="horizontal-first">
-            #leaderboardTable($createdIssueLB)
+          <div class="tabs-pane active-pane">
+            #leaderboardTable("user-details" $createdIssueLB)
           </div>
-          <div class="tabs-pane" id="horizontal-second">
-            #leaderboardTable($resolvedIssueLB)
+          <div class="tabs-pane">
+            #leaderboardTable("developer-details" $resolvedIssueLB)
           </div>
-          <div class="tabs-pane" id="horizontal-third">
-            #leaderboardTable($testedIssueLB)
+          <div class="tabs-pane">
+            #leaderboardTable("tester-details" $testedIssueLB)
           </div>
         </div>
       </div>
