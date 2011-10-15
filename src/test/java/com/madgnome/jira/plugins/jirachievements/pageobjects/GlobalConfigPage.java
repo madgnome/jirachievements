@@ -53,7 +53,7 @@ public class GlobalConfigPage extends AbstractJiraAdminPage
   {
     PageElement achievement = getAchievementElement(achievementId);
 
-    if (achievement.find(By.className("active")) == null)
+    if (!achievement.find(By.className("mask")).hasClass("active"))
     {
       // Achievement is enable, else do nothing
       achievement.click();

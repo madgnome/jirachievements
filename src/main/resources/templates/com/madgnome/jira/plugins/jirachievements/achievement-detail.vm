@@ -14,7 +14,7 @@
   #set($imgUrl = "$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/lock.png")
 #end
 
-<div class="achievement-full">
+<div class="achievement-full" id="achievement-${achievement.getID()}">
   <div class="achievement-image">
     <img src="$imgUrl"
          onerror="this.src='$req.contextPath/download/resources/com.madgnome.jira.plugins.jirachievements/images/achievements/default.png';"/>

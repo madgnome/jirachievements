@@ -5,6 +5,7 @@ import com.atlassian.pageobjects.elements.CheckboxElement;
 import com.atlassian.pageobjects.elements.ElementBy;
 import com.atlassian.pageobjects.elements.PageElement;
 import com.atlassian.pageobjects.elements.query.TimedCondition;
+import org.openqa.selenium.By;
 
 public class UserAchievementsPage extends AbstractJiraPage
 {
@@ -38,5 +39,40 @@ public class UserAchievementsPage extends AbstractJiraPage
   {
     kryptoniteCheckbox.check();
     return this;
+  }
+
+  public PageElement getAchievementElement(int id)
+  {
+    return container.find(By.id("achievement-" + String.valueOf(id)));
+  }
+
+  public boolean achievementIsPresent(int id)
+  {
+    return getAchievementElement(id).isPresent();
+  }
+
+  public boolean hasAchievement(int id)
+  {
+    return getAchievementElement(id).hasClass("active");
+  }
+
+  public int getUserLevelCount()
+  {
+    return Integer.parseInt(getLevelCount("userLevel").getText());
+  }
+
+  public int getDeveloperLevelCount()
+  {
+    return Integer.parseInt(getLevelCount("developerLevel").getText());
+  }
+
+  public int getTesterLevelCount()
+  {
+    return Integer.parseInt(getLevelCount("testerLevel").getText());
+  }
+
+  private PageElement getLevelCount(String id)
+  {
+    return container.find(By.id(id)).find(By.className("count"));
   }
 }
