@@ -2,10 +2,6 @@ package com.madgnome.jira.plugins.jirachievements.pageobjects.config;
 
 import com.atlassian.jira.pageobjects.JiraTestedProduct;
 import com.atlassian.jira.pageobjects.config.EnvironmentBasedProductInstance;
-import com.atlassian.jira.pageobjects.config.junit4.DumpPageSourceListener;
-import com.atlassian.jira.pageobjects.config.junit4.JiraWebTestRunner;
-import com.atlassian.jira.pageobjects.config.junit4.LogPageSourceListener;
-import com.atlassian.jira.pageobjects.config.junit4.ScreenshotListener;
 import com.google.common.collect.Lists;
 import org.junit.runner.notification.RunListener;
 import org.junit.runners.model.InitializationError;
@@ -16,7 +12,7 @@ import org.junit.runners.model.InitializationError;
  *
  * @since v4.4
  */
-public class SingleJiraWebTestRunner extends JiraWebTestRunner
+public class SingleJiraWebTestRunner extends CustomJiraWebTestRunner
 {
   public SingleJiraWebTestRunner(Class<?> klass) throws InitializationError
   {
@@ -30,9 +26,10 @@ public class SingleJiraWebTestRunner extends JiraWebTestRunner
 
   private static Iterable<RunListener> listeners()
   {
-    return Lists.newArrayList(
-            LogPageSourceListener.asRunListener(),
-            DumpPageSourceListener.asRunListener(),
-            ScreenshotListener.asRunListener());
+    return  Lists.newArrayList();
+//    return Lists.newArrayList(
+//            LogPageSourceListener.asRunListener(),
+//            DumpPageSourceListener.asRunListener(),
+//            ScreenshotListener.asRunListener());
   }
 }

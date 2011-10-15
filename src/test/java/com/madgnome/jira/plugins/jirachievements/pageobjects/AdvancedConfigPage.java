@@ -16,7 +16,7 @@ public class AdvancedConfigPage extends AbstractJiraAdminPage
   @ElementBy(className = "admin-active-area")
   private PageElement configContainer;
 
-  @ElementBy(name = "Submit")
+  @ElementBy(name = "Update")
   private PageElement updateButton;
 
   private MultiSelect userStatusesSelect;

@@ -165,11 +165,6 @@
               <artifactId>activeobjects-plugin</artifactId>
               <version>${ao.version}</version>
             </pluginArtifact>
-            <!--<pluginArtifact>-->
-              <!--<groupId>com.atlassian.activeobjects</groupId>-->
-              <!--<artifactId>activeobjects-jira43-spi</artifactId>-->
-              <!--<version>${ao.version}</version>-->
-            <!--</pluginArtifact>-->
             <pluginArtifact>
               <groupId>com.atlassian.activeobjects</groupId>
               <artifactId>activeobjects-jira-spi</artifactId>
@@ -190,13 +185,6 @@
         </configuration>
       </plugin>
     </plugins>
-    
-    <resources>
-      <resource>
-        <directory>src/main/xml</directory>
-        <targetPath>xml</targetPath>
-      </resource>
-    </resources>
   </build>
 
   <properties>
