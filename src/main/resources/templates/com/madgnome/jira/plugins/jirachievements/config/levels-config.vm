@@ -47,9 +47,9 @@
               <td><div id="tester_placeholder" class="chart"></div></td>
             </tr>
             <tr>
-              <td><a>Configure</a></td>
-              <td><a>Configure</a></td>
-              <td><a>Configure</a></td>
+              <td><a href="javascript: alert('Not yet implemented. Stay tuned!')">Configure</a></td>
+              <td><a href="javascript: alert('Not yet implemented. Stay tuned!')">Configure</a></td>
+              <td><a href="javascript: alert('Not yet implemented. Stay tuned!')">Configure</a></td>
             </tr>
           </tbody>
         </table>

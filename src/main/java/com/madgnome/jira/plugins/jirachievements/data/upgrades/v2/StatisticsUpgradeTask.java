@@ -58,10 +58,7 @@ public class StatisticsUpgradeTask extends AbstractUpgradeTask
   private void createConfigForStatus(ConfigRefEnum configRef, String statusName)
   {
     Status status = constantsManager.getStatusByName(statusName);
-    if (status != null)
-    {
-      configDaoService.getOrCreate(configRef, status.getId());
-    }
+    configDaoService.getOrCreate(configRef, status != null ? status.getId() : "");
   }
 
   private void upgradeStatistics(ActiveObjects ao)

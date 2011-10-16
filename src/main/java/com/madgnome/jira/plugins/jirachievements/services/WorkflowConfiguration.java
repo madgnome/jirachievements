@@ -77,7 +77,7 @@ public class WorkflowConfiguration
 
   public void saveStatuses(NormalizedStatus status, String[] statusesId)
   {
-    List<String> ids = Arrays.asList(statusesId);
+    List<String> ids = statusesId != null ? Arrays.asList(statusesId) : Collections.<String>emptyList();
     Collections.sort(ids);
     StringBuilder builder = new StringBuilder();
     for (String id : ids)
