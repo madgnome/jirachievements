@@ -177,11 +177,21 @@
         </configuration>
 
       </plugin>
+
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <test.server.properties>localtest.properties</test.server.properties>
+          </systemPropertyVariables>
         </configuration>
       </plugin>
     </plugins>
