@@ -1,6 +1,5 @@
 package com.madgnome.jira.plugins.jirachievements.pageobjects;
 
-import com.atlassian.jira.pageobjects.pages.project.AbstractProjectTab;
 import com.atlassian.pageobjects.PageBinder;
 import com.atlassian.pageobjects.elements.ElementBy;
 import com.atlassian.pageobjects.elements.PageElement;
@@ -10,9 +9,9 @@ import org.openqa.selenium.By;
 
 import javax.inject.Inject;
 
-public class LeaderboardProjectTab extends AbstractProjectTab
+public class LeaderboardVersionTab extends AbstractVersionTab
 {
-  public static String LINK_ID = "project-leaderboard-panel-panel";
+  public static String LINK_ID = "version-leaderboard-panel-panel";
 
   @ElementBy(className = "content")
   private PageElement container;
@@ -29,9 +28,9 @@ public class LeaderboardProjectTab extends AbstractProjectTab
   @Inject
   private PageBinder pageBinder;
 
-  public LeaderboardProjectTab(String projectKey)
+  public LeaderboardVersionTab()
   {
-    super(LINK_ID, projectKey);
+    super(LINK_ID);
   }
 
   public String getUserLeader()

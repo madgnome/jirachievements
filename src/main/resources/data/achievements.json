@@ -154,7 +154,7 @@
   },
   {
     "ref": "st-thomas",
-    "name": "The Writer",
+    "name": "Saint Thomas",
     "catchPhrase": "I think you miss your vocation",
     "description": "An issue without description but with a screenshoot",
     "category": "USER",
@@ -171,7 +171,7 @@
     "hidden": "true"
   },
   {
-    "ref": "ghostwriter",
+    "ref": "sixth-sense",
     "name": "The Sixth Sense",
     "catchPhrase": "I watch dead issues",
     "description": "Start to watch a close issue",
