@@ -7,6 +7,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +32,7 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
       UserAchievement userAchievement = ao.create(UserAchievement.class);
       userAchievement.setUserWrapper(userWrapper);
       userAchievement.setAchievement(achievement);
+      userAchievement.setCreatedOn(new Date());
       userAchievement.save();
     }
   }

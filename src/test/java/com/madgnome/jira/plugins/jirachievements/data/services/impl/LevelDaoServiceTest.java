@@ -84,6 +84,6 @@ public class LevelDaoServiceTest extends BaseDaoServiceTest<Level, LevelDaoServi
     Level nextLevel = daoService.findNextLevel(category, value);
     assertNotNull(nextLevel);
     assertTrue(nextLevel.getMaxThreshold() > value);
-    assertTrue(currentLevel.getNumber() + 1 == nextLevel.getNumber());
+    assertTrue(currentLevel.getLevelNumber() + 1 == nextLevel.getLevelNumber());
   }
 }

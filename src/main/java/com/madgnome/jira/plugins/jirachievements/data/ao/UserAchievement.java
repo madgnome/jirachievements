@@ -19,7 +19,6 @@ public interface UserAchievement extends Entity
   boolean isNotified();
   void setNotified(boolean notified);
 
-  @Default("CURRENT_TIMESTAMP")
   Date getCreatedOn();
   void setCreatedOn(Date createdOn);
 }

@@ -5,8 +5,8 @@ import net.java.ao.Entity;
 
 public interface Level extends Entity
 {
-  int getNumber();
-  void setNumber(int number);
+  int getLevelNumber();
+  void setLevelNumber(int number);
 
   Category getCategory();
   void setCategory(Category category);

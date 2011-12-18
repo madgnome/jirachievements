@@ -37,7 +37,7 @@ public class LevelBean
   public static LevelBean fromLevel(Level level)
   {
     LevelBean levelBean = new LevelBean();
-    levelBean.number = level.getNumber();
+    levelBean.number = level.getLevelNumber();
     levelBean.category = level.getCategory();
     levelBean.minThreshold = level.getMinThreshold();
     levelBean.maxThreshold = level.getMaxThreshold();

@@ -15,7 +15,7 @@ public interface UserWrapper extends Entity
   String getJiraUserName();
   void setJiraUserName(String name);
 
-  @ManyToMany(value = UserAchievement.class)
+  @ManyToMany(UserAchievement.class)
   Achievement[]  getAchievements();
 
   @ManyToMany(UserStatistic.class)

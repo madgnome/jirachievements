@@ -1,10 +1,10 @@
 #* @vtlvariable name="action" type="com.madgnome.jira.plugins.jirachievements.ui.action.admin.ViewGlobalConfiguration" *#
 #macro (categoryAchievements $categoryName)
-  <div class="achievements-list">
-    #foreach ($achievement in $achievements.get($categoryName))
+<div class="achievements-list">
+  #foreach ($achievement in $achievements.get($categoryName))
       #parse ('/templates/com/madgnome/jira/plugins/jirachievements/config/achievement-admin-detail.vm')
     #end
-  </div>
+</div>
 #end
 
 <div id="achievements-config">
@@ -69,16 +69,16 @@
     function createPicker(selectField)
     {
       new AJS.MultiSelect({
-                             element: selectField,
-                             itemAttrDisplayed: "label"
-                           });
+        element: selectField,
+        itemAttrDisplayed: "label"
+      });
     }
 
     function locateSelect(parent)
     {
 
       var _parent = AJS.$(parent),
-        selectField;
+              selectField;
 
       if (_parent.is("select"))
       {
@@ -104,23 +104,23 @@
       selector = selector || DEFAULT_SELECTORS.join(", ");
 
       AJS.$(selector, context).each(function ()
-                                    {
+      {
 
-                                      var selectField = locateSelect(this);
+        var selectField = locateSelect(this);
 
-                                      if (selectField.length)
-                                      {
-                                        createPicker(selectField);
-                                      }
-                                      else
-                                      {
-                                        /* [logging] */
-                                        AJS.log("jira.app.convertToVersionPicker: Tried to create version picker using [" + selector + "] "
-                                                  + "however selector does not match or could not find <select>");
-                                        /* [logging] end */
-                                      }
+        if (selectField.length)
+        {
+          createPicker(selectField);
+        }
+        else
+        {
+          /* [logging] */
+          AJS.log("jira.app.convertToVersionPicker: Tried to create version picker using [" + selector + "] "
+                  + "however selector does not match or could not find <select>");
+          /* [logging] end */
+        }
 
-                                    });
+      });
 
     };
   }();

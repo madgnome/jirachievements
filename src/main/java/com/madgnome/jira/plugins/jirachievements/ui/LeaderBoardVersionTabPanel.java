@@ -38,7 +38,7 @@ public class LeaderBoardVersionTabPanel extends GenericTabPanel
     Map<String, Object> params = super.createVelocityParams(ctx);
     String projectKey = ctx.getProject().getKey();
     String version = ctx.getVersion().getName();
-    com.opensymphony.user.User user = ctx.getUser();
+    User user = ctx.getUser();
 
     try
     {

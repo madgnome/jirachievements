@@ -94,7 +94,7 @@
 #macro (chartData $category)
   var data_$category = [[
     #foreach ($level in $action.getLevels($category))
-      [$level.number, $level.minThreshold],
+      [$level.levelNumber, $level.minThreshold],
     #end
   ]]
 #end

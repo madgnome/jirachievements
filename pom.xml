@@ -32,6 +32,12 @@
   <dependencies>
     <dependency>
       <groupId>com.atlassian.jira</groupId>
+      <artifactId>jira-api</artifactId>
+      <version>4.4.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.atlassian.jira</groupId>
       <artifactId>atlassian-jira</artifactId>
       <version>${jira.version}</version>
       <scope>provided</scope>
@@ -188,9 +194,9 @@
   </build>
 
   <properties>
-    <amps.version>3.6</amps.version>
-    <jira.version>4.4.1</jira.version>
-    <jira.data.version>4.4</jira.data.version>
-    <ao.version>0.15.9</ao.version>
+    <amps.version>3.7.2</amps.version>
+    <jira.version>5.0-rc2</jira.version>
+    <jira.data.version>5.0-rc2</jira.data.version>
+    <ao.version>0.19</ao.version>
   </properties>
 </project>

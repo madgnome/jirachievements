@@ -1,5 +1,6 @@
 package com.madgnome.jira.plugins.jirachievements.ui;
 
+import com.atlassian.crowd.embedded.api.User;
 import com.atlassian.jira.plugin.profile.OptionalUserProfilePanel;
 import com.atlassian.jira.plugin.profile.ViewProfilePanel;
 import com.atlassian.jira.plugin.profile.ViewProfilePanelModuleDescriptor;
@@ -10,7 +11,6 @@ import com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoSe
 import com.madgnome.jira.plugins.jirachievements.data.services.ILevelDaoService;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserStatisticDaoService;
 import com.madgnome.jira.plugins.jirachievements.services.UserManager;
-import com.opensymphony.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import webwork.action.ServletActionContext;

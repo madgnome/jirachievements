@@ -1,10 +1,10 @@
 .categories {
   width: 100%;
-  text-align: center;
 }
 
 .categories td {
   width: 33%;
+  text-align: center;
 }
 
 .categories .label {

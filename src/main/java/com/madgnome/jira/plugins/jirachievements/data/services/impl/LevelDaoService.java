@@ -31,7 +31,7 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   @Override
   public Level get(Category category, int number)
   {
-    Level[] levels = ao.find(getClazz(), "CATEGORY = ? AND NUMBER = ?", category, number);
+    Level[] levels = ao.find(getClazz(), "CATEGORY = ? AND LEVEL_NUMBER = ?", category, number);
     if (levels.length > 1)
     {
       throw new IllegalStateException("Found more than one level of <" + category.name() + "-" + number + ">");
@@ -51,7 +51,7 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   @Override
   public List<Level> all(Category category)
   {
-    Query query = Query.select().where("CATEGORY = ?", category).order("NUMBER ASC");
+    Query query = Query.select().where("CATEGORY = ?", category).order("LEVEL_NUMBER ASC");
     return Arrays.asList(ao.find(getClazz(), query));
   }
 
@@ -67,7 +67,7 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   public Level findNextLevel(Category category, int value)
   {
     Query query = Query.select().where("CATEGORY = ? AND MIN_THRESHOLD > ?", category, value)
-                                .order("NUMBER ASC");
+                                .order("LEVEL_NUMBER ASC");
     Level[] levels = ao.find(getClazz(), query);
 
     return levels.length > 0 ? levels[0] : null;
@@ -88,7 +88,7 @@ public class LevelDaoService extends BaseDaoService<Level> implements ILevelDaoS
   {
     Level level = ao.create(getClazz());
     level.setCategory(category);
-    level.setNumber(number);
+    level.setLevelNumber(number);
     level.setStatisticRef(statisticRef);
     level.setMinThreshold(min);
     level.setMaxThreshold(max);
