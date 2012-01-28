@@ -16,6 +16,7 @@ public class DatabaseProcessor implements DatabaseUpdater
             Statistic.class,
             StatisticRef.class,
             UserAchievement.class,
+            UserLevel.class,
             UserStatistic.class,
             UserWrapper.class);
   }

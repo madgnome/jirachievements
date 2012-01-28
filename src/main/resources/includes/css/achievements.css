@@ -142,8 +142,8 @@ span.level {
 }
 
 #kryptonite {
-  position: absolute;
-  top: 0;
+  position: relative;
+  top: -30px;
   right: 0;
   margin: 10px
 }

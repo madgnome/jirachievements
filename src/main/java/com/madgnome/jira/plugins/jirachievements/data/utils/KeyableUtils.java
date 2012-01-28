@@ -6,6 +6,7 @@ import com.madgnome.jira.plugins.jirachievements.data.upgrades.v2.ComponentStati
 import com.madgnome.jira.plugins.jirachievements.data.upgrades.v2.ProjectStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.upgrades.v2.UserStatistic;
 import com.madgnome.jira.plugins.jirachievements.data.upgrades.v2.VersionStatistic;
+import net.java.ao.Entity;
 
 public class KeyableUtils
 {
@@ -14,6 +15,16 @@ public class KeyableUtils
   public static String buildKey(UserStatistic statistic)
   {
     return buildKey(statistic.getStatisticRef(), statistic.getUserWrapper());
+  }
+
+  public static String buildKey(String a, String b)
+  {
+    return a + SEPARATOR + b;
+  }
+  
+  public static String buildKey(Entity a, Entity b)
+  {
+    return a.getID() + SEPARATOR + b.getID();
   }
 
   public static String buildKey(StatisticRef statisticRef, UserWrapper userWrapper)

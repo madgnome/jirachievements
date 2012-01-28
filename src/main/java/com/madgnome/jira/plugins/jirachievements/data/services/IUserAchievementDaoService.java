@@ -6,6 +6,7 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.Difficulty;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 
+import java.util.List;
 import java.util.Map;
 
 @Transactional
@@ -17,4 +18,6 @@ public interface IUserAchievementDaoService extends IDaoService<UserAchievement>
   UserAchievement get(int achievementId, int userWrapperId);
 
   Map<Difficulty, Integer> getAchievementsByLevel(UserWrapper userWrapper);
+
+  List<UserAchievement> last(int maxResult);
 }

@@ -1,6 +1,5 @@
 package com.madgnome.jira.plugins.jirachievements.data.ao;
 
-
 import net.java.ao.Entity;
 
 public interface Level extends Entity

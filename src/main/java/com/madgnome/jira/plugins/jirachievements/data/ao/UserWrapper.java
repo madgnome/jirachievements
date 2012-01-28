@@ -21,6 +21,9 @@ public interface UserWrapper extends Entity
   @ManyToMany(UserStatistic.class)
   StatisticRef[] getStatistics();
 
+  @ManyToMany(UserLevel.class)
+  Level[] getLevels();
+
   @Default("true")
   boolean isActive();
   void setActive(boolean active);

@@ -19,7 +19,7 @@ public abstract class AbstractUpgradeTask implements ActiveObjectsUpgradeTask
   @Override
   public final void upgrade(ModelVersion currentVersion, ActiveObjects ao)
   {
-    logger.debug("Running upgrade task for model #{}, ao {}", getModelVersion(), ao);
+    logger.info("Running upgrade task for model #{}, ao {}", getModelVersion(), ao);
     doUpgrade(ao);
   }
 

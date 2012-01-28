@@ -1,3 +1,6 @@
+#* @vtlvariable name="userLevel" type="com.madgnome.jira.plugins.jirachievements.data.ao.Level" *#
+#* @vtlvariable name="developerLevel" type="com.madgnome.jira.plugins.jirachievements.data.ao.Level" *#
+#* @vtlvariable name="testerLevel" type="com.madgnome.jira.plugins.jirachievements.data.ao.Level" *#
 #* @vtlvariable name="achievements" type="java.util.Map<com.madgnome.jira.plugins.jirachievements.data.ao.Category, java.util.List<com.madgnome.jira.plugins.jirachievements.data.ao.Achievement>>" *#
 
 #macro (categoryAchievements $categoryName)
@@ -38,11 +41,14 @@
 </table>
 #end
 
-<div id="kryptonite">
-  <label for="disable-for-user">Disable notifications</label>
-  <input id="disable-for-user" type="checkbox" title="Kryptonite!"
-    #if (!$userWrapper.active) checked #end/>
+<div style="float:right;">
+  <div id="kryptonite">
+    <label for="disable-for-user">Disable notifications</label>
+    <input id="disable-for-user" type="checkbox" title="Kryptonite!"
+      #if (!$userWrapper.active) checked #end/>
+  </div>
 </div>
+
 
 <div id="primary" class="column full">
   <div class="content">
@@ -54,24 +60,24 @@
         <table class="levels" style="width: 100%">
           <tbody>
             <tr id="userLevel">
-              <td class="icon level user${userLevel.number}">&nbsp;</td>
-              <td class="name"><span class="level">Level ${userLevel.number}</span> - User</td>
+              <td class="icon level user${userLevel.levelNumber}">&nbsp;</td>
+              <td class="name"><span class="level">Level ${userLevel.levelNumber}</span> - User</td>
               <td class="count">$userStatistic.value</td>
               <td class="graph last">
                 #histogram($userPercentage)
               </td>
             </tr>
             <tr id="developerLevel" class="rowAlternateLightGray">
-              <td class="icon level developer${developerLevel.number}">&nbsp;</td>
-              <td class="name"><span class="level">Level ${developerLevel.number}</span> - Developer</td>
+              <td class="icon level developer${developerLevel.levelNumber}">&nbsp;</td>
+              <td class="name"><span class="level">Level ${developerLevel.levelNumber}</span> - Developer</td>
               <td class="count">$developerStatistic.value</td>
               <td class="graph last">
                 #histogram($developerPercentage)
               </td>
             </tr>
             <tr id="testerLevel">
-              <td class="icon level tester${testerLevel.number}">&nbsp;</td>
-              <td class="name"><span class="level">Level ${testerLevel.number}</span> - Tester</td>
+              <td class="icon level tester${testerLevel.levelNumber}">&nbsp;</td>
+              <td class="name"><span class="level">Level ${testerLevel.levelNumber}</span> - Tester</td>
               <td class="count">$testerStatistic.value</td>
               <td class="graph last">
                 #histogram($testerPercentage)

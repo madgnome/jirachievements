@@ -33,7 +33,7 @@
     <dependency>
       <groupId>com.atlassian.jira</groupId>
       <artifactId>jira-api</artifactId>
-      <version>4.4.1</version>
+      <version>${jira.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -70,6 +70,18 @@
       <groupId>com.atlassian.plugins.rest</groupId>
       <artifactId>atlassian-rest-common</artifactId>
       <version>1.0.2</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.atlassian.streams</groupId>
+      <artifactId>streams-api</artifactId>
+      <version>${streams.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.atlassian.streams</groupId>
+      <artifactId>streams-spi</artifactId>
+      <version>${streams.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -165,6 +177,7 @@
           <productVersion>${jira.version}</productVersion>
           <productDataVersion>${jira.data.version}</productDataVersion>
           <!--<productDataPath>C:\scm\jirachievements\base.zip</productDataPath>-->
+          <allowGoogleTracking>false</allowGoogleTracking>
           <pluginArtifacts>
             <pluginArtifact>
               <groupId>com.atlassian.activeobjects</groupId>
@@ -195,8 +208,9 @@
 
   <properties>
     <amps.version>3.7.2</amps.version>
-    <jira.version>5.0-rc2</jira.version>
-    <jira.data.version>5.0-rc2</jira.data.version>
-    <ao.version>0.19</ao.version>
+    <jira.version>5.0-rc3</jira.version>
+    <jira.data.version>5.0-rc3</jira.data.version>
+    <ao.version>0.19.3</ao.version>
+    <streams.version>5.0</streams.version>
   </properties>
 </project>

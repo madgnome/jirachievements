@@ -21,6 +21,11 @@ public class StatisticManager
     this.projectVersionStatisticDaoService = projectVersionStatisticDaoService;
   }
 
+  public UserStatistic incrementUserStatistic(StatisticRefEnum statRef, UserWrapper userWrapper, int threshold)
+  {
+    return userStatisticDaoService.incrementStatistic(statRef, userWrapper, threshold);
+  }
+
   public UserStatistic createOrUpdateUserStatistic(StatisticRefEnum statRef, UserWrapper userWrapper, int value)
   {
     return userStatisticDaoService.createOrUpdate(statRef, userWrapper, value);

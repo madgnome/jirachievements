@@ -18,14 +18,17 @@
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserStatistic</entity>
     <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper</entity>
+    <entity>com.madgnome.jira.plugins.jirachievements.data.ao.UserLevel</entity>
     <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v1.InitDatabaseTask</upgradeTask>
     <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v2.StatisticsUpgradeTask</upgradeTask>
+    <upgradeTask>com.madgnome.jira.plugins.jirachievements.data.upgrades.v3.JiraFiveUpgradeTask</upgradeTask>
   </ao>
 
   <!-- Components Import -->
   <component-import key="userUtil" interface="com.atlassian.jira.user.util.UserUtil"/>
   <component-import key="salUserManager" interface="com.atlassian.sal.api.user.UserManager"/>
   <component-import key="webResourceManager" interface="com.atlassian.plugin.webresource.WebResourceManager" />
+  <component-import key="webResourceUrlProvider" interface="com.atlassian.plugin.webresource.WebResourceUrlProvider" />
   <component-import key="templateRenderer" interface="com.atlassian.templaterenderer.TemplateRenderer"/>
   <component-import key="eventPublisher" interface="com.atlassian.event.api.EventPublisher"/>
   <component-import key="jqlParser" interface="com.atlassian.jira.jql.parser.JqlQueryParser"/>
@@ -33,6 +36,9 @@
   <component-import key="pluginScheduler" interface="com.atlassian.sal.api.scheduling.PluginScheduler"/>
   <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties"/>
   <component-import key="lifecycleManager" interface="com.atlassian.sal.api.lifecycle.LifecycleManager"/>
+
+  <component-import key="i18nResolver" interface="com.atlassian.sal.api.message.I18nResolver" />
+  <component-import key="userProfileAccessor" interface="com.atlassian.streams.spi.UserProfileAccessor" />
 
   <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects"/>
 
@@ -48,8 +54,8 @@
 
   <!-- Components : Listeners -->
   <component key="issueListener" class="com.madgnome.jira.plugins.jirachievements.listeners.IssueAchievementsEventListener"/>
-  <component key="oldEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>
-  <component key="eventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>
+  <!--<component key="oldEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.OldFashionUserEventListener"/>-->
+  <!--<component key="eventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.UserCreationEventListener"/>-->
   <!--<component key="jirachievementPluginEventListener" class="com.madgnome.jira.plugins.jirachievements.listeners.JirachievementPluginEventListener"/>-->
 
   <!-- Components : Initializers -->
@@ -73,6 +79,7 @@
   <component key="statisticManager" class="com.madgnome.jira.plugins.jirachievements.services.StatisticManager"/>
   <component key="userManager" class="com.madgnome.jira.plugins.jirachievements.services.UserManager"/>
   <component key="achievementManager" class="com.madgnome.jira.plugins.jirachievements.services.AchievementManager"/>
+  <component key="levelManager" class="com.madgnome.jira.plugins.jirachievements.services.LevelManager"/>
 
   <!-- Components : DAO -->
   <component key="achievementDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IAchievementDaoService"
@@ -104,6 +111,9 @@
 
   <component key="userWrapperDaoService" interface="com.madgnome.jira.plugins.jirachievements.data.services.IUserWrapperDaoService"
              class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserWrapperDaoService"/>
+
+  <component key="userLevelDaoService" inteface="com.madgnome.jira.plugins.jirachievements.data.services.IUserLevelDaoService"
+             class="com.madgnome.jira.plugins.jirachievements.data.services.impl.UserLevelDaoService"/>
 
   <!-- Components : Statistics -->
   <component key="openedByUserStatistic" class="com.madgnome.jira.plugins.jirachievements.statistics.OpenedByUserStatistic"/>
@@ -141,6 +151,15 @@
     <resource name="jquery.flot.resize.js" type="download" location="/includes/js/plugins/jquery.flot.resize.js"/>
   </web-resource>
 
+  <web-resource name="Users achievement dialog" key="jh-users-achievement">
+    <resource name="users-achievement.js" type="download" location="/includes/js/users-achievement.js"/>
+
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+
+    <context>atl.general</context>
+    <context>atl.admin</context>
+  </web-resource>
+
   <web-resource name="Header User Details resources" key="jh-header-user-details">
     <resource name="header-details-user.js" type="download" location="includes/js/header-details-user.js"/>
 
@@ -150,6 +169,11 @@
 
   <web-resource name="User achievements resources" key="jh-user-achievements-details">
     <resource name="jquery.masonry.js" type="download" location="includes/js/plugins/jquery.masonry.js"/>
+    <context>jira.userprofile</context>
+  </web-resource>
+
+  <web-resource name="Stream resources" key="jh-stream-webresource" >
+    <resource type="download" name="jh-icon.png" location="includes/images/jh-icon.png"/>
   </web-resource>
 
   <!-- Achievements in user profile-->
@@ -238,6 +262,11 @@
       </action>
     </actions>
   </webwork1>
+
+  <!-- Activity Stream -->
+  <activity-streams-provider key="external-provider" name="JIRA Hero"
+                             class="com.madgnome.jira.plugins.jirachievements.stream.ActivityProvider">
+  </activity-streams-provider>
 
   <!-- Rules -->
   <component key="welcomeRule" class="com.madgnome.jira.plugins.jirachievements.rules.WelcomeRule"/>

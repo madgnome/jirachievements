@@ -6,10 +6,9 @@ import com.madgnome.jira.plugins.jirachievements.data.ao.Difficulty;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserAchievement;
 import com.madgnome.jira.plugins.jirachievements.data.ao.UserWrapper;
 import com.madgnome.jira.plugins.jirachievements.data.services.IUserAchievementDaoService;
+import net.java.ao.Query;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class UserAchievementDaoService extends BaseDaoService<UserAchievement> implements IUserAchievementDaoService
 {
@@ -81,5 +80,11 @@ public class UserAchievementDaoService extends BaseDaoService<UserAchievement> i
     }
 
     return achievementsByLevel;
+  }
+
+  @Override
+  public List<UserAchievement> last(int maxResult)
+  {
+    return Arrays.asList(ao.find(getClazz(), Query.select().order("CREATED_ON DESC").limit(maxResult)));
   }
 }

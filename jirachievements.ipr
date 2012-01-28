@@ -1470,6 +1470,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/spring/atlassian-spring/1.0/atlassian-spring-1.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.atlassian.streams:streams-api:5.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.0/streams-api-5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.0/streams-api-5.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.0/streams-api-5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: com.atlassian.streams:streams-spi:5.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.0/streams-spi-5.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.0/streams-spi-5.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.0/streams-spi-5.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.atlassian.templaterenderer:atlassian-template-renderer-api:1.2.3">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/templaterenderer/atlassian-template-renderer-api/1.2.3/atlassian-template-renderer-api-1.2.3.jar!/" />

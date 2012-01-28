@@ -16,22 +16,31 @@ public class JiraFiveUpgradeTask extends AbstractUpgradeTask
   protected void doUpgrade(ActiveObjects ao)
   {
     ao.migrate(Achievement.class,
-            ComponentStatistic.class,
-            Config.class,
-            Level.class,
-            com.madgnome.jira.plugins.jirachievements.data.ao.Level.class,
-            ProjectStatistic.class,
-            Statistic.class,
-            StatisticRef.class,
-            UserAchievement.class,
-            UserStatistic.class,
-            UserWrapper.class,
-            VersionStatistic.class);
+              ComponentStatistic.class,
+              Config.class,
+              Level.class,
+              com.madgnome.jira.plugins.jirachievements.data.ao.Level.class,
+              ProjectStatistic.class,
+              Statistic.class,
+              StatisticRef.class,
+              UserAchievement.class,
+              UserStatistic.class,
+              UserWrapper.class,
+              VersionStatistic.class);
 
     for (Level level : ao.find(Level.class))
     {
-      level.setLevelNumber(level.getNumber());
-      level.save();
+      boolean changed = false;
+      if (level.getNumber() != 0)
+      {
+        level.setLevelNumber(level.getNumber());
+        changed = true;
+      }
+
+      if (changed)
+      {
+        level.save();
+      }
     }
   }
 }

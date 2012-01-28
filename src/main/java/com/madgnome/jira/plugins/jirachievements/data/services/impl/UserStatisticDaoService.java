@@ -54,6 +54,22 @@ public class UserStatisticDaoService extends BaseDaoService<UserStatistic> imple
     return userStatistic;
   }
 
+  @Override
+  public UserStatistic incrementStatistic(StatisticRefEnum statRef, UserWrapper userWrapper, int threshold)
+  {
+    StatisticRef statisticRef = statisticRefDaoService.get(statRef);
+
+    UserStatistic userStatistic = null;
+    if (statisticRef != null)
+    {
+      userStatistic = getOrCreate(statisticRef, userWrapper);
+      userStatistic.setValue(userStatistic.getValue() + threshold);
+      userStatistic.save();
+    }
+
+    return userStatistic;
+  }
+
   private UserStatistic getOrCreate(StatisticRef statisticRef, UserWrapper userWrapper)
   {
     final UserStatistic[] userStatistics = ao.find(getClazz(), "STATISTIC_REF_ID = ? AND USER_WRAPPER_ID = ?", statisticRef.getID(), userWrapper.getID());
