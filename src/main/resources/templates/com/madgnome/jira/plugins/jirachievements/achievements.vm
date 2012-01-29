@@ -149,4 +149,6 @@
       });
     });
   });
+
+  AJS.tabs.setup();
 </script>

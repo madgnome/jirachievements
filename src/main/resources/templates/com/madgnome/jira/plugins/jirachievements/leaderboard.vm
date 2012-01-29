@@ -36,14 +36,14 @@
 #end
 
 #macro (leaderboardTable $id $listLeaderBoard)
-<table id="$id">
+<table style="width: 100%;">
   <tbody>
     #foreach ($projectStatistic in $listLeaderBoard)
       <tr>
         <td class="name">
           #userLink($projectStatistic true)
         </td>
-        <td class="count">$projectStatistic.count</td>
+        <td class="count" style="float:right;">$projectStatistic.count</td>
         <td class="graph last">#histogram($projectStatistic.percentage)</td>
       </tr>
     #end
@@ -128,13 +128,13 @@
               <a href="#tester-details"><strong>Tester</strong></a>
             </li>
           </ul>
-          <div class="tabs-pane active-pane">
+          <div class="tabs-pane active-pane" id="user-details">
             #leaderboardTable("user-details" $createdIssueLB)
           </div>
-          <div class="tabs-pane">
+          <div class="tabs-pane" id="developer-details">
             #leaderboardTable("developer-details" $resolvedIssueLB)
           </div>
-          <div class="tabs-pane">
+          <div class="tabs-pane" id="tester-details">
             #leaderboardTable("tester-details" $testedIssueLB)
           </div>
         </div>
@@ -142,3 +142,7 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  AJS.tabs.setup();
+</script>
