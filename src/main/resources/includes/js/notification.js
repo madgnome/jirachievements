@@ -6,7 +6,7 @@
         var achievement = this;
         var options = {
           position: 'center',
-          corners: '30px',
+          corners: '20px',
           theme: 'jirachivements',
 //          sticky: true,
           life: 5000,

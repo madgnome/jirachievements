@@ -30,3 +30,7 @@ margin: 10px 5px 5px 60px;
   font-style: italic;
 }
 
+.achievement-content h4 {
+  color: white !important;
+}
+
