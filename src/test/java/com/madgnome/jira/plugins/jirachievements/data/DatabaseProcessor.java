@@ -7,10 +7,13 @@ import net.java.ao.test.jdbc.DatabaseUpdater;
 public class DatabaseProcessor implements DatabaseUpdater
 {
   @Override
+  @SuppressWarnings("unchecked")
   public void update(EntityManager entityManager) throws Exception
   {
     entityManager.migrate(
             Achievement.class,
+            ComponentStatistic.class,
+            Config.class,
             Level.class,
             ProjectStatistic.class,
             Statistic.class,
@@ -18,6 +21,7 @@ public class DatabaseProcessor implements DatabaseUpdater
             UserAchievement.class,
             UserLevel.class,
             UserStatistic.class,
-            UserWrapper.class);
+            UserWrapper.class,
+            VersionStatistic.class);
   }
 }

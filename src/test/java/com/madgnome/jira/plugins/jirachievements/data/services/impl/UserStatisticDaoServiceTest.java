@@ -73,6 +73,20 @@ public class UserStatisticDaoServiceTest extends BaseDaoServiceTest<UserStatisti
     assertEquals(value, userStatistic.getValue());
   }
 
+  @Test
+  public void incrementStatistic()
+  {
+    StatisticRefEnum statRef = StatisticRefEnum.CREATED_ISSUE_COUNT;
+    createStatisticRef(statRef);
+    UserWrapper userWrapper = createUserWrapper();
+
+    daoService.createOrUpdate(statRef, userWrapper, 1);
+
+    daoService.incrementStatistic(statRef, userWrapper, 2);
+
+    assertEquals(daoService.get(userWrapper, statRef).getValue(), 3);
+  }
+
   private StatisticRef createStatisticRef(StatisticRefEnum statisticRefEnum)
   {
     return statisticRefDaoService.create(statisticRefEnum);

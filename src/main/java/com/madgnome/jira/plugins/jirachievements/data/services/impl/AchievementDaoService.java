@@ -25,26 +25,6 @@ public class AchievementDaoService extends ReferencableDaoService<Achievement, A
     return Arrays.asList(ao.find(getClazz(), "ACTIVE = ?", true));
   }
 
-  public Map<Category, List<Achievement>> allGroupByCategory()
-  {
-    Map<Category, List<Achievement>> achievementByCategory = new HashMap<Category, List<Achievement>>();
-    List<Achievement> achievements = all();
-    for (Achievement achievement : achievements)
-    {
-      Category category = achievement.getCategory();
-      List<Achievement> categoryAchievements = achievementByCategory.get(category);
-      if (categoryAchievements == null)
-      {
-        categoryAchievements = new ArrayList<Achievement>();
-        achievementByCategory.put(category, categoryAchievements);
-      }
-
-      categoryAchievements.add(achievement);
-    }
-    
-    return achievementByCategory;
-  }
-
   public Map<String, List<Achievement>> allGroupByCategoryName()
   {
     Map<String, List<Achievement>> achievementByCategory = new HashMap<String, List<Achievement>>();

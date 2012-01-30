@@ -194,14 +194,56 @@
             <fastdev.mvn.command>C:\techbox\lib\atlassian-plugin-sdk\atlassian-plugin-sdk-3.6\apache-maven\bin\mvn.bat</fastdev.mvn.command>
           </systemPropertyVariables>
         </configuration>
-
       </plugin>
+
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <ao.test.database>${ao.test.database}</ao.test.database>
+            <ao.test.tablenameconverter>${ao.test.tablenameconverter}</ao.test.tablenameconverter>
+            <ao.test.fieldnameconverter>${ao.test.fieldnameconverter}</ao.test.fieldnameconverter>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.leberrigaud.maven.plugins</groupId>
+        <artifactId>database-maven-plugin</artifactId>
+        <configuration>
+          <skip>${db.skip}</skip>
+          <database>${ao.test.database}</database>
+          <name>ao_test</name>
+          <username>ao_user</username>
+          <password>ao_password</password>
+          <rootUsername>${db.username}</rootUsername>
+          <rootPassword>${db.password}</rootPassword>
+        </configuration>
+        <executions>
+          <execution>
+            <id>create-db</id>
+            <goals>
+              <goal>create</goal>
+            </goals>
+            <phase>process-test-resources</phase>
+          </execution>
+          <execution>
+            <id>drop-db</id>
+            <goals>
+              <goal>drop</goal>
+            </goals>
+            <phase>test</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
@@ -212,5 +254,136 @@
     <jira.data.version>5.0-rc3</jira.data.version>
     <ao.version>0.19.3</ao.version>
     <streams.version>5.0</streams.version>
+
+    <hsqldb.version>1.8.0.5</hsqldb.version>
+    <mysql.version>5.1.13</mysql.version>
+    <postgres.version>8.4-701.jdbc3</postgres.version>
+
+    <ao.test.tablenameconverter>atlassian</ao.test.tablenameconverter>
+    <ao.test.fieldnameconverter>atlassian</ao.test.fieldnameconverter>
   </properties>
+
+  <profiles>
+    <profile>
+      <id>hsql</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <ao.test.database>hsql</ao.test.database>
+        <db.skip>true</db.skip>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>hsqldb</groupId>
+          <artifactId>hsqldb</artifactId>
+          <version>${hsqldb.version}</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>mysql</id>
+      <properties>
+        <ao.test.database>mysql</ao.test.database>
+        <db.username>root</db.username>
+        <db.password>root</db.password>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>${mysql.version}</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.leberrigaud.maven.plugins</groupId>
+            <artifactId>database-maven-plugin</artifactId>
+            <dependencies>
+              <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <scope>runtime</scope>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>postgres</id>
+      <properties>
+        <ao.test.database>postgres</ao.test.database>
+        <db.username>postgres</db.username>
+        <db.password>postgres</db.password>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>${postgres.version}</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.leberrigaud.maven.plugins</groupId>
+            <artifactId>database-maven-plugin</artifactId>
+            <configuration>
+              <schema>ao_schema</schema>
+            </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgres.version}</version>
+                <scope>runtime</scope>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>postgres-jdbc4</id>
+      <properties>
+        <ao.test.database>postgres</ao.test.database>
+        <db.username>postgres</db.username>
+        <db.password>postgres</db.password>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>9.0-801.jdbc4</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.leberrigaud.maven.plugins</groupId>
+            <artifactId>database-maven-plugin</artifactId>
+            <configuration>
+              <schema>ao_schema</schema>
+            </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>9.0-801.jdbc4</version>
+                <scope>runtime</scope>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>

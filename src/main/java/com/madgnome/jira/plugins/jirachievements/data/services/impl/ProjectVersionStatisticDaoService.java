@@ -31,7 +31,7 @@ public class ProjectVersionStatisticDaoService extends BaseDaoService<VersionSta
   }
 
   @Override
-  public VersionStatistic get(UserWrapper userWrapper, String projectKey, String component, StatisticRefEnum statisticRefEnum)
+  public VersionStatistic get(UserWrapper userWrapper, String projectKey, String version, StatisticRefEnum statisticRefEnum)
   {
     StatisticRef statisticRef = statisticRefDaoService.get(statisticRefEnum);
     if (statisticRef == null)
@@ -39,18 +39,18 @@ public class ProjectVersionStatisticDaoService extends BaseDaoService<VersionSta
       return null;
     }
 
-    return getOrCreate(projectKey, component, statisticRef, userWrapper);
+    return getOrCreate(projectKey, version, statisticRef, userWrapper);
   }
 
   @Override
-  public VersionStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String component, StatisticRefEnum statisticRefEnum, int value)
+  public VersionStatistic createOrUpdate(UserWrapper userWrapper, String projectKey, String version, StatisticRefEnum statisticRefEnum, int value)
   {
     StatisticRef statisticRef = statisticRefDaoService.get(statisticRefEnum);
 
     VersionStatistic versionStatistic = null;
     if (statisticRef != null)
     {
-      versionStatistic = getOrCreate(projectKey, component, statisticRef, userWrapper);
+      versionStatistic = getOrCreate(projectKey, version, statisticRef, userWrapper);
       versionStatistic.setValue(value);
       versionStatistic.save();
     }
@@ -59,10 +59,10 @@ public class ProjectVersionStatisticDaoService extends BaseDaoService<VersionSta
   }
 
   @Override
-  public List<VersionStatistic> findStatisticsForVersionAndRef(String projectKey, String component, StatisticRefEnum statisticRefEnum)
+  public List<VersionStatistic> findStatisticsForVersionAndRef(String projectKey, String version, StatisticRefEnum statisticRefEnum)
   {
     StatisticRef statRef = statisticRefDaoService.get(statisticRefEnum);
-    Query query = Query.select().where("PROJECT_KEY = ? AND VERSION = ? AND STATISTIC_REF_ID = ?", projectKey, component, statRef.getID()).order("VALUE DESC");
+    Query query = Query.select().where("PROJECT_KEY = ? AND VERSION = ? AND STATISTIC_REF_ID = ?", projectKey, version, statRef.getID()).order("VALUE DESC");
     return Arrays.asList(ao.find(getClazz(), query));
   }
 

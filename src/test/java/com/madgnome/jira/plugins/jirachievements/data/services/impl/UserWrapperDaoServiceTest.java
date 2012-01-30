@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class UserWrapperDaoServiceTest extends AbstractServiceTest
 {
@@ -115,5 +117,17 @@ public class UserWrapperDaoServiceTest extends AbstractServiceTest
 
     List<UserWrapper> userWrappers = userWrapperDaoService.all();
     assertEquals(3, userWrappers.size());
+  }
+
+  @Test
+  public void activateFalseShouldDeactivateUser() throws Exception
+  {
+    userWrapperDaoService.create(new ImmutableUser(0, "bob", "Sponge Bob", null, true));
+
+    final User user = mock(User.class);
+    when(user.getName()).thenReturn("bob");
+    userWrapperDaoService.activate(user, false);
+
+    assertFalse(userWrapperDaoService.get(user).isActive());
   }
 }
