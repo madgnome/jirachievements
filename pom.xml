@@ -18,7 +18,7 @@
 
   <scm>
     <connection>scm:git:git://github.com/madgnome/jirachievements.git</connection>
-    <developerConnection>scm:git:https://madgnome@github.com/madgnome/jirachievements.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:madgnome/jirachievements.git</developerConnection>
     <url>https://github.com/madgnome/jirachievements</url>
   </scm>
 
