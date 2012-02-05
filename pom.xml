@@ -278,7 +278,7 @@
           <groupId>hsqldb</groupId>
           <artifactId>hsqldb</artifactId>
           <version>${hsqldb.version}</version>
-          <scope>runtime</scope>
+          <scope>test</scope>
         </dependency>
       </dependencies>
     </profile>
@@ -294,7 +294,7 @@
           <groupId>mysql</groupId>
           <artifactId>mysql-connector-java</artifactId>
           <version>${mysql.version}</version>
-          <scope>runtime</scope>
+          <scope>test</scope>
         </dependency>
       </dependencies>
       <build>
@@ -307,7 +307,7 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
-                <scope>runtime</scope>
+                <scope>test</scope>
               </dependency>
             </dependencies>
           </plugin>
@@ -326,7 +326,7 @@
           <groupId>postgresql</groupId>
           <artifactId>postgresql</artifactId>
           <version>${postgres.version}</version>
-          <scope>runtime</scope>
+          <scope>test</scope>
         </dependency>
       </dependencies>
       <build>
@@ -342,7 +342,7 @@
                 <groupId>postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${postgres.version}</version>
-                <scope>runtime</scope>
+                <scope>test</scope>
               </dependency>
             </dependencies>
           </plugin>
@@ -361,7 +361,7 @@
           <groupId>postgresql</groupId>
           <artifactId>postgresql</artifactId>
           <version>9.0-801.jdbc4</version>
-          <scope>runtime</scope>
+          <scope>test</scope>
         </dependency>
       </dependencies>
       <build>
@@ -377,7 +377,7 @@
                 <groupId>postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>9.0-801.jdbc4</version>
-                <scope>runtime</scope>
+                <scope>test</scope>
               </dependency>
             </dependencies>
           </plugin>

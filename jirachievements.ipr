@@ -1470,6 +1470,17 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/selenium/atlassian-webdriver-core/2.1.0-m9/atlassian-webdriver-core-2.1.0-m9-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: com.atlassian.selenium:atlassian-webdriver-jira:2.1.0-m9">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/selenium/atlassian-webdriver-jira/2.1.0-m9/atlassian-webdriver-jira-2.1.0-m9.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/selenium/atlassian-webdriver-jira/2.1.0-m9/atlassian-webdriver-jira-2.1.0-m9-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/selenium/atlassian-webdriver-jira/2.1.0-m9/atlassian-webdriver-jira-2.1.0-m9-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: com.atlassian.seraph:atlassian-seraph:2.5.2">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/seraph/atlassian-seraph/2.5.2/atlassian-seraph-2.5.2.jar!/" />
@@ -1503,26 +1514,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/spring/atlassian-spring/1.0/atlassian-spring-1.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.streams:streams-api:5.0">
+    <library name="Maven: com.atlassian.streams:streams-api:5.1.m3">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.0/streams-api-5.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.1.m3/streams-api-5.1.m3.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.0/streams-api-5.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.1.m3/streams-api-5.1.m3-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.0/streams-api-5.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-api/5.1.m3/streams-api-5.1.m3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.atlassian.streams:streams-spi:5.0">
+    <library name="Maven: com.atlassian.streams:streams-spi:5.1.m3">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.0/streams-spi-5.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.1.m3/streams-spi-5.1.m3.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.0/streams-spi-5.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.1.m3/streams-spi-5.1.m3-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.0/streams-spi-5.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/atlassian/streams/streams-spi/5.1.m3/streams-spi-5.1.m3-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.atlassian.templaterenderer:atlassian-template-renderer-api:1.2.3">
@@ -2735,26 +2746,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.apache.felix.framework/3.0.2/org.apache.felix.framework-3.0.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpclient:4.0.1">
+    <library name="Maven: org.apache.httpcomponents:httpclient:4.1.2">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.1.2/httpclient-4.1.2.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.1.2/httpclient-4.1.2-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.1.2/httpclient-4.1.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.apache.httpcomponents:httpcore:4.0.1">
+    <library name="Maven: org.apache.httpcomponents:httpcore:4.1.2">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.1.2/httpcore-4.1.2.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.1.2/httpcore-4.1.2-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.1.2/httpcore-4.1.2-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.httpcomponents:httpmime:4.0.1">
